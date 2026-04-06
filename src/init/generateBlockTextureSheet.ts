@@ -7,7 +7,7 @@ import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
 } from "@/init/blockTextureSheetLayout";
-import { createBlockMaterials, getBlockData } from "@/engine/blockLoader";
+import { getCachedGeometryAndMaterial } from "@/engine/blockLoader";
 
 export async function generateBlockTextureSheet(
     blockNames: string[],
@@ -96,12 +96,11 @@ export async function generateBlockTextureSheet(
 
     for (let index = 0; index < blockNames.length; index += 1) {
         const blockName = blockNames[index];
+        const { geometry: blockGeometry, material: blockMaterial } =
+            await getCachedGeometryAndMaterial(blockName);
 
-        const blockData = getBlockData(blockName);
-        // Create materials for the block based on its texture data, which will be used to render the block model onto the texture sheet
-        const materials = await createBlockMaterials(blockData.textures ?? {});
-
-        mesh.material = materials;
+        mesh.geometry = blockGeometry;
+        mesh.material = blockMaterial;
 
         renderer.clear();
         renderer.render(scene, camera);
@@ -117,7 +116,6 @@ export async function generateBlockTextureSheet(
             y * renderScale,
         );
 
-        disposeMaterials(materials);
         onProgress?.({ completed: index + 1, total: totalBlocks });
 
         if ((index + 1) % chunkSize === 0) {
@@ -126,6 +124,7 @@ export async function generateBlockTextureSheet(
     }
 
     mesh.material = placeholderMaterial;
+    mesh.geometry = geometry;
     geometry.dispose();
     placeholderMaterial.dispose();
     renderer.dispose();
@@ -143,14 +142,6 @@ export async function generateBlockTextureSheet(
         })),
         metadata,
     };
-}
-
-function disposeMaterials(materials: THREE.Material | THREE.Material[]): void {
-    const materialList = Array.isArray(materials) ? materials : [materials];
-
-    materialList.forEach((material) => {
-        material.dispose();
-    });
 }
 
 function nextFrame(): Promise<void> {
