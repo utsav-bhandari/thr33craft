@@ -182,6 +182,7 @@ export interface FillRegionOptions {
 }
 
 export interface WorldgenDimensions {
+    blockName?: string;
     xBlocks: number;
     yBlocks: number;
     zBlocks: number;
