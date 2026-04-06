@@ -1,7 +1,7 @@
 import type { Camera, Scene, WebGLRenderer } from "three";
 import type { InputManagerLike, PlayerControllerLike } from "@project-types";
 import { BaseSystem } from "@lib/base/BaseSystem";
-import type { UIHandler } from "@/engine/UIHandler.js";
+import type { UIHandler } from "@/engine/UIHandler";
 
 export class System extends BaseSystem {
     uiHandler: UIHandler;

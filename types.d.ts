@@ -1,5 +1,5 @@
 import type * as THREE from "three";
-import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
+import type { PointerLockControls } from "three/addons/controls/PointerLockControls";
 
 export type Vector3Tuple = [number, number, number];
 

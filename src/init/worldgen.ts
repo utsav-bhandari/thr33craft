@@ -5,9 +5,9 @@ import type {
     Scene,
 } from "three";
 import type { WorldgenDimensions } from "@project-types";
-import type { System } from "@/engine/System.js";
-import { createInstancedFill } from "@generators/fill.js";
-import { WORLD_PARAMS } from "@/config.js";
+import type { System } from "@/engine/System";
+import { createInstancedFill } from "@generators/fill";
+import { WORLD_PARAMS } from "@/config";
 
 function requireWorldgenForm(): HTMLFormElement {
     const element = document.getElementById("worldgen-form");

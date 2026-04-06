@@ -1,7 +1,7 @@
 import { Vector3 } from "three";
 import type { Object3D } from "three";
 import type { PlayerParams } from "@project-types";
-import { BasePlayer } from "@lib/base/BasePlayer.js";
+import { BasePlayer } from "@lib/base/BasePlayer";
 
 export class Player extends BasePlayer {
     speed: number;

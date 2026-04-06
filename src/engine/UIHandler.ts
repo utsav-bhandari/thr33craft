@@ -1,6 +1,6 @@
-import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
+import type { PointerLockControls } from "three/addons/controls/PointerLockControls";
 import type { InputManagerLike, UIModalLike } from "@project-types";
-import { BaseUIHandler } from "@lib/base/BaseUIHandler.js";
+import { BaseUIHandler } from "@lib/base/BaseUIHandler";
 
 export class UIHandler extends BaseUIHandler {
     hideOnUIHtmlElems: HTMLElement[];

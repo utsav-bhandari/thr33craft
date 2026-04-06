@@ -9,7 +9,7 @@ import type {
 import {
     createAtlasMappedBoxGeometry,
     createRuntimeBlockTextureAtlas,
-} from "@/engine/blockTextureAtlas.js";
+} from "@/engine/blockTextureAtlas";
 
 const textureLoader = new THREE.TextureLoader();
 

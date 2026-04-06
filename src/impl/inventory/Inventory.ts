@@ -2,23 +2,26 @@ import type {
     BlockTextureSheet,
     InventoryBlockTextureSheetParams,
 } from "@project-types";
-import { BaseUIModal } from "@lib/base/BaseUIModal.js";
-import { InventoryGrid } from "@/impl/inventory/InventoryGrid.js";
+import { BaseUIModal } from "@lib/base/BaseUIModal";
+import { InventoryGrid } from "@/impl/inventory/InventoryGrid";
 import {
     InventorySearch,
     type InventoryQueryChangeDetail,
-} from "@/impl/inventory/InventorySearch.js";
+} from "@/impl/inventory/InventorySearch";
+import { InventoryStateController } from "@/impl/inventory/InventoryStateController";
+import { InventoryStatus } from "@/impl/inventory/InventoryStatus";
 
 export class Inventory extends BaseUIModal {
     downloadFileName: string;
     textureSheet: BlockTextureSheet | null;
-    statusElement: HTMLParagraphElement;
+    statusComponent: InventoryStatus;
     headerElement: HTMLDivElement;
     actionsElement: HTMLDivElement;
     closeButton: HTMLButtonElement;
     downloadButton: HTMLButtonElement | null;
     searchComponent: InventorySearch;
     gridComponent: InventoryGrid;
+    stateController: InventoryStateController;
 
     constructor(
         htmlElement: HTMLElement,
@@ -33,9 +36,6 @@ export class Inventory extends BaseUIModal {
 
         this.downloadFileName = downloadFileName;
         this.textureSheet = null;
-
-        this.statusElement = document.createElement("p");
-        this.statusElement.className = "inventory-status";
 
         this.headerElement = document.createElement("div");
         this.headerElement.className = "inventory-header";
@@ -81,13 +81,23 @@ export class Inventory extends BaseUIModal {
         });
 
         this.gridComponent = new InventoryGrid();
+        this.statusComponent = new InventoryStatus();
+        this.stateController = new InventoryStateController({
+            status: this.statusComponent,
+            search: this.searchComponent,
+            grid: this.gridComponent,
+            downloadButton: this.downloadButton,
+        });
 
         this.actionsElement.append(
             this.searchComponent.htmlElement,
             ...(this.downloadButton ? [this.downloadButton] : []),
         );
 
-        this.headerElement.append(this.statusElement, this.closeButton);
+        this.headerElement.append(
+            this.statusComponent.htmlElement,
+            this.closeButton,
+        );
         this.htmlElement.replaceChildren(
             this.headerElement,
             this.actionsElement,
@@ -99,31 +109,17 @@ export class Inventory extends BaseUIModal {
 
     setLoadingState(message: string): void {
         this.textureSheet = null;
-        this.statusElement.textContent = message;
-        this.gridComponent.hide();
-        this.searchComponent.setDisabled(true);
-        this.downloadButton?.setAttribute("disabled", "true");
+        this.stateController.showLoading(message);
     }
 
     setErrorState(message: string): void {
         this.textureSheet = null;
-        this.statusElement.textContent = message;
-        this.gridComponent.hide();
-        this.searchComponent.setDisabled(true);
-        this.downloadButton?.setAttribute("disabled", "true");
-        this.statusElement.classList.add("error");
-        this.statusElement.classList.remove("success");
+        this.stateController.showError(message);
     }
 
     setGridTextureSheet(textureSheet: BlockTextureSheet): void {
         this.textureSheet = textureSheet;
-        this.gridComponent.setTextureSheet(textureSheet);
-        this.statusElement.textContent = `${textureSheet.items.length} blocks loaded`;
-        this.statusElement.classList.add("success");
-        this.statusElement.classList.remove("error");
-        this.searchComponent.setDisabled(false);
-        this.downloadButton?.removeAttribute("disabled");
-        this.searchComponent.clear();
+        this.stateController.showTextureSheet(textureSheet);
         this.applyFilter("");
     }
 
@@ -134,9 +130,11 @@ export class Inventory extends BaseUIModal {
             visibleCount,
         } = this.gridComponent.applyFilter(query);
 
-        this.statusElement.textContent = normalizedQuery
-            ? `${visibleCount} of ${totalCount} blocks`
-            : `${totalCount} blocks loaded`;
+        this.stateController.showFilterResult({
+            query: normalizedQuery,
+            totalCount,
+            visibleCount,
+        });
     }
 
     downloadTextureSheet(): void {

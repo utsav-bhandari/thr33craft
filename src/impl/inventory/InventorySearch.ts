@@ -1,4 +1,4 @@
-import { BaseUIComponent } from "@lib/base/BaseUIComponent.js";
+import { BaseUIComponent } from "@lib/base/BaseUIComponent";
 
 export interface InventoryQueryChangeDetail {
     query: string;

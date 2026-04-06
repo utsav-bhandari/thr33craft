@@ -7,13 +7,13 @@ import type {
     LoadBlockTextureSheetOptions,
     UIModalLike,
 } from "@project-types";
-import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
-import { BaseUIModal } from "@lib/base/BaseUIModal.js";
-import { UIHandler } from "@/engine/UIHandler.js";
-import { getAllBlockTextureNames } from "@/engine/blockLoader.js";
-import { generateBlockTextureSheet } from "@/generateBlockTextureSheet.js";
-import { Inventory } from "@/impl/inventory/Inventory.js";
-import { loadIndividualBlocks } from "@/init/loadBlockTextureSheet.js";
+import type { PointerLockControls } from "three/addons/controls/PointerLockControls";
+import { BaseUIModal } from "@lib/base/BaseUIModal";
+import { UIHandler } from "@/engine/UIHandler";
+import { getAllBlockTextureNames } from "@/engine/blockLoader";
+import { generateBlockTextureSheet } from "@/generateBlockTextureSheet";
+import { Inventory } from "@/impl/inventory/Inventory";
+import { loadIndividualBlocks } from "@/init/loadBlockTextureSheet";
 
 export function initUI({
     inputManager,

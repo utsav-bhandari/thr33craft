@@ -5,7 +5,7 @@ import type {
     MovementDirection,
     PlayerLike,
 } from "@project-types";
-import { BasePlayerController } from "@lib/base/BasePlayerController.js";
+import { BasePlayerController } from "@lib/base/BasePlayerController";
 
 export class PlayerController extends BasePlayerController {
     declare player: PlayerLike;

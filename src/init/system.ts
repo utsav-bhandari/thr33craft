@@ -1,13 +1,13 @@
-import { InputManager } from "@lib/controls/InputManager.js";
-import { KeyMap } from "@lib/controls/KeyMap.js";
-import { KeyStore } from "@lib/controls/KeyStore.js";
+import { InputManager } from "@lib/controls/InputManager";
+import { KeyMap } from "@lib/controls/KeyMap";
+import { KeyStore } from "@lib/controls/KeyStore";
 import type { InitSystemArgs } from "@project-types";
-import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/config.js";
-import { PlayerController } from "@/engine/PlayerController.js";
-import { System } from "@/engine/System.js";
-import { createBlockMesh } from "@/engine/blockLoader.js";
-import { Player } from "@/impl/Player.js";
-import { initUI } from "@/init/ui.js";
+import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/config";
+import { PlayerController } from "@/engine/PlayerController";
+import { System } from "@/engine/System";
+import { createBlockMesh } from "@/engine/blockLoader";
+import { Player } from "@/impl/Player";
+import { initUI } from "@/init/ui";
 
 export async function initSystem({
     scene,

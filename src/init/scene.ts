@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import type { PerspectiveCamera, Scene, WebGLRenderer } from "three";
-import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
+import { PointerLockControls } from "three/addons/controls/PointerLockControls";
 import type { SceneInitConfig, Vector3Tuple } from "@project-types";
-import { WORLD_PARAMS } from "@/config.js";
+import { WORLD_PARAMS } from "@/config";
 
 function setVectorFromTuple(vector: THREE.Vector3, tuple: Vector3Tuple): void {
     vector.fromArray(tuple);

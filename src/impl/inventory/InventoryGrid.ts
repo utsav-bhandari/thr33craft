@@ -1,5 +1,5 @@
 import type { BlockTextureSheet, BlockTextureSheetItem } from "@project-types";
-import { BaseUIComponent } from "@lib/base/BaseUIComponent.js";
+import { BaseUIComponent } from "@lib/base/BaseUIComponent";
 
 export interface InventoryFilterResult {
     query: string;
