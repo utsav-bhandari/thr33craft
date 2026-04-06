@@ -27,8 +27,6 @@ export interface GameParams {
     inventoryHtmlElm: HTMLElement;
     menuHtmlElm: HTMLElement;
     worldGenHtmlElm: HTMLElement;
-    crosshairHtmlElm: HTMLElement;
-    hudHintHtmlElm: HTMLElement;
     inventoryBlockTextureSheetParams: InventoryBlockTextureSheetParams;
 }
 
@@ -68,9 +66,6 @@ export interface SystemInitConfig {
         blockName?: string;
         spawnPosition?: Vector3Tuple;
         params?: PlayerParams;
-    };
-    ui?: {
-        hideOnUIHtmlElems?: HTMLElement[];
     };
     actions?: {
         menu?: string;

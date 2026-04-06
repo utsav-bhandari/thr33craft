@@ -55,8 +55,6 @@ export const gameParams: GameParams = {
     inventoryHtmlElm: requireElement("inventory", HTMLDivElement),
     menuHtmlElm: requireElement("menu", HTMLDivElement),
     worldGenHtmlElm: requireElement("worldgen", HTMLDivElement),
-    crosshairHtmlElm: requireElement("crosshair", HTMLImageElement),
-    hudHintHtmlElm: requireElement("menu-hint", HTMLDivElement),
     inventoryBlockTextureSheetParams: INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS,
 };
 
@@ -107,9 +105,6 @@ export const SYSTEM_INIT_CONFIG: SystemInitConfig = {
     player: {
         blockName: "redstone_block",
         spawnPosition: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
-    },
-    ui: {
-        hideOnUIHtmlElems: [gameParams.crosshairHtmlElm],
     },
     actions: {
         menu: "MENU",

@@ -178,6 +178,10 @@
     z-index: 2;
 }
 
+body.ui-open .gameplay {
+    display: none !important;
+}
+
 .hud-message {
     position: absolute;
     top: 18px;

@@ -15,6 +15,8 @@ export class BaseUIHandler {
         this.activeUI = null;
     }
 
+    protected onActiveUIChange(_activeUI: UIModalLike | null): void {}
+
     isUIOpen(): boolean {
         return this.activeUI !== null;
     }
@@ -22,12 +24,14 @@ export class BaseUIHandler {
     closeActiveUI(): boolean {
         if (!this.activeUI) {
             this.ptrControls.lock();
+            this.onActiveUIChange(this.activeUI);
             return false;
         }
 
         this.activeUI.close();
         this.activeUI = null;
         this.ptrControls.lock();
+        this.onActiveUIChange(this.activeUI);
         return false;
     }
 
@@ -39,6 +43,7 @@ export class BaseUIHandler {
 
         if (this.activeUI === newUI) {
             this.ptrControls.unlock();
+            this.onActiveUIChange(this.activeUI);
             return true;
         }
 
@@ -46,6 +51,7 @@ export class BaseUIHandler {
         this.activeUI = newUI;
         this.activeUI.open();
         this.ptrControls.unlock();
+        this.onActiveUIChange(this.activeUI);
         return true;
     }
 

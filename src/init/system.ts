@@ -27,7 +27,6 @@ export async function initSystem({
     const {
         keyPreset = gameParams.keysPreset ?? DEFAULT_KEYS_PRESET,
         player: playerOptions = {},
-        ui: uiOptions = {},
         actions: actionOptions = {},
     } = options;
 
@@ -37,12 +36,6 @@ export async function initSystem({
         spawnPosition = WORLD_PARAMS.PLAYER_STARTING_POSITION,
         params: playerParams = gameParams.playerParams,
     } = playerOptions;
-
-    // Determine which HTML elements should be hidden when the UI is open, allowing for overrides from uiOptions
-    const hideOnUIHtmlElems = uiOptions.hideOnUIHtmlElems ?? [
-        gameParams.crosshairHtmlElm,
-        gameParams.hudHintHtmlElm,
-    ];
 
     const { menu = "MENU", inventory = "INVENTORY" } = actionOptions;
 
@@ -56,7 +49,6 @@ export async function initSystem({
         inputManager,
         pointerControls,
         gameParams,
-        hideOnUIHtmlElems,
     });
 
     // Create the player mesh and add it to the scene

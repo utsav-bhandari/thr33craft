@@ -21,23 +21,17 @@ export function initUI({
     inputManager,
     pointerControls,
     gameParams,
-    hideOnUIHtmlElems = [],
 }: {
     inputManager: InputManagerLike;
     pointerControls: PointerLockControls;
     gameParams: GameParams;
-    hideOnUIHtmlElems?: HTMLElement[];
 }): {
     uiHandler: UIHandler;
     menu: UIModalLike;
     worldgen: UIModalLike;
     inventory: Inventory;
 } {
-    const uiHandler = new UIHandler(
-        inputManager,
-        pointerControls,
-        hideOnUIHtmlElems,
-    );
+    const uiHandler = new UIHandler(inputManager, pointerControls);
 
     const menu = uiHandler.registerModal(
         "menu",

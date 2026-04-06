@@ -6,6 +6,7 @@ import type {
     PlayerLike,
 } from "@project-types";
 import { BasePlayerController } from "@lib/base/BasePlayerController";
+import { thickness } from "three/tsl";
 
 export class PlayerController extends BasePlayerController {
     declare player: PlayerLike;
@@ -68,5 +69,6 @@ export class PlayerController extends BasePlayerController {
 
         this.player.move(targetVelocity, 20, deltaTime);
         this.camera.position.copy(this.player.position);
+        this.camera.translateZ(10);
     }
 }
