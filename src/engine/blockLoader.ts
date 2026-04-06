@@ -13,8 +13,6 @@ import {
 
 // This module is responsible for loading block data and textures, creating block meshes, and managing texture atlases for efficient rendering of blocks in the game world. It includes functions to retrieve block data, preload textures, create materials for block faces, and generate meshes based on block names, utilizing caching mechanisms to optimize performance and reduce redundant loading of resources.
 
-const textureLoader = new THREE.TextureLoader();
-
 // A certain blocky game uses a specific order for block faces, which is important to maintain when creating geometries and applying textures. The FACE_MAPPINGS constant defines this order, ensuring that textures are correctly mapped to the corresponding faces of the block geometry when generating meshes for rendering in the game world.
 export const FACE_MAPPINGS = [
     "east",
@@ -26,7 +24,6 @@ export const FACE_MAPPINGS = [
 ] as const;
 
 const allBlocks = blocksJson as BlocksByName;
-const textureCache = new Map<string, THREE.Texture>();
 const atlasMaterialCache = new Map<THREE.Texture, THREE.MeshStandardMaterial>();
 const blockGeometryCache = new Map<string, THREE.BoxGeometry>();
 
@@ -51,75 +48,6 @@ export function getBlockData(blockName: string): BlockData {
 
 export async function fetchBlockTextureAtlas(): Promise<AtlasState> {
     return blockTextureAtlasPromise;
-}
-
-// Loads a texture from the specified path, utilizing a cache to avoid redundant loading and improve performance
-async function loadTexture(texturePath: string): Promise<THREE.Texture> {
-    const cachedTexture = textureCache.get(texturePath);
-    if (cachedTexture) {
-        return cachedTexture;
-    }
-
-    return new Promise<THREE.Texture>((resolve, reject) => {
-        textureLoader.load(
-            texturePath,
-            (texture) => {
-                texture.magFilter = THREE.NearestFilter;
-                texture.minFilter = THREE.NearestFilter;
-                texture.colorSpace = THREE.SRGBColorSpace;
-                textureCache.set(texturePath, texture);
-                resolve(texture);
-            },
-            undefined,
-            reject,
-        );
-    });
-}
-
-// Retrieves a texture based on the provided texture file name, first checking the cache for an existing texture before attempting to load it from the specified path
-async function getTexture(textureFile: string): Promise<THREE.Texture> {
-    const cachedTexture = textureCache.get(textureFile);
-    if (cachedTexture) {
-        return cachedTexture;
-    }
-
-    const texture = await loadTexture(`/assets/blocks/${textureFile}.png`);
-    textureCache.set(textureFile, texture);
-    return texture;
-}
-
-/** Creates a material for a block face based on the provided texture path. If the texture path is undefined or if there is an error loading the texture, it returns a default magenta material to indicate a missing texture. The function also handles special cases, such as making glass blocks non-opaque by disabling depth writing. */
-export async function createFaceMaterial(
-    texturePath: string | undefined,
-): Promise<THREE.MeshStandardMaterial> {
-    if (!texturePath) {
-        return new THREE.MeshStandardMaterial({ color: 0xff00ff });
-    }
-
-    const textureFile = texturePath.split("/").pop();
-    if (!textureFile) {
-        return new THREE.MeshStandardMaterial({ color: 0xff00ff });
-    }
-
-    try {
-        const texture = await getTexture(textureFile);
-        return new THREE.MeshStandardMaterial({
-            map: texture,
-            alphaTest: 0.5,
-            depthWrite: !textureFile.includes("glass"),
-        });
-    } catch {
-        return new THREE.MeshStandardMaterial({ color: 0xff00ff });
-    }
-}
-
-/** Creates an array of materials for the faces of a block based on the provided texture mapping. It iterates through the defined FACE_MAPPINGS order and creates a material for each face using the corresponding texture path from the texture mapping, ensuring that each face of the block is rendered with the correct texture in the game world. */
-export async function createBlockMaterials(
-    textureMap: Record<string, string> = {},
-): Promise<THREE.MeshStandardMaterial[]> {
-    return Promise.all(
-        FACE_MAPPINGS.map((face) => createFaceMaterial(textureMap[face])),
-    );
 }
 
 export async function createBlockMesh(
@@ -164,7 +92,7 @@ function getAtlasMaterial(
     const material = new THREE.MeshStandardMaterial({
         map: atlasTexture,
         alphaTest: 0.5,
-        depthWrite: false,
+        depthWrite: true,
     });
     atlasMaterialCache.set(atlasTexture, material);
     return material;
