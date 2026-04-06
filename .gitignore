@@ -49,3 +49,5 @@ Thumbs.db
 dist/index.html
 dist/assets/index-BfTHF4Kv.js
 dist/assets/index-DJWlM1yf.css
+
+tsconfig.json
