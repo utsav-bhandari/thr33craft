@@ -1,0 +1,223 @@
+#menu,
+#worldgen {
+    position: absolute;
+    inset: 0;
+}
+
+.modal-overlay {
+    /* box-sizing: border-box; */
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(128, 173, 255, 0.16),
+            transparent 38%
+        ),
+        rgba(6, 8, 12, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 4;
+}
+
+.modal-card {
+    width: min(100%, 440px);
+    padding: 22px;
+    background: linear-gradient(
+        180deg,
+        rgba(19, 24, 31, 0.96),
+        rgba(10, 12, 17, 0.98)
+    );
+    border: 2px solid rgba(184, 216, 255, 0.22);
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.worldgen-card {
+    width: min(100%, 460px);
+}
+
+.menu-card {
+    width: min(100%, 420px);
+}
+
+.modal-copy {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.modal-kicker {
+    margin: 0;
+    color: #7fb0ff;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.05;
+}
+
+.modal-description {
+    margin: 0;
+    color: rgba(232, 238, 247, 0.78);
+    line-height: 1.35;
+    font-size: 0.97rem;
+}
+
+.worldgen-form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.field-group {
+    display: grid;
+    gap: 6px;
+}
+
+.field-group span {
+    color: rgba(232, 238, 247, 0.82);
+    font-size: 16px;
+}
+
+.field-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(184, 216, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    outline: none;
+    min-height: 42px;
+}
+
+.worldgen-form > button {
+    grid-column: 1 / -1;
+}
+
+.field-group input:focus {
+    border-color: rgba(127, 176, 255, 0.85);
+    box-shadow: 0 0 0 2px rgba(127, 176, 255, 0.18);
+}
+
+.primary-button,
+.danger-button {
+    width: 100%;
+    border: 0;
+    padding: 12px 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: linear-gradient(180deg, #5aa9ff, #357dd1);
+}
+
+.danger-button {
+    background: linear-gradient(180deg, #ff6767, #bf2323);
+}
+
+.primary-button:hover,
+.danger-button:hover {
+    filter: brightness(1.08);
+}
+
+.primary-button:active,
+.danger-button:active {
+    transform: translateY(1px);
+}
+
+.primary-button:disabled,
+.danger-button:disabled {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+.modal-error {
+    margin: 0;
+    color: #ff8c8c;
+    min-height: 24px;
+}
+
+.controls-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(184, 216, 255, 0.14);
+}
+
+.controls-row span {
+    color: rgba(232, 238, 247, 0.72);
+}
+
+.controls-row strong {
+    font-weight: 400;
+    color: #fff;
+}
+
+#crosshair {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.hud-message {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 10px 16px;
+    background: rgba(8, 11, 17, 0.72);
+    border: 1px solid rgba(184, 216, 255, 0.2);
+    color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+@media all and (max-width: 640px) {
+    .modal-overlay {
+        padding: 16px;
+    }
+
+    .modal-card {
+        padding: 22px 18px;
+    }
+
+    .controls-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hud-message {
+        width: calc(100% - 24px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .lil-gui.root {
+        right: auto;
+        top: auto;
+        max-height: 50%;
+        max-width: 80%;
+        bottom: 0;
+        left: 0;
+    }
+}

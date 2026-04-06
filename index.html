@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Project 6</title>
+        <link rel="stylesheet" href="assets/styles/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/assets/images/favicon.ico"
+        />
+    </head>
+
+    <body>
+        <script type="module" src="/src/main.ts"></script>
+
+        <img
+            src="./assets/images/crosshair.svg"
+            alt="crosshair image"
+            id="crosshair"
+        />
+
+        <div id="worldgen" class="modal-overlay hidden">
+            <div class="modal-card pixel-corners worldgen-card">
+                <div class="modal-copy">
+                    <p class="modal-kicker">World Generation</p>
+                    <h1 class="modal-title">Choose your starting fill</h1>
+                    <p class="modal-description">
+                        Pick block counts for X, Y, and Z. Generation may take a
+                        moment, so wait for it to finish before starting.
+                    </p>
+                </div>
+
+                <form id="worldgen-form" class="worldgen-form">
+                    <label class="field-group" for="fill-x">
+                        <span>X blocks</span>
+                        <input
+                            id="fill-x"
+                            name="x"
+                            type="number"
+                            min="1"
+                            step="1"
+                            inputmode="numeric"
+                            value="1"
+                            required
+                            data-integer-input
+                        />
+                    </label>
+
+                    <label class="field-group" for="fill-y">
+                        <span>Y blocks</span>
+                        <input
+                            id="fill-y"
+                            name="y"
+                            type="number"
+                            min="1"
+                            step="1"
+                            inputmode="numeric"
+                            value="1"
+                            required
+                            data-integer-input
+                        />
+                    </label>
+
+                    <label class="field-group" for="fill-z">
+                        <span>Z blocks</span>
+                        <input
+                            id="fill-z"
+                            name="z"
+                            type="number"
+                            min="1"
+                            step="1"
+                            inputmode="numeric"
+                            value="1"
+                            required
+                            data-integer-input
+                        />
+                    </label>
+
+                    <button class="primary-button" type="submit">
+                        Start World
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="menu" class="modal-overlay hidden">
+            <div class="modal-card pixel-corners menu-card">
+                <div class="modal-copy">
+                    <p class="modal-kicker">Menu</p>
+                    <h2 class="modal-title">Controls and session</h2>
+                    <p class="modal-description">
+                        Press F again or click outside this panel to jump back
+                        in.
+                    </p>
+                </div>
+
+                <div class="controls-list" aria-label="controls list">
+                    <div class="controls-row">
+                        <span>Look</span><strong>Mouse</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Move</span><strong>W A S D</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Ascend</span><strong>Space</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Descend</span><strong>C</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Speed Up</span><strong>Shift</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Inventory</span><strong>E</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Menu</span><strong>F</strong>
+                    </div>
+                </div>
+
+                <button id="reset-world" class="danger-button" type="button">
+                    Reset World
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-hint" class="hud-message hidden">
+            Press F for menu and controls
+        </div>
+
+        <div id="inventory" class="pixel-corners hidden"></div>
+    </body>
+</html>

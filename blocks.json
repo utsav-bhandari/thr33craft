@@ -1,0 +1,4545 @@
+{
+    "acacia_log": {
+        "textures": {
+            "down": "minecraft:block/acacia_log_top",
+            "up": "minecraft:block/acacia_log_top",
+            "north": "minecraft:block/acacia_log",
+            "south": "minecraft:block/acacia_log",
+            "west": "minecraft:block/acacia_log",
+            "east": "minecraft:block/acacia_log",
+            "particle": "minecraft:block/acacia_log"
+        }
+    },
+    "acacia_planks": {
+        "textures": {
+            "down": "minecraft:block/acacia_planks",
+            "up": "minecraft:block/acacia_planks",
+            "north": "minecraft:block/acacia_planks",
+            "south": "minecraft:block/acacia_planks",
+            "west": "minecraft:block/acacia_planks",
+            "east": "minecraft:block/acacia_planks",
+            "particle": "minecraft:block/acacia_planks"
+        }
+    },
+    "acacia_wood": {
+        "textures": {
+            "down": "minecraft:block/acacia_log",
+            "up": "minecraft:block/acacia_log",
+            "north": "minecraft:block/acacia_log",
+            "south": "minecraft:block/acacia_log",
+            "west": "minecraft:block/acacia_log",
+            "east": "minecraft:block/acacia_log",
+            "particle": "minecraft:block/acacia_log"
+        }
+    },
+    "amethyst_block": {
+        "textures": {
+            "down": "minecraft:block/amethyst_block",
+            "up": "minecraft:block/amethyst_block",
+            "north": "minecraft:block/amethyst_block",
+            "south": "minecraft:block/amethyst_block",
+            "west": "minecraft:block/amethyst_block",
+            "east": "minecraft:block/amethyst_block",
+            "particle": "minecraft:block/amethyst_block"
+        }
+    },
+    "ancient_debris": {
+        "textures": {
+            "down": "minecraft:block/ancient_debris_top",
+            "up": "minecraft:block/ancient_debris_top",
+            "north": "minecraft:block/ancient_debris_side",
+            "south": "minecraft:block/ancient_debris_side",
+            "west": "minecraft:block/ancient_debris_side",
+            "east": "minecraft:block/ancient_debris_side",
+            "particle": "minecraft:block/ancient_debris_side"
+        }
+    },
+    "andesite": {
+        "textures": {
+            "down": "minecraft:block/andesite",
+            "up": "minecraft:block/andesite",
+            "north": "minecraft:block/andesite",
+            "south": "minecraft:block/andesite",
+            "west": "minecraft:block/andesite",
+            "east": "minecraft:block/andesite",
+            "particle": "minecraft:block/andesite"
+        }
+    },
+    "azalea_leaves": {
+        "textures": {
+            "down": "minecraft:block/azalea_leaves",
+            "up": "minecraft:block/azalea_leaves",
+            "north": "minecraft:block/azalea_leaves",
+            "south": "minecraft:block/azalea_leaves",
+            "west": "minecraft:block/azalea_leaves",
+            "east": "minecraft:block/azalea_leaves",
+            "particle": "minecraft:block/azalea_leaves"
+        }
+    },
+    "bamboo_block": {
+        "textures": {
+            "down": "minecraft:block/bamboo_block_top",
+            "up": "minecraft:block/bamboo_block_top",
+            "north": "minecraft:block/bamboo_block",
+            "south": "minecraft:block/bamboo_block",
+            "west": "minecraft:block/bamboo_block",
+            "east": "minecraft:block/bamboo_block",
+            "particle": "minecraft:block/bamboo_block"
+        }
+    },
+    "bamboo_mosaic": {
+        "textures": {
+            "down": "minecraft:block/bamboo_mosaic",
+            "up": "minecraft:block/bamboo_mosaic",
+            "north": "minecraft:block/bamboo_mosaic",
+            "south": "minecraft:block/bamboo_mosaic",
+            "west": "minecraft:block/bamboo_mosaic",
+            "east": "minecraft:block/bamboo_mosaic",
+            "particle": "minecraft:block/bamboo_mosaic"
+        }
+    },
+    "bamboo_planks": {
+        "textures": {
+            "down": "minecraft:block/bamboo_planks",
+            "up": "minecraft:block/bamboo_planks",
+            "north": "minecraft:block/bamboo_planks",
+            "south": "minecraft:block/bamboo_planks",
+            "west": "minecraft:block/bamboo_planks",
+            "east": "minecraft:block/bamboo_planks",
+            "particle": "minecraft:block/bamboo_planks"
+        }
+    },
+    "basalt": {
+        "textures": {
+            "down": "minecraft:block/basalt_top",
+            "up": "minecraft:block/basalt_top",
+            "north": "minecraft:block/basalt_side",
+            "south": "minecraft:block/basalt_side",
+            "west": "minecraft:block/basalt_side",
+            "east": "minecraft:block/basalt_side",
+            "particle": "minecraft:block/basalt_side"
+        }
+    },
+    "bedrock": {
+        "textures": {
+            "down": "minecraft:block/bedrock",
+            "up": "minecraft:block/bedrock",
+            "north": "minecraft:block/bedrock",
+            "south": "minecraft:block/bedrock",
+            "west": "minecraft:block/bedrock",
+            "east": "minecraft:block/bedrock",
+            "particle": "minecraft:block/bedrock"
+        }
+    },
+    "birch_log": {
+        "textures": {
+            "down": "minecraft:block/birch_log_top",
+            "up": "minecraft:block/birch_log_top",
+            "north": "minecraft:block/birch_log",
+            "south": "minecraft:block/birch_log",
+            "west": "minecraft:block/birch_log",
+            "east": "minecraft:block/birch_log",
+            "particle": "minecraft:block/birch_log"
+        }
+    },
+    "birch_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/birch_log_top",
+            "up": "minecraft:block/birch_log_top",
+            "north": "minecraft:block/birch_log",
+            "south": "minecraft:block/birch_log",
+            "west": "minecraft:block/birch_log",
+            "east": "minecraft:block/birch_log",
+            "particle": "minecraft:block/birch_log"
+        }
+    },
+    "birch_planks": {
+        "textures": {
+            "down": "minecraft:block/birch_planks",
+            "up": "minecraft:block/birch_planks",
+            "north": "minecraft:block/birch_planks",
+            "south": "minecraft:block/birch_planks",
+            "west": "minecraft:block/birch_planks",
+            "east": "minecraft:block/birch_planks",
+            "particle": "minecraft:block/birch_planks"
+        }
+    },
+    "birch_wood": {
+        "textures": {
+            "down": "minecraft:block/birch_log",
+            "up": "minecraft:block/birch_log",
+            "north": "minecraft:block/birch_log",
+            "south": "minecraft:block/birch_log",
+            "west": "minecraft:block/birch_log",
+            "east": "minecraft:block/birch_log",
+            "particle": "minecraft:block/birch_log"
+        }
+    },
+    "blackstone": {
+        "textures": {
+            "down": "minecraft:block/blackstone_top",
+            "up": "minecraft:block/blackstone_top",
+            "north": "minecraft:block/blackstone",
+            "south": "minecraft:block/blackstone",
+            "west": "minecraft:block/blackstone",
+            "east": "minecraft:block/blackstone",
+            "particle": "minecraft:block/blackstone"
+        }
+    },
+    "black_concrete": {
+        "textures": {
+            "down": "minecraft:block/black_concrete",
+            "up": "minecraft:block/black_concrete",
+            "north": "minecraft:block/black_concrete",
+            "south": "minecraft:block/black_concrete",
+            "west": "minecraft:block/black_concrete",
+            "east": "minecraft:block/black_concrete",
+            "particle": "minecraft:block/black_concrete"
+        }
+    },
+    "black_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/black_concrete_powder",
+            "up": "minecraft:block/black_concrete_powder",
+            "north": "minecraft:block/black_concrete_powder",
+            "south": "minecraft:block/black_concrete_powder",
+            "west": "minecraft:block/black_concrete_powder",
+            "east": "minecraft:block/black_concrete_powder",
+            "particle": "minecraft:block/black_concrete_powder"
+        }
+    },
+    "black_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/black_stained_glass",
+            "up": "minecraft:block/black_stained_glass",
+            "north": "minecraft:block/black_stained_glass",
+            "south": "minecraft:block/black_stained_glass",
+            "west": "minecraft:block/black_stained_glass",
+            "east": "minecraft:block/black_stained_glass",
+            "particle": "minecraft:block/black_stained_glass"
+        }
+    },
+    "black_terracotta": {
+        "textures": {
+            "down": "minecraft:block/black_terracotta",
+            "up": "minecraft:block/black_terracotta",
+            "north": "minecraft:block/black_terracotta",
+            "south": "minecraft:block/black_terracotta",
+            "west": "minecraft:block/black_terracotta",
+            "east": "minecraft:block/black_terracotta",
+            "particle": "minecraft:block/black_terracotta"
+        }
+    },
+    "black_wool": {
+        "textures": {
+            "down": "minecraft:block/black_wool",
+            "up": "minecraft:block/black_wool",
+            "north": "minecraft:block/black_wool",
+            "south": "minecraft:block/black_wool",
+            "west": "minecraft:block/black_wool",
+            "east": "minecraft:block/black_wool",
+            "particle": "minecraft:block/black_wool"
+        }
+    },
+    "blast_furnace": {
+        "textures": {
+            "down": "minecraft:block/blast_furnace_top",
+            "up": "minecraft:block/blast_furnace_top",
+            "north": "minecraft:block/blast_furnace_front",
+            "south": "minecraft:block/blast_furnace_side",
+            "west": "minecraft:block/blast_furnace_side",
+            "east": "minecraft:block/blast_furnace_side",
+            "particle": "minecraft:block/blast_furnace_front"
+        }
+    },
+    "blast_furnace_on": {
+        "textures": {
+            "down": "minecraft:block/blast_furnace_top",
+            "up": "minecraft:block/blast_furnace_top",
+            "north": "minecraft:block/blast_furnace_front_on",
+            "south": "minecraft:block/blast_furnace_side",
+            "west": "minecraft:block/blast_furnace_side",
+            "east": "minecraft:block/blast_furnace_side",
+            "particle": "minecraft:block/blast_furnace_front_on"
+        }
+    },
+    "blue_concrete": {
+        "textures": {
+            "down": "minecraft:block/blue_concrete",
+            "up": "minecraft:block/blue_concrete",
+            "north": "minecraft:block/blue_concrete",
+            "south": "minecraft:block/blue_concrete",
+            "west": "minecraft:block/blue_concrete",
+            "east": "minecraft:block/blue_concrete",
+            "particle": "minecraft:block/blue_concrete"
+        }
+    },
+    "blue_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/blue_concrete_powder",
+            "up": "minecraft:block/blue_concrete_powder",
+            "north": "minecraft:block/blue_concrete_powder",
+            "south": "minecraft:block/blue_concrete_powder",
+            "west": "minecraft:block/blue_concrete_powder",
+            "east": "minecraft:block/blue_concrete_powder",
+            "particle": "minecraft:block/blue_concrete_powder"
+        }
+    },
+    "blue_ice": {
+        "textures": {
+            "down": "minecraft:block/blue_ice",
+            "up": "minecraft:block/blue_ice",
+            "north": "minecraft:block/blue_ice",
+            "south": "minecraft:block/blue_ice",
+            "west": "minecraft:block/blue_ice",
+            "east": "minecraft:block/blue_ice",
+            "particle": "minecraft:block/blue_ice"
+        }
+    },
+    "blue_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/blue_stained_glass",
+            "up": "minecraft:block/blue_stained_glass",
+            "north": "minecraft:block/blue_stained_glass",
+            "south": "minecraft:block/blue_stained_glass",
+            "west": "minecraft:block/blue_stained_glass",
+            "east": "minecraft:block/blue_stained_glass",
+            "particle": "minecraft:block/blue_stained_glass"
+        }
+    },
+    "blue_terracotta": {
+        "textures": {
+            "down": "minecraft:block/blue_terracotta",
+            "up": "minecraft:block/blue_terracotta",
+            "north": "minecraft:block/blue_terracotta",
+            "south": "minecraft:block/blue_terracotta",
+            "west": "minecraft:block/blue_terracotta",
+            "east": "minecraft:block/blue_terracotta",
+            "particle": "minecraft:block/blue_terracotta"
+        }
+    },
+    "blue_wool": {
+        "textures": {
+            "down": "minecraft:block/blue_wool",
+            "up": "minecraft:block/blue_wool",
+            "north": "minecraft:block/blue_wool",
+            "south": "minecraft:block/blue_wool",
+            "west": "minecraft:block/blue_wool",
+            "east": "minecraft:block/blue_wool",
+            "particle": "minecraft:block/blue_wool"
+        }
+    },
+    "bone_block": {
+        "textures": {
+            "down": "minecraft:block/bone_block_top",
+            "up": "minecraft:block/bone_block_top",
+            "north": "minecraft:block/bone_block_side",
+            "south": "minecraft:block/bone_block_side",
+            "west": "minecraft:block/bone_block_side",
+            "east": "minecraft:block/bone_block_side",
+            "particle": "minecraft:block/bone_block_side"
+        }
+    },
+    "bookshelf": {
+        "textures": {
+            "down": "minecraft:block/oak_planks",
+            "up": "minecraft:block/oak_planks",
+            "north": "minecraft:block/bookshelf",
+            "south": "minecraft:block/bookshelf",
+            "west": "minecraft:block/bookshelf",
+            "east": "minecraft:block/bookshelf",
+            "particle": "minecraft:block/bookshelf"
+        }
+    },
+    "brain_coral_block": {
+        "textures": {
+            "down": "minecraft:block/brain_coral_block",
+            "up": "minecraft:block/brain_coral_block",
+            "north": "minecraft:block/brain_coral_block",
+            "south": "minecraft:block/brain_coral_block",
+            "west": "minecraft:block/brain_coral_block",
+            "east": "minecraft:block/brain_coral_block",
+            "particle": "minecraft:block/brain_coral_block"
+        }
+    },
+    "bricks": {
+        "textures": {
+            "down": "minecraft:block/bricks",
+            "up": "minecraft:block/bricks",
+            "north": "minecraft:block/bricks",
+            "south": "minecraft:block/bricks",
+            "west": "minecraft:block/bricks",
+            "east": "minecraft:block/bricks",
+            "particle": "minecraft:block/bricks"
+        }
+    },
+    "brown_concrete": {
+        "textures": {
+            "down": "minecraft:block/brown_concrete",
+            "up": "minecraft:block/brown_concrete",
+            "north": "minecraft:block/brown_concrete",
+            "south": "minecraft:block/brown_concrete",
+            "west": "minecraft:block/brown_concrete",
+            "east": "minecraft:block/brown_concrete",
+            "particle": "minecraft:block/brown_concrete"
+        }
+    },
+    "brown_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/brown_concrete_powder",
+            "up": "minecraft:block/brown_concrete_powder",
+            "north": "minecraft:block/brown_concrete_powder",
+            "south": "minecraft:block/brown_concrete_powder",
+            "west": "minecraft:block/brown_concrete_powder",
+            "east": "minecraft:block/brown_concrete_powder",
+            "particle": "minecraft:block/brown_concrete_powder"
+        }
+    },
+    "brown_mushroom_block_inventory": {
+        "textures": {
+            "down": "minecraft:block/brown_mushroom_block",
+            "up": "minecraft:block/brown_mushroom_block",
+            "north": "minecraft:block/brown_mushroom_block",
+            "south": "minecraft:block/brown_mushroom_block",
+            "west": "minecraft:block/brown_mushroom_block",
+            "east": "minecraft:block/brown_mushroom_block",
+            "particle": "minecraft:block/brown_mushroom_block"
+        }
+    },
+    "brown_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/brown_stained_glass",
+            "up": "minecraft:block/brown_stained_glass",
+            "north": "minecraft:block/brown_stained_glass",
+            "south": "minecraft:block/brown_stained_glass",
+            "west": "minecraft:block/brown_stained_glass",
+            "east": "minecraft:block/brown_stained_glass",
+            "particle": "minecraft:block/brown_stained_glass"
+        }
+    },
+    "brown_terracotta": {
+        "textures": {
+            "down": "minecraft:block/brown_terracotta",
+            "up": "minecraft:block/brown_terracotta",
+            "north": "minecraft:block/brown_terracotta",
+            "south": "minecraft:block/brown_terracotta",
+            "west": "minecraft:block/brown_terracotta",
+            "east": "minecraft:block/brown_terracotta",
+            "particle": "minecraft:block/brown_terracotta"
+        }
+    },
+    "brown_wool": {
+        "textures": {
+            "down": "minecraft:block/brown_wool",
+            "up": "minecraft:block/brown_wool",
+            "north": "minecraft:block/brown_wool",
+            "south": "minecraft:block/brown_wool",
+            "west": "minecraft:block/brown_wool",
+            "east": "minecraft:block/brown_wool",
+            "particle": "minecraft:block/brown_wool"
+        }
+    },
+    "bubble_coral_block": {
+        "textures": {
+            "down": "minecraft:block/bubble_coral_block",
+            "up": "minecraft:block/bubble_coral_block",
+            "north": "minecraft:block/bubble_coral_block",
+            "south": "minecraft:block/bubble_coral_block",
+            "west": "minecraft:block/bubble_coral_block",
+            "east": "minecraft:block/bubble_coral_block",
+            "particle": "minecraft:block/bubble_coral_block"
+        }
+    },
+    "budding_amethyst": {
+        "textures": {
+            "down": "minecraft:block/budding_amethyst",
+            "up": "minecraft:block/budding_amethyst",
+            "north": "minecraft:block/budding_amethyst",
+            "south": "minecraft:block/budding_amethyst",
+            "west": "minecraft:block/budding_amethyst",
+            "east": "minecraft:block/budding_amethyst",
+            "particle": "minecraft:block/budding_amethyst"
+        }
+    },
+    "calcite": {
+        "textures": {
+            "down": "minecraft:block/calcite",
+            "up": "minecraft:block/calcite",
+            "north": "minecraft:block/calcite",
+            "south": "minecraft:block/calcite",
+            "west": "minecraft:block/calcite",
+            "east": "minecraft:block/calcite",
+            "particle": "minecraft:block/calcite"
+        }
+    },
+    "cartography_table": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_planks",
+            "up": "minecraft:block/cartography_table_top",
+            "north": "minecraft:block/cartography_table_side3",
+            "south": "minecraft:block/cartography_table_side1",
+            "west": "minecraft:block/cartography_table_side2",
+            "east": "minecraft:block/cartography_table_side3",
+            "particle": "minecraft:block/cartography_table_side3"
+        }
+    },
+    "carved_pumpkin": {
+        "textures": {
+            "down": "minecraft:block/pumpkin_top",
+            "up": "minecraft:block/pumpkin_top",
+            "north": "minecraft:block/carved_pumpkin",
+            "south": "minecraft:block/pumpkin_side",
+            "west": "minecraft:block/pumpkin_side",
+            "east": "minecraft:block/pumpkin_side",
+            "particle": "minecraft:block/carved_pumpkin"
+        }
+    },
+    "cherry_log": {
+        "textures": {
+            "down": "minecraft:block/cherry_log_top",
+            "up": "minecraft:block/cherry_log_top",
+            "north": "minecraft:block/cherry_log",
+            "south": "minecraft:block/cherry_log",
+            "west": "minecraft:block/cherry_log",
+            "east": "minecraft:block/cherry_log",
+            "particle": "minecraft:block/cherry_log"
+        }
+    },
+    "cherry_planks": {
+        "textures": {
+            "down": "minecraft:block/cherry_planks",
+            "up": "minecraft:block/cherry_planks",
+            "north": "minecraft:block/cherry_planks",
+            "south": "minecraft:block/cherry_planks",
+            "west": "minecraft:block/cherry_planks",
+            "east": "minecraft:block/cherry_planks",
+            "particle": "minecraft:block/cherry_planks"
+        }
+    },
+    "cherry_wood": {
+        "textures": {
+            "down": "minecraft:block/cherry_log",
+            "up": "minecraft:block/cherry_log",
+            "north": "minecraft:block/cherry_log",
+            "south": "minecraft:block/cherry_log",
+            "west": "minecraft:block/cherry_log",
+            "east": "minecraft:block/cherry_log",
+            "particle": "minecraft:block/cherry_log"
+        }
+    },
+    "chiseled_bookshelf_inventory": {
+        "textures": {
+            "north": "block/chiseled_bookshelf_empty",
+            "east": "block/chiseled_bookshelf_side",
+            "south": "block/chiseled_bookshelf_side",
+            "west": "block/chiseled_bookshelf_side",
+            "up": "block/chiseled_bookshelf_top",
+            "down": "block/chiseled_bookshelf_top",
+            "particle": "block/chiseled_bookshelf_top"
+        }
+    },
+    "chiseled_copper": {
+        "textures": {
+            "down": "minecraft:block/chiseled_copper",
+            "up": "minecraft:block/chiseled_copper",
+            "north": "minecraft:block/chiseled_copper",
+            "south": "minecraft:block/chiseled_copper",
+            "west": "minecraft:block/chiseled_copper",
+            "east": "minecraft:block/chiseled_copper",
+            "particle": "minecraft:block/chiseled_copper"
+        }
+    },
+    "chiseled_deepslate": {
+        "textures": {
+            "down": "minecraft:block/chiseled_deepslate",
+            "up": "minecraft:block/chiseled_deepslate",
+            "north": "minecraft:block/chiseled_deepslate",
+            "south": "minecraft:block/chiseled_deepslate",
+            "west": "minecraft:block/chiseled_deepslate",
+            "east": "minecraft:block/chiseled_deepslate",
+            "particle": "minecraft:block/chiseled_deepslate"
+        }
+    },
+    "chiseled_nether_bricks": {
+        "textures": {
+            "down": "minecraft:block/chiseled_nether_bricks",
+            "up": "minecraft:block/chiseled_nether_bricks",
+            "north": "minecraft:block/chiseled_nether_bricks",
+            "south": "minecraft:block/chiseled_nether_bricks",
+            "west": "minecraft:block/chiseled_nether_bricks",
+            "east": "minecraft:block/chiseled_nether_bricks",
+            "particle": "minecraft:block/chiseled_nether_bricks"
+        }
+    },
+    "chiseled_polished_blackstone": {
+        "textures": {
+            "down": "minecraft:block/chiseled_polished_blackstone",
+            "up": "minecraft:block/chiseled_polished_blackstone",
+            "north": "minecraft:block/chiseled_polished_blackstone",
+            "south": "minecraft:block/chiseled_polished_blackstone",
+            "west": "minecraft:block/chiseled_polished_blackstone",
+            "east": "minecraft:block/chiseled_polished_blackstone",
+            "particle": "minecraft:block/chiseled_polished_blackstone"
+        }
+    },
+    "chiseled_quartz_block": {
+        "textures": {
+            "down": "minecraft:block/chiseled_quartz_block_top",
+            "up": "minecraft:block/chiseled_quartz_block_top",
+            "north": "minecraft:block/chiseled_quartz_block",
+            "south": "minecraft:block/chiseled_quartz_block",
+            "west": "minecraft:block/chiseled_quartz_block",
+            "east": "minecraft:block/chiseled_quartz_block",
+            "particle": "minecraft:block/chiseled_quartz_block"
+        }
+    },
+    "chiseled_red_sandstone": {
+        "textures": {
+            "down": "minecraft:block/red_sandstone_top",
+            "up": "minecraft:block/red_sandstone_top",
+            "north": "minecraft:block/chiseled_red_sandstone",
+            "south": "minecraft:block/chiseled_red_sandstone",
+            "west": "minecraft:block/chiseled_red_sandstone",
+            "east": "minecraft:block/chiseled_red_sandstone",
+            "particle": "minecraft:block/chiseled_red_sandstone"
+        }
+    },
+    "chiseled_resin_bricks": {
+        "textures": {
+            "down": "minecraft:block/chiseled_resin_bricks",
+            "up": "minecraft:block/chiseled_resin_bricks",
+            "north": "minecraft:block/chiseled_resin_bricks",
+            "south": "minecraft:block/chiseled_resin_bricks",
+            "west": "minecraft:block/chiseled_resin_bricks",
+            "east": "minecraft:block/chiseled_resin_bricks",
+            "particle": "minecraft:block/chiseled_resin_bricks"
+        }
+    },
+    "chiseled_sandstone": {
+        "textures": {
+            "down": "minecraft:block/sandstone_top",
+            "up": "minecraft:block/sandstone_top",
+            "north": "minecraft:block/chiseled_sandstone",
+            "south": "minecraft:block/chiseled_sandstone",
+            "west": "minecraft:block/chiseled_sandstone",
+            "east": "minecraft:block/chiseled_sandstone",
+            "particle": "minecraft:block/chiseled_sandstone"
+        }
+    },
+    "chiseled_stone_bricks": {
+        "textures": {
+            "down": "minecraft:block/chiseled_stone_bricks",
+            "up": "minecraft:block/chiseled_stone_bricks",
+            "north": "minecraft:block/chiseled_stone_bricks",
+            "south": "minecraft:block/chiseled_stone_bricks",
+            "west": "minecraft:block/chiseled_stone_bricks",
+            "east": "minecraft:block/chiseled_stone_bricks",
+            "particle": "minecraft:block/chiseled_stone_bricks"
+        }
+    },
+    "chiseled_tuff": {
+        "textures": {
+            "down": "minecraft:block/chiseled_tuff_top",
+            "up": "minecraft:block/chiseled_tuff_top",
+            "north": "minecraft:block/chiseled_tuff",
+            "south": "minecraft:block/chiseled_tuff",
+            "west": "minecraft:block/chiseled_tuff",
+            "east": "minecraft:block/chiseled_tuff",
+            "particle": "minecraft:block/chiseled_tuff"
+        }
+    },
+    "chiseled_tuff_bricks": {
+        "textures": {
+            "down": "minecraft:block/chiseled_tuff_bricks_top",
+            "up": "minecraft:block/chiseled_tuff_bricks_top",
+            "north": "minecraft:block/chiseled_tuff_bricks",
+            "south": "minecraft:block/chiseled_tuff_bricks",
+            "west": "minecraft:block/chiseled_tuff_bricks",
+            "east": "minecraft:block/chiseled_tuff_bricks",
+            "particle": "minecraft:block/chiseled_tuff_bricks"
+        }
+    },
+    "clay": {
+        "textures": {
+            "down": "minecraft:block/clay",
+            "up": "minecraft:block/clay",
+            "north": "minecraft:block/clay",
+            "south": "minecraft:block/clay",
+            "west": "minecraft:block/clay",
+            "east": "minecraft:block/clay",
+            "particle": "minecraft:block/clay"
+        }
+    },
+    "coal_block": {
+        "textures": {
+            "down": "minecraft:block/coal_block",
+            "up": "minecraft:block/coal_block",
+            "north": "minecraft:block/coal_block",
+            "south": "minecraft:block/coal_block",
+            "west": "minecraft:block/coal_block",
+            "east": "minecraft:block/coal_block",
+            "particle": "minecraft:block/coal_block"
+        }
+    },
+    "coal_ore": {
+        "textures": {
+            "down": "minecraft:block/coal_ore",
+            "up": "minecraft:block/coal_ore",
+            "north": "minecraft:block/coal_ore",
+            "south": "minecraft:block/coal_ore",
+            "west": "minecraft:block/coal_ore",
+            "east": "minecraft:block/coal_ore",
+            "particle": "minecraft:block/coal_ore"
+        }
+    },
+    "coarse_dirt": {
+        "textures": {
+            "down": "minecraft:block/coarse_dirt",
+            "up": "minecraft:block/coarse_dirt",
+            "north": "minecraft:block/coarse_dirt",
+            "south": "minecraft:block/coarse_dirt",
+            "west": "minecraft:block/coarse_dirt",
+            "east": "minecraft:block/coarse_dirt",
+            "particle": "minecraft:block/coarse_dirt"
+        }
+    },
+    "cobbled_deepslate": {
+        "textures": {
+            "down": "minecraft:block/cobbled_deepslate",
+            "up": "minecraft:block/cobbled_deepslate",
+            "north": "minecraft:block/cobbled_deepslate",
+            "south": "minecraft:block/cobbled_deepslate",
+            "west": "minecraft:block/cobbled_deepslate",
+            "east": "minecraft:block/cobbled_deepslate",
+            "particle": "minecraft:block/cobbled_deepslate"
+        }
+    },
+    "cobblestone": {
+        "textures": {
+            "down": "minecraft:block/cobblestone",
+            "up": "minecraft:block/cobblestone",
+            "north": "minecraft:block/cobblestone",
+            "south": "minecraft:block/cobblestone",
+            "west": "minecraft:block/cobblestone",
+            "east": "minecraft:block/cobblestone",
+            "particle": "minecraft:block/cobblestone"
+        }
+    },
+    "copper_block": {
+        "textures": {
+            "down": "minecraft:block/copper_block",
+            "up": "minecraft:block/copper_block",
+            "north": "minecraft:block/copper_block",
+            "south": "minecraft:block/copper_block",
+            "west": "minecraft:block/copper_block",
+            "east": "minecraft:block/copper_block",
+            "particle": "minecraft:block/copper_block"
+        }
+    },
+    "copper_bulb": {
+        "textures": {
+            "down": "minecraft:block/copper_bulb",
+            "up": "minecraft:block/copper_bulb",
+            "north": "minecraft:block/copper_bulb",
+            "south": "minecraft:block/copper_bulb",
+            "west": "minecraft:block/copper_bulb",
+            "east": "minecraft:block/copper_bulb",
+            "particle": "minecraft:block/copper_bulb"
+        }
+    },
+    "copper_bulb_lit": {
+        "textures": {
+            "down": "minecraft:block/copper_bulb_lit",
+            "up": "minecraft:block/copper_bulb_lit",
+            "north": "minecraft:block/copper_bulb_lit",
+            "south": "minecraft:block/copper_bulb_lit",
+            "west": "minecraft:block/copper_bulb_lit",
+            "east": "minecraft:block/copper_bulb_lit",
+            "particle": "minecraft:block/copper_bulb_lit"
+        }
+    },
+    "copper_bulb_lit_powered": {
+        "textures": {
+            "down": "minecraft:block/copper_bulb_lit_powered",
+            "up": "minecraft:block/copper_bulb_lit_powered",
+            "north": "minecraft:block/copper_bulb_lit_powered",
+            "south": "minecraft:block/copper_bulb_lit_powered",
+            "west": "minecraft:block/copper_bulb_lit_powered",
+            "east": "minecraft:block/copper_bulb_lit_powered",
+            "particle": "minecraft:block/copper_bulb_lit_powered"
+        }
+    },
+    "copper_bulb_powered": {
+        "textures": {
+            "down": "minecraft:block/copper_bulb_powered",
+            "up": "minecraft:block/copper_bulb_powered",
+            "north": "minecraft:block/copper_bulb_powered",
+            "south": "minecraft:block/copper_bulb_powered",
+            "west": "minecraft:block/copper_bulb_powered",
+            "east": "minecraft:block/copper_bulb_powered",
+            "particle": "minecraft:block/copper_bulb_powered"
+        }
+    },
+    "copper_grate": {
+        "textures": {
+            "down": "minecraft:block/copper_grate",
+            "up": "minecraft:block/copper_grate",
+            "north": "minecraft:block/copper_grate",
+            "south": "minecraft:block/copper_grate",
+            "west": "minecraft:block/copper_grate",
+            "east": "minecraft:block/copper_grate",
+            "particle": "minecraft:block/copper_grate"
+        }
+    },
+    "copper_ore": {
+        "textures": {
+            "down": "minecraft:block/copper_ore",
+            "up": "minecraft:block/copper_ore",
+            "north": "minecraft:block/copper_ore",
+            "south": "minecraft:block/copper_ore",
+            "west": "minecraft:block/copper_ore",
+            "east": "minecraft:block/copper_ore",
+            "particle": "minecraft:block/copper_ore"
+        }
+    },
+    "cracked_deepslate_bricks": {
+        "textures": {
+            "down": "minecraft:block/cracked_deepslate_bricks",
+            "up": "minecraft:block/cracked_deepslate_bricks",
+            "north": "minecraft:block/cracked_deepslate_bricks",
+            "south": "minecraft:block/cracked_deepslate_bricks",
+            "west": "minecraft:block/cracked_deepslate_bricks",
+            "east": "minecraft:block/cracked_deepslate_bricks",
+            "particle": "minecraft:block/cracked_deepslate_bricks"
+        }
+    },
+    "cracked_deepslate_tiles": {
+        "textures": {
+            "down": "minecraft:block/cracked_deepslate_tiles",
+            "up": "minecraft:block/cracked_deepslate_tiles",
+            "north": "minecraft:block/cracked_deepslate_tiles",
+            "south": "minecraft:block/cracked_deepslate_tiles",
+            "west": "minecraft:block/cracked_deepslate_tiles",
+            "east": "minecraft:block/cracked_deepslate_tiles",
+            "particle": "minecraft:block/cracked_deepslate_tiles"
+        }
+    },
+    "cracked_nether_bricks": {
+        "textures": {
+            "down": "minecraft:block/cracked_nether_bricks",
+            "up": "minecraft:block/cracked_nether_bricks",
+            "north": "minecraft:block/cracked_nether_bricks",
+            "south": "minecraft:block/cracked_nether_bricks",
+            "west": "minecraft:block/cracked_nether_bricks",
+            "east": "minecraft:block/cracked_nether_bricks",
+            "particle": "minecraft:block/cracked_nether_bricks"
+        }
+    },
+    "cracked_polished_blackstone_bricks": {
+        "textures": {
+            "down": "minecraft:block/cracked_polished_blackstone_bricks",
+            "up": "minecraft:block/cracked_polished_blackstone_bricks",
+            "north": "minecraft:block/cracked_polished_blackstone_bricks",
+            "south": "minecraft:block/cracked_polished_blackstone_bricks",
+            "west": "minecraft:block/cracked_polished_blackstone_bricks",
+            "east": "minecraft:block/cracked_polished_blackstone_bricks",
+            "particle": "minecraft:block/cracked_polished_blackstone_bricks"
+        }
+    },
+    "cracked_stone_bricks": {
+        "textures": {
+            "down": "minecraft:block/cracked_stone_bricks",
+            "up": "minecraft:block/cracked_stone_bricks",
+            "north": "minecraft:block/cracked_stone_bricks",
+            "south": "minecraft:block/cracked_stone_bricks",
+            "west": "minecraft:block/cracked_stone_bricks",
+            "east": "minecraft:block/cracked_stone_bricks",
+            "particle": "minecraft:block/cracked_stone_bricks"
+        }
+    },
+    "crafter": {
+        "textures": {
+            "down": "block/crafter_bottom",
+            "up": "block/crafter_top",
+            "north": "block/crafter_north",
+            "south": "block/crafter_south",
+            "west": "block/crafter_west",
+            "east": "block/crafter_east",
+            "particle": "block/crafter_north"
+        }
+    },
+    "crafting_table": {
+        "textures": {
+            "down": "minecraft:block/oak_planks",
+            "up": "minecraft:block/crafting_table_top",
+            "north": "minecraft:block/crafting_table_front",
+            "south": "minecraft:block/crafting_table_side",
+            "west": "minecraft:block/crafting_table_front",
+            "east": "minecraft:block/crafting_table_side",
+            "particle": "minecraft:block/crafting_table_front"
+        }
+    },
+    "creaking_heart": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top",
+            "up": "minecraft:block/creaking_heart_top",
+            "north": "minecraft:block/creaking_heart",
+            "south": "minecraft:block/creaking_heart",
+            "west": "minecraft:block/creaking_heart",
+            "east": "minecraft:block/creaking_heart",
+            "particle": "minecraft:block/creaking_heart"
+        }
+    },
+    "creaking_heart_awake": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top_awake",
+            "up": "minecraft:block/creaking_heart_top_awake",
+            "north": "minecraft:block/creaking_heart_awake",
+            "south": "minecraft:block/creaking_heart_awake",
+            "west": "minecraft:block/creaking_heart_awake",
+            "east": "minecraft:block/creaking_heart_awake",
+            "particle": "minecraft:block/creaking_heart_awake"
+        }
+    },
+    "creaking_heart_awake_horizontal": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top_awake",
+            "up": "minecraft:block/creaking_heart_top_awake",
+            "north": "minecraft:block/creaking_heart_awake",
+            "south": "minecraft:block/creaking_heart_awake",
+            "west": "minecraft:block/creaking_heart_awake",
+            "east": "minecraft:block/creaking_heart_awake",
+            "particle": "minecraft:block/creaking_heart_awake"
+        }
+    },
+    "creaking_heart_dormant": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top_dormant",
+            "up": "minecraft:block/creaking_heart_top_dormant",
+            "north": "minecraft:block/creaking_heart_dormant",
+            "south": "minecraft:block/creaking_heart_dormant",
+            "west": "minecraft:block/creaking_heart_dormant",
+            "east": "minecraft:block/creaking_heart_dormant",
+            "particle": "minecraft:block/creaking_heart_dormant"
+        }
+    },
+    "creaking_heart_dormant_horizontal": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top_dormant",
+            "up": "minecraft:block/creaking_heart_top_dormant",
+            "north": "minecraft:block/creaking_heart_dormant",
+            "south": "minecraft:block/creaking_heart_dormant",
+            "west": "minecraft:block/creaking_heart_dormant",
+            "east": "minecraft:block/creaking_heart_dormant",
+            "particle": "minecraft:block/creaking_heart_dormant"
+        }
+    },
+    "creaking_heart_horizontal": {
+        "textures": {
+            "down": "minecraft:block/creaking_heart_top",
+            "up": "minecraft:block/creaking_heart_top",
+            "north": "minecraft:block/creaking_heart",
+            "south": "minecraft:block/creaking_heart",
+            "west": "minecraft:block/creaking_heart",
+            "east": "minecraft:block/creaking_heart",
+            "particle": "minecraft:block/creaking_heart"
+        }
+    },
+    "crimson_hyphae": {
+        "textures": {
+            "down": "minecraft:block/crimson_stem",
+            "up": "minecraft:block/crimson_stem",
+            "north": "minecraft:block/crimson_stem",
+            "south": "minecraft:block/crimson_stem",
+            "west": "minecraft:block/crimson_stem",
+            "east": "minecraft:block/crimson_stem",
+            "particle": "minecraft:block/crimson_stem"
+        }
+    },
+    "crimson_planks": {
+        "textures": {
+            "down": "minecraft:block/crimson_planks",
+            "up": "minecraft:block/crimson_planks",
+            "north": "minecraft:block/crimson_planks",
+            "south": "minecraft:block/crimson_planks",
+            "west": "minecraft:block/crimson_planks",
+            "east": "minecraft:block/crimson_planks",
+            "particle": "minecraft:block/crimson_planks"
+        }
+    },
+    "crimson_stem": {
+        "textures": {
+            "down": "minecraft:block/crimson_stem_top",
+            "up": "minecraft:block/crimson_stem_top",
+            "north": "minecraft:block/crimson_stem",
+            "south": "minecraft:block/crimson_stem",
+            "west": "minecraft:block/crimson_stem",
+            "east": "minecraft:block/crimson_stem",
+            "particle": "minecraft:block/crimson_stem"
+        }
+    },
+    "crying_obsidian": {
+        "textures": {
+            "down": "minecraft:block/crying_obsidian",
+            "up": "minecraft:block/crying_obsidian",
+            "north": "minecraft:block/crying_obsidian",
+            "south": "minecraft:block/crying_obsidian",
+            "west": "minecraft:block/crying_obsidian",
+            "east": "minecraft:block/crying_obsidian",
+            "particle": "minecraft:block/crying_obsidian"
+        }
+    },
+    "cut_copper": {
+        "textures": {
+            "down": "minecraft:block/cut_copper",
+            "up": "minecraft:block/cut_copper",
+            "north": "minecraft:block/cut_copper",
+            "south": "minecraft:block/cut_copper",
+            "west": "minecraft:block/cut_copper",
+            "east": "minecraft:block/cut_copper",
+            "particle": "minecraft:block/cut_copper"
+        }
+    },
+    "cut_red_sandstone": {
+        "textures": {
+            "down": "minecraft:block/red_sandstone_top",
+            "up": "minecraft:block/red_sandstone_top",
+            "north": "minecraft:block/cut_red_sandstone",
+            "south": "minecraft:block/cut_red_sandstone",
+            "west": "minecraft:block/cut_red_sandstone",
+            "east": "minecraft:block/cut_red_sandstone",
+            "particle": "minecraft:block/cut_red_sandstone"
+        }
+    },
+    "cut_sandstone": {
+        "textures": {
+            "down": "minecraft:block/sandstone_top",
+            "up": "minecraft:block/sandstone_top",
+            "north": "minecraft:block/cut_sandstone",
+            "south": "minecraft:block/cut_sandstone",
+            "west": "minecraft:block/cut_sandstone",
+            "east": "minecraft:block/cut_sandstone",
+            "particle": "minecraft:block/cut_sandstone"
+        }
+    },
+    "cyan_concrete": {
+        "textures": {
+            "down": "minecraft:block/cyan_concrete",
+            "up": "minecraft:block/cyan_concrete",
+            "north": "minecraft:block/cyan_concrete",
+            "south": "minecraft:block/cyan_concrete",
+            "west": "minecraft:block/cyan_concrete",
+            "east": "minecraft:block/cyan_concrete",
+            "particle": "minecraft:block/cyan_concrete"
+        }
+    },
+    "cyan_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/cyan_concrete_powder",
+            "up": "minecraft:block/cyan_concrete_powder",
+            "north": "minecraft:block/cyan_concrete_powder",
+            "south": "minecraft:block/cyan_concrete_powder",
+            "west": "minecraft:block/cyan_concrete_powder",
+            "east": "minecraft:block/cyan_concrete_powder",
+            "particle": "minecraft:block/cyan_concrete_powder"
+        }
+    },
+    "cyan_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/cyan_stained_glass",
+            "up": "minecraft:block/cyan_stained_glass",
+            "north": "minecraft:block/cyan_stained_glass",
+            "south": "minecraft:block/cyan_stained_glass",
+            "west": "minecraft:block/cyan_stained_glass",
+            "east": "minecraft:block/cyan_stained_glass",
+            "particle": "minecraft:block/cyan_stained_glass"
+        }
+    },
+    "cyan_terracotta": {
+        "textures": {
+            "down": "minecraft:block/cyan_terracotta",
+            "up": "minecraft:block/cyan_terracotta",
+            "north": "minecraft:block/cyan_terracotta",
+            "south": "minecraft:block/cyan_terracotta",
+            "west": "minecraft:block/cyan_terracotta",
+            "east": "minecraft:block/cyan_terracotta",
+            "particle": "minecraft:block/cyan_terracotta"
+        }
+    },
+    "cyan_wool": {
+        "textures": {
+            "down": "minecraft:block/cyan_wool",
+            "up": "minecraft:block/cyan_wool",
+            "north": "minecraft:block/cyan_wool",
+            "south": "minecraft:block/cyan_wool",
+            "west": "minecraft:block/cyan_wool",
+            "east": "minecraft:block/cyan_wool",
+            "particle": "minecraft:block/cyan_wool"
+        }
+    },
+    "dark_oak_log": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_log_top",
+            "up": "minecraft:block/dark_oak_log_top",
+            "north": "minecraft:block/dark_oak_log",
+            "south": "minecraft:block/dark_oak_log",
+            "west": "minecraft:block/dark_oak_log",
+            "east": "minecraft:block/dark_oak_log",
+            "particle": "minecraft:block/dark_oak_log"
+        }
+    },
+    "dark_oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_log_top",
+            "up": "minecraft:block/dark_oak_log_top",
+            "north": "minecraft:block/dark_oak_log",
+            "south": "minecraft:block/dark_oak_log",
+            "west": "minecraft:block/dark_oak_log",
+            "east": "minecraft:block/dark_oak_log",
+            "particle": "minecraft:block/dark_oak_log"
+        }
+    },
+    "dark_oak_planks": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_planks",
+            "up": "minecraft:block/dark_oak_planks",
+            "north": "minecraft:block/dark_oak_planks",
+            "south": "minecraft:block/dark_oak_planks",
+            "west": "minecraft:block/dark_oak_planks",
+            "east": "minecraft:block/dark_oak_planks",
+            "particle": "minecraft:block/dark_oak_planks"
+        }
+    },
+    "dark_oak_wood": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_log",
+            "up": "minecraft:block/dark_oak_log",
+            "north": "minecraft:block/dark_oak_log",
+            "south": "minecraft:block/dark_oak_log",
+            "west": "minecraft:block/dark_oak_log",
+            "east": "minecraft:block/dark_oak_log",
+            "particle": "minecraft:block/dark_oak_log"
+        }
+    },
+    "dark_prismarine": {
+        "textures": {
+            "down": "minecraft:block/dark_prismarine",
+            "up": "minecraft:block/dark_prismarine",
+            "north": "minecraft:block/dark_prismarine",
+            "south": "minecraft:block/dark_prismarine",
+            "west": "minecraft:block/dark_prismarine",
+            "east": "minecraft:block/dark_prismarine",
+            "particle": "minecraft:block/dark_prismarine"
+        }
+    },
+    "dead_brain_coral_block": {
+        "textures": {
+            "down": "minecraft:block/dead_brain_coral_block",
+            "up": "minecraft:block/dead_brain_coral_block",
+            "north": "minecraft:block/dead_brain_coral_block",
+            "south": "minecraft:block/dead_brain_coral_block",
+            "west": "minecraft:block/dead_brain_coral_block",
+            "east": "minecraft:block/dead_brain_coral_block",
+            "particle": "minecraft:block/dead_brain_coral_block"
+        }
+    },
+    "dead_bubble_coral_block": {
+        "textures": {
+            "down": "minecraft:block/dead_bubble_coral_block",
+            "up": "minecraft:block/dead_bubble_coral_block",
+            "north": "minecraft:block/dead_bubble_coral_block",
+            "south": "minecraft:block/dead_bubble_coral_block",
+            "west": "minecraft:block/dead_bubble_coral_block",
+            "east": "minecraft:block/dead_bubble_coral_block",
+            "particle": "minecraft:block/dead_bubble_coral_block"
+        }
+    },
+    "dead_fire_coral_block": {
+        "textures": {
+            "down": "minecraft:block/dead_fire_coral_block",
+            "up": "minecraft:block/dead_fire_coral_block",
+            "north": "minecraft:block/dead_fire_coral_block",
+            "south": "minecraft:block/dead_fire_coral_block",
+            "west": "minecraft:block/dead_fire_coral_block",
+            "east": "minecraft:block/dead_fire_coral_block",
+            "particle": "minecraft:block/dead_fire_coral_block"
+        }
+    },
+    "dead_horn_coral_block": {
+        "textures": {
+            "down": "minecraft:block/dead_horn_coral_block",
+            "up": "minecraft:block/dead_horn_coral_block",
+            "north": "minecraft:block/dead_horn_coral_block",
+            "south": "minecraft:block/dead_horn_coral_block",
+            "west": "minecraft:block/dead_horn_coral_block",
+            "east": "minecraft:block/dead_horn_coral_block",
+            "particle": "minecraft:block/dead_horn_coral_block"
+        }
+    },
+    "dead_tube_coral_block": {
+        "textures": {
+            "down": "minecraft:block/dead_tube_coral_block",
+            "up": "minecraft:block/dead_tube_coral_block",
+            "north": "minecraft:block/dead_tube_coral_block",
+            "south": "minecraft:block/dead_tube_coral_block",
+            "west": "minecraft:block/dead_tube_coral_block",
+            "east": "minecraft:block/dead_tube_coral_block",
+            "particle": "minecraft:block/dead_tube_coral_block"
+        }
+    },
+    "deepslate": {
+        "textures": {
+            "down": "minecraft:block/deepslate_top",
+            "up": "minecraft:block/deepslate_top",
+            "north": "minecraft:block/deepslate",
+            "south": "minecraft:block/deepslate",
+            "west": "minecraft:block/deepslate",
+            "east": "minecraft:block/deepslate",
+            "particle": "minecraft:block/deepslate"
+        }
+    },
+    "deepslate_bricks": {
+        "textures": {
+            "down": "minecraft:block/deepslate_bricks",
+            "up": "minecraft:block/deepslate_bricks",
+            "north": "minecraft:block/deepslate_bricks",
+            "south": "minecraft:block/deepslate_bricks",
+            "west": "minecraft:block/deepslate_bricks",
+            "east": "minecraft:block/deepslate_bricks",
+            "particle": "minecraft:block/deepslate_bricks"
+        }
+    },
+    "deepslate_coal_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_coal_ore",
+            "up": "minecraft:block/deepslate_coal_ore",
+            "north": "minecraft:block/deepslate_coal_ore",
+            "south": "minecraft:block/deepslate_coal_ore",
+            "west": "minecraft:block/deepslate_coal_ore",
+            "east": "minecraft:block/deepslate_coal_ore",
+            "particle": "minecraft:block/deepslate_coal_ore"
+        }
+    },
+    "deepslate_copper_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_copper_ore",
+            "up": "minecraft:block/deepslate_copper_ore",
+            "north": "minecraft:block/deepslate_copper_ore",
+            "south": "minecraft:block/deepslate_copper_ore",
+            "west": "minecraft:block/deepslate_copper_ore",
+            "east": "minecraft:block/deepslate_copper_ore",
+            "particle": "minecraft:block/deepslate_copper_ore"
+        }
+    },
+    "deepslate_diamond_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_diamond_ore",
+            "up": "minecraft:block/deepslate_diamond_ore",
+            "north": "minecraft:block/deepslate_diamond_ore",
+            "south": "minecraft:block/deepslate_diamond_ore",
+            "west": "minecraft:block/deepslate_diamond_ore",
+            "east": "minecraft:block/deepslate_diamond_ore",
+            "particle": "minecraft:block/deepslate_diamond_ore"
+        }
+    },
+    "deepslate_emerald_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_emerald_ore",
+            "up": "minecraft:block/deepslate_emerald_ore",
+            "north": "minecraft:block/deepslate_emerald_ore",
+            "south": "minecraft:block/deepslate_emerald_ore",
+            "west": "minecraft:block/deepslate_emerald_ore",
+            "east": "minecraft:block/deepslate_emerald_ore",
+            "particle": "minecraft:block/deepslate_emerald_ore"
+        }
+    },
+    "deepslate_gold_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_gold_ore",
+            "up": "minecraft:block/deepslate_gold_ore",
+            "north": "minecraft:block/deepslate_gold_ore",
+            "south": "minecraft:block/deepslate_gold_ore",
+            "west": "minecraft:block/deepslate_gold_ore",
+            "east": "minecraft:block/deepslate_gold_ore",
+            "particle": "minecraft:block/deepslate_gold_ore"
+        }
+    },
+    "deepslate_iron_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_iron_ore",
+            "up": "minecraft:block/deepslate_iron_ore",
+            "north": "minecraft:block/deepslate_iron_ore",
+            "south": "minecraft:block/deepslate_iron_ore",
+            "west": "minecraft:block/deepslate_iron_ore",
+            "east": "minecraft:block/deepslate_iron_ore",
+            "particle": "minecraft:block/deepslate_iron_ore"
+        }
+    },
+    "deepslate_lapis_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_lapis_ore",
+            "up": "minecraft:block/deepslate_lapis_ore",
+            "north": "minecraft:block/deepslate_lapis_ore",
+            "south": "minecraft:block/deepslate_lapis_ore",
+            "west": "minecraft:block/deepslate_lapis_ore",
+            "east": "minecraft:block/deepslate_lapis_ore",
+            "particle": "minecraft:block/deepslate_lapis_ore"
+        }
+    },
+    "deepslate_redstone_ore": {
+        "textures": {
+            "down": "minecraft:block/deepslate_redstone_ore",
+            "up": "minecraft:block/deepslate_redstone_ore",
+            "north": "minecraft:block/deepslate_redstone_ore",
+            "south": "minecraft:block/deepslate_redstone_ore",
+            "west": "minecraft:block/deepslate_redstone_ore",
+            "east": "minecraft:block/deepslate_redstone_ore",
+            "particle": "minecraft:block/deepslate_redstone_ore"
+        }
+    },
+    "deepslate_tiles": {
+        "textures": {
+            "down": "minecraft:block/deepslate_tiles",
+            "up": "minecraft:block/deepslate_tiles",
+            "north": "minecraft:block/deepslate_tiles",
+            "south": "minecraft:block/deepslate_tiles",
+            "west": "minecraft:block/deepslate_tiles",
+            "east": "minecraft:block/deepslate_tiles",
+            "particle": "minecraft:block/deepslate_tiles"
+        }
+    },
+    "diamond_block": {
+        "textures": {
+            "down": "minecraft:block/diamond_block",
+            "up": "minecraft:block/diamond_block",
+            "north": "minecraft:block/diamond_block",
+            "south": "minecraft:block/diamond_block",
+            "west": "minecraft:block/diamond_block",
+            "east": "minecraft:block/diamond_block",
+            "particle": "minecraft:block/diamond_block"
+        }
+    },
+    "diamond_ore": {
+        "textures": {
+            "down": "minecraft:block/diamond_ore",
+            "up": "minecraft:block/diamond_ore",
+            "north": "minecraft:block/diamond_ore",
+            "south": "minecraft:block/diamond_ore",
+            "west": "minecraft:block/diamond_ore",
+            "east": "minecraft:block/diamond_ore",
+            "particle": "minecraft:block/diamond_ore"
+        }
+    },
+    "diorite": {
+        "textures": {
+            "down": "minecraft:block/diorite",
+            "up": "minecraft:block/diorite",
+            "north": "minecraft:block/diorite",
+            "south": "minecraft:block/diorite",
+            "west": "minecraft:block/diorite",
+            "east": "minecraft:block/diorite",
+            "particle": "minecraft:block/diorite"
+        }
+    },
+    "dirt": {
+        "textures": {
+            "down": "minecraft:block/dirt",
+            "up": "minecraft:block/dirt",
+            "north": "minecraft:block/dirt",
+            "south": "minecraft:block/dirt",
+            "west": "minecraft:block/dirt",
+            "east": "minecraft:block/dirt",
+            "particle": "minecraft:block/dirt"
+        }
+    },
+    "dispenser": {
+        "textures": {
+            "down": "minecraft:block/furnace_top",
+            "up": "minecraft:block/furnace_top",
+            "north": "minecraft:block/dispenser_front",
+            "south": "minecraft:block/furnace_side",
+            "west": "minecraft:block/furnace_side",
+            "east": "minecraft:block/furnace_side",
+            "particle": "minecraft:block/dispenser_front"
+        }
+    },
+    "dried_kelp_block": {
+        "textures": {
+            "down": "block/dried_kelp_bottom",
+            "up": "block/dried_kelp_top",
+            "north": "block/dried_kelp_side",
+            "south": "block/dried_kelp_side",
+            "west": "block/dried_kelp_side",
+            "east": "block/dried_kelp_side",
+            "particle": "block/dried_kelp_side"
+        }
+    },
+    "dripstone_block": {
+        "textures": {
+            "down": "minecraft:block/dripstone_block",
+            "up": "minecraft:block/dripstone_block",
+            "north": "minecraft:block/dripstone_block",
+            "south": "minecraft:block/dripstone_block",
+            "west": "minecraft:block/dripstone_block",
+            "east": "minecraft:block/dripstone_block",
+            "particle": "minecraft:block/dripstone_block"
+        }
+    },
+    "dropper": {
+        "textures": {
+            "down": "minecraft:block/furnace_top",
+            "up": "minecraft:block/furnace_top",
+            "north": "minecraft:block/dropper_front",
+            "south": "minecraft:block/furnace_side",
+            "west": "minecraft:block/furnace_side",
+            "east": "minecraft:block/furnace_side",
+            "particle": "minecraft:block/dropper_front"
+        }
+    },
+    "emerald_block": {
+        "textures": {
+            "down": "minecraft:block/emerald_block",
+            "up": "minecraft:block/emerald_block",
+            "north": "minecraft:block/emerald_block",
+            "south": "minecraft:block/emerald_block",
+            "west": "minecraft:block/emerald_block",
+            "east": "minecraft:block/emerald_block",
+            "particle": "minecraft:block/emerald_block"
+        }
+    },
+    "emerald_ore": {
+        "textures": {
+            "down": "minecraft:block/emerald_ore",
+            "up": "minecraft:block/emerald_ore",
+            "north": "minecraft:block/emerald_ore",
+            "south": "minecraft:block/emerald_ore",
+            "west": "minecraft:block/emerald_ore",
+            "east": "minecraft:block/emerald_ore",
+            "particle": "minecraft:block/emerald_ore"
+        }
+    },
+    "end_stone": {
+        "textures": {
+            "down": "minecraft:block/end_stone",
+            "up": "minecraft:block/end_stone",
+            "north": "minecraft:block/end_stone",
+            "south": "minecraft:block/end_stone",
+            "west": "minecraft:block/end_stone",
+            "east": "minecraft:block/end_stone",
+            "particle": "minecraft:block/end_stone"
+        }
+    },
+    "end_stone_bricks": {
+        "textures": {
+            "down": "minecraft:block/end_stone_bricks",
+            "up": "minecraft:block/end_stone_bricks",
+            "north": "minecraft:block/end_stone_bricks",
+            "south": "minecraft:block/end_stone_bricks",
+            "west": "minecraft:block/end_stone_bricks",
+            "east": "minecraft:block/end_stone_bricks",
+            "particle": "minecraft:block/end_stone_bricks"
+        }
+    },
+    "exposed_chiseled_copper": {
+        "textures": {
+            "down": "minecraft:block/exposed_chiseled_copper",
+            "up": "minecraft:block/exposed_chiseled_copper",
+            "north": "minecraft:block/exposed_chiseled_copper",
+            "south": "minecraft:block/exposed_chiseled_copper",
+            "west": "minecraft:block/exposed_chiseled_copper",
+            "east": "minecraft:block/exposed_chiseled_copper",
+            "particle": "minecraft:block/exposed_chiseled_copper"
+        }
+    },
+    "exposed_copper": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper",
+            "up": "minecraft:block/exposed_copper",
+            "north": "minecraft:block/exposed_copper",
+            "south": "minecraft:block/exposed_copper",
+            "west": "minecraft:block/exposed_copper",
+            "east": "minecraft:block/exposed_copper",
+            "particle": "minecraft:block/exposed_copper"
+        }
+    },
+    "exposed_copper_bulb": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper_bulb",
+            "up": "minecraft:block/exposed_copper_bulb",
+            "north": "minecraft:block/exposed_copper_bulb",
+            "south": "minecraft:block/exposed_copper_bulb",
+            "west": "minecraft:block/exposed_copper_bulb",
+            "east": "minecraft:block/exposed_copper_bulb",
+            "particle": "minecraft:block/exposed_copper_bulb"
+        }
+    },
+    "exposed_copper_bulb_lit": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper_bulb_lit",
+            "up": "minecraft:block/exposed_copper_bulb_lit",
+            "north": "minecraft:block/exposed_copper_bulb_lit",
+            "south": "minecraft:block/exposed_copper_bulb_lit",
+            "west": "minecraft:block/exposed_copper_bulb_lit",
+            "east": "minecraft:block/exposed_copper_bulb_lit",
+            "particle": "minecraft:block/exposed_copper_bulb_lit"
+        }
+    },
+    "exposed_copper_bulb_lit_powered": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "up": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "north": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "south": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "west": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "east": "minecraft:block/exposed_copper_bulb_lit_powered",
+            "particle": "minecraft:block/exposed_copper_bulb_lit_powered"
+        }
+    },
+    "exposed_copper_bulb_powered": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper_bulb_powered",
+            "up": "minecraft:block/exposed_copper_bulb_powered",
+            "north": "minecraft:block/exposed_copper_bulb_powered",
+            "south": "minecraft:block/exposed_copper_bulb_powered",
+            "west": "minecraft:block/exposed_copper_bulb_powered",
+            "east": "minecraft:block/exposed_copper_bulb_powered",
+            "particle": "minecraft:block/exposed_copper_bulb_powered"
+        }
+    },
+    "exposed_copper_grate": {
+        "textures": {
+            "down": "minecraft:block/exposed_copper_grate",
+            "up": "minecraft:block/exposed_copper_grate",
+            "north": "minecraft:block/exposed_copper_grate",
+            "south": "minecraft:block/exposed_copper_grate",
+            "west": "minecraft:block/exposed_copper_grate",
+            "east": "minecraft:block/exposed_copper_grate",
+            "particle": "minecraft:block/exposed_copper_grate"
+        }
+    },
+    "exposed_cut_copper": {
+        "textures": {
+            "down": "minecraft:block/exposed_cut_copper",
+            "up": "minecraft:block/exposed_cut_copper",
+            "north": "minecraft:block/exposed_cut_copper",
+            "south": "minecraft:block/exposed_cut_copper",
+            "west": "minecraft:block/exposed_cut_copper",
+            "east": "minecraft:block/exposed_cut_copper",
+            "particle": "minecraft:block/exposed_cut_copper"
+        }
+    },
+    "fire_coral_block": {
+        "textures": {
+            "down": "minecraft:block/fire_coral_block",
+            "up": "minecraft:block/fire_coral_block",
+            "north": "minecraft:block/fire_coral_block",
+            "south": "minecraft:block/fire_coral_block",
+            "west": "minecraft:block/fire_coral_block",
+            "east": "minecraft:block/fire_coral_block",
+            "particle": "minecraft:block/fire_coral_block"
+        }
+    },
+    "fletching_table": {
+        "textures": {
+            "down": "minecraft:block/birch_planks",
+            "up": "minecraft:block/fletching_table_top",
+            "north": "minecraft:block/fletching_table_front",
+            "south": "minecraft:block/fletching_table_front",
+            "west": "minecraft:block/fletching_table_side",
+            "east": "minecraft:block/fletching_table_side",
+            "particle": "minecraft:block/fletching_table_front"
+        }
+    },
+    "acacia_leaves": {
+        "textures": {
+            "down": "minecraft:block/acacia_leaves",
+            "up": "minecraft:block/acacia_leaves",
+            "north": "minecraft:block/acacia_leaves",
+            "south": "minecraft:block/acacia_leaves",
+            "west": "minecraft:block/acacia_leaves",
+            "east": "minecraft:block/acacia_leaves",
+            "particle": "minecraft:block/acacia_leaves"
+        }
+    },
+    "flowering_azalea_leaves": {
+        "textures": {
+            "down": "minecraft:block/flowering_azalea_leaves",
+            "up": "minecraft:block/flowering_azalea_leaves",
+            "north": "minecraft:block/flowering_azalea_leaves",
+            "south": "minecraft:block/flowering_azalea_leaves",
+            "west": "minecraft:block/flowering_azalea_leaves",
+            "east": "minecraft:block/flowering_azalea_leaves",
+            "particle": "minecraft:block/flowering_azalea_leaves"
+        }
+    },
+    "birch_leaves": {
+        "textures": {
+            "down": "minecraft:block/birch_leaves",
+            "up": "minecraft:block/birch_leaves",
+            "north": "minecraft:block/birch_leaves",
+            "south": "minecraft:block/birch_leaves",
+            "west": "minecraft:block/birch_leaves",
+            "east": "minecraft:block/birch_leaves",
+            "particle": "minecraft:block/birch_leaves"
+        }
+    },
+    "cherry_leaves": {
+        "textures": {
+            "down": "minecraft:block/cherry_leaves",
+            "up": "minecraft:block/cherry_leaves",
+            "north": "minecraft:block/cherry_leaves",
+            "south": "minecraft:block/cherry_leaves",
+            "west": "minecraft:block/cherry_leaves",
+            "east": "minecraft:block/cherry_leaves",
+            "particle": "minecraft:block/cherry_leaves"
+        }
+    },
+    "dark_oak_leaves": {
+        "textures": {
+            "down": "minecraft:block/dark_oak_leaves",
+            "up": "minecraft:block/dark_oak_leaves",
+            "north": "minecraft:block/dark_oak_leaves",
+            "south": "minecraft:block/dark_oak_leaves",
+            "west": "minecraft:block/dark_oak_leaves",
+            "east": "minecraft:block/dark_oak_leaves",
+            "particle": "minecraft:block/dark_oak_leaves"
+        }
+    },
+    "jungle_leaves": {
+        "textures": {
+            "down": "minecraft:block/jungle_leaves",
+            "up": "minecraft:block/jungle_leaves",
+            "north": "minecraft:block/jungle_leaves",
+            "south": "minecraft:block/jungle_leaves",
+            "west": "minecraft:block/jungle_leaves",
+            "east": "minecraft:block/jungle_leaves",
+            "particle": "minecraft:block/jungle_leaves"
+        }
+    },
+    "mangrove_leaves": {
+        "textures": {
+            "down": "minecraft:block/mangrove_leaves",
+            "up": "minecraft:block/mangrove_leaves",
+            "north": "minecraft:block/mangrove_leaves",
+            "south": "minecraft:block/mangrove_leaves",
+            "west": "minecraft:block/mangrove_leaves",
+            "east": "minecraft:block/mangrove_leaves",
+            "particle": "minecraft:block/mangrove_leaves"
+        }
+    },
+    "oak_leaves": {
+        "textures": {
+            "down": "minecraft:block/oak_leaves",
+            "up": "minecraft:block/oak_leaves",
+            "north": "minecraft:block/oak_leaves",
+            "south": "minecraft:block/oak_leaves",
+            "west": "minecraft:block/oak_leaves",
+            "east": "minecraft:block/oak_leaves",
+            "particle": "minecraft:block/oak_leaves"
+        }
+    },
+    "pale_oak_leaves": {
+        "textures": {
+            "down": "minecraft:block/pale_oak_leaves",
+            "up": "minecraft:block/pale_oak_leaves",
+            "north": "minecraft:block/pale_oak_leaves",
+            "south": "minecraft:block/pale_oak_leaves",
+            "west": "minecraft:block/pale_oak_leaves",
+            "east": "minecraft:block/pale_oak_leaves",
+            "particle": "minecraft:block/pale_oak_leaves"
+        }
+    },
+    "spruce_leaves": {
+        "textures": {
+            "down": "minecraft:block/spruce_leaves",
+            "up": "minecraft:block/spruce_leaves",
+            "north": "minecraft:block/spruce_leaves",
+            "south": "minecraft:block/spruce_leaves",
+            "west": "minecraft:block/spruce_leaves",
+            "east": "minecraft:block/spruce_leaves",
+            "particle": "minecraft:block/spruce_leaves"
+        }
+    },
+    "frosted_ice_0": {
+        "textures": {
+            "down": "minecraft:block/frosted_ice_0",
+            "up": "minecraft:block/frosted_ice_0",
+            "north": "minecraft:block/frosted_ice_0",
+            "south": "minecraft:block/frosted_ice_0",
+            "west": "minecraft:block/frosted_ice_0",
+            "east": "minecraft:block/frosted_ice_0",
+            "particle": "minecraft:block/frosted_ice_0"
+        }
+    },
+    "frosted_ice_1": {
+        "textures": {
+            "down": "minecraft:block/frosted_ice_1",
+            "up": "minecraft:block/frosted_ice_1",
+            "north": "minecraft:block/frosted_ice_1",
+            "south": "minecraft:block/frosted_ice_1",
+            "west": "minecraft:block/frosted_ice_1",
+            "east": "minecraft:block/frosted_ice_1",
+            "particle": "minecraft:block/frosted_ice_1"
+        }
+    },
+    "frosted_ice_2": {
+        "textures": {
+            "down": "minecraft:block/frosted_ice_2",
+            "up": "minecraft:block/frosted_ice_2",
+            "north": "minecraft:block/frosted_ice_2",
+            "south": "minecraft:block/frosted_ice_2",
+            "west": "minecraft:block/frosted_ice_2",
+            "east": "minecraft:block/frosted_ice_2",
+            "particle": "minecraft:block/frosted_ice_2"
+        }
+    },
+    "frosted_ice_3": {
+        "textures": {
+            "down": "minecraft:block/frosted_ice_3",
+            "up": "minecraft:block/frosted_ice_3",
+            "north": "minecraft:block/frosted_ice_3",
+            "south": "minecraft:block/frosted_ice_3",
+            "west": "minecraft:block/frosted_ice_3",
+            "east": "minecraft:block/frosted_ice_3",
+            "particle": "minecraft:block/frosted_ice_3"
+        }
+    },
+    "furnace": {
+        "textures": {
+            "down": "minecraft:block/furnace_top",
+            "up": "minecraft:block/furnace_top",
+            "north": "minecraft:block/furnace_front",
+            "south": "minecraft:block/furnace_side",
+            "west": "minecraft:block/furnace_side",
+            "east": "minecraft:block/furnace_side",
+            "particle": "minecraft:block/furnace_front"
+        }
+    },
+    "furnace_on": {
+        "textures": {
+            "down": "minecraft:block/furnace_top",
+            "up": "minecraft:block/furnace_top",
+            "north": "minecraft:block/furnace_front_on",
+            "south": "minecraft:block/furnace_side",
+            "west": "minecraft:block/furnace_side",
+            "east": "minecraft:block/furnace_side",
+            "particle": "minecraft:block/furnace_front_on"
+        }
+    },
+    "gilded_blackstone": {
+        "textures": {
+            "down": "minecraft:block/gilded_blackstone",
+            "up": "minecraft:block/gilded_blackstone",
+            "north": "minecraft:block/gilded_blackstone",
+            "south": "minecraft:block/gilded_blackstone",
+            "west": "minecraft:block/gilded_blackstone",
+            "east": "minecraft:block/gilded_blackstone",
+            "particle": "minecraft:block/gilded_blackstone"
+        }
+    },
+    "glass": {
+        "textures": {
+            "down": "minecraft:block/glass",
+            "up": "minecraft:block/glass",
+            "north": "minecraft:block/glass",
+            "south": "minecraft:block/glass",
+            "west": "minecraft:block/glass",
+            "east": "minecraft:block/glass",
+            "particle": "minecraft:block/glass"
+        }
+    },
+    "glowstone": {
+        "textures": {
+            "down": "minecraft:block/glowstone",
+            "up": "minecraft:block/glowstone",
+            "north": "minecraft:block/glowstone",
+            "south": "minecraft:block/glowstone",
+            "west": "minecraft:block/glowstone",
+            "east": "minecraft:block/glowstone",
+            "particle": "minecraft:block/glowstone"
+        }
+    },
+    "gold_block": {
+        "textures": {
+            "down": "minecraft:block/gold_block",
+            "up": "minecraft:block/gold_block",
+            "north": "minecraft:block/gold_block",
+            "south": "minecraft:block/gold_block",
+            "west": "minecraft:block/gold_block",
+            "east": "minecraft:block/gold_block",
+            "particle": "minecraft:block/gold_block"
+        }
+    },
+    "gold_ore": {
+        "textures": {
+            "down": "minecraft:block/gold_ore",
+            "up": "minecraft:block/gold_ore",
+            "north": "minecraft:block/gold_ore",
+            "south": "minecraft:block/gold_ore",
+            "west": "minecraft:block/gold_ore",
+            "east": "minecraft:block/gold_ore",
+            "particle": "minecraft:block/gold_ore"
+        }
+    },
+    "granite": {
+        "textures": {
+            "down": "minecraft:block/granite",
+            "up": "minecraft:block/granite",
+            "north": "minecraft:block/granite",
+            "south": "minecraft:block/granite",
+            "west": "minecraft:block/granite",
+            "east": "minecraft:block/granite",
+            "particle": "minecraft:block/granite"
+        }
+    },
+    "grass_block": {
+        "textures": {
+            "down": "block/dirt",
+            "up": "block/grass_block_top",
+            "north": "block/grass_block_side",
+            "south": "block/grass_block_side",
+            "west": "block/grass_block_side",
+            "east": "block/grass_block_side",
+            "particle": "block/dirt"
+        }
+    },
+    "gravel": {
+        "textures": {
+            "down": "minecraft:block/gravel",
+            "up": "minecraft:block/gravel",
+            "north": "minecraft:block/gravel",
+            "south": "minecraft:block/gravel",
+            "west": "minecraft:block/gravel",
+            "east": "minecraft:block/gravel",
+            "particle": "minecraft:block/gravel"
+        }
+    },
+    "gray_concrete": {
+        "textures": {
+            "down": "minecraft:block/gray_concrete",
+            "up": "minecraft:block/gray_concrete",
+            "north": "minecraft:block/gray_concrete",
+            "south": "minecraft:block/gray_concrete",
+            "west": "minecraft:block/gray_concrete",
+            "east": "minecraft:block/gray_concrete",
+            "particle": "minecraft:block/gray_concrete"
+        }
+    },
+    "gray_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/gray_concrete_powder",
+            "up": "minecraft:block/gray_concrete_powder",
+            "north": "minecraft:block/gray_concrete_powder",
+            "south": "minecraft:block/gray_concrete_powder",
+            "west": "minecraft:block/gray_concrete_powder",
+            "east": "minecraft:block/gray_concrete_powder",
+            "particle": "minecraft:block/gray_concrete_powder"
+        }
+    },
+    "gray_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/gray_stained_glass",
+            "up": "minecraft:block/gray_stained_glass",
+            "north": "minecraft:block/gray_stained_glass",
+            "south": "minecraft:block/gray_stained_glass",
+            "west": "minecraft:block/gray_stained_glass",
+            "east": "minecraft:block/gray_stained_glass",
+            "particle": "minecraft:block/gray_stained_glass"
+        }
+    },
+    "gray_terracotta": {
+        "textures": {
+            "down": "minecraft:block/gray_terracotta",
+            "up": "minecraft:block/gray_terracotta",
+            "north": "minecraft:block/gray_terracotta",
+            "south": "minecraft:block/gray_terracotta",
+            "west": "minecraft:block/gray_terracotta",
+            "east": "minecraft:block/gray_terracotta",
+            "particle": "minecraft:block/gray_terracotta"
+        }
+    },
+    "gray_wool": {
+        "textures": {
+            "down": "minecraft:block/gray_wool",
+            "up": "minecraft:block/gray_wool",
+            "north": "minecraft:block/gray_wool",
+            "south": "minecraft:block/gray_wool",
+            "west": "minecraft:block/gray_wool",
+            "east": "minecraft:block/gray_wool",
+            "particle": "minecraft:block/gray_wool"
+        }
+    },
+    "green_concrete": {
+        "textures": {
+            "down": "minecraft:block/green_concrete",
+            "up": "minecraft:block/green_concrete",
+            "north": "minecraft:block/green_concrete",
+            "south": "minecraft:block/green_concrete",
+            "west": "minecraft:block/green_concrete",
+            "east": "minecraft:block/green_concrete",
+            "particle": "minecraft:block/green_concrete"
+        }
+    },
+    "green_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/green_concrete_powder",
+            "up": "minecraft:block/green_concrete_powder",
+            "north": "minecraft:block/green_concrete_powder",
+            "south": "minecraft:block/green_concrete_powder",
+            "west": "minecraft:block/green_concrete_powder",
+            "east": "minecraft:block/green_concrete_powder",
+            "particle": "minecraft:block/green_concrete_powder"
+        }
+    },
+    "green_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/green_stained_glass",
+            "up": "minecraft:block/green_stained_glass",
+            "north": "minecraft:block/green_stained_glass",
+            "south": "minecraft:block/green_stained_glass",
+            "west": "minecraft:block/green_stained_glass",
+            "east": "minecraft:block/green_stained_glass",
+            "particle": "minecraft:block/green_stained_glass"
+        }
+    },
+    "green_terracotta": {
+        "textures": {
+            "down": "minecraft:block/green_terracotta",
+            "up": "minecraft:block/green_terracotta",
+            "north": "minecraft:block/green_terracotta",
+            "south": "minecraft:block/green_terracotta",
+            "west": "minecraft:block/green_terracotta",
+            "east": "minecraft:block/green_terracotta",
+            "particle": "minecraft:block/green_terracotta"
+        }
+    },
+    "green_wool": {
+        "textures": {
+            "down": "minecraft:block/green_wool",
+            "up": "minecraft:block/green_wool",
+            "north": "minecraft:block/green_wool",
+            "south": "minecraft:block/green_wool",
+            "west": "minecraft:block/green_wool",
+            "east": "minecraft:block/green_wool",
+            "particle": "minecraft:block/green_wool"
+        }
+    },
+    "hay_block": {
+        "textures": {
+            "down": "minecraft:block/hay_block_top",
+            "up": "minecraft:block/hay_block_top",
+            "north": "minecraft:block/hay_block_side",
+            "south": "minecraft:block/hay_block_side",
+            "west": "minecraft:block/hay_block_side",
+            "east": "minecraft:block/hay_block_side",
+            "particle": "minecraft:block/hay_block_side"
+        }
+    },
+    "hay_block_horizontal": {
+        "textures": {
+            "down": "minecraft:block/hay_block_top",
+            "up": "minecraft:block/hay_block_top",
+            "north": "minecraft:block/hay_block_side",
+            "south": "minecraft:block/hay_block_side",
+            "west": "minecraft:block/hay_block_side",
+            "east": "minecraft:block/hay_block_side",
+            "particle": "minecraft:block/hay_block_side"
+        }
+    },
+    "honeycomb_block": {
+        "textures": {
+            "down": "minecraft:block/honeycomb_block",
+            "up": "minecraft:block/honeycomb_block",
+            "north": "minecraft:block/honeycomb_block",
+            "south": "minecraft:block/honeycomb_block",
+            "west": "minecraft:block/honeycomb_block",
+            "east": "minecraft:block/honeycomb_block",
+            "particle": "minecraft:block/honeycomb_block"
+        }
+    },
+    "honey_block": {
+        "textures": {
+            "down": "block/honey_block_bottom",
+            "up": "block/honey_block_bottom",
+            "north": "block/honey_block_bottom",
+            "south": "block/honey_block_bottom",
+            "west": "block/honey_block_bottom",
+            "east": "block/honey_block_bottom",
+            "particle": "block/honey_block_top"
+        }
+    },
+    "horn_coral_block": {
+        "textures": {
+            "down": "minecraft:block/horn_coral_block",
+            "up": "minecraft:block/horn_coral_block",
+            "north": "minecraft:block/horn_coral_block",
+            "south": "minecraft:block/horn_coral_block",
+            "west": "minecraft:block/horn_coral_block",
+            "east": "minecraft:block/horn_coral_block",
+            "particle": "minecraft:block/horn_coral_block"
+        }
+    },
+    "ice": {
+        "textures": {
+            "down": "minecraft:block/ice",
+            "up": "minecraft:block/ice",
+            "north": "minecraft:block/ice",
+            "south": "minecraft:block/ice",
+            "west": "minecraft:block/ice",
+            "east": "minecraft:block/ice",
+            "particle": "minecraft:block/ice"
+        }
+    },
+    "iron_block": {
+        "textures": {
+            "down": "minecraft:block/iron_block",
+            "up": "minecraft:block/iron_block",
+            "north": "minecraft:block/iron_block",
+            "south": "minecraft:block/iron_block",
+            "west": "minecraft:block/iron_block",
+            "east": "minecraft:block/iron_block",
+            "particle": "minecraft:block/iron_block"
+        }
+    },
+    "iron_ore": {
+        "textures": {
+            "down": "minecraft:block/iron_ore",
+            "up": "minecraft:block/iron_ore",
+            "north": "minecraft:block/iron_ore",
+            "south": "minecraft:block/iron_ore",
+            "west": "minecraft:block/iron_ore",
+            "east": "minecraft:block/iron_ore",
+            "particle": "minecraft:block/iron_ore"
+        }
+    },
+    "jack_o_lantern": {
+        "textures": {
+            "down": "minecraft:block/pumpkin_top",
+            "up": "minecraft:block/pumpkin_top",
+            "north": "minecraft:block/jack_o_lantern",
+            "south": "minecraft:block/pumpkin_side",
+            "west": "minecraft:block/pumpkin_side",
+            "east": "minecraft:block/pumpkin_side",
+            "particle": "minecraft:block/jack_o_lantern"
+        }
+    },
+    "jigsaw": {
+        "textures": {
+            "down": "minecraft:block/jigsaw_side",
+            "up": "minecraft:block/jigsaw_lock",
+            "north": "minecraft:block/jigsaw_top",
+            "south": "minecraft:block/jigsaw_bottom",
+            "west": "minecraft:block/jigsaw_side",
+            "east": "minecraft:block/jigsaw_side",
+            "particle": "minecraft:block/jigsaw_top"
+        }
+    },
+    "jukebox": {
+        "textures": {
+            "down": "minecraft:block/jukebox_side",
+            "up": "minecraft:block/jukebox_top",
+            "north": "minecraft:block/jukebox_side",
+            "south": "minecraft:block/jukebox_side",
+            "west": "minecraft:block/jukebox_side",
+            "east": "minecraft:block/jukebox_side",
+            "particle": "minecraft:block/jukebox_side"
+        }
+    },
+    "jungle_log": {
+        "textures": {
+            "down": "minecraft:block/jungle_log_top",
+            "up": "minecraft:block/jungle_log_top",
+            "north": "minecraft:block/jungle_log",
+            "south": "minecraft:block/jungle_log",
+            "west": "minecraft:block/jungle_log",
+            "east": "minecraft:block/jungle_log",
+            "particle": "minecraft:block/jungle_log"
+        }
+    },
+    "jungle_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/jungle_log_top",
+            "up": "minecraft:block/jungle_log_top",
+            "north": "minecraft:block/jungle_log",
+            "south": "minecraft:block/jungle_log",
+            "west": "minecraft:block/jungle_log",
+            "east": "minecraft:block/jungle_log",
+            "particle": "minecraft:block/jungle_log"
+        }
+    },
+    "jungle_planks": {
+        "textures": {
+            "down": "minecraft:block/jungle_planks",
+            "up": "minecraft:block/jungle_planks",
+            "north": "minecraft:block/jungle_planks",
+            "south": "minecraft:block/jungle_planks",
+            "west": "minecraft:block/jungle_planks",
+            "east": "minecraft:block/jungle_planks",
+            "particle": "minecraft:block/jungle_planks"
+        }
+    },
+    "jungle_wood": {
+        "textures": {
+            "down": "minecraft:block/jungle_log",
+            "up": "minecraft:block/jungle_log",
+            "north": "minecraft:block/jungle_log",
+            "south": "minecraft:block/jungle_log",
+            "west": "minecraft:block/jungle_log",
+            "east": "minecraft:block/jungle_log",
+            "particle": "minecraft:block/jungle_log"
+        }
+    },
+    "lapis_block": {
+        "textures": {
+            "down": "minecraft:block/lapis_block",
+            "up": "minecraft:block/lapis_block",
+            "north": "minecraft:block/lapis_block",
+            "south": "minecraft:block/lapis_block",
+            "west": "minecraft:block/lapis_block",
+            "east": "minecraft:block/lapis_block",
+            "particle": "minecraft:block/lapis_block"
+        }
+    },
+    "lapis_ore": {
+        "textures": {
+            "down": "minecraft:block/lapis_ore",
+            "up": "minecraft:block/lapis_ore",
+            "north": "minecraft:block/lapis_ore",
+            "south": "minecraft:block/lapis_ore",
+            "west": "minecraft:block/lapis_ore",
+            "east": "minecraft:block/lapis_ore",
+            "particle": "minecraft:block/lapis_ore"
+        }
+    },
+    "light_blue_concrete": {
+        "textures": {
+            "down": "minecraft:block/light_blue_concrete",
+            "up": "minecraft:block/light_blue_concrete",
+            "north": "minecraft:block/light_blue_concrete",
+            "south": "minecraft:block/light_blue_concrete",
+            "west": "minecraft:block/light_blue_concrete",
+            "east": "minecraft:block/light_blue_concrete",
+            "particle": "minecraft:block/light_blue_concrete"
+        }
+    },
+    "light_blue_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/light_blue_concrete_powder",
+            "up": "minecraft:block/light_blue_concrete_powder",
+            "north": "minecraft:block/light_blue_concrete_powder",
+            "south": "minecraft:block/light_blue_concrete_powder",
+            "west": "minecraft:block/light_blue_concrete_powder",
+            "east": "minecraft:block/light_blue_concrete_powder",
+            "particle": "minecraft:block/light_blue_concrete_powder"
+        }
+    },
+    "light_blue_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/light_blue_stained_glass",
+            "up": "minecraft:block/light_blue_stained_glass",
+            "north": "minecraft:block/light_blue_stained_glass",
+            "south": "minecraft:block/light_blue_stained_glass",
+            "west": "minecraft:block/light_blue_stained_glass",
+            "east": "minecraft:block/light_blue_stained_glass",
+            "particle": "minecraft:block/light_blue_stained_glass"
+        }
+    },
+    "light_blue_terracotta": {
+        "textures": {
+            "down": "minecraft:block/light_blue_terracotta",
+            "up": "minecraft:block/light_blue_terracotta",
+            "north": "minecraft:block/light_blue_terracotta",
+            "south": "minecraft:block/light_blue_terracotta",
+            "west": "minecraft:block/light_blue_terracotta",
+            "east": "minecraft:block/light_blue_terracotta",
+            "particle": "minecraft:block/light_blue_terracotta"
+        }
+    },
+    "light_blue_wool": {
+        "textures": {
+            "down": "minecraft:block/light_blue_wool",
+            "up": "minecraft:block/light_blue_wool",
+            "north": "minecraft:block/light_blue_wool",
+            "south": "minecraft:block/light_blue_wool",
+            "west": "minecraft:block/light_blue_wool",
+            "east": "minecraft:block/light_blue_wool",
+            "particle": "minecraft:block/light_blue_wool"
+        }
+    },
+    "light_gray_concrete": {
+        "textures": {
+            "down": "minecraft:block/light_gray_concrete",
+            "up": "minecraft:block/light_gray_concrete",
+            "north": "minecraft:block/light_gray_concrete",
+            "south": "minecraft:block/light_gray_concrete",
+            "west": "minecraft:block/light_gray_concrete",
+            "east": "minecraft:block/light_gray_concrete",
+            "particle": "minecraft:block/light_gray_concrete"
+        }
+    },
+    "light_gray_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/light_gray_concrete_powder",
+            "up": "minecraft:block/light_gray_concrete_powder",
+            "north": "minecraft:block/light_gray_concrete_powder",
+            "south": "minecraft:block/light_gray_concrete_powder",
+            "west": "minecraft:block/light_gray_concrete_powder",
+            "east": "minecraft:block/light_gray_concrete_powder",
+            "particle": "minecraft:block/light_gray_concrete_powder"
+        }
+    },
+    "light_gray_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/light_gray_stained_glass",
+            "up": "minecraft:block/light_gray_stained_glass",
+            "north": "minecraft:block/light_gray_stained_glass",
+            "south": "minecraft:block/light_gray_stained_glass",
+            "west": "minecraft:block/light_gray_stained_glass",
+            "east": "minecraft:block/light_gray_stained_glass",
+            "particle": "minecraft:block/light_gray_stained_glass"
+        }
+    },
+    "light_gray_terracotta": {
+        "textures": {
+            "down": "minecraft:block/light_gray_terracotta",
+            "up": "minecraft:block/light_gray_terracotta",
+            "north": "minecraft:block/light_gray_terracotta",
+            "south": "minecraft:block/light_gray_terracotta",
+            "west": "minecraft:block/light_gray_terracotta",
+            "east": "minecraft:block/light_gray_terracotta",
+            "particle": "minecraft:block/light_gray_terracotta"
+        }
+    },
+    "light_gray_wool": {
+        "textures": {
+            "down": "minecraft:block/light_gray_wool",
+            "up": "minecraft:block/light_gray_wool",
+            "north": "minecraft:block/light_gray_wool",
+            "south": "minecraft:block/light_gray_wool",
+            "west": "minecraft:block/light_gray_wool",
+            "east": "minecraft:block/light_gray_wool",
+            "particle": "minecraft:block/light_gray_wool"
+        }
+    },
+    "lime_concrete": {
+        "textures": {
+            "down": "minecraft:block/lime_concrete",
+            "up": "minecraft:block/lime_concrete",
+            "north": "minecraft:block/lime_concrete",
+            "south": "minecraft:block/lime_concrete",
+            "west": "minecraft:block/lime_concrete",
+            "east": "minecraft:block/lime_concrete",
+            "particle": "minecraft:block/lime_concrete"
+        }
+    },
+    "lime_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/lime_concrete_powder",
+            "up": "minecraft:block/lime_concrete_powder",
+            "north": "minecraft:block/lime_concrete_powder",
+            "south": "minecraft:block/lime_concrete_powder",
+            "west": "minecraft:block/lime_concrete_powder",
+            "east": "minecraft:block/lime_concrete_powder",
+            "particle": "minecraft:block/lime_concrete_powder"
+        }
+    },
+    "lime_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/lime_stained_glass",
+            "up": "minecraft:block/lime_stained_glass",
+            "north": "minecraft:block/lime_stained_glass",
+            "south": "minecraft:block/lime_stained_glass",
+            "west": "minecraft:block/lime_stained_glass",
+            "east": "minecraft:block/lime_stained_glass",
+            "particle": "minecraft:block/lime_stained_glass"
+        }
+    },
+    "lime_terracotta": {
+        "textures": {
+            "down": "minecraft:block/lime_terracotta",
+            "up": "minecraft:block/lime_terracotta",
+            "north": "minecraft:block/lime_terracotta",
+            "south": "minecraft:block/lime_terracotta",
+            "west": "minecraft:block/lime_terracotta",
+            "east": "minecraft:block/lime_terracotta",
+            "particle": "minecraft:block/lime_terracotta"
+        }
+    },
+    "lime_wool": {
+        "textures": {
+            "down": "minecraft:block/lime_wool",
+            "up": "minecraft:block/lime_wool",
+            "north": "minecraft:block/lime_wool",
+            "south": "minecraft:block/lime_wool",
+            "west": "minecraft:block/lime_wool",
+            "east": "minecraft:block/lime_wool",
+            "particle": "minecraft:block/lime_wool"
+        }
+    },
+    "lodestone": {
+        "textures": {
+            "down": "minecraft:block/lodestone_top",
+            "up": "minecraft:block/lodestone_top",
+            "north": "minecraft:block/lodestone_side",
+            "south": "minecraft:block/lodestone_side",
+            "west": "minecraft:block/lodestone_side",
+            "east": "minecraft:block/lodestone_side",
+            "particle": "minecraft:block/lodestone_side"
+        }
+    },
+    "magenta_concrete": {
+        "textures": {
+            "down": "minecraft:block/magenta_concrete",
+            "up": "minecraft:block/magenta_concrete",
+            "north": "minecraft:block/magenta_concrete",
+            "south": "minecraft:block/magenta_concrete",
+            "west": "minecraft:block/magenta_concrete",
+            "east": "minecraft:block/magenta_concrete",
+            "particle": "minecraft:block/magenta_concrete"
+        }
+    },
+    "magenta_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/magenta_concrete_powder",
+            "up": "minecraft:block/magenta_concrete_powder",
+            "north": "minecraft:block/magenta_concrete_powder",
+            "south": "minecraft:block/magenta_concrete_powder",
+            "west": "minecraft:block/magenta_concrete_powder",
+            "east": "minecraft:block/magenta_concrete_powder",
+            "particle": "minecraft:block/magenta_concrete_powder"
+        }
+    },
+    "magenta_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/magenta_stained_glass",
+            "up": "minecraft:block/magenta_stained_glass",
+            "north": "minecraft:block/magenta_stained_glass",
+            "south": "minecraft:block/magenta_stained_glass",
+            "west": "minecraft:block/magenta_stained_glass",
+            "east": "minecraft:block/magenta_stained_glass",
+            "particle": "minecraft:block/magenta_stained_glass"
+        }
+    },
+    "magenta_terracotta": {
+        "textures": {
+            "down": "minecraft:block/magenta_terracotta",
+            "up": "minecraft:block/magenta_terracotta",
+            "north": "minecraft:block/magenta_terracotta",
+            "south": "minecraft:block/magenta_terracotta",
+            "west": "minecraft:block/magenta_terracotta",
+            "east": "minecraft:block/magenta_terracotta",
+            "particle": "minecraft:block/magenta_terracotta"
+        }
+    },
+    "magenta_wool": {
+        "textures": {
+            "down": "minecraft:block/magenta_wool",
+            "up": "minecraft:block/magenta_wool",
+            "north": "minecraft:block/magenta_wool",
+            "south": "minecraft:block/magenta_wool",
+            "west": "minecraft:block/magenta_wool",
+            "east": "minecraft:block/magenta_wool",
+            "particle": "minecraft:block/magenta_wool"
+        }
+    },
+    "magma_block": {
+        "textures": {
+            "down": "minecraft:block/magma",
+            "up": "minecraft:block/magma",
+            "north": "minecraft:block/magma",
+            "south": "minecraft:block/magma",
+            "west": "minecraft:block/magma",
+            "east": "minecraft:block/magma",
+            "particle": "minecraft:block/magma"
+        }
+    },
+    "mangrove_log": {
+        "textures": {
+            "down": "minecraft:block/mangrove_log_top",
+            "up": "minecraft:block/mangrove_log_top",
+            "north": "minecraft:block/mangrove_log",
+            "south": "minecraft:block/mangrove_log",
+            "west": "minecraft:block/mangrove_log",
+            "east": "minecraft:block/mangrove_log",
+            "particle": "minecraft:block/mangrove_log"
+        }
+    },
+    "mangrove_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/mangrove_log_top",
+            "up": "minecraft:block/mangrove_log_top",
+            "north": "minecraft:block/mangrove_log",
+            "south": "minecraft:block/mangrove_log",
+            "west": "minecraft:block/mangrove_log",
+            "east": "minecraft:block/mangrove_log",
+            "particle": "minecraft:block/mangrove_log"
+        }
+    },
+    "mangrove_planks": {
+        "textures": {
+            "down": "minecraft:block/mangrove_planks",
+            "up": "minecraft:block/mangrove_planks",
+            "north": "minecraft:block/mangrove_planks",
+            "south": "minecraft:block/mangrove_planks",
+            "west": "minecraft:block/mangrove_planks",
+            "east": "minecraft:block/mangrove_planks",
+            "particle": "minecraft:block/mangrove_planks"
+        }
+    },
+    "mangrove_wood": {
+        "textures": {
+            "down": "minecraft:block/mangrove_log",
+            "up": "minecraft:block/mangrove_log",
+            "north": "minecraft:block/mangrove_log",
+            "south": "minecraft:block/mangrove_log",
+            "west": "minecraft:block/mangrove_log",
+            "east": "minecraft:block/mangrove_log",
+            "particle": "minecraft:block/mangrove_log"
+        }
+    },
+    "melon": {
+        "textures": {
+            "down": "minecraft:block/melon_top",
+            "up": "minecraft:block/melon_top",
+            "north": "minecraft:block/melon_side",
+            "south": "minecraft:block/melon_side",
+            "west": "minecraft:block/melon_side",
+            "east": "minecraft:block/melon_side",
+            "particle": "minecraft:block/melon_side"
+        }
+    },
+    "mossy_cobblestone": {
+        "textures": {
+            "down": "minecraft:block/mossy_cobblestone",
+            "up": "minecraft:block/mossy_cobblestone",
+            "north": "minecraft:block/mossy_cobblestone",
+            "south": "minecraft:block/mossy_cobblestone",
+            "west": "minecraft:block/mossy_cobblestone",
+            "east": "minecraft:block/mossy_cobblestone",
+            "particle": "minecraft:block/mossy_cobblestone"
+        }
+    },
+    "mossy_stone_bricks": {
+        "textures": {
+            "down": "minecraft:block/mossy_stone_bricks",
+            "up": "minecraft:block/mossy_stone_bricks",
+            "north": "minecraft:block/mossy_stone_bricks",
+            "south": "minecraft:block/mossy_stone_bricks",
+            "west": "minecraft:block/mossy_stone_bricks",
+            "east": "minecraft:block/mossy_stone_bricks",
+            "particle": "minecraft:block/mossy_stone_bricks"
+        }
+    },
+    "moss_block": {
+        "textures": {
+            "down": "minecraft:block/moss_block",
+            "up": "minecraft:block/moss_block",
+            "north": "minecraft:block/moss_block",
+            "south": "minecraft:block/moss_block",
+            "west": "minecraft:block/moss_block",
+            "east": "minecraft:block/moss_block",
+            "particle": "minecraft:block/moss_block"
+        }
+    },
+    "mud": {
+        "textures": {
+            "down": "minecraft:block/mud",
+            "up": "minecraft:block/mud",
+            "north": "minecraft:block/mud",
+            "south": "minecraft:block/mud",
+            "west": "minecraft:block/mud",
+            "east": "minecraft:block/mud",
+            "particle": "minecraft:block/mud"
+        }
+    },
+    "muddy_mangrove_roots": {
+        "textures": {
+            "down": "minecraft:block/muddy_mangrove_roots_top",
+            "up": "minecraft:block/muddy_mangrove_roots_top",
+            "north": "minecraft:block/muddy_mangrove_roots_side",
+            "south": "minecraft:block/muddy_mangrove_roots_side",
+            "west": "minecraft:block/muddy_mangrove_roots_side",
+            "east": "minecraft:block/muddy_mangrove_roots_side",
+            "particle": "minecraft:block/muddy_mangrove_roots_side"
+        }
+    },
+    "mud_bricks": {
+        "textures": {
+            "down": "minecraft:block/mud_bricks",
+            "up": "minecraft:block/mud_bricks",
+            "north": "minecraft:block/mud_bricks",
+            "south": "minecraft:block/mud_bricks",
+            "west": "minecraft:block/mud_bricks",
+            "east": "minecraft:block/mud_bricks",
+            "particle": "minecraft:block/mud_bricks"
+        }
+    },
+    "mushroom_stem_inventory": {
+        "textures": {
+            "down": "minecraft:block/mushroom_stem",
+            "up": "minecraft:block/mushroom_stem",
+            "north": "minecraft:block/mushroom_stem",
+            "south": "minecraft:block/mushroom_stem",
+            "west": "minecraft:block/mushroom_stem",
+            "east": "minecraft:block/mushroom_stem",
+            "particle": "minecraft:block/mushroom_stem"
+        }
+    },
+    "netherite_block": {
+        "textures": {
+            "down": "minecraft:block/netherite_block",
+            "up": "minecraft:block/netherite_block",
+            "north": "minecraft:block/netherite_block",
+            "south": "minecraft:block/netherite_block",
+            "west": "minecraft:block/netherite_block",
+            "east": "minecraft:block/netherite_block",
+            "particle": "minecraft:block/netherite_block"
+        }
+    },
+    "netherrack": {
+        "textures": {
+            "down": "minecraft:block/netherrack",
+            "up": "minecraft:block/netherrack",
+            "north": "minecraft:block/netherrack",
+            "south": "minecraft:block/netherrack",
+            "west": "minecraft:block/netherrack",
+            "east": "minecraft:block/netherrack",
+            "particle": "minecraft:block/netherrack"
+        }
+    },
+    "nether_bricks": {
+        "textures": {
+            "down": "minecraft:block/nether_bricks",
+            "up": "minecraft:block/nether_bricks",
+            "north": "minecraft:block/nether_bricks",
+            "south": "minecraft:block/nether_bricks",
+            "west": "minecraft:block/nether_bricks",
+            "east": "minecraft:block/nether_bricks",
+            "particle": "minecraft:block/nether_bricks"
+        }
+    },
+    "nether_gold_ore": {
+        "textures": {
+            "down": "minecraft:block/nether_gold_ore",
+            "up": "minecraft:block/nether_gold_ore",
+            "north": "minecraft:block/nether_gold_ore",
+            "south": "minecraft:block/nether_gold_ore",
+            "west": "minecraft:block/nether_gold_ore",
+            "east": "minecraft:block/nether_gold_ore",
+            "particle": "minecraft:block/nether_gold_ore"
+        }
+    },
+    "nether_quartz_ore": {
+        "textures": {
+            "down": "minecraft:block/nether_quartz_ore",
+            "up": "minecraft:block/nether_quartz_ore",
+            "north": "minecraft:block/nether_quartz_ore",
+            "south": "minecraft:block/nether_quartz_ore",
+            "west": "minecraft:block/nether_quartz_ore",
+            "east": "minecraft:block/nether_quartz_ore",
+            "particle": "minecraft:block/nether_quartz_ore"
+        }
+    },
+    "nether_wart_block": {
+        "textures": {
+            "down": "minecraft:block/nether_wart_block",
+            "up": "minecraft:block/nether_wart_block",
+            "north": "minecraft:block/nether_wart_block",
+            "south": "minecraft:block/nether_wart_block",
+            "west": "minecraft:block/nether_wart_block",
+            "east": "minecraft:block/nether_wart_block",
+            "particle": "minecraft:block/nether_wart_block"
+        }
+    },
+    "note_block": {
+        "textures": {
+            "down": "minecraft:block/note_block",
+            "up": "minecraft:block/note_block",
+            "north": "minecraft:block/note_block",
+            "south": "minecraft:block/note_block",
+            "west": "minecraft:block/note_block",
+            "east": "minecraft:block/note_block",
+            "particle": "minecraft:block/note_block"
+        }
+    },
+    "oak_log": {
+        "textures": {
+            "down": "minecraft:block/oak_log_top",
+            "up": "minecraft:block/oak_log_top",
+            "north": "minecraft:block/oak_log",
+            "south": "minecraft:block/oak_log",
+            "west": "minecraft:block/oak_log",
+            "east": "minecraft:block/oak_log",
+            "particle": "minecraft:block/oak_log"
+        }
+    },
+    "oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/oak_log_top",
+            "up": "minecraft:block/oak_log_top",
+            "north": "minecraft:block/oak_log",
+            "south": "minecraft:block/oak_log",
+            "west": "minecraft:block/oak_log",
+            "east": "minecraft:block/oak_log",
+            "particle": "minecraft:block/oak_log"
+        }
+    },
+    "oak_planks": {
+        "textures": {
+            "down": "minecraft:block/oak_planks",
+            "up": "minecraft:block/oak_planks",
+            "north": "minecraft:block/oak_planks",
+            "south": "minecraft:block/oak_planks",
+            "west": "minecraft:block/oak_planks",
+            "east": "minecraft:block/oak_planks",
+            "particle": "minecraft:block/oak_planks"
+        }
+    },
+    "oak_wood": {
+        "textures": {
+            "down": "minecraft:block/oak_log",
+            "up": "minecraft:block/oak_log",
+            "north": "minecraft:block/oak_log",
+            "south": "minecraft:block/oak_log",
+            "west": "minecraft:block/oak_log",
+            "east": "minecraft:block/oak_log",
+            "particle": "minecraft:block/oak_log"
+        }
+    },
+    "observer": {
+        "textures": {
+            "down": "block/observer_top",
+            "up": "block/observer_top",
+            "north": "block/observer_front",
+            "south": "block/observer_back",
+            "west": "block/observer_side",
+            "east": "block/observer_side",
+            "particle": "block/observer_front"
+        }
+    },
+    "obsidian": {
+        "textures": {
+            "down": "minecraft:block/obsidian",
+            "up": "minecraft:block/obsidian",
+            "north": "minecraft:block/obsidian",
+            "south": "minecraft:block/obsidian",
+            "west": "minecraft:block/obsidian",
+            "east": "minecraft:block/obsidian",
+            "particle": "minecraft:block/obsidian"
+        }
+    },
+    "ochre_froglight": {
+        "textures": {
+            "down": "minecraft:block/ochre_froglight_top",
+            "up": "minecraft:block/ochre_froglight_top",
+            "north": "minecraft:block/ochre_froglight_side",
+            "south": "minecraft:block/ochre_froglight_side",
+            "west": "minecraft:block/ochre_froglight_side",
+            "east": "minecraft:block/ochre_froglight_side",
+            "particle": "minecraft:block/ochre_froglight_side"
+        }
+    },
+    "ochre_froglight_horizontal": {
+        "textures": {
+            "down": "minecraft:block/ochre_froglight_top",
+            "up": "minecraft:block/ochre_froglight_top",
+            "north": "minecraft:block/ochre_froglight_side",
+            "south": "minecraft:block/ochre_froglight_side",
+            "west": "minecraft:block/ochre_froglight_side",
+            "east": "minecraft:block/ochre_froglight_side",
+            "particle": "minecraft:block/ochre_froglight_side"
+        }
+    },
+    "orange_concrete": {
+        "textures": {
+            "down": "minecraft:block/orange_concrete",
+            "up": "minecraft:block/orange_concrete",
+            "north": "minecraft:block/orange_concrete",
+            "south": "minecraft:block/orange_concrete",
+            "west": "minecraft:block/orange_concrete",
+            "east": "minecraft:block/orange_concrete",
+            "particle": "minecraft:block/orange_concrete"
+        }
+    },
+    "orange_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/orange_concrete_powder",
+            "up": "minecraft:block/orange_concrete_powder",
+            "north": "minecraft:block/orange_concrete_powder",
+            "south": "minecraft:block/orange_concrete_powder",
+            "west": "minecraft:block/orange_concrete_powder",
+            "east": "minecraft:block/orange_concrete_powder",
+            "particle": "minecraft:block/orange_concrete_powder"
+        }
+    },
+    "orange_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/orange_stained_glass",
+            "up": "minecraft:block/orange_stained_glass",
+            "north": "minecraft:block/orange_stained_glass",
+            "south": "minecraft:block/orange_stained_glass",
+            "west": "minecraft:block/orange_stained_glass",
+            "east": "minecraft:block/orange_stained_glass",
+            "particle": "minecraft:block/orange_stained_glass"
+        }
+    },
+    "orange_terracotta": {
+        "textures": {
+            "down": "minecraft:block/orange_terracotta",
+            "up": "minecraft:block/orange_terracotta",
+            "north": "minecraft:block/orange_terracotta",
+            "south": "minecraft:block/orange_terracotta",
+            "west": "minecraft:block/orange_terracotta",
+            "east": "minecraft:block/orange_terracotta",
+            "particle": "minecraft:block/orange_terracotta"
+        }
+    },
+    "orange_wool": {
+        "textures": {
+            "down": "minecraft:block/orange_wool",
+            "up": "minecraft:block/orange_wool",
+            "north": "minecraft:block/orange_wool",
+            "south": "minecraft:block/orange_wool",
+            "west": "minecraft:block/orange_wool",
+            "east": "minecraft:block/orange_wool",
+            "particle": "minecraft:block/orange_wool"
+        }
+    },
+    "orientable_vertical": {
+        "textures": {
+            "particle": "#side",
+            "down": "#side",
+            "up": "#front",
+            "north": "#side",
+            "east": "#side",
+            "south": "#side",
+            "west": "#side"
+        }
+    },
+    "orientable_with_bottom": {
+        "textures": {
+            "particle": "#front",
+            "down": "#bottom",
+            "up": "#top",
+            "north": "#front",
+            "east": "#side",
+            "south": "#side",
+            "west": "#side"
+        }
+    },
+    "oxidized_chiseled_copper": {
+        "textures": {
+            "down": "minecraft:block/oxidized_chiseled_copper",
+            "up": "minecraft:block/oxidized_chiseled_copper",
+            "north": "minecraft:block/oxidized_chiseled_copper",
+            "south": "minecraft:block/oxidized_chiseled_copper",
+            "west": "minecraft:block/oxidized_chiseled_copper",
+            "east": "minecraft:block/oxidized_chiseled_copper",
+            "particle": "minecraft:block/oxidized_chiseled_copper"
+        }
+    },
+    "oxidized_copper": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper",
+            "up": "minecraft:block/oxidized_copper",
+            "north": "minecraft:block/oxidized_copper",
+            "south": "minecraft:block/oxidized_copper",
+            "west": "minecraft:block/oxidized_copper",
+            "east": "minecraft:block/oxidized_copper",
+            "particle": "minecraft:block/oxidized_copper"
+        }
+    },
+    "oxidized_copper_bulb": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper_bulb",
+            "up": "minecraft:block/oxidized_copper_bulb",
+            "north": "minecraft:block/oxidized_copper_bulb",
+            "south": "minecraft:block/oxidized_copper_bulb",
+            "west": "minecraft:block/oxidized_copper_bulb",
+            "east": "minecraft:block/oxidized_copper_bulb",
+            "particle": "minecraft:block/oxidized_copper_bulb"
+        }
+    },
+    "oxidized_copper_bulb_lit": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper_bulb_lit",
+            "up": "minecraft:block/oxidized_copper_bulb_lit",
+            "north": "minecraft:block/oxidized_copper_bulb_lit",
+            "south": "minecraft:block/oxidized_copper_bulb_lit",
+            "west": "minecraft:block/oxidized_copper_bulb_lit",
+            "east": "minecraft:block/oxidized_copper_bulb_lit",
+            "particle": "minecraft:block/oxidized_copper_bulb_lit"
+        }
+    },
+    "oxidized_copper_bulb_lit_powered": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "up": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "north": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "south": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "west": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "east": "minecraft:block/oxidized_copper_bulb_lit_powered",
+            "particle": "minecraft:block/oxidized_copper_bulb_lit_powered"
+        }
+    },
+    "oxidized_copper_bulb_powered": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper_bulb_powered",
+            "up": "minecraft:block/oxidized_copper_bulb_powered",
+            "north": "minecraft:block/oxidized_copper_bulb_powered",
+            "south": "minecraft:block/oxidized_copper_bulb_powered",
+            "west": "minecraft:block/oxidized_copper_bulb_powered",
+            "east": "minecraft:block/oxidized_copper_bulb_powered",
+            "particle": "minecraft:block/oxidized_copper_bulb_powered"
+        }
+    },
+    "oxidized_copper_grate": {
+        "textures": {
+            "down": "minecraft:block/oxidized_copper_grate",
+            "up": "minecraft:block/oxidized_copper_grate",
+            "north": "minecraft:block/oxidized_copper_grate",
+            "south": "minecraft:block/oxidized_copper_grate",
+            "west": "minecraft:block/oxidized_copper_grate",
+            "east": "minecraft:block/oxidized_copper_grate",
+            "particle": "minecraft:block/oxidized_copper_grate"
+        }
+    },
+    "oxidized_cut_copper": {
+        "textures": {
+            "down": "minecraft:block/oxidized_cut_copper",
+            "up": "minecraft:block/oxidized_cut_copper",
+            "north": "minecraft:block/oxidized_cut_copper",
+            "south": "minecraft:block/oxidized_cut_copper",
+            "west": "minecraft:block/oxidized_cut_copper",
+            "east": "minecraft:block/oxidized_cut_copper",
+            "particle": "minecraft:block/oxidized_cut_copper"
+        }
+    },
+    "packed_ice": {
+        "textures": {
+            "down": "minecraft:block/packed_ice",
+            "up": "minecraft:block/packed_ice",
+            "north": "minecraft:block/packed_ice",
+            "south": "minecraft:block/packed_ice",
+            "west": "minecraft:block/packed_ice",
+            "east": "minecraft:block/packed_ice",
+            "particle": "minecraft:block/packed_ice"
+        }
+    },
+    "packed_mud": {
+        "textures": {
+            "down": "minecraft:block/packed_mud",
+            "up": "minecraft:block/packed_mud",
+            "north": "minecraft:block/packed_mud",
+            "south": "minecraft:block/packed_mud",
+            "west": "minecraft:block/packed_mud",
+            "east": "minecraft:block/packed_mud",
+            "particle": "minecraft:block/packed_mud"
+        }
+    },
+    "pale_moss_block": {
+        "textures": {
+            "down": "minecraft:block/pale_moss_block",
+            "up": "minecraft:block/pale_moss_block",
+            "north": "minecraft:block/pale_moss_block",
+            "south": "minecraft:block/pale_moss_block",
+            "west": "minecraft:block/pale_moss_block",
+            "east": "minecraft:block/pale_moss_block",
+            "particle": "minecraft:block/pale_moss_block"
+        }
+    },
+    "pale_oak_log": {
+        "textures": {
+            "down": "minecraft:block/pale_oak_log_top",
+            "up": "minecraft:block/pale_oak_log_top",
+            "north": "minecraft:block/pale_oak_log",
+            "south": "minecraft:block/pale_oak_log",
+            "west": "minecraft:block/pale_oak_log",
+            "east": "minecraft:block/pale_oak_log",
+            "particle": "minecraft:block/pale_oak_log"
+        }
+    },
+    "pale_oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/pale_oak_log_top",
+            "up": "minecraft:block/pale_oak_log_top",
+            "north": "minecraft:block/pale_oak_log",
+            "south": "minecraft:block/pale_oak_log",
+            "west": "minecraft:block/pale_oak_log",
+            "east": "minecraft:block/pale_oak_log",
+            "particle": "minecraft:block/pale_oak_log"
+        }
+    },
+    "pale_oak_planks": {
+        "textures": {
+            "down": "minecraft:block/pale_oak_planks",
+            "up": "minecraft:block/pale_oak_planks",
+            "north": "minecraft:block/pale_oak_planks",
+            "south": "minecraft:block/pale_oak_planks",
+            "west": "minecraft:block/pale_oak_planks",
+            "east": "minecraft:block/pale_oak_planks",
+            "particle": "minecraft:block/pale_oak_planks"
+        }
+    },
+    "pale_oak_wood": {
+        "textures": {
+            "down": "minecraft:block/pale_oak_log",
+            "up": "minecraft:block/pale_oak_log",
+            "north": "minecraft:block/pale_oak_log",
+            "south": "minecraft:block/pale_oak_log",
+            "west": "minecraft:block/pale_oak_log",
+            "east": "minecraft:block/pale_oak_log",
+            "particle": "minecraft:block/pale_oak_log"
+        }
+    },
+    "pearlescent_froglight": {
+        "textures": {
+            "down": "minecraft:block/pearlescent_froglight_top",
+            "up": "minecraft:block/pearlescent_froglight_top",
+            "north": "minecraft:block/pearlescent_froglight_side",
+            "south": "minecraft:block/pearlescent_froglight_side",
+            "west": "minecraft:block/pearlescent_froglight_side",
+            "east": "minecraft:block/pearlescent_froglight_side",
+            "particle": "minecraft:block/pearlescent_froglight_side"
+        }
+    },
+    "pearlescent_froglight_horizontal": {
+        "textures": {
+            "down": "minecraft:block/pearlescent_froglight_top",
+            "up": "minecraft:block/pearlescent_froglight_top",
+            "north": "minecraft:block/pearlescent_froglight_side",
+            "south": "minecraft:block/pearlescent_froglight_side",
+            "west": "minecraft:block/pearlescent_froglight_side",
+            "east": "minecraft:block/pearlescent_froglight_side",
+            "particle": "minecraft:block/pearlescent_froglight_side"
+        }
+    },
+    "pink_concrete": {
+        "textures": {
+            "down": "minecraft:block/pink_concrete",
+            "up": "minecraft:block/pink_concrete",
+            "north": "minecraft:block/pink_concrete",
+            "south": "minecraft:block/pink_concrete",
+            "west": "minecraft:block/pink_concrete",
+            "east": "minecraft:block/pink_concrete",
+            "particle": "minecraft:block/pink_concrete"
+        }
+    },
+    "pink_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/pink_concrete_powder",
+            "up": "minecraft:block/pink_concrete_powder",
+            "north": "minecraft:block/pink_concrete_powder",
+            "south": "minecraft:block/pink_concrete_powder",
+            "west": "minecraft:block/pink_concrete_powder",
+            "east": "minecraft:block/pink_concrete_powder",
+            "particle": "minecraft:block/pink_concrete_powder"
+        }
+    },
+    "pink_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/pink_stained_glass",
+            "up": "minecraft:block/pink_stained_glass",
+            "north": "minecraft:block/pink_stained_glass",
+            "south": "minecraft:block/pink_stained_glass",
+            "west": "minecraft:block/pink_stained_glass",
+            "east": "minecraft:block/pink_stained_glass",
+            "particle": "minecraft:block/pink_stained_glass"
+        }
+    },
+    "pink_terracotta": {
+        "textures": {
+            "down": "minecraft:block/pink_terracotta",
+            "up": "minecraft:block/pink_terracotta",
+            "north": "minecraft:block/pink_terracotta",
+            "south": "minecraft:block/pink_terracotta",
+            "west": "minecraft:block/pink_terracotta",
+            "east": "minecraft:block/pink_terracotta",
+            "particle": "minecraft:block/pink_terracotta"
+        }
+    },
+    "pink_wool": {
+        "textures": {
+            "down": "minecraft:block/pink_wool",
+            "up": "minecraft:block/pink_wool",
+            "north": "minecraft:block/pink_wool",
+            "south": "minecraft:block/pink_wool",
+            "west": "minecraft:block/pink_wool",
+            "east": "minecraft:block/pink_wool",
+            "particle": "minecraft:block/pink_wool"
+        }
+    },
+    "polished_andesite": {
+        "textures": {
+            "down": "minecraft:block/polished_andesite",
+            "up": "minecraft:block/polished_andesite",
+            "north": "minecraft:block/polished_andesite",
+            "south": "minecraft:block/polished_andesite",
+            "west": "minecraft:block/polished_andesite",
+            "east": "minecraft:block/polished_andesite",
+            "particle": "minecraft:block/polished_andesite"
+        }
+    },
+    "polished_basalt": {
+        "textures": {
+            "down": "minecraft:block/polished_basalt_top",
+            "up": "minecraft:block/polished_basalt_top",
+            "north": "minecraft:block/polished_basalt_side",
+            "south": "minecraft:block/polished_basalt_side",
+            "west": "minecraft:block/polished_basalt_side",
+            "east": "minecraft:block/polished_basalt_side",
+            "particle": "minecraft:block/polished_basalt_side"
+        }
+    },
+    "polished_blackstone": {
+        "textures": {
+            "down": "minecraft:block/polished_blackstone",
+            "up": "minecraft:block/polished_blackstone",
+            "north": "minecraft:block/polished_blackstone",
+            "south": "minecraft:block/polished_blackstone",
+            "west": "minecraft:block/polished_blackstone",
+            "east": "minecraft:block/polished_blackstone",
+            "particle": "minecraft:block/polished_blackstone"
+        }
+    },
+    "polished_blackstone_bricks": {
+        "textures": {
+            "down": "minecraft:block/polished_blackstone_bricks",
+            "up": "minecraft:block/polished_blackstone_bricks",
+            "north": "minecraft:block/polished_blackstone_bricks",
+            "south": "minecraft:block/polished_blackstone_bricks",
+            "west": "minecraft:block/polished_blackstone_bricks",
+            "east": "minecraft:block/polished_blackstone_bricks",
+            "particle": "minecraft:block/polished_blackstone_bricks"
+        }
+    },
+    "polished_deepslate": {
+        "textures": {
+            "down": "minecraft:block/polished_deepslate",
+            "up": "minecraft:block/polished_deepslate",
+            "north": "minecraft:block/polished_deepslate",
+            "south": "minecraft:block/polished_deepslate",
+            "west": "minecraft:block/polished_deepslate",
+            "east": "minecraft:block/polished_deepslate",
+            "particle": "minecraft:block/polished_deepslate"
+        }
+    },
+    "polished_diorite": {
+        "textures": {
+            "down": "minecraft:block/polished_diorite",
+            "up": "minecraft:block/polished_diorite",
+            "north": "minecraft:block/polished_diorite",
+            "south": "minecraft:block/polished_diorite",
+            "west": "minecraft:block/polished_diorite",
+            "east": "minecraft:block/polished_diorite",
+            "particle": "minecraft:block/polished_diorite"
+        }
+    },
+    "polished_granite": {
+        "textures": {
+            "down": "minecraft:block/polished_granite",
+            "up": "minecraft:block/polished_granite",
+            "north": "minecraft:block/polished_granite",
+            "south": "minecraft:block/polished_granite",
+            "west": "minecraft:block/polished_granite",
+            "east": "minecraft:block/polished_granite",
+            "particle": "minecraft:block/polished_granite"
+        }
+    },
+    "polished_tuff": {
+        "textures": {
+            "down": "minecraft:block/polished_tuff",
+            "up": "minecraft:block/polished_tuff",
+            "north": "minecraft:block/polished_tuff",
+            "south": "minecraft:block/polished_tuff",
+            "west": "minecraft:block/polished_tuff",
+            "east": "minecraft:block/polished_tuff",
+            "particle": "minecraft:block/polished_tuff"
+        }
+    },
+    "prismarine": {
+        "textures": {
+            "down": "minecraft:block/prismarine",
+            "up": "minecraft:block/prismarine",
+            "north": "minecraft:block/prismarine",
+            "south": "minecraft:block/prismarine",
+            "west": "minecraft:block/prismarine",
+            "east": "minecraft:block/prismarine",
+            "particle": "minecraft:block/prismarine"
+        }
+    },
+    "prismarine_bricks": {
+        "textures": {
+            "down": "minecraft:block/prismarine_bricks",
+            "up": "minecraft:block/prismarine_bricks",
+            "north": "minecraft:block/prismarine_bricks",
+            "south": "minecraft:block/prismarine_bricks",
+            "west": "minecraft:block/prismarine_bricks",
+            "east": "minecraft:block/prismarine_bricks",
+            "particle": "minecraft:block/prismarine_bricks"
+        }
+    },
+    "pumpkin": {
+        "textures": {
+            "down": "block/pumpkin_top",
+            "up": "block/pumpkin_top",
+            "north": "block/pumpkin_side",
+            "south": "block/pumpkin_side",
+            "west": "block/pumpkin_side",
+            "east": "block/pumpkin_side",
+            "particle": "block/pumpkin_side"
+        }
+    },
+    "purple_concrete": {
+        "textures": {
+            "down": "minecraft:block/purple_concrete",
+            "up": "minecraft:block/purple_concrete",
+            "north": "minecraft:block/purple_concrete",
+            "south": "minecraft:block/purple_concrete",
+            "west": "minecraft:block/purple_concrete",
+            "east": "minecraft:block/purple_concrete",
+            "particle": "minecraft:block/purple_concrete"
+        }
+    },
+    "purple_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/purple_concrete_powder",
+            "up": "minecraft:block/purple_concrete_powder",
+            "north": "minecraft:block/purple_concrete_powder",
+            "south": "minecraft:block/purple_concrete_powder",
+            "west": "minecraft:block/purple_concrete_powder",
+            "east": "minecraft:block/purple_concrete_powder",
+            "particle": "minecraft:block/purple_concrete_powder"
+        }
+    },
+    "purple_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/purple_stained_glass",
+            "up": "minecraft:block/purple_stained_glass",
+            "north": "minecraft:block/purple_stained_glass",
+            "south": "minecraft:block/purple_stained_glass",
+            "west": "minecraft:block/purple_stained_glass",
+            "east": "minecraft:block/purple_stained_glass",
+            "particle": "minecraft:block/purple_stained_glass"
+        }
+    },
+    "purple_terracotta": {
+        "textures": {
+            "down": "minecraft:block/purple_terracotta",
+            "up": "minecraft:block/purple_terracotta",
+            "north": "minecraft:block/purple_terracotta",
+            "south": "minecraft:block/purple_terracotta",
+            "west": "minecraft:block/purple_terracotta",
+            "east": "minecraft:block/purple_terracotta",
+            "particle": "minecraft:block/purple_terracotta"
+        }
+    },
+    "purple_wool": {
+        "textures": {
+            "down": "minecraft:block/purple_wool",
+            "up": "minecraft:block/purple_wool",
+            "north": "minecraft:block/purple_wool",
+            "south": "minecraft:block/purple_wool",
+            "west": "minecraft:block/purple_wool",
+            "east": "minecraft:block/purple_wool",
+            "particle": "minecraft:block/purple_wool"
+        }
+    },
+    "purpur_block": {
+        "textures": {
+            "down": "minecraft:block/purpur_block",
+            "up": "minecraft:block/purpur_block",
+            "north": "minecraft:block/purpur_block",
+            "south": "minecraft:block/purpur_block",
+            "west": "minecraft:block/purpur_block",
+            "east": "minecraft:block/purpur_block",
+            "particle": "minecraft:block/purpur_block"
+        }
+    },
+    "purpur_pillar": {
+        "textures": {
+            "down": "minecraft:block/purpur_pillar_top",
+            "up": "minecraft:block/purpur_pillar_top",
+            "north": "minecraft:block/purpur_pillar",
+            "south": "minecraft:block/purpur_pillar",
+            "west": "minecraft:block/purpur_pillar",
+            "east": "minecraft:block/purpur_pillar",
+            "particle": "minecraft:block/purpur_pillar"
+        }
+    },
+    "purpur_pillar_horizontal": {
+        "textures": {
+            "down": "minecraft:block/purpur_pillar_top",
+            "up": "minecraft:block/purpur_pillar_top",
+            "north": "minecraft:block/purpur_pillar",
+            "south": "minecraft:block/purpur_pillar",
+            "west": "minecraft:block/purpur_pillar",
+            "east": "minecraft:block/purpur_pillar",
+            "particle": "minecraft:block/purpur_pillar"
+        }
+    },
+    "quartz_block": {
+        "textures": {
+            "down": "minecraft:block/quartz_block_top",
+            "up": "minecraft:block/quartz_block_top",
+            "north": "minecraft:block/quartz_block_side",
+            "south": "minecraft:block/quartz_block_side",
+            "west": "minecraft:block/quartz_block_side",
+            "east": "minecraft:block/quartz_block_side",
+            "particle": "minecraft:block/quartz_block_side"
+        }
+    },
+    "quartz_bricks": {
+        "textures": {
+            "down": "minecraft:block/quartz_bricks",
+            "up": "minecraft:block/quartz_bricks",
+            "north": "minecraft:block/quartz_bricks",
+            "south": "minecraft:block/quartz_bricks",
+            "west": "minecraft:block/quartz_bricks",
+            "east": "minecraft:block/quartz_bricks",
+            "particle": "minecraft:block/quartz_bricks"
+        }
+    },
+    "quartz_pillar": {
+        "textures": {
+            "down": "minecraft:block/quartz_pillar_top",
+            "up": "minecraft:block/quartz_pillar_top",
+            "north": "minecraft:block/quartz_pillar",
+            "south": "minecraft:block/quartz_pillar",
+            "west": "minecraft:block/quartz_pillar",
+            "east": "minecraft:block/quartz_pillar",
+            "particle": "minecraft:block/quartz_pillar"
+        }
+    },
+    "quartz_pillar_horizontal": {
+        "textures": {
+            "down": "minecraft:block/quartz_pillar_top",
+            "up": "minecraft:block/quartz_pillar_top",
+            "north": "minecraft:block/quartz_pillar",
+            "south": "minecraft:block/quartz_pillar",
+            "west": "minecraft:block/quartz_pillar",
+            "east": "minecraft:block/quartz_pillar",
+            "particle": "minecraft:block/quartz_pillar"
+        }
+    },
+    "raw_copper_block": {
+        "textures": {
+            "down": "minecraft:block/raw_copper_block",
+            "up": "minecraft:block/raw_copper_block",
+            "north": "minecraft:block/raw_copper_block",
+            "south": "minecraft:block/raw_copper_block",
+            "west": "minecraft:block/raw_copper_block",
+            "east": "minecraft:block/raw_copper_block",
+            "particle": "minecraft:block/raw_copper_block"
+        }
+    },
+    "raw_gold_block": {
+        "textures": {
+            "down": "minecraft:block/raw_gold_block",
+            "up": "minecraft:block/raw_gold_block",
+            "north": "minecraft:block/raw_gold_block",
+            "south": "minecraft:block/raw_gold_block",
+            "west": "minecraft:block/raw_gold_block",
+            "east": "minecraft:block/raw_gold_block",
+            "particle": "minecraft:block/raw_gold_block"
+        }
+    },
+    "raw_iron_block": {
+        "textures": {
+            "down": "minecraft:block/raw_iron_block",
+            "up": "minecraft:block/raw_iron_block",
+            "north": "minecraft:block/raw_iron_block",
+            "south": "minecraft:block/raw_iron_block",
+            "west": "minecraft:block/raw_iron_block",
+            "east": "minecraft:block/raw_iron_block",
+            "particle": "minecraft:block/raw_iron_block"
+        }
+    },
+    "redstone_block": {
+        "textures": {
+            "down": "minecraft:block/redstone_block",
+            "up": "minecraft:block/redstone_block",
+            "north": "minecraft:block/redstone_block",
+            "south": "minecraft:block/redstone_block",
+            "west": "minecraft:block/redstone_block",
+            "east": "minecraft:block/redstone_block",
+            "particle": "minecraft:block/redstone_block"
+        }
+    },
+    "redstone_lamp": {
+        "textures": {
+            "down": "minecraft:block/redstone_lamp",
+            "up": "minecraft:block/redstone_lamp",
+            "north": "minecraft:block/redstone_lamp",
+            "south": "minecraft:block/redstone_lamp",
+            "west": "minecraft:block/redstone_lamp",
+            "east": "minecraft:block/redstone_lamp",
+            "particle": "minecraft:block/redstone_lamp"
+        }
+    },
+    "redstone_lamp_on": {
+        "textures": {
+            "down": "minecraft:block/redstone_lamp_on",
+            "up": "minecraft:block/redstone_lamp_on",
+            "north": "minecraft:block/redstone_lamp_on",
+            "south": "minecraft:block/redstone_lamp_on",
+            "west": "minecraft:block/redstone_lamp_on",
+            "east": "minecraft:block/redstone_lamp_on",
+            "particle": "minecraft:block/redstone_lamp_on"
+        }
+    },
+    "redstone_ore": {
+        "textures": {
+            "down": "minecraft:block/redstone_ore",
+            "up": "minecraft:block/redstone_ore",
+            "north": "minecraft:block/redstone_ore",
+            "south": "minecraft:block/redstone_ore",
+            "west": "minecraft:block/redstone_ore",
+            "east": "minecraft:block/redstone_ore",
+            "particle": "minecraft:block/redstone_ore"
+        }
+    },
+    "red_concrete": {
+        "textures": {
+            "down": "minecraft:block/red_concrete",
+            "up": "minecraft:block/red_concrete",
+            "north": "minecraft:block/red_concrete",
+            "south": "minecraft:block/red_concrete",
+            "west": "minecraft:block/red_concrete",
+            "east": "minecraft:block/red_concrete",
+            "particle": "minecraft:block/red_concrete"
+        }
+    },
+    "red_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/red_concrete_powder",
+            "up": "minecraft:block/red_concrete_powder",
+            "north": "minecraft:block/red_concrete_powder",
+            "south": "minecraft:block/red_concrete_powder",
+            "west": "minecraft:block/red_concrete_powder",
+            "east": "minecraft:block/red_concrete_powder",
+            "particle": "minecraft:block/red_concrete_powder"
+        }
+    },
+    "red_mushroom_block_inventory": {
+        "textures": {
+            "down": "minecraft:block/red_mushroom_block",
+            "up": "minecraft:block/red_mushroom_block",
+            "north": "minecraft:block/red_mushroom_block",
+            "south": "minecraft:block/red_mushroom_block",
+            "west": "minecraft:block/red_mushroom_block",
+            "east": "minecraft:block/red_mushroom_block",
+            "particle": "minecraft:block/red_mushroom_block"
+        }
+    },
+    "red_nether_bricks": {
+        "textures": {
+            "down": "minecraft:block/red_nether_bricks",
+            "up": "minecraft:block/red_nether_bricks",
+            "north": "minecraft:block/red_nether_bricks",
+            "south": "minecraft:block/red_nether_bricks",
+            "west": "minecraft:block/red_nether_bricks",
+            "east": "minecraft:block/red_nether_bricks",
+            "particle": "minecraft:block/red_nether_bricks"
+        }
+    },
+    "red_sand": {
+        "textures": {
+            "down": "minecraft:block/red_sand",
+            "up": "minecraft:block/red_sand",
+            "north": "minecraft:block/red_sand",
+            "south": "minecraft:block/red_sand",
+            "west": "minecraft:block/red_sand",
+            "east": "minecraft:block/red_sand",
+            "particle": "minecraft:block/red_sand"
+        }
+    },
+    "red_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/red_stained_glass",
+            "up": "minecraft:block/red_stained_glass",
+            "north": "minecraft:block/red_stained_glass",
+            "south": "minecraft:block/red_stained_glass",
+            "west": "minecraft:block/red_stained_glass",
+            "east": "minecraft:block/red_stained_glass",
+            "particle": "minecraft:block/red_stained_glass"
+        }
+    },
+    "red_terracotta": {
+        "textures": {
+            "down": "minecraft:block/red_terracotta",
+            "up": "minecraft:block/red_terracotta",
+            "north": "minecraft:block/red_terracotta",
+            "south": "minecraft:block/red_terracotta",
+            "west": "minecraft:block/red_terracotta",
+            "east": "minecraft:block/red_terracotta",
+            "particle": "minecraft:block/red_terracotta"
+        }
+    },
+    "red_wool": {
+        "textures": {
+            "down": "minecraft:block/red_wool",
+            "up": "minecraft:block/red_wool",
+            "north": "minecraft:block/red_wool",
+            "south": "minecraft:block/red_wool",
+            "west": "minecraft:block/red_wool",
+            "east": "minecraft:block/red_wool",
+            "particle": "minecraft:block/red_wool"
+        }
+    },
+    "resin_block": {
+        "textures": {
+            "down": "minecraft:block/resin_block",
+            "up": "minecraft:block/resin_block",
+            "north": "minecraft:block/resin_block",
+            "south": "minecraft:block/resin_block",
+            "west": "minecraft:block/resin_block",
+            "east": "minecraft:block/resin_block",
+            "particle": "minecraft:block/resin_block"
+        }
+    },
+    "resin_bricks": {
+        "textures": {
+            "down": "minecraft:block/resin_bricks",
+            "up": "minecraft:block/resin_bricks",
+            "north": "minecraft:block/resin_bricks",
+            "south": "minecraft:block/resin_bricks",
+            "west": "minecraft:block/resin_bricks",
+            "east": "minecraft:block/resin_bricks",
+            "particle": "minecraft:block/resin_bricks"
+        }
+    },
+    "rooted_dirt": {
+        "textures": {
+            "down": "minecraft:block/rooted_dirt",
+            "up": "minecraft:block/rooted_dirt",
+            "north": "minecraft:block/rooted_dirt",
+            "south": "minecraft:block/rooted_dirt",
+            "west": "minecraft:block/rooted_dirt",
+            "east": "minecraft:block/rooted_dirt",
+            "particle": "minecraft:block/rooted_dirt"
+        }
+    },
+    "sand": {
+        "textures": {
+            "down": "minecraft:block/sand",
+            "up": "minecraft:block/sand",
+            "north": "minecraft:block/sand",
+            "south": "minecraft:block/sand",
+            "west": "minecraft:block/sand",
+            "east": "minecraft:block/sand",
+            "particle": "minecraft:block/sand"
+        }
+    },
+    "sculk": {
+        "textures": {
+            "down": "minecraft:block/sculk",
+            "up": "minecraft:block/sculk",
+            "north": "minecraft:block/sculk",
+            "south": "minecraft:block/sculk",
+            "west": "minecraft:block/sculk",
+            "east": "minecraft:block/sculk",
+            "particle": "minecraft:block/sculk"
+        }
+    },
+    "sea_lantern": {
+        "textures": {
+            "down": "minecraft:block/sea_lantern",
+            "up": "minecraft:block/sea_lantern",
+            "north": "minecraft:block/sea_lantern",
+            "south": "minecraft:block/sea_lantern",
+            "west": "minecraft:block/sea_lantern",
+            "east": "minecraft:block/sea_lantern",
+            "particle": "minecraft:block/sea_lantern"
+        }
+    },
+    "shroomlight": {
+        "textures": {
+            "down": "minecraft:block/shroomlight",
+            "up": "minecraft:block/shroomlight",
+            "north": "minecraft:block/shroomlight",
+            "south": "minecraft:block/shroomlight",
+            "west": "minecraft:block/shroomlight",
+            "east": "minecraft:block/shroomlight",
+            "particle": "minecraft:block/shroomlight"
+        }
+    },
+    "slime_block": {
+        "textures": {
+            "down": "block/slime_block",
+            "up": "block/slime_block",
+            "north": "block/slime_block",
+            "south": "block/slime_block",
+            "west": "block/slime_block",
+            "east": "block/slime_block",
+            "particle": "block/slime_block"
+        }
+    },
+    "smithing_table": {
+        "textures": {
+            "down": "minecraft:block/smithing_table_bottom",
+            "up": "minecraft:block/smithing_table_top",
+            "north": "minecraft:block/smithing_table_front",
+            "south": "minecraft:block/smithing_table_front",
+            "west": "minecraft:block/smithing_table_side",
+            "east": "minecraft:block/smithing_table_side",
+            "particle": "minecraft:block/smithing_table_front"
+        }
+    },
+    "smooth_basalt": {
+        "textures": {
+            "down": "minecraft:block/smooth_basalt",
+            "up": "minecraft:block/smooth_basalt",
+            "north": "minecraft:block/smooth_basalt",
+            "south": "minecraft:block/smooth_basalt",
+            "west": "minecraft:block/smooth_basalt",
+            "east": "minecraft:block/smooth_basalt",
+            "particle": "minecraft:block/smooth_basalt"
+        }
+    },
+    "smooth_quartz": {
+        "textures": {
+            "down": "minecraft:block/quartz_block_bottom",
+            "up": "minecraft:block/quartz_block_bottom",
+            "north": "minecraft:block/quartz_block_bottom",
+            "south": "minecraft:block/quartz_block_bottom",
+            "west": "minecraft:block/quartz_block_bottom",
+            "east": "minecraft:block/quartz_block_bottom",
+            "particle": "minecraft:block/quartz_block_bottom"
+        }
+    },
+    "smooth_red_sandstone": {
+        "textures": {
+            "down": "minecraft:block/red_sandstone_top",
+            "up": "minecraft:block/red_sandstone_top",
+            "north": "minecraft:block/red_sandstone_top",
+            "south": "minecraft:block/red_sandstone_top",
+            "west": "minecraft:block/red_sandstone_top",
+            "east": "minecraft:block/red_sandstone_top",
+            "particle": "minecraft:block/red_sandstone_top"
+        }
+    },
+    "smooth_sandstone": {
+        "textures": {
+            "down": "minecraft:block/sandstone_top",
+            "up": "minecraft:block/sandstone_top",
+            "north": "minecraft:block/sandstone_top",
+            "south": "minecraft:block/sandstone_top",
+            "west": "minecraft:block/sandstone_top",
+            "east": "minecraft:block/sandstone_top",
+            "particle": "minecraft:block/sandstone_top"
+        }
+    },
+    "smooth_stone": {
+        "textures": {
+            "down": "minecraft:block/smooth_stone",
+            "up": "minecraft:block/smooth_stone",
+            "north": "minecraft:block/smooth_stone",
+            "south": "minecraft:block/smooth_stone",
+            "west": "minecraft:block/smooth_stone",
+            "east": "minecraft:block/smooth_stone",
+            "particle": "minecraft:block/smooth_stone"
+        }
+    },
+    "smooth_stone_slab_double": {
+        "textures": {
+            "down": "minecraft:block/smooth_stone",
+            "up": "minecraft:block/smooth_stone",
+            "north": "minecraft:block/smooth_stone_slab_side",
+            "south": "minecraft:block/smooth_stone_slab_side",
+            "west": "minecraft:block/smooth_stone_slab_side",
+            "east": "minecraft:block/smooth_stone_slab_side",
+            "particle": "minecraft:block/smooth_stone_slab_side"
+        }
+    },
+    "snow_block": {
+        "textures": {
+            "down": "minecraft:block/snow",
+            "up": "minecraft:block/snow",
+            "north": "minecraft:block/snow",
+            "south": "minecraft:block/snow",
+            "west": "minecraft:block/snow",
+            "east": "minecraft:block/snow",
+            "particle": "minecraft:block/snow"
+        }
+    },
+    "soul_sand": {
+        "textures": {
+            "down": "minecraft:block/soul_sand",
+            "up": "minecraft:block/soul_sand",
+            "north": "minecraft:block/soul_sand",
+            "south": "minecraft:block/soul_sand",
+            "west": "minecraft:block/soul_sand",
+            "east": "minecraft:block/soul_sand",
+            "particle": "minecraft:block/soul_sand"
+        }
+    },
+    "soul_soil": {
+        "textures": {
+            "down": "minecraft:block/soul_soil",
+            "up": "minecraft:block/soul_soil",
+            "north": "minecraft:block/soul_soil",
+            "south": "minecraft:block/soul_soil",
+            "west": "minecraft:block/soul_soil",
+            "east": "minecraft:block/soul_soil",
+            "particle": "minecraft:block/soul_soil"
+        }
+    },
+    "sponge": {
+        "textures": {
+            "down": "minecraft:block/sponge",
+            "up": "minecraft:block/sponge",
+            "north": "minecraft:block/sponge",
+            "south": "minecraft:block/sponge",
+            "west": "minecraft:block/sponge",
+            "east": "minecraft:block/sponge",
+            "particle": "minecraft:block/sponge"
+        }
+    },
+    "spruce_log": {
+        "textures": {
+            "down": "minecraft:block/spruce_log_top",
+            "up": "minecraft:block/spruce_log_top",
+            "north": "minecraft:block/spruce_log",
+            "south": "minecraft:block/spruce_log",
+            "west": "minecraft:block/spruce_log",
+            "east": "minecraft:block/spruce_log",
+            "particle": "minecraft:block/spruce_log"
+        }
+    },
+    "spruce_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/spruce_log_top",
+            "up": "minecraft:block/spruce_log_top",
+            "north": "minecraft:block/spruce_log",
+            "south": "minecraft:block/spruce_log",
+            "west": "minecraft:block/spruce_log",
+            "east": "minecraft:block/spruce_log",
+            "particle": "minecraft:block/spruce_log"
+        }
+    },
+    "spruce_planks": {
+        "textures": {
+            "down": "minecraft:block/spruce_planks",
+            "up": "minecraft:block/spruce_planks",
+            "north": "minecraft:block/spruce_planks",
+            "south": "minecraft:block/spruce_planks",
+            "west": "minecraft:block/spruce_planks",
+            "east": "minecraft:block/spruce_planks",
+            "particle": "minecraft:block/spruce_planks"
+        }
+    },
+    "spruce_wood": {
+        "textures": {
+            "down": "minecraft:block/spruce_log",
+            "up": "minecraft:block/spruce_log",
+            "north": "minecraft:block/spruce_log",
+            "south": "minecraft:block/spruce_log",
+            "west": "minecraft:block/spruce_log",
+            "east": "minecraft:block/spruce_log",
+            "particle": "minecraft:block/spruce_log"
+        }
+    },
+    "stone": {
+        "textures": {
+            "down": "minecraft:block/stone",
+            "up": "minecraft:block/stone",
+            "north": "minecraft:block/stone",
+            "south": "minecraft:block/stone",
+            "west": "minecraft:block/stone",
+            "east": "minecraft:block/stone",
+            "particle": "minecraft:block/stone"
+        }
+    },
+    "stone_bricks": {
+        "textures": {
+            "down": "minecraft:block/stone_bricks",
+            "up": "minecraft:block/stone_bricks",
+            "north": "minecraft:block/stone_bricks",
+            "south": "minecraft:block/stone_bricks",
+            "west": "minecraft:block/stone_bricks",
+            "east": "minecraft:block/stone_bricks",
+            "particle": "minecraft:block/stone_bricks"
+        }
+    },
+    "stripped_acacia_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_acacia_log_top",
+            "up": "minecraft:block/stripped_acacia_log_top",
+            "north": "minecraft:block/stripped_acacia_log",
+            "south": "minecraft:block/stripped_acacia_log",
+            "west": "minecraft:block/stripped_acacia_log",
+            "east": "minecraft:block/stripped_acacia_log",
+            "particle": "minecraft:block/stripped_acacia_log"
+        }
+    },
+    "stripped_acacia_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_acacia_log_top",
+            "up": "minecraft:block/stripped_acacia_log_top",
+            "north": "minecraft:block/stripped_acacia_log",
+            "south": "minecraft:block/stripped_acacia_log",
+            "west": "minecraft:block/stripped_acacia_log",
+            "east": "minecraft:block/stripped_acacia_log",
+            "particle": "minecraft:block/stripped_acacia_log"
+        }
+    },
+    "stripped_acacia_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_acacia_log",
+            "up": "minecraft:block/stripped_acacia_log",
+            "north": "minecraft:block/stripped_acacia_log",
+            "south": "minecraft:block/stripped_acacia_log",
+            "west": "minecraft:block/stripped_acacia_log",
+            "east": "minecraft:block/stripped_acacia_log",
+            "particle": "minecraft:block/stripped_acacia_log"
+        }
+    },
+    "stripped_bamboo_block": {
+        "textures": {
+            "down": "minecraft:block/stripped_bamboo_block_top",
+            "up": "minecraft:block/stripped_bamboo_block_top",
+            "north": "minecraft:block/stripped_bamboo_block",
+            "south": "minecraft:block/stripped_bamboo_block",
+            "west": "minecraft:block/stripped_bamboo_block",
+            "east": "minecraft:block/stripped_bamboo_block",
+            "particle": "minecraft:block/stripped_bamboo_block"
+        }
+    },
+    "stripped_birch_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_birch_log_top",
+            "up": "minecraft:block/stripped_birch_log_top",
+            "north": "minecraft:block/stripped_birch_log",
+            "south": "minecraft:block/stripped_birch_log",
+            "west": "minecraft:block/stripped_birch_log",
+            "east": "minecraft:block/stripped_birch_log",
+            "particle": "minecraft:block/stripped_birch_log"
+        }
+    },
+    "stripped_birch_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_birch_log_top",
+            "up": "minecraft:block/stripped_birch_log_top",
+            "north": "minecraft:block/stripped_birch_log",
+            "south": "minecraft:block/stripped_birch_log",
+            "west": "minecraft:block/stripped_birch_log",
+            "east": "minecraft:block/stripped_birch_log",
+            "particle": "minecraft:block/stripped_birch_log"
+        }
+    },
+    "stripped_birch_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_birch_log",
+            "up": "minecraft:block/stripped_birch_log",
+            "north": "minecraft:block/stripped_birch_log",
+            "south": "minecraft:block/stripped_birch_log",
+            "west": "minecraft:block/stripped_birch_log",
+            "east": "minecraft:block/stripped_birch_log",
+            "particle": "minecraft:block/stripped_birch_log"
+        }
+    },
+    "stripped_cherry_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_cherry_log_top",
+            "up": "minecraft:block/stripped_cherry_log_top",
+            "north": "minecraft:block/stripped_cherry_log",
+            "south": "minecraft:block/stripped_cherry_log",
+            "west": "minecraft:block/stripped_cherry_log",
+            "east": "minecraft:block/stripped_cherry_log",
+            "particle": "minecraft:block/stripped_cherry_log"
+        }
+    },
+    "stripped_cherry_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_cherry_log",
+            "up": "minecraft:block/stripped_cherry_log",
+            "north": "minecraft:block/stripped_cherry_log",
+            "south": "minecraft:block/stripped_cherry_log",
+            "west": "minecraft:block/stripped_cherry_log",
+            "east": "minecraft:block/stripped_cherry_log",
+            "particle": "minecraft:block/stripped_cherry_log"
+        }
+    },
+    "stripped_crimson_hyphae": {
+        "textures": {
+            "down": "minecraft:block/stripped_crimson_stem",
+            "up": "minecraft:block/stripped_crimson_stem",
+            "north": "minecraft:block/stripped_crimson_stem",
+            "south": "minecraft:block/stripped_crimson_stem",
+            "west": "minecraft:block/stripped_crimson_stem",
+            "east": "minecraft:block/stripped_crimson_stem",
+            "particle": "minecraft:block/stripped_crimson_stem"
+        }
+    },
+    "stripped_crimson_stem": {
+        "textures": {
+            "down": "minecraft:block/stripped_crimson_stem_top",
+            "up": "minecraft:block/stripped_crimson_stem_top",
+            "north": "minecraft:block/stripped_crimson_stem",
+            "south": "minecraft:block/stripped_crimson_stem",
+            "west": "minecraft:block/stripped_crimson_stem",
+            "east": "minecraft:block/stripped_crimson_stem",
+            "particle": "minecraft:block/stripped_crimson_stem"
+        }
+    },
+    "stripped_dark_oak_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_dark_oak_log_top",
+            "up": "minecraft:block/stripped_dark_oak_log_top",
+            "north": "minecraft:block/stripped_dark_oak_log",
+            "south": "minecraft:block/stripped_dark_oak_log",
+            "west": "minecraft:block/stripped_dark_oak_log",
+            "east": "minecraft:block/stripped_dark_oak_log",
+            "particle": "minecraft:block/stripped_dark_oak_log"
+        }
+    },
+    "stripped_dark_oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_dark_oak_log_top",
+            "up": "minecraft:block/stripped_dark_oak_log_top",
+            "north": "minecraft:block/stripped_dark_oak_log",
+            "south": "minecraft:block/stripped_dark_oak_log",
+            "west": "minecraft:block/stripped_dark_oak_log",
+            "east": "minecraft:block/stripped_dark_oak_log",
+            "particle": "minecraft:block/stripped_dark_oak_log"
+        }
+    },
+    "stripped_dark_oak_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_dark_oak_log",
+            "up": "minecraft:block/stripped_dark_oak_log",
+            "north": "minecraft:block/stripped_dark_oak_log",
+            "south": "minecraft:block/stripped_dark_oak_log",
+            "west": "minecraft:block/stripped_dark_oak_log",
+            "east": "minecraft:block/stripped_dark_oak_log",
+            "particle": "minecraft:block/stripped_dark_oak_log"
+        }
+    },
+    "stripped_jungle_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_jungle_log_top",
+            "up": "minecraft:block/stripped_jungle_log_top",
+            "north": "minecraft:block/stripped_jungle_log",
+            "south": "minecraft:block/stripped_jungle_log",
+            "west": "minecraft:block/stripped_jungle_log",
+            "east": "minecraft:block/stripped_jungle_log",
+            "particle": "minecraft:block/stripped_jungle_log"
+        }
+    },
+    "stripped_jungle_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_jungle_log_top",
+            "up": "minecraft:block/stripped_jungle_log_top",
+            "north": "minecraft:block/stripped_jungle_log",
+            "south": "minecraft:block/stripped_jungle_log",
+            "west": "minecraft:block/stripped_jungle_log",
+            "east": "minecraft:block/stripped_jungle_log",
+            "particle": "minecraft:block/stripped_jungle_log"
+        }
+    },
+    "stripped_jungle_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_jungle_log",
+            "up": "minecraft:block/stripped_jungle_log",
+            "north": "minecraft:block/stripped_jungle_log",
+            "south": "minecraft:block/stripped_jungle_log",
+            "west": "minecraft:block/stripped_jungle_log",
+            "east": "minecraft:block/stripped_jungle_log",
+            "particle": "minecraft:block/stripped_jungle_log"
+        }
+    },
+    "stripped_mangrove_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_mangrove_log_top",
+            "up": "minecraft:block/stripped_mangrove_log_top",
+            "north": "minecraft:block/stripped_mangrove_log",
+            "south": "minecraft:block/stripped_mangrove_log",
+            "west": "minecraft:block/stripped_mangrove_log",
+            "east": "minecraft:block/stripped_mangrove_log",
+            "particle": "minecraft:block/stripped_mangrove_log"
+        }
+    },
+    "stripped_mangrove_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_mangrove_log_top",
+            "up": "minecraft:block/stripped_mangrove_log_top",
+            "north": "minecraft:block/stripped_mangrove_log",
+            "south": "minecraft:block/stripped_mangrove_log",
+            "west": "minecraft:block/stripped_mangrove_log",
+            "east": "minecraft:block/stripped_mangrove_log",
+            "particle": "minecraft:block/stripped_mangrove_log"
+        }
+    },
+    "stripped_mangrove_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_mangrove_log",
+            "up": "minecraft:block/stripped_mangrove_log",
+            "north": "minecraft:block/stripped_mangrove_log",
+            "south": "minecraft:block/stripped_mangrove_log",
+            "west": "minecraft:block/stripped_mangrove_log",
+            "east": "minecraft:block/stripped_mangrove_log",
+            "particle": "minecraft:block/stripped_mangrove_log"
+        }
+    },
+    "stripped_oak_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_oak_log_top",
+            "up": "minecraft:block/stripped_oak_log_top",
+            "north": "minecraft:block/stripped_oak_log",
+            "south": "minecraft:block/stripped_oak_log",
+            "west": "minecraft:block/stripped_oak_log",
+            "east": "minecraft:block/stripped_oak_log",
+            "particle": "minecraft:block/stripped_oak_log"
+        }
+    },
+    "stripped_oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_oak_log_top",
+            "up": "minecraft:block/stripped_oak_log_top",
+            "north": "minecraft:block/stripped_oak_log",
+            "south": "minecraft:block/stripped_oak_log",
+            "west": "minecraft:block/stripped_oak_log",
+            "east": "minecraft:block/stripped_oak_log",
+            "particle": "minecraft:block/stripped_oak_log"
+        }
+    },
+    "stripped_oak_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_oak_log",
+            "up": "minecraft:block/stripped_oak_log",
+            "north": "minecraft:block/stripped_oak_log",
+            "south": "minecraft:block/stripped_oak_log",
+            "west": "minecraft:block/stripped_oak_log",
+            "east": "minecraft:block/stripped_oak_log",
+            "particle": "minecraft:block/stripped_oak_log"
+        }
+    },
+    "stripped_pale_oak_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_pale_oak_log_top",
+            "up": "minecraft:block/stripped_pale_oak_log_top",
+            "north": "minecraft:block/stripped_pale_oak_log",
+            "south": "minecraft:block/stripped_pale_oak_log",
+            "west": "minecraft:block/stripped_pale_oak_log",
+            "east": "minecraft:block/stripped_pale_oak_log",
+            "particle": "minecraft:block/stripped_pale_oak_log"
+        }
+    },
+    "stripped_pale_oak_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_pale_oak_log_top",
+            "up": "minecraft:block/stripped_pale_oak_log_top",
+            "north": "minecraft:block/stripped_pale_oak_log",
+            "south": "minecraft:block/stripped_pale_oak_log",
+            "west": "minecraft:block/stripped_pale_oak_log",
+            "east": "minecraft:block/stripped_pale_oak_log",
+            "particle": "minecraft:block/stripped_pale_oak_log"
+        }
+    },
+    "stripped_pale_oak_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_pale_oak_log",
+            "up": "minecraft:block/stripped_pale_oak_log",
+            "north": "minecraft:block/stripped_pale_oak_log",
+            "south": "minecraft:block/stripped_pale_oak_log",
+            "west": "minecraft:block/stripped_pale_oak_log",
+            "east": "minecraft:block/stripped_pale_oak_log",
+            "particle": "minecraft:block/stripped_pale_oak_log"
+        }
+    },
+    "stripped_spruce_log": {
+        "textures": {
+            "down": "minecraft:block/stripped_spruce_log_top",
+            "up": "minecraft:block/stripped_spruce_log_top",
+            "north": "minecraft:block/stripped_spruce_log",
+            "south": "minecraft:block/stripped_spruce_log",
+            "west": "minecraft:block/stripped_spruce_log",
+            "east": "minecraft:block/stripped_spruce_log",
+            "particle": "minecraft:block/stripped_spruce_log"
+        }
+    },
+    "stripped_spruce_log_horizontal": {
+        "textures": {
+            "down": "minecraft:block/stripped_spruce_log_top",
+            "up": "minecraft:block/stripped_spruce_log_top",
+            "north": "minecraft:block/stripped_spruce_log",
+            "south": "minecraft:block/stripped_spruce_log",
+            "west": "minecraft:block/stripped_spruce_log",
+            "east": "minecraft:block/stripped_spruce_log",
+            "particle": "minecraft:block/stripped_spruce_log"
+        }
+    },
+    "stripped_spruce_wood": {
+        "textures": {
+            "down": "minecraft:block/stripped_spruce_log",
+            "up": "minecraft:block/stripped_spruce_log",
+            "north": "minecraft:block/stripped_spruce_log",
+            "south": "minecraft:block/stripped_spruce_log",
+            "west": "minecraft:block/stripped_spruce_log",
+            "east": "minecraft:block/stripped_spruce_log",
+            "particle": "minecraft:block/stripped_spruce_log"
+        }
+    },
+    "stripped_warped_hyphae": {
+        "textures": {
+            "down": "minecraft:block/stripped_warped_stem",
+            "up": "minecraft:block/stripped_warped_stem",
+            "north": "minecraft:block/stripped_warped_stem",
+            "south": "minecraft:block/stripped_warped_stem",
+            "west": "minecraft:block/stripped_warped_stem",
+            "east": "minecraft:block/stripped_warped_stem",
+            "particle": "minecraft:block/stripped_warped_stem"
+        }
+    },
+    "stripped_warped_stem": {
+        "textures": {
+            "down": "minecraft:block/stripped_warped_stem_top",
+            "up": "minecraft:block/stripped_warped_stem_top",
+            "north": "minecraft:block/stripped_warped_stem",
+            "south": "minecraft:block/stripped_warped_stem",
+            "west": "minecraft:block/stripped_warped_stem",
+            "east": "minecraft:block/stripped_warped_stem",
+            "particle": "minecraft:block/stripped_warped_stem"
+        }
+    },
+    "structure_block": {
+        "textures": {
+            "down": "minecraft:block/structure_block",
+            "up": "minecraft:block/structure_block",
+            "north": "minecraft:block/structure_block",
+            "south": "minecraft:block/structure_block",
+            "west": "minecraft:block/structure_block",
+            "east": "minecraft:block/structure_block",
+            "particle": "minecraft:block/structure_block"
+        }
+    },
+    "structure_block_corner": {
+        "textures": {
+            "down": "minecraft:block/structure_block_corner",
+            "up": "minecraft:block/structure_block_corner",
+            "north": "minecraft:block/structure_block_corner",
+            "south": "minecraft:block/structure_block_corner",
+            "west": "minecraft:block/structure_block_corner",
+            "east": "minecraft:block/structure_block_corner",
+            "particle": "minecraft:block/structure_block_corner"
+        }
+    },
+    "structure_block_data": {
+        "textures": {
+            "down": "minecraft:block/structure_block_data",
+            "up": "minecraft:block/structure_block_data",
+            "north": "minecraft:block/structure_block_data",
+            "south": "minecraft:block/structure_block_data",
+            "west": "minecraft:block/structure_block_data",
+            "east": "minecraft:block/structure_block_data",
+            "particle": "minecraft:block/structure_block_data"
+        }
+    },
+    "structure_block_load": {
+        "textures": {
+            "down": "minecraft:block/structure_block_load",
+            "up": "minecraft:block/structure_block_load",
+            "north": "minecraft:block/structure_block_load",
+            "south": "minecraft:block/structure_block_load",
+            "west": "minecraft:block/structure_block_load",
+            "east": "minecraft:block/structure_block_load",
+            "particle": "minecraft:block/structure_block_load"
+        }
+    },
+    "structure_block_save": {
+        "textures": {
+            "down": "minecraft:block/structure_block_save",
+            "up": "minecraft:block/structure_block_save",
+            "north": "minecraft:block/structure_block_save",
+            "south": "minecraft:block/structure_block_save",
+            "west": "minecraft:block/structure_block_save",
+            "east": "minecraft:block/structure_block_save",
+            "particle": "minecraft:block/structure_block_save"
+        }
+    },
+    "suspicious_gravel_0": {
+        "textures": {
+            "down": "minecraft:block/suspicious_gravel_0",
+            "up": "minecraft:block/suspicious_gravel_0",
+            "north": "minecraft:block/suspicious_gravel_0",
+            "south": "minecraft:block/suspicious_gravel_0",
+            "west": "minecraft:block/suspicious_gravel_0",
+            "east": "minecraft:block/suspicious_gravel_0",
+            "particle": "minecraft:block/suspicious_gravel_0"
+        }
+    },
+    "suspicious_gravel_1": {
+        "textures": {
+            "down": "minecraft:block/suspicious_gravel_1",
+            "up": "minecraft:block/suspicious_gravel_1",
+            "north": "minecraft:block/suspicious_gravel_1",
+            "south": "minecraft:block/suspicious_gravel_1",
+            "west": "minecraft:block/suspicious_gravel_1",
+            "east": "minecraft:block/suspicious_gravel_1",
+            "particle": "minecraft:block/suspicious_gravel_1"
+        }
+    },
+    "suspicious_gravel_2": {
+        "textures": {
+            "down": "minecraft:block/suspicious_gravel_2",
+            "up": "minecraft:block/suspicious_gravel_2",
+            "north": "minecraft:block/suspicious_gravel_2",
+            "south": "minecraft:block/suspicious_gravel_2",
+            "west": "minecraft:block/suspicious_gravel_2",
+            "east": "minecraft:block/suspicious_gravel_2",
+            "particle": "minecraft:block/suspicious_gravel_2"
+        }
+    },
+    "suspicious_gravel_3": {
+        "textures": {
+            "down": "minecraft:block/suspicious_gravel_3",
+            "up": "minecraft:block/suspicious_gravel_3",
+            "north": "minecraft:block/suspicious_gravel_3",
+            "south": "minecraft:block/suspicious_gravel_3",
+            "west": "minecraft:block/suspicious_gravel_3",
+            "east": "minecraft:block/suspicious_gravel_3",
+            "particle": "minecraft:block/suspicious_gravel_3"
+        }
+    },
+    "suspicious_sand_0": {
+        "textures": {
+            "down": "minecraft:block/suspicious_sand_0",
+            "up": "minecraft:block/suspicious_sand_0",
+            "north": "minecraft:block/suspicious_sand_0",
+            "south": "minecraft:block/suspicious_sand_0",
+            "west": "minecraft:block/suspicious_sand_0",
+            "east": "minecraft:block/suspicious_sand_0",
+            "particle": "minecraft:block/suspicious_sand_0"
+        }
+    },
+    "suspicious_sand_1": {
+        "textures": {
+            "down": "minecraft:block/suspicious_sand_1",
+            "up": "minecraft:block/suspicious_sand_1",
+            "north": "minecraft:block/suspicious_sand_1",
+            "south": "minecraft:block/suspicious_sand_1",
+            "west": "minecraft:block/suspicious_sand_1",
+            "east": "minecraft:block/suspicious_sand_1",
+            "particle": "minecraft:block/suspicious_sand_1"
+        }
+    },
+    "suspicious_sand_2": {
+        "textures": {
+            "down": "minecraft:block/suspicious_sand_2",
+            "up": "minecraft:block/suspicious_sand_2",
+            "north": "minecraft:block/suspicious_sand_2",
+            "south": "minecraft:block/suspicious_sand_2",
+            "west": "minecraft:block/suspicious_sand_2",
+            "east": "minecraft:block/suspicious_sand_2",
+            "particle": "minecraft:block/suspicious_sand_2"
+        }
+    },
+    "suspicious_sand_3": {
+        "textures": {
+            "down": "minecraft:block/suspicious_sand_3",
+            "up": "minecraft:block/suspicious_sand_3",
+            "north": "minecraft:block/suspicious_sand_3",
+            "south": "minecraft:block/suspicious_sand_3",
+            "west": "minecraft:block/suspicious_sand_3",
+            "east": "minecraft:block/suspicious_sand_3",
+            "particle": "minecraft:block/suspicious_sand_3"
+        }
+    },
+    "target": {
+        "textures": {
+            "down": "minecraft:block/target_top",
+            "up": "minecraft:block/target_top",
+            "north": "minecraft:block/target_side",
+            "south": "minecraft:block/target_side",
+            "west": "minecraft:block/target_side",
+            "east": "minecraft:block/target_side",
+            "particle": "minecraft:block/target_side"
+        }
+    },
+    "terracotta": {
+        "textures": {
+            "down": "minecraft:block/terracotta",
+            "up": "minecraft:block/terracotta",
+            "north": "minecraft:block/terracotta",
+            "south": "minecraft:block/terracotta",
+            "west": "minecraft:block/terracotta",
+            "east": "minecraft:block/terracotta",
+            "particle": "minecraft:block/terracotta"
+        }
+    },
+    "test_block_accept": {
+        "textures": {
+            "down": "minecraft:block/test_block_accept",
+            "up": "minecraft:block/test_block_accept",
+            "north": "minecraft:block/test_block_accept",
+            "south": "minecraft:block/test_block_accept",
+            "west": "minecraft:block/test_block_accept",
+            "east": "minecraft:block/test_block_accept",
+            "particle": "minecraft:block/test_block_accept"
+        }
+    },
+    "test_block_fail": {
+        "textures": {
+            "down": "minecraft:block/test_block_fail",
+            "up": "minecraft:block/test_block_fail",
+            "north": "minecraft:block/test_block_fail",
+            "south": "minecraft:block/test_block_fail",
+            "west": "minecraft:block/test_block_fail",
+            "east": "minecraft:block/test_block_fail",
+            "particle": "minecraft:block/test_block_fail"
+        }
+    },
+    "test_block_log": {
+        "textures": {
+            "down": "minecraft:block/test_block_log",
+            "up": "minecraft:block/test_block_log",
+            "north": "minecraft:block/test_block_log",
+            "south": "minecraft:block/test_block_log",
+            "west": "minecraft:block/test_block_log",
+            "east": "minecraft:block/test_block_log",
+            "particle": "minecraft:block/test_block_log"
+        }
+    },
+    "test_block_start": {
+        "textures": {
+            "down": "minecraft:block/test_block_start",
+            "up": "minecraft:block/test_block_start",
+            "north": "minecraft:block/test_block_start",
+            "south": "minecraft:block/test_block_start",
+            "west": "minecraft:block/test_block_start",
+            "east": "minecraft:block/test_block_start",
+            "particle": "minecraft:block/test_block_start"
+        }
+    },
+    "test_instance_block": {
+        "textures": {
+            "down": "minecraft:block/test_instance_block",
+            "up": "minecraft:block/test_instance_block",
+            "north": "minecraft:block/test_instance_block",
+            "south": "minecraft:block/test_instance_block",
+            "west": "minecraft:block/test_instance_block",
+            "east": "minecraft:block/test_instance_block",
+            "particle": "minecraft:block/test_instance_block"
+        }
+    },
+    "tinted_glass": {
+        "textures": {
+            "down": "minecraft:block/tinted_glass",
+            "up": "minecraft:block/tinted_glass",
+            "north": "minecraft:block/tinted_glass",
+            "south": "minecraft:block/tinted_glass",
+            "west": "minecraft:block/tinted_glass",
+            "east": "minecraft:block/tinted_glass",
+            "particle": "minecraft:block/tinted_glass"
+        }
+    },
+    "tube_coral_block": {
+        "textures": {
+            "down": "minecraft:block/tube_coral_block",
+            "up": "minecraft:block/tube_coral_block",
+            "north": "minecraft:block/tube_coral_block",
+            "south": "minecraft:block/tube_coral_block",
+            "west": "minecraft:block/tube_coral_block",
+            "east": "minecraft:block/tube_coral_block",
+            "particle": "minecraft:block/tube_coral_block"
+        }
+    },
+    "tuff": {
+        "textures": {
+            "down": "minecraft:block/tuff",
+            "up": "minecraft:block/tuff",
+            "north": "minecraft:block/tuff",
+            "south": "minecraft:block/tuff",
+            "west": "minecraft:block/tuff",
+            "east": "minecraft:block/tuff",
+            "particle": "minecraft:block/tuff"
+        }
+    },
+    "tuff_bricks": {
+        "textures": {
+            "down": "minecraft:block/tuff_bricks",
+            "up": "minecraft:block/tuff_bricks",
+            "north": "minecraft:block/tuff_bricks",
+            "south": "minecraft:block/tuff_bricks",
+            "west": "minecraft:block/tuff_bricks",
+            "east": "minecraft:block/tuff_bricks",
+            "particle": "minecraft:block/tuff_bricks"
+        }
+    },
+    "verdant_froglight": {
+        "textures": {
+            "down": "minecraft:block/verdant_froglight_top",
+            "up": "minecraft:block/verdant_froglight_top",
+            "north": "minecraft:block/verdant_froglight_side",
+            "south": "minecraft:block/verdant_froglight_side",
+            "west": "minecraft:block/verdant_froglight_side",
+            "east": "minecraft:block/verdant_froglight_side",
+            "particle": "minecraft:block/verdant_froglight_side"
+        }
+    },
+    "verdant_froglight_horizontal": {
+        "textures": {
+            "down": "minecraft:block/verdant_froglight_top",
+            "up": "minecraft:block/verdant_froglight_top",
+            "north": "minecraft:block/verdant_froglight_side",
+            "south": "minecraft:block/verdant_froglight_side",
+            "west": "minecraft:block/verdant_froglight_side",
+            "east": "minecraft:block/verdant_froglight_side",
+            "particle": "minecraft:block/verdant_froglight_side"
+        }
+    },
+    "warped_hyphae": {
+        "textures": {
+            "down": "minecraft:block/warped_stem",
+            "up": "minecraft:block/warped_stem",
+            "north": "minecraft:block/warped_stem",
+            "south": "minecraft:block/warped_stem",
+            "west": "minecraft:block/warped_stem",
+            "east": "minecraft:block/warped_stem",
+            "particle": "minecraft:block/warped_stem"
+        }
+    },
+    "warped_planks": {
+        "textures": {
+            "down": "minecraft:block/warped_planks",
+            "up": "minecraft:block/warped_planks",
+            "north": "minecraft:block/warped_planks",
+            "south": "minecraft:block/warped_planks",
+            "west": "minecraft:block/warped_planks",
+            "east": "minecraft:block/warped_planks",
+            "particle": "minecraft:block/warped_planks"
+        }
+    },
+    "warped_stem": {
+        "textures": {
+            "down": "minecraft:block/warped_stem_top",
+            "up": "minecraft:block/warped_stem_top",
+            "north": "minecraft:block/warped_stem",
+            "south": "minecraft:block/warped_stem",
+            "west": "minecraft:block/warped_stem",
+            "east": "minecraft:block/warped_stem",
+            "particle": "minecraft:block/warped_stem"
+        }
+    },
+    "warped_wart_block": {
+        "textures": {
+            "down": "minecraft:block/warped_wart_block",
+            "up": "minecraft:block/warped_wart_block",
+            "north": "minecraft:block/warped_wart_block",
+            "south": "minecraft:block/warped_wart_block",
+            "west": "minecraft:block/warped_wart_block",
+            "east": "minecraft:block/warped_wart_block",
+            "particle": "minecraft:block/warped_wart_block"
+        }
+    },
+    "weathered_chiseled_copper": {
+        "textures": {
+            "down": "minecraft:block/weathered_chiseled_copper",
+            "up": "minecraft:block/weathered_chiseled_copper",
+            "north": "minecraft:block/weathered_chiseled_copper",
+            "south": "minecraft:block/weathered_chiseled_copper",
+            "west": "minecraft:block/weathered_chiseled_copper",
+            "east": "minecraft:block/weathered_chiseled_copper",
+            "particle": "minecraft:block/weathered_chiseled_copper"
+        }
+    },
+    "weathered_copper": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper",
+            "up": "minecraft:block/weathered_copper",
+            "north": "minecraft:block/weathered_copper",
+            "south": "minecraft:block/weathered_copper",
+            "west": "minecraft:block/weathered_copper",
+            "east": "minecraft:block/weathered_copper",
+            "particle": "minecraft:block/weathered_copper"
+        }
+    },
+    "weathered_copper_bulb": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper_bulb",
+            "up": "minecraft:block/weathered_copper_bulb",
+            "north": "minecraft:block/weathered_copper_bulb",
+            "south": "minecraft:block/weathered_copper_bulb",
+            "west": "minecraft:block/weathered_copper_bulb",
+            "east": "minecraft:block/weathered_copper_bulb",
+            "particle": "minecraft:block/weathered_copper_bulb"
+        }
+    },
+    "weathered_copper_bulb_lit": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper_bulb_lit",
+            "up": "minecraft:block/weathered_copper_bulb_lit",
+            "north": "minecraft:block/weathered_copper_bulb_lit",
+            "south": "minecraft:block/weathered_copper_bulb_lit",
+            "west": "minecraft:block/weathered_copper_bulb_lit",
+            "east": "minecraft:block/weathered_copper_bulb_lit",
+            "particle": "minecraft:block/weathered_copper_bulb_lit"
+        }
+    },
+    "weathered_copper_bulb_lit_powered": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "up": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "north": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "south": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "west": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "east": "minecraft:block/weathered_copper_bulb_lit_powered",
+            "particle": "minecraft:block/weathered_copper_bulb_lit_powered"
+        }
+    },
+    "weathered_copper_bulb_powered": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper_bulb_powered",
+            "up": "minecraft:block/weathered_copper_bulb_powered",
+            "north": "minecraft:block/weathered_copper_bulb_powered",
+            "south": "minecraft:block/weathered_copper_bulb_powered",
+            "west": "minecraft:block/weathered_copper_bulb_powered",
+            "east": "minecraft:block/weathered_copper_bulb_powered",
+            "particle": "minecraft:block/weathered_copper_bulb_powered"
+        }
+    },
+    "weathered_copper_grate": {
+        "textures": {
+            "down": "minecraft:block/weathered_copper_grate",
+            "up": "minecraft:block/weathered_copper_grate",
+            "north": "minecraft:block/weathered_copper_grate",
+            "south": "minecraft:block/weathered_copper_grate",
+            "west": "minecraft:block/weathered_copper_grate",
+            "east": "minecraft:block/weathered_copper_grate",
+            "particle": "minecraft:block/weathered_copper_grate"
+        }
+    },
+    "weathered_cut_copper": {
+        "textures": {
+            "down": "minecraft:block/weathered_cut_copper",
+            "up": "minecraft:block/weathered_cut_copper",
+            "north": "minecraft:block/weathered_cut_copper",
+            "south": "minecraft:block/weathered_cut_copper",
+            "west": "minecraft:block/weathered_cut_copper",
+            "east": "minecraft:block/weathered_cut_copper",
+            "particle": "minecraft:block/weathered_cut_copper"
+        }
+    },
+    "wet_sponge": {
+        "textures": {
+            "down": "minecraft:block/wet_sponge",
+            "up": "minecraft:block/wet_sponge",
+            "north": "minecraft:block/wet_sponge",
+            "south": "minecraft:block/wet_sponge",
+            "west": "minecraft:block/wet_sponge",
+            "east": "minecraft:block/wet_sponge",
+            "particle": "minecraft:block/wet_sponge"
+        }
+    },
+    "white_concrete": {
+        "textures": {
+            "down": "minecraft:block/white_concrete",
+            "up": "minecraft:block/white_concrete",
+            "north": "minecraft:block/white_concrete",
+            "south": "minecraft:block/white_concrete",
+            "west": "minecraft:block/white_concrete",
+            "east": "minecraft:block/white_concrete",
+            "particle": "minecraft:block/white_concrete"
+        }
+    },
+    "white_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/white_concrete_powder",
+            "up": "minecraft:block/white_concrete_powder",
+            "north": "minecraft:block/white_concrete_powder",
+            "south": "minecraft:block/white_concrete_powder",
+            "west": "minecraft:block/white_concrete_powder",
+            "east": "minecraft:block/white_concrete_powder",
+            "particle": "minecraft:block/white_concrete_powder"
+        }
+    },
+    "white_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/white_stained_glass",
+            "up": "minecraft:block/white_stained_glass",
+            "north": "minecraft:block/white_stained_glass",
+            "south": "minecraft:block/white_stained_glass",
+            "west": "minecraft:block/white_stained_glass",
+            "east": "minecraft:block/white_stained_glass",
+            "particle": "minecraft:block/white_stained_glass"
+        }
+    },
+    "white_terracotta": {
+        "textures": {
+            "down": "minecraft:block/white_terracotta",
+            "up": "minecraft:block/white_terracotta",
+            "north": "minecraft:block/white_terracotta",
+            "south": "minecraft:block/white_terracotta",
+            "west": "minecraft:block/white_terracotta",
+            "east": "minecraft:block/white_terracotta",
+            "particle": "minecraft:block/white_terracotta"
+        }
+    },
+    "white_wool": {
+        "textures": {
+            "down": "minecraft:block/white_wool",
+            "up": "minecraft:block/white_wool",
+            "north": "minecraft:block/white_wool",
+            "south": "minecraft:block/white_wool",
+            "west": "minecraft:block/white_wool",
+            "east": "minecraft:block/white_wool",
+            "particle": "minecraft:block/white_wool"
+        }
+    },
+    "yellow_concrete": {
+        "textures": {
+            "down": "minecraft:block/yellow_concrete",
+            "up": "minecraft:block/yellow_concrete",
+            "north": "minecraft:block/yellow_concrete",
+            "south": "minecraft:block/yellow_concrete",
+            "west": "minecraft:block/yellow_concrete",
+            "east": "minecraft:block/yellow_concrete",
+            "particle": "minecraft:block/yellow_concrete"
+        }
+    },
+    "yellow_concrete_powder": {
+        "textures": {
+            "down": "minecraft:block/yellow_concrete_powder",
+            "up": "minecraft:block/yellow_concrete_powder",
+            "north": "minecraft:block/yellow_concrete_powder",
+            "south": "minecraft:block/yellow_concrete_powder",
+            "west": "minecraft:block/yellow_concrete_powder",
+            "east": "minecraft:block/yellow_concrete_powder",
+            "particle": "minecraft:block/yellow_concrete_powder"
+        }
+    },
+    "yellow_stained_glass": {
+        "textures": {
+            "down": "minecraft:block/yellow_stained_glass",
+            "up": "minecraft:block/yellow_stained_glass",
+            "north": "minecraft:block/yellow_stained_glass",
+            "south": "minecraft:block/yellow_stained_glass",
+            "west": "minecraft:block/yellow_stained_glass",
+            "east": "minecraft:block/yellow_stained_glass",
+            "particle": "minecraft:block/yellow_stained_glass"
+        }
+    },
+    "yellow_terracotta": {
+        "textures": {
+            "down": "minecraft:block/yellow_terracotta",
+            "up": "minecraft:block/yellow_terracotta",
+            "north": "minecraft:block/yellow_terracotta",
+            "south": "minecraft:block/yellow_terracotta",
+            "west": "minecraft:block/yellow_terracotta",
+            "east": "minecraft:block/yellow_terracotta",
+            "particle": "minecraft:block/yellow_terracotta"
+        }
+    },
+    "yellow_wool": {
+        "textures": {
+            "down": "minecraft:block/yellow_wool",
+            "up": "minecraft:block/yellow_wool",
+            "north": "minecraft:block/yellow_wool",
+            "south": "minecraft:block/yellow_wool",
+            "west": "minecraft:block/yellow_wool",
+            "east": "minecraft:block/yellow_wool",
+            "particle": "minecraft:block/yellow_wool"
+        }
+    }
+}
