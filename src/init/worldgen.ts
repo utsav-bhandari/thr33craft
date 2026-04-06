@@ -47,6 +47,12 @@ export function initWorldgen({
 }): void {
     const worldgenForm = requireWorldgenForm();
     const resetWorldButton = getResetWorldButton();
+    const submitButton = worldgenForm.querySelector<HTMLButtonElement>(
+        '.primary-button[type="submit"]',
+    );
+    if (submitButton) {
+        submitButton.disabled = false;
+    }
 
     worldgenForm.addEventListener("submit", async (event) => {
         event.preventDefault();
