@@ -4,6 +4,9 @@ export interface InventoryQueryChangeDetail {
     query: string;
 }
 
+/**
+ * Represents the search component of the inventory UI, allowing players to filter the displayed blocks based on a search query. This class manages the state of the search input and emits events when the query changes, enabling real-time filtering of the inventory grid based on user input. It also provides methods to clear the search input and enable or disable the search functionality as needed.
+ */
 export class InventorySearch extends BaseUIComponent {
     declare htmlElement: HTMLDivElement;
     inputElement: HTMLInputElement;

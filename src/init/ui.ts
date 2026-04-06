@@ -7,7 +7,7 @@ import type {
     LoadBlockTextureSheetOptions,
     UIModalLike,
 } from "@project-types";
-import type { PointerLockControls } from "three/addons/controls/PointerLockControls";
+import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
 import { UIHandler } from "@/engine/UIHandler";
 import { getAllBlockTextureNames } from "@/engine/blockLoader";
@@ -15,6 +15,8 @@ import { generateBlockTextureSheet } from "@/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@/init/loadBlockTextureSheet";
 
+/** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
+ * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
 export function initUI({
     inputManager,
     pointerControls,
@@ -107,6 +109,7 @@ async function initializeInventoryUI(
     }
 }
 
+/** Generates a block texture sheet from scratch based on the provided block names and options, and updates the inventory UI with the loading progress. This function is used when the block texture sheet needs to be dynamically created at runtime, allowing for customization of the texture sheet generation process and providing feedback to the user through the inventory UI. */
 async function generateTextureSheetFromScratch(
     inventoryUI: Inventory,
     blockNames: string[],
@@ -126,6 +129,7 @@ async function generateTextureSheetFromScratch(
     });
 }
 
+/** Loads a block texture sheet from a static asset based on the provided block names and options, and updates the inventory UI with the loading progress. This function is used when a pre-generated block texture sheet is available as an asset, allowing for efficient loading of the texture sheet while providing feedback to the user through the inventory UI. */
 async function loadTextureSheetFromAsset(
     inventoryUI: Inventory,
     blockNames: string[],

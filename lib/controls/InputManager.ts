@@ -9,6 +9,7 @@ export class InputManager {
         this.keyStore = keyStore;
     }
 
+    /** Checks if the key mapped to the given action is currently pressed. Returns true if the key is pressed, false otherwise. */
     isPressed(action: string): boolean {
         const keyForAction = this.keyMap.getKey(action);
 

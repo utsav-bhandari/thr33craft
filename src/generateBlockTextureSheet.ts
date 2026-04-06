@@ -20,12 +20,14 @@ export async function generateBlockTextureSheet(
         options.renderScale ?? Math.min(window.devicePixelRatio || 1, 2);
     const onProgress = options.onProgress;
 
+    // generate the layout for the texture sheet based on the number of blocks and the specified columns and icon size
     const sheetLayout = createBlockTextureSheetLayout(
         blockNames.length,
         columns,
         iconSize,
     );
 
+    // create a canvas element to render the block textures onto, with dimensions based on the calculated layout and render scale
     const sheetCanvas = document.createElement("canvas");
     sheetCanvas.width = sheetLayout.logicalWidth * renderScale;
     sheetCanvas.height = sheetLayout.logicalHeight * renderScale;
@@ -38,6 +40,7 @@ export async function generateBlockTextureSheet(
     }
 
     sheetContext.imageSmoothingEnabled = true;
+    // Clear the canvas to ensure it's empty before rendering the block textures
     sheetContext.clearRect(0, 0, sheetCanvas.width, sheetCanvas.height);
 
     const renderer = new THREE.WebGLRenderer({
@@ -51,6 +54,7 @@ export async function generateBlockTextureSheet(
     renderer.setClearColor(0x000000, 0);
 
     const scene = new THREE.Scene();
+    // Set up an orthographic camera for rendering the block textures, with a position that allows it to capture the entire block model
     const camera = new THREE.OrthographicCamera(
         -1.15,
         1.15,
@@ -87,11 +91,14 @@ export async function generateBlockTextureSheet(
     );
     const totalBlocks = blockNames.length;
 
+    // Notify the progress callback that the texture sheet generation has started, with 0 completed blocks out of the total number of blocks to process
     onProgress?.({ completed: 0, total: totalBlocks });
 
     for (let index = 0; index < blockNames.length; index += 1) {
         const blockName = blockNames[index];
+
         const blockData = getBlockData(blockName);
+        // Create materials for the block based on its texture data, which will be used to render the block model onto the texture sheet
         const materials = await createBlockMaterials(blockData.textures ?? {});
 
         mesh.material = materials;

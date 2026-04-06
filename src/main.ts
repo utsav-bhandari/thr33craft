@@ -4,6 +4,9 @@ import { initScene } from "@/init/scene";
 import { initSystem } from "@/init/system";
 import { initWorldgen } from "@/init/worldgen";
 
+/**
+ * Bootstraps the application by initializing the scene, system, and world generation, and starts the animation loop for rendering the scene. This function is responsible for setting up the core components of the application and ensuring that everything is ready for the game to run smoothly.
+ */
 async function bootstrap(): Promise<void> {
     const { scene, renderer, camera, pointerControls } =
         initScene(SCENE_INIT_CONFIG);

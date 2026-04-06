@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import type { PerspectiveCamera, Scene, WebGLRenderer } from "three";
-import { PointerLockControls } from "three/addons/controls/PointerLockControls";
+import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import type { SceneInitConfig, Vector3Tuple } from "@project-types";
 import { WORLD_PARAMS } from "@/config";
 
@@ -68,6 +68,7 @@ export function initScene(options: SceneInitConfig = {}): {
         scene.add(new THREE.AmbientLight(ambientColor, ambientIntensity));
     }
 
+    // Initialize pointer lock controls for first-person camera movement, allowing the player to look around the scene using mouse movement while the pointer is locked to the canvas. This provides an immersive experience for navigating the 3D environment.
     const pointerControls = new PointerLockControls(
         camera,
         renderer.domElement,

@@ -15,6 +15,7 @@ export class BaseUIComponent {
         this.htmlElement.classList.add("hidden");
     }
 
+    /** Registers an event handler for the specified event name. Returns a function to unregister the handler. */
     on(
         eventName: string,
         handler?: EventListenerOrEventListenerObject | null,
@@ -31,6 +32,7 @@ export class BaseUIComponent {
         };
     }
 
+    /** Unregisters an event handler for the specified event name. */
     off(
         eventName: string,
         handler?: EventListenerOrEventListenerObject | null,
@@ -43,6 +45,7 @@ export class BaseUIComponent {
         this.events.removeEventListener(eventName, handler, options);
     }
 
+    /** Emits a custom event with the specified name and optional detail data. Returns true if the event was not canceled, false otherwise. */
     emit(eventName: string, detail?: unknown): boolean {
         return this.events.dispatchEvent(
             new CustomEvent(eventName, { detail }),
