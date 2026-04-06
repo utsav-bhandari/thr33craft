@@ -6,7 +6,7 @@ import type {
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
-} from "@/blockTextureSheetLayout";
+} from "@/init/blockTextureSheetLayout";
 import { createBlockMaterials, getBlockData } from "@/engine/blockLoader";
 
 export async function generateBlockTextureSheet(
