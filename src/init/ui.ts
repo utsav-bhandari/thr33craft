@@ -11,7 +11,7 @@ import type { PointerLockControls } from "three/addons/controls/PointerLockContr
 import { BaseUIModal } from "@lib/base/BaseUIModal";
 import { UIHandler } from "@/engine/UIHandler";
 import { getAllBlockTextureNames } from "@/engine/blockLoader";
-import { generateBlockTextureSheet } from "@/generateBlockTextureSheet";
+import { generateBlockTextureSheet } from "@/init/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@/init/loadBlockTextureSheet";
 
