@@ -1,6 +1,6 @@
 import type { Camera, Scene, WebGLRenderer } from "three";
 import type { InputManagerLike, PlayerControllerLike } from "@project-types";
-import { BaseSystem } from "@lib/base/BaseSystem.js";
+import { BaseSystem } from "@lib/base/BaseSystem";
 import type { UIHandler } from "@/engine/UIHandler.js";
 
 export class System extends BaseSystem {
@@ -28,7 +28,9 @@ export class System extends BaseSystem {
         worldCamera: Camera,
     ): void {
         const deltaTime =
-            this.lastFrameTime === null ? 0 : (time - this.lastFrameTime) / 1000;
+            this.lastFrameTime === null
+                ? 0
+                : (time - this.lastFrameTime) / 1000;
         this.lastFrameTime = time;
 
         if (!this.uiHandler.isUIOpen()) {

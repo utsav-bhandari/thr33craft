@@ -103,7 +103,9 @@ export async function createRuntimeBlockTextureAtlas({
     };
 }
 
-export function createAtlasMappedBoxGeometry(faceUvs: AtlasUvRect[]): THREE.BoxGeometry {
+export function createAtlasMappedBoxGeometry(
+    faceUvs: AtlasUvRect[],
+): THREE.BoxGeometry {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const uvAttribute = geometry.getAttribute("uv");
 
@@ -114,8 +116,16 @@ export function createAtlasMappedBoxGeometry(faceUvs: AtlasUvRect[]): THREE.BoxG
             const attributeIndex = vertexOffset + vertexIndex;
             uvAttribute.setXY(
                 attributeIndex,
-                lerp(uvRect.minU, uvRect.maxU, uvAttribute.getX(attributeIndex)),
-                lerp(uvRect.minV, uvRect.maxV, uvAttribute.getY(attributeIndex)),
+                lerp(
+                    uvRect.minU,
+                    uvRect.maxU,
+                    uvAttribute.getX(attributeIndex),
+                ),
+                lerp(
+                    uvRect.minV,
+                    uvRect.maxV,
+                    uvAttribute.getY(attributeIndex),
+                ),
             );
         }
     });
@@ -159,7 +169,10 @@ function createAtlasLayout(textureCount: number): AtlasLayout {
     };
 }
 
-function getTilePosition(index: number, atlasLayout: AtlasLayout): TilePosition {
+function getTilePosition(
+    index: number,
+    atlasLayout: AtlasLayout,
+): TilePosition {
     const column = index % atlasLayout.tilesPerSide;
     const row = Math.floor(index / atlasLayout.tilesPerSide);
 
@@ -194,7 +207,9 @@ function nextPowerOfTwo(value: number): number {
     return 2 ** Math.ceil(Math.log2(value));
 }
 
-async function loadTextureImage(textureKey: string): Promise<HTMLImageElement | null> {
+async function loadTextureImage(
+    textureKey: string,
+): Promise<HTMLImageElement | null> {
     if (imageCache.has(textureKey)) {
         return imageCache.get(textureKey) ?? null;
     }

@@ -1,6 +1,11 @@
 import * as THREE from "three";
 import blocksJson from "@blocks";
-import type { AtlasState, BlockData, BlocksByName, GeometryMaterialPair } from "@project-types";
+import type {
+    AtlasState,
+    BlockData,
+    BlocksByName,
+    GeometryMaterialPair,
+} from "@project-types";
 import {
     createAtlasMappedBoxGeometry,
     createRuntimeBlockTextureAtlas,
@@ -119,7 +124,10 @@ export async function createBlockMesh(
     );
 }
 
-function getBlockGeometry(blockName: string, atlasState: AtlasState): THREE.BoxGeometry {
+function getBlockGeometry(
+    blockName: string,
+    atlasState: AtlasState,
+): THREE.BoxGeometry {
     const cachedGeometry = blockGeometryCache.get(blockName);
     if (cachedGeometry) {
         return cachedGeometry;
@@ -135,7 +143,9 @@ function getBlockGeometry(blockName: string, atlasState: AtlasState): THREE.BoxG
     return geometry;
 }
 
-function getAtlasMaterial(atlasTexture: THREE.Texture): THREE.MeshStandardMaterial {
+function getAtlasMaterial(
+    atlasTexture: THREE.Texture,
+): THREE.MeshStandardMaterial {
     const cachedMaterial = atlasMaterialCache.get(atlasTexture);
     if (cachedMaterial) {
         return cachedMaterial;

@@ -74,7 +74,9 @@ export class Inventory extends BaseUIModal {
                 return;
             }
 
-            const detail = event.detail as InventoryQueryChangeDetail | undefined;
+            const detail = event.detail as
+                | InventoryQueryChangeDetail
+                | undefined;
             this.applyFilter(detail?.query ?? "");
         });
 
@@ -126,8 +128,11 @@ export class Inventory extends BaseUIModal {
     }
 
     applyFilter(query: string): void {
-        const { query: normalizedQuery, totalCount, visibleCount } =
-            this.gridComponent.applyFilter(query);
+        const {
+            query: normalizedQuery,
+            totalCount,
+            visibleCount,
+        } = this.gridComponent.applyFilter(query);
 
         this.statusElement.textContent = normalizedQuery
             ? `${visibleCount} of ${totalCount} blocks`

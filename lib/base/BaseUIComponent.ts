@@ -44,6 +44,8 @@ export class BaseUIComponent {
     }
 
     emit(eventName: string, detail?: unknown): boolean {
-        return this.events.dispatchEvent(new CustomEvent(eventName, { detail }));
+        return this.events.dispatchEvent(
+            new CustomEvent(eventName, { detail }),
+        );
     }
 }

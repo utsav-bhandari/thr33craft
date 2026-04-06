@@ -1,4 +1,7 @@
-import type { BlockTextureSheet, LoadBlockTextureSheetOptions } from "@project-types";
+import type {
+    BlockTextureSheet,
+    LoadBlockTextureSheetOptions,
+} from "@project-types";
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
@@ -38,7 +41,9 @@ export async function loadIndividualBlocks(
     };
 }
 
-function loadBlockTextureSheet(textureSheetUrl: string): Promise<HTMLImageElement> {
+function loadBlockTextureSheet(
+    textureSheetUrl: string,
+): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
         const image = new Image();
         image.addEventListener("load", () => resolve(image), { once: true });

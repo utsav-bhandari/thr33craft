@@ -34,16 +34,17 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     INVENTORY: "e",
 };
 
-export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams = {
-    source: "static",
-    staticTextureSheetUrl: "/assets/images/block-texture-sheet.png",
-    showDownloadButton: false,
-    downloadFileName: "block-texture-sheet.png",
-    columns: 16,
-    iconSize: 64,
-    chunkSize: 20,
-    renderScale: Math.min(window.devicePixelRatio || 1, 2),
-};
+export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams =
+    {
+        source: "static",
+        staticTextureSheetUrl: "/assets/images/block-texture-sheet.png",
+        showDownloadButton: false,
+        downloadFileName: "block-texture-sheet.png",
+        columns: 16,
+        iconSize: 64,
+        chunkSize: 20,
+        renderScale: Math.min(window.devicePixelRatio || 1, 2),
+    };
 
 export const gameParams: GameParams = {
     playerParams: {

@@ -22,7 +22,8 @@ export async function createInstancedFill({
         throw new Error("blockSize must be greater than zero.");
     }
 
-    const { geometry, material } = await getCachedGeometryAndMaterial(blockName);
+    const { geometry, material } =
+        await getCachedGeometryAndMaterial(blockName);
 
     const xCount = getBlockCount(endX - startX, blockSize);
     const zCount = getBlockCount(endZ - startZ, blockSize);

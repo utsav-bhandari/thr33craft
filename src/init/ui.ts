@@ -84,12 +84,16 @@ async function initializeInventoryUI(
 
         const textureSheet =
             source === "generated"
-                ? await generateTextureSheetFromScratch(inventoryUI, blockNames, {
-                      columns,
-                      iconSize,
-                      chunkSize,
-                      renderScale,
-                  })
+                ? await generateTextureSheetFromScratch(
+                      inventoryUI,
+                      blockNames,
+                      {
+                          columns,
+                          iconSize,
+                          chunkSize,
+                          renderScale,
+                      },
+                  )
                 : await loadTextureSheetFromAsset(inventoryUI, blockNames, {
                       textureSheetUrl: staticTextureSheetUrl,
                       columns,

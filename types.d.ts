@@ -90,8 +90,16 @@ export interface UIComponentLike {
     htmlElement: HTMLElement;
     show(): void;
     hide(): void;
-    on(eventName: string, handler?: EventListenerOrEventListenerObject | null, options?: AddEventListenerOptions | boolean): () => void;
-    off(eventName: string, handler?: EventListenerOrEventListenerObject | null, options?: EventListenerOptions | boolean): void;
+    on(
+        eventName: string,
+        handler?: EventListenerOrEventListenerObject | null,
+        options?: AddEventListenerOptions | boolean,
+    ): () => void;
+    off(
+        eventName: string,
+        handler?: EventListenerOrEventListenerObject | null,
+        options?: EventListenerOptions | boolean,
+    ): void;
     emit(eventName: string, detail?: unknown): boolean;
 }
 

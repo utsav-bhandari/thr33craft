@@ -26,7 +26,8 @@ export function initScene(options: SceneInitConfig = {}): {
     const { enabled: axesEnabled = true, size: axesSize = 100 } = axesHelper;
     const {
         enabled: gridEnabled = true,
-        size: gridSize = WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
+        size: gridSize = WORLD_PARAMS.BLOCK_SIZE *
+            WORLD_PARAMS.WORLD_SIZE_BLOCKS,
         divisions = WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
     } = grid;
     const {
@@ -67,7 +68,10 @@ export function initScene(options: SceneInitConfig = {}): {
         scene.add(new THREE.AmbientLight(ambientColor, ambientIntensity));
     }
 
-    const pointerControls = new PointerLockControls(camera, renderer.domElement);
+    const pointerControls = new PointerLockControls(
+        camera,
+        renderer.domElement,
+    );
 
     return {
         scene,
