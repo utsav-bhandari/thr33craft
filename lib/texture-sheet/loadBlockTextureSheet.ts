@@ -5,7 +5,8 @@ import type {
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
-} from "@/init/blockTextureSheetLayout";
+    // } from "@/init/texture-sheet/blockTextureSheetLayout";
+} from "@lib/texture-sheet/blockTextureSheetLayout";
 
 export async function loadIndividualBlocks(
     blockNames: string[],

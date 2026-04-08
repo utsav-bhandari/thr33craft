@@ -6,7 +6,7 @@ import type {
 } from "three";
 import type { WorldgenDimensions } from "@project-types";
 import type { System } from "@/engine/System";
-import { createInstancedFill } from "@generators/fill";
+import { createInstancedFill } from "@/engine/generators/fill";
 import { WORLD_PARAMS } from "@/config";
 
 function requireWorldgenForm(): HTMLFormElement {
@@ -79,6 +79,7 @@ async function buildUserRequestedGroundMesh({
     xBlocks,
     yBlocks,
     zBlocks,
+    blockName = WORLD_PARAMS.GROUND_BLOCK_NAME,
 }: WorldgenDimensions): Promise<
     InstancedMesh<BoxGeometry, MeshStandardMaterial>
 > {
@@ -93,7 +94,7 @@ async function buildUserRequestedGroundMesh({
     const startY = endY - ySpan;
 
     return createInstancedFill({
-        blockName: WORLD_PARAMS.GROUND_BLOCK_NAME,
+        blockName,
         blockSize,
         startX,
         startZ,

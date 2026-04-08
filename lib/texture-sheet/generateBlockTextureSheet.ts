@@ -6,7 +6,7 @@ import type {
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
-} from "@/init/blockTextureSheetLayout";
+} from "@lib/texture-sheet/blockTextureSheetLayout";
 import { getCachedGeometryAndMaterial } from "@/engine/blockLoader";
 
 export async function generateBlockTextureSheet(
@@ -142,6 +142,14 @@ export async function generateBlockTextureSheet(
         })),
         metadata,
     };
+}
+
+class Giver {
+    constructor(callbackfn: (resolve: (message: string) => void) => void) {
+        const yeller = (message: string) => console.log(message);
+
+        callbackfn(yeller);
+    }
 }
 
 function nextFrame(): Promise<void> {

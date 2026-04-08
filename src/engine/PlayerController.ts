@@ -69,6 +69,6 @@ export class PlayerController extends BasePlayerController {
 
         this.player.move(targetVelocity, 20, deltaTime);
         this.camera.position.copy(this.player.position);
-        this.camera.translateZ(10);
+        // this.camera.translateZ(10);
     }
 }

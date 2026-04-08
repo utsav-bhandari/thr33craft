@@ -66,7 +66,7 @@ export const WORLD_PARAMS = {
         y: 1,
         z: 1,
     },
-    GROUND_BLOCK_NAME: "glass",
+    GROUND_BLOCK_NAME: "gold_block",
     PLAYER_STARTING_POSITION,
 } as const;
 
@@ -91,8 +91,9 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
     },
     ambientLight: {
         enabled: true,
-        color: 0xffffff,
-        intensity: 1,
+        // color: 0xffffff,
+        color: 0xeeeeee,
+        intensity: 3,
     },
     renderer: {
         antialias: true,

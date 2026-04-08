@@ -38,6 +38,9 @@ export async function createInstancedFill({
     for (let yi = 0; yi < yCount; yi++) {
         for (let z = 0; z < zCount; z++) {
             for (let x = 0; x < xCount; x++) {
+                console.log(
+                    `Setting block at (x: ${x}, y: ${yi}, z: ${z}) - instance index: ${instanceIndex}`,
+                );
                 matrix.setPosition(
                     startX + x * blockSize + halfBlock,
                     startY + yi * blockSize + halfBlock,
