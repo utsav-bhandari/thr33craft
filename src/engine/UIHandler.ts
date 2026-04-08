@@ -1,6 +1,7 @@
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import type { InputManagerLike, UIModalLike } from "@project-types";
 import { BaseUIHandler } from "@lib/base/BaseUIHandler";
+import { debug } from "@logger";
 
 export class UIHandler extends BaseUIHandler {
     modals: Map<string, UIModalLike>;
@@ -29,8 +30,8 @@ export class UIHandler extends BaseUIHandler {
         this.modalListeners.set(
             name,
             modal.on("close-request", () => {
-                if (this.activeUI === modal) {
-                    this.closeActiveUI();
+                if (this.isActiveUI(modal)) {
+                    this.closeUI(modal);
                 }
             }),
         );
@@ -38,37 +39,39 @@ export class UIHandler extends BaseUIHandler {
         return modal;
     }
 
-    getModal(name: string): UIModalLike | null {
-        return this.modals.get(name) ?? null;
-    }
-
-    openModal(name: string): boolean {
-        return this.setActiveUI(this.requireModal(name));
-    }
-
-    toggleModal(name: string): boolean {
-        return this.toggle(this.requireModal(name));
-    }
-
-    closeModal(name: string): boolean {
-        const modal = this.requireModal(name);
-
-        if (this.activeUI === modal) {
-            return this.closeActiveUI();
-        }
-
-        modal.close();
-        return false;
-    }
-
-    /** Ensures that a modal with the specified name exists and returns it. Throws an error if the modal is not found. */
-    requireModal(name: string): UIModalLike {
+    closeModal(name: string): void {
         const modal = this.getModal(name);
 
-        if (!modal) {
-            throw new Error(`Unknown modal: ${name}`);
+        if (this.isActiveUI(modal)) {
+            debug(`Closing modal: ${name}`);
+            this.closeUI(modal);
         }
+    }
 
-        return modal;
+    openModal(name: string): void {
+        const modal = this.getModal(name);
+        debug(`Opening modal: ${name}`);
+        this.setActiveUI(modal);
+    }
+
+    /** Toggles the specified UI modal, opening it if it's currently closed or closing it if it's currently open.*/
+    toggleModal(name: string): void {
+        const modal = this.getModal(name);
+
+        if (this.isActiveUI(modal)) {
+            debug(`Closing modal: ${name}`);
+            this.closeUI(modal);
+            return;
+        }
+        debug(`Opening modal: ${name}`);
+        this.setActiveUI(modal);
+    }
+
+    /** Ensures that a modal with the specified name exists for all callers. */
+    getModal(name: string): UIModalLike {
+        if (!this.modals.has(name)) {
+            throw new Error(`No modal registered with name: ${name}`);
+        }
+        return this.modals.get(name)!;
     }
 }

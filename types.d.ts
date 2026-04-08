@@ -101,7 +101,7 @@ export interface UIComponentLike {
 export interface UIModalLike extends UIComponentLike {
     open(): void;
     close(): void;
-    isOpen(): boolean;
+    isVisible(): boolean;
 }
 
 export interface KeyMapLike {

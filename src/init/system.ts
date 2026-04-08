@@ -125,7 +125,7 @@ function registerHandlers({
     });
 
     addKeyHandler("keydown", () => {
-        if (worldgen?.isOpen()) {
+        if (worldgen?.isVisible()) {
             return;
         }
 
@@ -135,7 +135,7 @@ function registerHandlers({
     });
 
     addKeyHandler("keydown", () => {
-        if (worldgen?.isOpen()) {
+        if (worldgen?.isVisible()) {
             return;
         }
 
