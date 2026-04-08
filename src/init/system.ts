@@ -110,23 +110,18 @@ function registerHandlers({
         document.addEventListener(eventName, listener);
     };
 
-    const menu = uiHandler.getModal("menu");
+    const focusWarning = createWindowFocusWarning();
+
     const worldgen = uiHandler.getModal("worldgen");
 
     addKeyHandler("keydown", (key) => {
-        debug("Key down", key);
+        debug(key, "pressed");
         keyStore.addPressedKey(key);
     });
 
     addKeyHandler("keyup", (key) => {
-        debug("Key up", key);
+        debug(key, "released");
         keyStore.removePressedKey(key);
-    });
-
-    menu?.htmlElement.addEventListener("click", (event) => {
-        if (event.target === menu.htmlElement) {
-            uiHandler.closeModal("menu");
-        }
     });
 
     addKeyHandler("keydown", () => {
@@ -153,7 +148,21 @@ function registerHandlers({
     window.addEventListener("blur", () => {
         debug("Window blurred, clearing key store");
         keyStore.clear();
+        focusWarning.classList.add("visible");
     });
+
+    window.addEventListener("focus", () => {
+        debug("Window focused");
+        focusWarning.classList.remove("visible");
+    });
+}
+
+function createWindowFocusWarning(): HTMLElement {
+    const message = document.createElement("div");
+    message.className = "focus-window-message";
+    message.textContent = "Click on window to continue playing";
+    document.body.appendChild(message);
+    return message;
 }
 
 // Helper function to check if keyboard event target is an editable element to avoid interfering with typing in inputs, textareas, etc. This ensures that game controls do not interfere with standard text input behavior in the UI.

@@ -23,14 +23,14 @@ export class BaseUIHandler {
 
     closeActiveUI(): boolean {
         if (!this.activeUI) {
-            this.ptrControls.lock();
+            this.lockPointer();
             this.onActiveUIChange(this.activeUI);
             return false;
         }
 
         this.activeUI.close();
         this.activeUI = null;
-        this.ptrControls.lock();
+        this.lockPointer();
         this.onActiveUIChange(this.activeUI);
         return false;
     }
@@ -42,7 +42,7 @@ export class BaseUIHandler {
         }
 
         if (this.activeUI === newUI) {
-            this.ptrControls.unlock();
+            this.unlockPointer();
             this.onActiveUIChange(this.activeUI);
             return true;
         }
@@ -50,7 +50,7 @@ export class BaseUIHandler {
         this.activeUI?.close();
         this.activeUI = newUI;
         this.activeUI.open();
-        this.ptrControls.unlock();
+        this.unlockPointer();
         this.onActiveUIChange(this.activeUI);
         return true;
     }
@@ -62,5 +62,17 @@ export class BaseUIHandler {
         }
 
         return this.setActiveUI(ui);
+    }
+
+    lockPointer(): void {
+        this.ptrControls.lock();
+    }
+
+    unlockPointer(): void {
+        this.ptrControls.unlock();
+    }
+
+    isPointerLocked(): boolean {
+        return this.ptrControls.isLocked;
     }
 }

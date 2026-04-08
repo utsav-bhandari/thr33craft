@@ -20,10 +20,6 @@ export class UIHandler extends BaseUIHandler {
         document.body.classList.toggle("ui-open", activeUI !== null);
     }
 
-    isPointerLocked(): boolean {
-        return this.ptrControls.isLocked;
-    }
-
     /** Registers a new modal with the UI handler, replacing any existing modal with the same name and setting up an event listener to close the modal when a "close-request" event is emitted. This function ensures that only one instance of a modal with a given name exists at any time and that the UI state is properly managed when modals are opened or closed. */
     registerModal<T extends UIModalLike>(name: string, modal: T): T {
         const disposeListener = this.modalListeners.get(name);
