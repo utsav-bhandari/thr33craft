@@ -6,8 +6,8 @@ import type {
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
-} from "@lib/texture-sheet/blockTextureSheetLayout";
-import { getCachedGeometryAndMaterial } from "@/engine/blockLoader";
+} from "@libtexture/blockTextureSheetLayout";
+import { getCachedGeometryAndMaterial } from "@libtexture/blockLoader";
 
 export async function generateBlockTextureSheet(
     blockNames: string[],

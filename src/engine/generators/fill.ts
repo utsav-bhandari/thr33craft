@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import type { FillRegionOptions } from "@project-types";
-import { getCachedGeometryAndMaterial } from "@/engine/blockLoader";
+import { getCachedGeometryAndMaterial } from "@libtexture/blockLoader";
 
 function getBlockCount(span: number, blockSize: number): number {
     return Math.ceil(span / blockSize);

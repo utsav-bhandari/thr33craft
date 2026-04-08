@@ -10,10 +10,10 @@ import type {
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
 import { UIHandler } from "@/engine/UIHandler";
-import { getAllBlockTextureNames } from "@/engine/blockLoader";
-import { generateBlockTextureSheet } from "@lib/texture-sheet/generateBlockTextureSheet";
+import { getAllBlockTextureNames } from "@libtexture/blockLoader";
+import { generateBlockTextureSheet } from "@libtexture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
-import { loadIndividualBlocks } from "@lib/texture-sheet/loadBlockTextureSheet";
+import { loadIndividualBlocks } from "@libtexture/loadBlockTextureSheet";
 
 /** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
  * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */

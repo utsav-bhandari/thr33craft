@@ -5,7 +5,7 @@ import type { InitSystemArgs } from "@project-types";
 import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/config";
 import { PlayerController } from "@/engine/PlayerController";
 import { System } from "@/engine/System";
-import { createBlockMesh } from "@/engine/blockLoader";
+import { createBlockMesh } from "@libtexture/blockLoader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
 
