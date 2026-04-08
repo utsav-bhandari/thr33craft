@@ -10,7 +10,7 @@ import type {
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
 import { UIHandler } from "@/engine/UIHandler";
-import { getAllBlockTextureNames } from "@libtexture/blockLoader";
+import { getAllBlockTextureNames } from "@libtexture/block-loader";
 import { generateBlockTextureSheet } from "@libtexture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@libtexture/loadBlockTextureSheet";

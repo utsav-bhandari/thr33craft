@@ -6,7 +6,6 @@ import type {
     PlayerLike,
 } from "@project-types";
 import { BasePlayerController } from "@lib/base/BasePlayerController";
-import { thickness } from "three/tsl";
 
 export class PlayerController extends BasePlayerController {
     declare player: PlayerLike;
