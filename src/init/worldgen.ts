@@ -8,6 +8,7 @@ import type { WorldgenDimensions } from "@project-types";
 import type { System } from "@/engine/System";
 import { createInstancedFill } from "@/engine/generators/fill";
 import { WORLD_PARAMS } from "@/config";
+import { debug } from "@/logger";
 
 function requireWorldgenForm(): HTMLFormElement {
     const element = document.getElementById("worldgen-form");
@@ -60,17 +61,21 @@ export function initWorldgen({
         const xBlocks = getRequiredNumberField(worldgenForm, "x");
         const yBlocks = getRequiredNumberField(worldgenForm, "y");
         const zBlocks = getRequiredNumberField(worldgenForm, "z");
+        debug("Worldgen submitted", { xBlocks, yBlocks, zBlocks });
+
         const groundMesh = await buildUserRequestedGroundMesh({
             xBlocks,
             yBlocks,
             zBlocks,
         });
+        debug("Worldgen mesh created", { xBlocks, yBlocks, zBlocks });
 
         scene.add(groundMesh);
         system.uiHandler.closeModal("worldgen");
     });
 
     resetWorldButton?.addEventListener("click", () => {
+        debug("Reset world clicked");
         window.location.reload();
     });
 }

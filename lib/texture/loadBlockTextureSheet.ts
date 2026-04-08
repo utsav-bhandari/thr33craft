@@ -7,6 +7,7 @@ import {
     createBlockTextureSheetMetadata,
     // } from "@/init/texture-sheet/blockTextureSheetLayout";
 } from "@libtexture/blockTextureSheetLayout";
+import { debug } from "@/logger";
 
 export async function loadIndividualBlocks(
     blockNames: string[],
@@ -45,9 +46,17 @@ export async function loadIndividualBlocks(
 function loadBlockTextureSheet(
     textureSheetUrl: string,
 ): Promise<HTMLImageElement> {
+    debug("Loading block texture sheet", textureSheetUrl);
     return new Promise((resolve, reject) => {
         const image = new Image();
-        image.addEventListener("load", () => resolve(image), { once: true });
+        image.addEventListener(
+            "load",
+            () => {
+                debug("Block texture sheet loaded", textureSheetUrl);
+                resolve(image);
+            },
+            { once: true },
+        );
         image.addEventListener(
             "error",
             () => {

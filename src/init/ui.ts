@@ -14,6 +14,7 @@ import { getAllBlockTextureNames } from "@libtexture/blockLoader";
 import { generateBlockTextureSheet } from "@libtexture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@libtexture/loadBlockTextureSheet";
+import { debug } from "@/logger";
 
 /** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
  * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
@@ -50,6 +51,7 @@ export function initUI({
     );
 
     uiHandler.openModal("worldgen");
+    debug("Worldgen modal opened and inventory initialization started");
     void initializeInventoryUI(
         inventory,
         gameParams.inventoryBlockTextureSheetParams,
@@ -78,6 +80,13 @@ async function initializeInventoryUI(
             renderScale,
         } = blockTextureSheetConfig;
 
+        debug("Initializing inventory UI", {
+            source,
+            staticTextureSheetUrl,
+            columns,
+            iconSize,
+        });
+
         const textureSheet =
             source === "generated"
                 ? await generateTextureSheetFromScratch(
@@ -96,6 +105,10 @@ async function initializeInventoryUI(
                       iconSize,
                   });
 
+        debug("Inventory texture sheet loaded", {
+            source,
+            blockCount: blockNames.length,
+        });
         inventoryUI.setGridTextureSheet(textureSheet);
     } catch (error) {
         console.error(error);

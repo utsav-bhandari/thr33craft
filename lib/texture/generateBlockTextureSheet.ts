@@ -8,6 +8,7 @@ import {
     createBlockTextureSheetMetadata,
 } from "@libtexture/blockTextureSheetLayout";
 import { getCachedGeometryAndMaterial } from "@libtexture/blockLoader";
+import { debug } from "@/logger";
 
 export async function generateBlockTextureSheet(
     blockNames: string[],
@@ -90,12 +91,20 @@ export async function generateBlockTextureSheet(
         sheetLayout.backgroundSize,
     );
     const totalBlocks = blockNames.length;
+    debug("Starting texture sheet generation", {
+        totalBlocks,
+        columns,
+        iconSize,
+        chunkSize,
+        renderScale,
+    });
 
     // Notify the progress callback that the texture sheet generation has started, with 0 completed blocks out of the total number of blocks to process
     onProgress?.({ completed: 0, total: totalBlocks });
 
     for (let index = 0; index < blockNames.length; index += 1) {
         const blockName = blockNames[index];
+        debug("Generating texture sheet block", { index, blockName });
         const { geometry: blockGeometry, material: blockMaterial } =
             await getCachedGeometryAndMaterial(blockName);
 
@@ -142,14 +151,6 @@ export async function generateBlockTextureSheet(
         })),
         metadata,
     };
-}
-
-class Giver {
-    constructor(callbackfn: (resolve: (message: string) => void) => void) {
-        const yeller = (message: string) => console.log(message);
-
-        callbackfn(yeller);
-    }
 }
 
 function nextFrame(): Promise<void> {

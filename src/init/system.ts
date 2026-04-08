@@ -8,6 +8,7 @@ import { System } from "@/engine/System";
 import { createBlockMesh } from "@libtexture/blockLoader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
+import { debug } from "@/logger";
 
 /** Initializes the system, including the player, input manager, UI, and other core components */
 export async function initSystem({
@@ -50,9 +51,12 @@ export async function initSystem({
         pointerControls,
         gameParams,
     });
+    debug("UI initialized");
 
     // Create the player mesh and add it to the scene
+    debug("Creating player mesh", blockName);
     const playerMesh = await createBlockMesh(blockName);
+    debug("Player mesh created", { blockName });
     playerMesh.position.set(...spawnPosition);
     scene.add(playerMesh);
 
@@ -110,11 +114,12 @@ function registerHandlers({
     const worldgen = uiHandler.getModal("worldgen");
 
     addKeyHandler("keydown", (key) => {
-        console.log(`Key down: ${key}`);
+        debug("Key down", key);
         keyStore.addPressedKey(key);
     });
 
     addKeyHandler("keyup", (key) => {
+        debug("Key up", key);
         keyStore.removePressedKey(key);
     });
 
@@ -146,6 +151,7 @@ function registerHandlers({
 
     // If user switches tabs or the window loses focus, clear the key store to prevent stuck keys when they return to the game. This ensures that the game does not continue to register keys as pressed when the user is not actively interacting with the game, providing a smoother and more intuitive user experience.
     window.addEventListener("blur", () => {
+        debug("Window blurred, clearing key store");
         keyStore.clear();
     });
 }

@@ -10,6 +10,7 @@ import {
     createAtlasMappedBoxGeometry,
     createRuntimeBlockTextureAtlas,
 } from "@libtexture/blockTextureAtlas";
+import { debug } from "@/logger";
 
 // This module is responsible for loading block data and textures, creating block meshes, and managing texture atlases for efficient rendering of blocks in the game world. It includes functions to retrieve block data, preload textures, create materials for block faces, and generate meshes based on block names, utilizing caching mechanisms to optimize performance and reduce redundant loading of resources.
 
@@ -47,17 +48,23 @@ export function getBlockData(blockName: string): BlockData {
 }
 
 export async function fetchBlockTextureAtlas(): Promise<AtlasState> {
-    return blockTextureAtlasPromise;
+    debug("Fetching block texture atlas");
+    const atlasState = await blockTextureAtlasPromise;
+    debug("Block texture atlas fetched");
+    return atlasState;
 }
 
 export async function createBlockMesh(
     blockName: string,
 ): Promise<THREE.Mesh<THREE.BoxGeometry, THREE.MeshStandardMaterial>> {
+    debug("Creating block mesh", blockName);
     const atlasState = await fetchBlockTextureAtlas();
-    return new THREE.Mesh(
+    const mesh = new THREE.Mesh(
         getBlockGeometry(blockName, atlasState),
         getAtlasMaterial(atlasState.atlasTexture),
     );
+    debug("Block mesh created", blockName);
+    return mesh;
 }
 
 /** Retrieves the geometry for a block based on its name and the provided atlas state. It first checks a cache for an existing geometry to avoid redundant creation, and if not found, it creates a new geometry using the atlas UV mappings for the block's faces. The generated geometry is then cached for future use to optimize performance when rendering multiple instances of the same block type in the game world. */
@@ -102,6 +109,7 @@ function getAtlasMaterial(
 export async function getCachedGeometryAndMaterial(
     blockName: string,
 ): Promise<GeometryMaterialPair> {
+    debug("Getting cached geometry and material", blockName);
     const atlasState = await fetchBlockTextureAtlas();
 
     return {

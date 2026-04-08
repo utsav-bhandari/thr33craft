@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import type { FillRegionOptions } from "@project-types";
 import { getCachedGeometryAndMaterial } from "@libtexture/blockLoader";
+import { debug } from "@/logger";
 
 function getBlockCount(span: number, blockSize: number): number {
     return Math.ceil(span / blockSize);
@@ -35,10 +36,18 @@ export async function createInstancedFill({
     const halfBlock = blockSize / 2;
     let instanceIndex = 0;
 
+    debug("Creating instanced fill", {
+        blockName,
+        count,
+        xCount,
+        yCount,
+        zCount,
+    });
+
     for (let yi = 0; yi < yCount; yi++) {
         for (let z = 0; z < zCount; z++) {
             for (let x = 0; x < xCount; x++) {
-                console.log(
+                debug(
                     `Setting block at (x: ${x}, y: ${yi}, z: ${z}) - instance index: ${instanceIndex}`,
                 );
                 matrix.setPosition(

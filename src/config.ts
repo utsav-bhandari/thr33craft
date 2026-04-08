@@ -20,6 +20,8 @@ function requireElement<T extends HTMLElement>(
     return element;
 }
 
+export const DEBUG = true;
+
 const PLAYER_STARTING_POSITION: Vector3Tuple = [10, 10, 5];
 
 export const DEFAULT_KEYS_PRESET: KeyPreset = {

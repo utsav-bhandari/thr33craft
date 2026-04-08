@@ -3,13 +3,16 @@ import { htmlSetup } from "@/helper";
 import { initScene } from "@/init/scene";
 import { initSystem } from "@/init/system";
 import { initWorldgen } from "@/init/worldgen";
+import { debug } from "@/logger";
 
 /**
  * Bootstraps the application by initializing the scene, system, and world generation, and starts the animation loop for rendering the scene. This function is responsible for setting up the core components of the application and ensuring that everything is ready for the game to run smoothly.
  */
 async function bootstrap(): Promise<void> {
+    debug("Bootstrapping game...");
     const { scene, renderer, camera, pointerControls } =
         initScene(SCENE_INIT_CONFIG);
+    debug("Scene initialized", SCENE_INIT_CONFIG);
 
     const { system } = await initSystem({
         scene,
@@ -18,11 +21,13 @@ async function bootstrap(): Promise<void> {
         gameParams,
         options: SYSTEM_INIT_CONFIG,
     });
+    debug("System initialized", { system });
 
     globalThis.system = system;
     renderer.setAnimationLoop((prevTime) => {
         system.animate(prevTime, renderer, scene, camera);
     });
+    debug("Render loop started");
 
     htmlSetup(camera, renderer);
     initWorldgen({ scene, system });

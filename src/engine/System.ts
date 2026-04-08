@@ -34,7 +34,7 @@ export class System extends BaseSystem {
         this.lastFrameTime = time;
 
         // Only update the world if no UI is open to prevent unintended interactions and ensure that the game state remains consistent while the player is interacting with the UI. This allows for a clear separation between gameplay and UI interactions, providing a smoother user experience.
-        if (!this.uiHandler.isUIOpen()) {
+        if (this.uiHandler.isPointerLocked() && !this.uiHandler.isUIOpen()) {
             this.worldUpdate(deltaTime);
         }
 
