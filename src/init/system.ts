@@ -9,6 +9,7 @@ import { createBlockMesh } from "@libtexture/block-loader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
 import { debug } from "@/logger";
+import { ChunkLoader } from "@engine/chunk/ChunkLoader";
 
 /** Initializes the system, including the player, input manager, UI, and other core components */
 export async function initSystem({
@@ -62,7 +63,13 @@ export async function initSystem({
 
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
-    const system = new System(inputManager, uiHandler, playerController);
+    const chunkLoader = new ChunkLoader();
+    const system = new System(
+        inputManager,
+        uiHandler,
+        playerController,
+        chunkLoader,
+    );
 
     registerHandlers({
         system,
@@ -153,7 +160,12 @@ function registerHandlers({
 
     window.addEventListener("focus", () => {
         debug("Window focused");
-        focusWarning.classList.remove("visible");
+        if (!system.uiHandler.isUIOpen()) {
+            system.uiHandler.lockPointer();
+        }
+        setTimeout(() => {
+            focusWarning.classList.remove("visible");
+        }, 400);
     });
 }
 
