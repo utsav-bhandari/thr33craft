@@ -9,6 +9,7 @@ import type { System } from "@/engine/System";
 import { createInstancedFill } from "@/engine/generators/fill";
 import { WORLD_PARAMS } from "@/config";
 import { debug } from "@/logger";
+import { getAtlasMaterial, getBlockGeometry } from "@libtexture/block-loader";
 
 function requireWorldgenForm(): HTMLFormElement {
     const element = document.getElementById("worldgen-form");
@@ -48,12 +49,6 @@ export function initWorldgen({
 }): void {
     const worldgenForm = requireWorldgenForm();
     const resetWorldButton = getResetWorldButton();
-    const submitButton = worldgenForm.querySelector<HTMLButtonElement>(
-        '.primary-button[type="submit"]',
-    );
-    if (submitButton) {
-        submitButton.disabled = false;
-    }
 
     worldgenForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -63,14 +58,18 @@ export function initWorldgen({
         const zBlocks = getRequiredNumberField(worldgenForm, "z");
         debug("Worldgen submitted", { xBlocks, yBlocks, zBlocks });
 
-        const groundMesh = await buildUserRequestedGroundMesh({
-            xBlocks,
-            yBlocks,
-            zBlocks,
-        });
-        debug("Worldgen mesh created", { xBlocks, yBlocks, zBlocks });
+        // const geometry = getBlockGeometry(WORLD_PARAMS.GROUND_BLOCK_NAME);
+        // const material = getAtlasMaterial();
 
-        scene.add(groundMesh);
+        // const groundMesh = buildUserRequestedGroundMesh({
+        //     geometry,
+        //     material,
+        //     xBlocks,
+        //     yBlocks,
+        //     zBlocks,
+        // });
+        // scene.add(groundMesh);
+        debug("Worldgen mesh created", { xBlocks, yBlocks, zBlocks });
         system.uiHandler.closeModal("worldgen");
     });
 
@@ -80,14 +79,13 @@ export function initWorldgen({
     });
 }
 
-async function buildUserRequestedGroundMesh({
+function buildUserRequestedGroundMesh({
+    geometry,
+    material,
     xBlocks,
     yBlocks,
     zBlocks,
-    blockName = WORLD_PARAMS.GROUND_BLOCK_NAME,
-}: WorldgenDimensions): Promise<
-    InstancedMesh<BoxGeometry, MeshStandardMaterial>
-> {
+}: WorldgenDimensions): InstancedMesh<BoxGeometry, MeshStandardMaterial> {
     const blockSize = WORLD_PARAMS.BLOCK_SIZE;
     const xSpan = xBlocks * blockSize;
     const zSpan = zBlocks * blockSize;
@@ -99,7 +97,8 @@ async function buildUserRequestedGroundMesh({
     const startY = endY - ySpan;
 
     return createInstancedFill({
-        blockName,
+        geometry,
+        material,
         blockSize,
         startX,
         startZ,

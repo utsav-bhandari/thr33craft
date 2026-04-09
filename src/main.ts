@@ -1,5 +1,6 @@
+// FOR NOW JUST IMPORT HELPER AT TOP TO SEE LOADING SCREEN, CAN REFACTOR LATER
+import { loadingScreenMessage, htmlSetup } from "@/helper";
 import { gameParams, SCENE_INIT_CONFIG, SYSTEM_INIT_CONFIG } from "@/config";
-import { htmlSetup } from "@/helper";
 import { initScene } from "@/init/scene";
 import { initSystem } from "@/init/system";
 import { initWorldgen } from "@/init/worldgen";
@@ -10,6 +11,7 @@ import { debug } from "@/logger";
  */
 async function bootstrap(): Promise<void> {
     debug("Bootstrapping game...");
+
     const { scene, renderer, camera, pointerControls } =
         initScene(SCENE_INIT_CONFIG);
     debug("Scene initialized", SCENE_INIT_CONFIG);
@@ -22,6 +24,8 @@ async function bootstrap(): Promise<void> {
         options: SYSTEM_INIT_CONFIG,
     });
     debug("System initialized", { system });
+
+    loadingScreenMessage.remove();
 
     globalThis.system = system;
     renderer.setAnimationLoop((prevTime) => {

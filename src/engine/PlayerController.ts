@@ -56,6 +56,10 @@ export class PlayerController extends BasePlayerController {
         return { dx: move.x, dy, dz: move.z };
     }
 
+    getPosition(): Vector3 {
+        return this.player.position;
+    }
+
     updatePlayer(deltaTime: number): void {
         // get movement direction based on input
         const { dx, dy, dz } = this.getDirection();
@@ -67,6 +71,10 @@ export class PlayerController extends BasePlayerController {
         );
 
         this.player.move(targetVelocity, 20, deltaTime);
+
+        if (this.player.position.y <= this.player.height) {
+            this.player.position.y = this.player.height;
+        }
         this.camera.position.copy(this.player.position);
         // this.camera.translateZ(10);
     }

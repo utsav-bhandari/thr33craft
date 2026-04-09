@@ -1,8 +1,11 @@
-import type { PerspectiveCamera, WebGLRenderer } from "three";
+import * as THREE from "three";
+
+export const loadingScreenMessage = createLoadingScreenMessage();
+document.body.appendChild(loadingScreenMessage);
 
 export function htmlSetup(
-    camera: PerspectiveCamera,
-    renderer: WebGLRenderer,
+    camera: THREE.PerspectiveCamera,
+    renderer: THREE.WebGLRenderer,
 ): void {
     const init = (): void => {
         const width = window.innerWidth;
@@ -34,4 +37,12 @@ function debounce(callback: () => void, delay: number): () => void {
             callback();
         }, delay);
     };
+}
+
+function createLoadingScreenMessage(): HTMLElement {
+    const message = document.createElement("div");
+    message.classList.add("loading-world-message");
+    message.classList.add("pixel-corners");
+    message.textContent = "Please wait, Loading World...";
+    return message;
 }

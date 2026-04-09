@@ -22,7 +22,7 @@ function requireElement<T extends HTMLElement>(
 
 export const DEBUG = true;
 
-const PLAYER_STARTING_POSITION: Vector3Tuple = [10, 10, 5];
+const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 2, 0];
 
 export const DEFAULT_KEYS_PRESET: KeyPreset = {
     UP: " ",
@@ -61,6 +61,19 @@ export const gameParams: GameParams = {
 };
 
 export const WORLD_PARAMS = {
+    get RENDER_DISTANCE() {
+        const cameraFar =
+            SCENE_INIT_CONFIG.camera?.far ?? WORLD_PARAMS.CHUNK_SIZE;
+
+        return Math.max(
+            1,
+            Math.floor(cameraFar / WORLD_PARAMS.CHUNK_SIZE) +
+                WORLD_PARAMS.CHUNK_PADDING,
+        );
+    },
+    // RENDER_DISTANCE: 2,
+    CHUNK_PADDING: 1,
+    CHUNK_SIZE: 4,
     BLOCK_SIZE: 1,
     WORLD_SIZE_BLOCKS: 100,
     DEFAULT_WORLD_FILL: {
@@ -68,9 +81,9 @@ export const WORLD_PARAMS = {
         y: 1,
         z: 1,
     },
-    GROUND_BLOCK_NAME: "gold_block",
+    GROUND_BLOCK_NAME: "grass_block",
     PLAYER_STARTING_POSITION,
-} as const;
+};
 
 export const SCENE_INIT_CONFIG: SceneInitConfig = {
     backgroundColor: 0x80adff,
@@ -87,7 +100,7 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 100,
+        far: 64,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 0],
     },

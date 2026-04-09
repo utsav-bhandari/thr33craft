@@ -178,6 +178,40 @@
     z-index: 2;
 }
 
+.loading-world-message {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background-image: url("/assets/blocks/dirt.png");
+    image-rendering: pixelated;
+    background-repeat: repeat;
+    background-size: 64px;
+    background-color: rgba(40, 39, 39, 0.45);
+    background-blend-mode: overlay;
+    color: #1fff06;
+    text-align: center;
+}
+
+.loading-world-message::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 11, 17, 0.55);
+}
+
+.loading-world-message > * {
+    position: relative;
+    z-index: 1;
+}
+
+.loading-world-message {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
 .focus-window-message {
     position: fixed;
     top: 18px;

@@ -122,11 +122,14 @@ export interface InputManagerLike {
 export interface PlayerLike {
     speed: number;
     position: THREE.Vector3;
+    height: number;
     move(targetVelocity: THREE.Vector3, accel: number, deltaTime: number): void;
 }
 
 export interface PlayerControllerLike {
     updatePlayer(deltaTime: number): void;
+    getPosition(): THREE.Vector3;
+    getDirection(): MovementDirection;
 }
 
 export interface MovementDirection {
@@ -165,13 +168,9 @@ export interface AtlasState {
     blockFaceUvs: Map<string, AtlasUvRect[]>;
 }
 
-export interface GeometryMaterialPair {
+export interface FillRegionOptions {
     geometry: THREE.BoxGeometry;
     material: THREE.MeshStandardMaterial;
-}
-
-export interface FillRegionOptions {
-    blockName: string;
     blockSize: number;
     startX: number;
     startZ: number;
@@ -182,7 +181,8 @@ export interface FillRegionOptions {
 }
 
 export interface WorldgenDimensions {
-    blockName?: string;
+    geometry: THREE.BoxGeometry;
+    material: THREE.MeshStandardMaterial;
     xBlocks: number;
     yBlocks: number;
     zBlocks: number;
