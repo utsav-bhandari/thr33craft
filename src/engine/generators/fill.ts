@@ -1,30 +1,27 @@
 import * as THREE from "three";
 import type { FillRegionOptions } from "@project-types";
-import { getCachedGeometryAndMaterial } from "@libtexture/block-loader";
-import { debug } from "@/logger";
 
 function getBlockCount(span: number, blockSize: number): number {
     return Math.ceil(span / blockSize);
 }
 
-export async function createInstancedFill({
-    blockName,
+export function createInstancedFill({
+    geometry,
+    material,
     blockSize,
     startX,
+    startY,
     startZ,
     endX,
-    endZ,
-    startY,
     endY = 0,
-}: FillRegionOptions): Promise<
-    THREE.InstancedMesh<THREE.BoxGeometry, THREE.MeshStandardMaterial>
+    endZ,
+}: FillRegionOptions): THREE.InstancedMesh<
+    THREE.BoxGeometry,
+    THREE.MeshStandardMaterial
 > {
     if (blockSize <= 0) {
         throw new Error("blockSize must be greater than zero.");
     }
-
-    const { geometry, material } =
-        await getCachedGeometryAndMaterial(blockName);
 
     const xCount = getBlockCount(endX - startX, blockSize);
     const zCount = getBlockCount(endZ - startZ, blockSize);
@@ -36,20 +33,9 @@ export async function createInstancedFill({
     const halfBlock = blockSize / 2;
     let instanceIndex = 0;
 
-    debug("Creating instanced fill", {
-        blockName,
-        count,
-        xCount,
-        yCount,
-        zCount,
-    });
-
     for (let yi = 0; yi < yCount; yi++) {
         for (let z = 0; z < zCount; z++) {
             for (let x = 0; x < xCount; x++) {
-                debug(
-                    `Setting block at (x: ${x}, y: ${yi}, z: ${z}) - instance index: ${instanceIndex}`,
-                );
                 matrix.setPosition(
                     startX + x * blockSize + halfBlock,
                     startY + yi * blockSize + halfBlock,

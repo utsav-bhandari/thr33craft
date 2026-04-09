@@ -7,8 +7,12 @@ import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
 } from "@libtexture/blockTextureSheetLayout";
-import { getCachedGeometryAndMaterial } from "@libtexture/block-loader";
 import { debug } from "@/logger";
+import {
+    blockTextureAtlas,
+    getAtlasMaterial,
+    getBlockGeometry,
+} from "./block-loader";
 
 export async function generateBlockTextureSheet(
     blockNames: string[],
@@ -105,8 +109,8 @@ export async function generateBlockTextureSheet(
     for (let index = 0; index < blockNames.length; index += 1) {
         const blockName = blockNames[index];
         debug("Generating texture sheet block", { index, blockName });
-        const { geometry: blockGeometry, material: blockMaterial } =
-            await getCachedGeometryAndMaterial(blockName);
+        const blockGeometry = getBlockGeometry(blockName, blockTextureAtlas);
+        const blockMaterial = getAtlasMaterial(blockTextureAtlas.atlasTexture);
 
         mesh.geometry = blockGeometry;
         mesh.material = blockMaterial;

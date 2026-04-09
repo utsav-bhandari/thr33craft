@@ -1,11 +1,6 @@
 import * as THREE from "three";
 import blocksJson from "@blocks";
-import type {
-    AtlasState,
-    BlockData,
-    BlocksByName,
-    GeometryMaterialPair,
-} from "@project-types";
+import type { AtlasState, BlockData, BlocksByName } from "@project-types";
 import {
     createAtlasMappedBoxGeometry,
     createRuntimeBlockTextureAtlas,
@@ -28,10 +23,13 @@ const allBlocks = blocksJson as BlocksByName;
 const atlasMaterialCache = new Map<THREE.Texture, THREE.MeshStandardMaterial>();
 const blockGeometryCache = new Map<string, THREE.BoxGeometry>();
 
-const blockTextureAtlasPromise = createRuntimeBlockTextureAtlas({
+debug("Fetching block texture atlas");
+
+export const blockTextureAtlas = await createRuntimeBlockTextureAtlas({
     blocks: allBlocks,
     faceMappings: FACE_MAPPINGS,
 });
+debug("Block texture atlas fetched");
 
 export function getAllBlockTextureNames(): string[] {
     return Object.keys(allBlocks);
@@ -47,37 +45,27 @@ export function getBlockData(blockName: string): BlockData {
     return blockData;
 }
 
-export async function fetchBlockTextureAtlas(): Promise<AtlasState> {
-    debug("Fetching block texture atlas");
-    const atlasState = await blockTextureAtlasPromise;
-    debug("Block texture atlas fetched");
-    return atlasState;
-}
-
 export async function createBlockMesh(
     blockName: string,
 ): Promise<THREE.Mesh<THREE.BoxGeometry, THREE.MeshStandardMaterial>> {
     debug("Creating block mesh", blockName);
-    const atlasState = await fetchBlockTextureAtlas();
+    const atlasState = blockTextureAtlas;
     const mesh = new THREE.Mesh(
-        getBlockGeometry(blockName, atlasState),
-        getAtlasMaterial(atlasState.atlasTexture),
+        getBlockGeometry(blockName),
+        getAtlasMaterial(),
     );
     debug("Block mesh created", blockName);
     return mesh;
 }
 
 /** Retrieves the geometry for a block based on its name and the provided atlas state. It first checks a cache for an existing geometry to avoid redundant creation, and if not found, it creates a new geometry using the atlas UV mappings for the block's faces. The generated geometry is then cached for future use to optimize performance when rendering multiple instances of the same block type in the game world. */
-function getBlockGeometry(
-    blockName: string,
-    atlasState: AtlasState,
-): THREE.BoxGeometry {
+export function getBlockGeometry(blockName: string): THREE.BoxGeometry {
     const cachedGeometry = blockGeometryCache.get(blockName);
     if (cachedGeometry) {
         return cachedGeometry;
     }
 
-    const faceUvs = atlasState.blockFaceUvs.get(blockName);
+    const faceUvs = blockTextureAtlas.blockFaceUvs.get(blockName);
     if (!faceUvs) {
         throw new Error(`Block atlas UVs for "${blockName}" not found`);
     }
@@ -88,32 +76,19 @@ function getBlockGeometry(
 }
 
 /** Retrieves a material for the block atlas texture, utilizing a cache to avoid redundant creation and improve performance when rendering multiple blocks that share the same atlas texture. If a material for the given atlas texture already exists in the cache, it returns that material; otherwise, it creates a new material, caches it, and returns it for use in rendering block meshes. */
-function getAtlasMaterial(
-    atlasTexture: THREE.Texture,
-): THREE.MeshStandardMaterial {
-    const cachedMaterial = atlasMaterialCache.get(atlasTexture);
+export function getAtlasMaterial(): THREE.MeshStandardMaterial {
+    const cachedMaterial = atlasMaterialCache.get(
+        blockTextureAtlas.atlasTexture,
+    );
     if (cachedMaterial) {
         return cachedMaterial;
     }
 
     const material = new THREE.MeshStandardMaterial({
-        map: atlasTexture,
+        map: blockTextureAtlas.atlasTexture,
         alphaTest: 0.5,
         depthWrite: true,
     });
-    atlasMaterialCache.set(atlasTexture, material);
+    atlasMaterialCache.set(blockTextureAtlas.atlasTexture, material);
     return material;
-}
-
-/** Retrieves both the geometry and material for a block based on its name, utilizing caching mechanisms to optimize performance. It first fetches the block texture atlas state to access the necessary UV mappings and atlas texture, then retrieves or creates the corresponding geometry and material for the block, returning them as a pair for use in rendering block meshes in the game world. */
-export async function getCachedGeometryAndMaterial(
-    blockName: string,
-): Promise<GeometryMaterialPair> {
-    debug("Getting cached geometry and material", blockName);
-    const atlasState = await fetchBlockTextureAtlas();
-
-    return {
-        geometry: getBlockGeometry(blockName, atlasState),
-        material: getAtlasMaterial(atlasState.atlasTexture),
-    };
 }
