@@ -36,4 +36,8 @@ export class Chunk {
     setPosition(): void {
         this.container.position.set(this.getWorldX(), 0, this.getWorldZ());
     }
+
+    getKey(): string {
+        return `${this.chunkX},${this.chunkZ}`;
+    }
 }

@@ -71,9 +71,9 @@ export const WORLD_PARAMS = {
                 WORLD_PARAMS.CHUNK_PADDING,
         );
     },
-    // RENDER_DISTANCE: 2,
     CHUNK_PADDING: 1,
-    CHUNK_SIZE: 4,
+    CHUNK_LOAD_INTERVAL: 10,
+    CHUNK_SIZE: 16,
     BLOCK_SIZE: 1,
     WORLD_SIZE_BLOCKS: 100,
     DEFAULT_WORLD_FILL: {
@@ -100,7 +100,7 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 64,
+        far: 128,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 0],
     },

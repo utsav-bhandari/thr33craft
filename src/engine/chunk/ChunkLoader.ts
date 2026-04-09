@@ -7,9 +7,11 @@ import { debug } from "@logger";
 
 export class ChunkLoader {
     worldChunksMap: Map<string, Chunk>;
-    // chunkList: string[]; // list of chunk keys in the format "chunkX,chunkZ"
-    // chunkList: Chunk[];
     curChunksToLoad: Set<Chunk>;
+    // Initially set framesSinceLastLoad to the chunk load interval to allow
+    // immediate loading of chunks when the game starts.
+    framesSinceLastLoad: number = WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
+
     constructor() {
         this.worldChunksMap = new Map();
         this.curChunksToLoad = new Set();
@@ -21,11 +23,17 @@ export class ChunkLoader {
             playerPosition.z,
         );
 
+        if (this.framesSinceLastLoad < WORLD_PARAMS.CHUNK_LOAD_INTERVAL) {
+            this.framesSinceLastLoad++;
+            return;
+        }
+
         this.updateCurrentChunksList(scene, {
             chunkX,
             chunkZ,
         });
 
+        this.framesSinceLastLoad = 0;
         this.loadChunks(scene, this.curChunksToLoad);
     }
 
@@ -37,7 +45,7 @@ export class ChunkLoader {
 
         for (let x = chunkX - radius; x <= chunkX + radius; x++) {
             for (let z = chunkZ - radius; z <= chunkZ + radius; z++) {
-                const chunkKey = this.getChunkKey(x, z);
+                const chunkKey = `${x},${z}`;
                 const chunk = this.getOrCreateChunk(chunkKey);
                 this.curChunksToLoad.add(chunk);
             }
@@ -54,10 +62,12 @@ export class ChunkLoader {
     }
 
     loadChunks(scene: THREE.Scene, chunks: Set<Chunk>): void {
+        debug(chunks);
         const geometry = getBlockGeometry(WORLD_PARAMS.GROUND_BLOCK_NAME);
         const material = getAtlasMaterial();
 
         for (const chunk of chunks) {
+            // Only add the chunk to the scene if it hasn't been added already.
             if (chunk.container.children.length === 0) {
                 const chunkMesh = createInstancedFill({
                     geometry,
@@ -73,7 +83,8 @@ export class ChunkLoader {
 
                 chunk.container.add(chunkMesh);
             }
-
+            // This check ensures that we only modify the scene graph when necessary, which can
+            // help maintain smooth performance as the player moves around and chunks are loaded and unloaded.
             if (chunk.container.parent !== scene) {
                 scene.add(chunk.container);
             }
@@ -142,12 +153,8 @@ export class ChunkLoader {
 
     createChunkData(chunkX: number, chunkZ: number): Chunk {
         const chunk = new Chunk(chunkX, chunkZ);
-        const chunkKey = this.getChunkKey(chunkX, chunkZ);
+        const chunkKey = chunk.getKey();
         this.worldChunksMap.set(chunkKey, chunk);
         return chunk;
-    }
-
-    private getChunkKey(chunkX: number, chunkZ: number): string {
-        return `${chunkX},${chunkZ}`;
     }
 }
