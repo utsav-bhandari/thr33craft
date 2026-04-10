@@ -139,10 +139,20 @@ export interface MovementDirection {
 }
 
 export interface BlockData {
-    textures?: Record<string, string>;
+    readonly id: BlockId;
+    readonly transparent: boolean;
+    readonly textures: Record<string, string>;
 }
 
-export type BlocksByName = Record<string, BlockData>;
+export type BlockName = string;
+
+export type BlockId = number;
+
+export type BlocksByName = Record<BlockName, BlockData>;
+
+export interface BlockDefinition extends BlockData {
+    readonly name: BlockName;
+}
 
 export interface AtlasUvRect {
     minU: number;
@@ -164,8 +174,8 @@ export interface TilePosition {
 }
 
 export interface AtlasState {
-    atlasTexture: THREE.CanvasTexture;
-    blockFaceUvs: Map<string, AtlasUvRect[]>;
+    readonly atlasTexture: THREE.CanvasTexture;
+    readonly blockFaceUvs: Map<string, AtlasUvRect[]>;
 }
 
 export interface FillRegionOptions {

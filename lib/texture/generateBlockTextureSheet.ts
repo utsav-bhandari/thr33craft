@@ -7,7 +7,7 @@ import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
 } from "@libtexture/blockTextureSheetLayout";
-import { debug } from "@/logger";
+import { debug } from "@utils/logger";
 import {
     blockTextureAtlas,
     getAtlasMaterial,

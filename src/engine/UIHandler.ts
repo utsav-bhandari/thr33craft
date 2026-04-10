@@ -1,7 +1,7 @@
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import type { InputManagerLike, UIModalLike } from "@project-types";
 import { BaseUIHandler } from "@lib/base/BaseUIHandler";
-import { debug } from "@logger";
+import { debug } from "@utils/logger";
 
 export class UIHandler extends BaseUIHandler {
     modals: Map<string, UIModalLike>;

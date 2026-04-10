@@ -7,7 +7,7 @@ import {
     createBlockTextureSheetMetadata,
     // } from "@/init/texture-sheet/blockTextureSheetLayout";
 } from "@libtexture/blockTextureSheetLayout";
-import { debug } from "@/logger";
+import { debug } from "@utils/logger";
 
 export async function loadIndividualBlocks(
     blockNames: string[],

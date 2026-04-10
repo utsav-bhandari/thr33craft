@@ -62,18 +62,15 @@ export const gameParams: GameParams = {
 
 export const WORLD_PARAMS = {
     get RENDER_DISTANCE() {
-        const cameraFar =
-            SCENE_INIT_CONFIG.camera?.far ?? WORLD_PARAMS.CHUNK_SIZE;
+        const cameraFar = SCENE_INIT_CONFIG.camera?.far ?? 16;
 
         return Math.max(
             1,
-            Math.floor(cameraFar / WORLD_PARAMS.CHUNK_SIZE) +
-                WORLD_PARAMS.CHUNK_PADDING,
+            Math.floor(cameraFar / 16) + WORLD_PARAMS.CHUNK_PADDING,
         );
     },
     CHUNK_PADDING: 1,
     CHUNK_LOAD_INTERVAL: 10,
-    CHUNK_SIZE: 16,
     BLOCK_SIZE: 1,
     WORLD_SIZE_BLOCKS: 100,
     DEFAULT_WORLD_FILL: {

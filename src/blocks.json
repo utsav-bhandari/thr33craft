@@ -1,5 +1,7 @@
 {
   "acacia_log": {
+    "id": 1,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/acacia_log_top",
       "up": "minecraft:block/acacia_log_top",
@@ -11,6 +13,8 @@
     }
   },
   "acacia_planks": {
+    "id": 2,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/acacia_planks",
       "up": "minecraft:block/acacia_planks",
@@ -22,6 +26,8 @@
     }
   },
   "acacia_wood": {
+    "id": 3,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/acacia_log",
       "up": "minecraft:block/acacia_log",
@@ -33,6 +39,8 @@
     }
   },
   "amethyst_block": {
+    "id": 4,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/amethyst_block",
       "up": "minecraft:block/amethyst_block",
@@ -44,6 +52,8 @@
     }
   },
   "ancient_debris": {
+    "id": 5,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/ancient_debris_top",
       "up": "minecraft:block/ancient_debris_top",
@@ -55,6 +65,8 @@
     }
   },
   "andesite": {
+    "id": 6,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/andesite",
       "up": "minecraft:block/andesite",
@@ -66,6 +78,8 @@
     }
   },
   "azalea_leaves": {
+    "id": 7,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/azalea_leaves",
       "up": "minecraft:block/azalea_leaves",
@@ -77,6 +91,8 @@
     }
   },
   "bamboo_block": {
+    "id": 8,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bamboo_block_top",
       "up": "minecraft:block/bamboo_block_top",
@@ -88,6 +104,8 @@
     }
   },
   "bamboo_mosaic": {
+    "id": 9,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bamboo_mosaic",
       "up": "minecraft:block/bamboo_mosaic",
@@ -99,6 +117,8 @@
     }
   },
   "bamboo_planks": {
+    "id": 10,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bamboo_planks",
       "up": "minecraft:block/bamboo_planks",
@@ -110,6 +130,8 @@
     }
   },
   "basalt": {
+    "id": 11,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/basalt_top",
       "up": "minecraft:block/basalt_top",
@@ -121,6 +143,8 @@
     }
   },
   "bedrock": {
+    "id": 12,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bedrock",
       "up": "minecraft:block/bedrock",
@@ -132,6 +156,8 @@
     }
   },
   "birch_log": {
+    "id": 13,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_log_top",
       "up": "minecraft:block/birch_log_top",
@@ -143,6 +169,8 @@
     }
   },
   "birch_log_horizontal": {
+    "id": 14,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_log_top",
       "up": "minecraft:block/birch_log_top",
@@ -154,6 +182,8 @@
     }
   },
   "birch_planks": {
+    "id": 15,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_planks",
       "up": "minecraft:block/birch_planks",
@@ -165,6 +195,8 @@
     }
   },
   "birch_wood": {
+    "id": 16,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_log",
       "up": "minecraft:block/birch_log",
@@ -176,6 +208,8 @@
     }
   },
   "blackstone": {
+    "id": 17,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blackstone_top",
       "up": "minecraft:block/blackstone_top",
@@ -187,6 +221,8 @@
     }
   },
   "black_concrete": {
+    "id": 18,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/black_concrete",
       "up": "minecraft:block/black_concrete",
@@ -198,6 +234,8 @@
     }
   },
   "black_concrete_powder": {
+    "id": 19,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/black_concrete_powder",
       "up": "minecraft:block/black_concrete_powder",
@@ -209,6 +247,8 @@
     }
   },
   "black_stained_glass": {
+    "id": 20,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/black_stained_glass",
       "up": "minecraft:block/black_stained_glass",
@@ -220,6 +260,8 @@
     }
   },
   "black_terracotta": {
+    "id": 21,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/black_terracotta",
       "up": "minecraft:block/black_terracotta",
@@ -231,6 +273,8 @@
     }
   },
   "black_wool": {
+    "id": 22,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/black_wool",
       "up": "minecraft:block/black_wool",
@@ -242,6 +286,8 @@
     }
   },
   "blast_furnace": {
+    "id": 23,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blast_furnace_top",
       "up": "minecraft:block/blast_furnace_top",
@@ -253,6 +299,8 @@
     }
   },
   "blast_furnace_on": {
+    "id": 24,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blast_furnace_top",
       "up": "minecraft:block/blast_furnace_top",
@@ -264,6 +312,8 @@
     }
   },
   "blue_concrete": {
+    "id": 25,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blue_concrete",
       "up": "minecraft:block/blue_concrete",
@@ -275,6 +325,8 @@
     }
   },
   "blue_concrete_powder": {
+    "id": 26,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blue_concrete_powder",
       "up": "minecraft:block/blue_concrete_powder",
@@ -286,6 +338,8 @@
     }
   },
   "blue_ice": {
+    "id": 27,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/blue_ice",
       "up": "minecraft:block/blue_ice",
@@ -297,6 +351,8 @@
     }
   },
   "blue_stained_glass": {
+    "id": 28,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/blue_stained_glass",
       "up": "minecraft:block/blue_stained_glass",
@@ -308,6 +364,8 @@
     }
   },
   "blue_terracotta": {
+    "id": 29,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blue_terracotta",
       "up": "minecraft:block/blue_terracotta",
@@ -319,6 +377,8 @@
     }
   },
   "blue_wool": {
+    "id": 30,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blue_wool",
       "up": "minecraft:block/blue_wool",
@@ -330,6 +390,8 @@
     }
   },
   "bone_block": {
+    "id": 31,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bone_block_top",
       "up": "minecraft:block/bone_block_top",
@@ -341,6 +403,8 @@
     }
   },
   "bookshelf": {
+    "id": 32,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_planks",
       "up": "minecraft:block/oak_planks",
@@ -352,6 +416,8 @@
     }
   },
   "brain_coral_block": {
+    "id": 33,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brain_coral_block",
       "up": "minecraft:block/brain_coral_block",
@@ -363,6 +429,8 @@
     }
   },
   "bricks": {
+    "id": 34,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bricks",
       "up": "minecraft:block/bricks",
@@ -374,6 +442,8 @@
     }
   },
   "brown_concrete": {
+    "id": 35,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brown_concrete",
       "up": "minecraft:block/brown_concrete",
@@ -385,6 +455,8 @@
     }
   },
   "brown_concrete_powder": {
+    "id": 36,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brown_concrete_powder",
       "up": "minecraft:block/brown_concrete_powder",
@@ -396,6 +468,8 @@
     }
   },
   "brown_mushroom_block_inventory": {
+    "id": 37,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brown_mushroom_block",
       "up": "minecraft:block/brown_mushroom_block",
@@ -407,6 +481,8 @@
     }
   },
   "brown_stained_glass": {
+    "id": 38,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/brown_stained_glass",
       "up": "minecraft:block/brown_stained_glass",
@@ -418,6 +494,8 @@
     }
   },
   "brown_terracotta": {
+    "id": 39,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brown_terracotta",
       "up": "minecraft:block/brown_terracotta",
@@ -429,6 +507,8 @@
     }
   },
   "brown_wool": {
+    "id": 40,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/brown_wool",
       "up": "minecraft:block/brown_wool",
@@ -440,6 +520,8 @@
     }
   },
   "bubble_coral_block": {
+    "id": 41,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/bubble_coral_block",
       "up": "minecraft:block/bubble_coral_block",
@@ -451,6 +533,8 @@
     }
   },
   "budding_amethyst": {
+    "id": 42,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/budding_amethyst",
       "up": "minecraft:block/budding_amethyst",
@@ -462,6 +546,8 @@
     }
   },
   "calcite": {
+    "id": 43,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/calcite",
       "up": "minecraft:block/calcite",
@@ -473,6 +559,8 @@
     }
   },
   "cartography_table": {
+    "id": 44,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_planks",
       "up": "minecraft:block/cartography_table_top",
@@ -484,6 +572,8 @@
     }
   },
   "carved_pumpkin": {
+    "id": 45,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pumpkin_top",
       "up": "minecraft:block/pumpkin_top",
@@ -495,6 +585,8 @@
     }
   },
   "cherry_log": {
+    "id": 46,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cherry_log_top",
       "up": "minecraft:block/cherry_log_top",
@@ -506,6 +598,8 @@
     }
   },
   "cherry_planks": {
+    "id": 47,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cherry_planks",
       "up": "minecraft:block/cherry_planks",
@@ -517,6 +611,8 @@
     }
   },
   "cherry_wood": {
+    "id": 48,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cherry_log",
       "up": "minecraft:block/cherry_log",
@@ -528,6 +624,8 @@
     }
   },
   "chiseled_bookshelf_inventory": {
+    "id": 49,
+    "transparent": false,
     "textures": {
       "north": "block/chiseled_bookshelf_empty",
       "east": "block/chiseled_bookshelf_side",
@@ -539,6 +637,8 @@
     }
   },
   "chiseled_copper": {
+    "id": 50,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_copper",
       "up": "minecraft:block/chiseled_copper",
@@ -550,6 +650,8 @@
     }
   },
   "chiseled_deepslate": {
+    "id": 51,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_deepslate",
       "up": "minecraft:block/chiseled_deepslate",
@@ -561,6 +663,8 @@
     }
   },
   "chiseled_nether_bricks": {
+    "id": 52,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_nether_bricks",
       "up": "minecraft:block/chiseled_nether_bricks",
@@ -572,6 +676,8 @@
     }
   },
   "chiseled_polished_blackstone": {
+    "id": 53,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_polished_blackstone",
       "up": "minecraft:block/chiseled_polished_blackstone",
@@ -583,6 +689,8 @@
     }
   },
   "chiseled_quartz_block": {
+    "id": 54,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_quartz_block_top",
       "up": "minecraft:block/chiseled_quartz_block_top",
@@ -594,6 +702,8 @@
     }
   },
   "chiseled_red_sandstone": {
+    "id": 55,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_sandstone_top",
       "up": "minecraft:block/red_sandstone_top",
@@ -605,6 +715,8 @@
     }
   },
   "chiseled_resin_bricks": {
+    "id": 56,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_resin_bricks",
       "up": "minecraft:block/chiseled_resin_bricks",
@@ -616,6 +728,8 @@
     }
   },
   "chiseled_sandstone": {
+    "id": 57,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sandstone_top",
       "up": "minecraft:block/sandstone_top",
@@ -627,6 +741,8 @@
     }
   },
   "chiseled_stone_bricks": {
+    "id": 58,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_stone_bricks",
       "up": "minecraft:block/chiseled_stone_bricks",
@@ -638,6 +754,8 @@
     }
   },
   "chiseled_tuff": {
+    "id": 59,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_tuff_top",
       "up": "minecraft:block/chiseled_tuff_top",
@@ -649,6 +767,8 @@
     }
   },
   "chiseled_tuff_bricks": {
+    "id": 60,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/chiseled_tuff_bricks_top",
       "up": "minecraft:block/chiseled_tuff_bricks_top",
@@ -660,6 +780,8 @@
     }
   },
   "clay": {
+    "id": 61,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/clay",
       "up": "minecraft:block/clay",
@@ -671,6 +793,8 @@
     }
   },
   "coal_block": {
+    "id": 62,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/coal_block",
       "up": "minecraft:block/coal_block",
@@ -682,6 +806,8 @@
     }
   },
   "coal_ore": {
+    "id": 63,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/coal_ore",
       "up": "minecraft:block/coal_ore",
@@ -693,6 +819,8 @@
     }
   },
   "coarse_dirt": {
+    "id": 64,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/coarse_dirt",
       "up": "minecraft:block/coarse_dirt",
@@ -704,6 +832,8 @@
     }
   },
   "cobbled_deepslate": {
+    "id": 65,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cobbled_deepslate",
       "up": "minecraft:block/cobbled_deepslate",
@@ -715,6 +845,8 @@
     }
   },
   "cobblestone": {
+    "id": 66,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cobblestone",
       "up": "minecraft:block/cobblestone",
@@ -726,6 +858,8 @@
     }
   },
   "copper_block": {
+    "id": 67,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_block",
       "up": "minecraft:block/copper_block",
@@ -737,6 +871,8 @@
     }
   },
   "copper_bulb": {
+    "id": 68,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_bulb",
       "up": "minecraft:block/copper_bulb",
@@ -748,6 +884,8 @@
     }
   },
   "copper_bulb_lit": {
+    "id": 69,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_bulb_lit",
       "up": "minecraft:block/copper_bulb_lit",
@@ -759,6 +897,8 @@
     }
   },
   "copper_bulb_lit_powered": {
+    "id": 70,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_bulb_lit_powered",
       "up": "minecraft:block/copper_bulb_lit_powered",
@@ -770,6 +910,8 @@
     }
   },
   "copper_bulb_powered": {
+    "id": 71,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_bulb_powered",
       "up": "minecraft:block/copper_bulb_powered",
@@ -781,6 +923,8 @@
     }
   },
   "copper_grate": {
+    "id": 72,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_grate",
       "up": "minecraft:block/copper_grate",
@@ -792,6 +936,8 @@
     }
   },
   "copper_ore": {
+    "id": 73,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/copper_ore",
       "up": "minecraft:block/copper_ore",
@@ -803,6 +949,8 @@
     }
   },
   "cracked_deepslate_bricks": {
+    "id": 74,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cracked_deepslate_bricks",
       "up": "minecraft:block/cracked_deepslate_bricks",
@@ -814,6 +962,8 @@
     }
   },
   "cracked_deepslate_tiles": {
+    "id": 75,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cracked_deepslate_tiles",
       "up": "minecraft:block/cracked_deepslate_tiles",
@@ -825,6 +975,8 @@
     }
   },
   "cracked_nether_bricks": {
+    "id": 76,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cracked_nether_bricks",
       "up": "minecraft:block/cracked_nether_bricks",
@@ -836,6 +988,8 @@
     }
   },
   "cracked_polished_blackstone_bricks": {
+    "id": 77,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cracked_polished_blackstone_bricks",
       "up": "minecraft:block/cracked_polished_blackstone_bricks",
@@ -847,6 +1001,8 @@
     }
   },
   "cracked_stone_bricks": {
+    "id": 78,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cracked_stone_bricks",
       "up": "minecraft:block/cracked_stone_bricks",
@@ -858,6 +1014,8 @@
     }
   },
   "crafter": {
+    "id": 79,
+    "transparent": false,
     "textures": {
       "down": "block/crafter_bottom",
       "up": "block/crafter_top",
@@ -869,6 +1027,8 @@
     }
   },
   "crafting_table": {
+    "id": 80,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_planks",
       "up": "minecraft:block/crafting_table_top",
@@ -880,6 +1040,8 @@
     }
   },
   "creaking_heart": {
+    "id": 81,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top",
       "up": "minecraft:block/creaking_heart_top",
@@ -891,6 +1053,8 @@
     }
   },
   "creaking_heart_awake": {
+    "id": 82,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top_awake",
       "up": "minecraft:block/creaking_heart_top_awake",
@@ -902,6 +1066,8 @@
     }
   },
   "creaking_heart_awake_horizontal": {
+    "id": 83,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top_awake",
       "up": "minecraft:block/creaking_heart_top_awake",
@@ -913,6 +1079,8 @@
     }
   },
   "creaking_heart_dormant": {
+    "id": 84,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top_dormant",
       "up": "minecraft:block/creaking_heart_top_dormant",
@@ -924,6 +1092,8 @@
     }
   },
   "creaking_heart_dormant_horizontal": {
+    "id": 85,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top_dormant",
       "up": "minecraft:block/creaking_heart_top_dormant",
@@ -935,6 +1105,8 @@
     }
   },
   "creaking_heart_horizontal": {
+    "id": 86,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/creaking_heart_top",
       "up": "minecraft:block/creaking_heart_top",
@@ -946,6 +1118,8 @@
     }
   },
   "crimson_hyphae": {
+    "id": 87,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/crimson_stem",
       "up": "minecraft:block/crimson_stem",
@@ -957,6 +1131,8 @@
     }
   },
   "crimson_planks": {
+    "id": 88,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/crimson_planks",
       "up": "minecraft:block/crimson_planks",
@@ -968,6 +1144,8 @@
     }
   },
   "crimson_stem": {
+    "id": 89,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/crimson_stem_top",
       "up": "minecraft:block/crimson_stem_top",
@@ -979,6 +1157,8 @@
     }
   },
   "crying_obsidian": {
+    "id": 90,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/crying_obsidian",
       "up": "minecraft:block/crying_obsidian",
@@ -990,6 +1170,8 @@
     }
   },
   "cut_copper": {
+    "id": 91,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cut_copper",
       "up": "minecraft:block/cut_copper",
@@ -1001,6 +1183,8 @@
     }
   },
   "cut_red_sandstone": {
+    "id": 92,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_sandstone_top",
       "up": "minecraft:block/red_sandstone_top",
@@ -1012,6 +1196,8 @@
     }
   },
   "cut_sandstone": {
+    "id": 93,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sandstone_top",
       "up": "minecraft:block/sandstone_top",
@@ -1023,6 +1209,8 @@
     }
   },
   "cyan_concrete": {
+    "id": 94,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cyan_concrete",
       "up": "minecraft:block/cyan_concrete",
@@ -1034,6 +1222,8 @@
     }
   },
   "cyan_concrete_powder": {
+    "id": 95,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cyan_concrete_powder",
       "up": "minecraft:block/cyan_concrete_powder",
@@ -1045,6 +1235,8 @@
     }
   },
   "cyan_stained_glass": {
+    "id": 96,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/cyan_stained_glass",
       "up": "minecraft:block/cyan_stained_glass",
@@ -1056,6 +1248,8 @@
     }
   },
   "cyan_terracotta": {
+    "id": 97,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cyan_terracotta",
       "up": "minecraft:block/cyan_terracotta",
@@ -1067,6 +1261,8 @@
     }
   },
   "cyan_wool": {
+    "id": 98,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cyan_wool",
       "up": "minecraft:block/cyan_wool",
@@ -1078,6 +1274,8 @@
     }
   },
   "dark_oak_log": {
+    "id": 99,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_log_top",
       "up": "minecraft:block/dark_oak_log_top",
@@ -1089,6 +1287,8 @@
     }
   },
   "dark_oak_log_horizontal": {
+    "id": 100,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_log_top",
       "up": "minecraft:block/dark_oak_log_top",
@@ -1100,6 +1300,8 @@
     }
   },
   "dark_oak_planks": {
+    "id": 101,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_planks",
       "up": "minecraft:block/dark_oak_planks",
@@ -1111,6 +1313,8 @@
     }
   },
   "dark_oak_wood": {
+    "id": 102,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_log",
       "up": "minecraft:block/dark_oak_log",
@@ -1122,6 +1326,8 @@
     }
   },
   "dark_prismarine": {
+    "id": 103,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_prismarine",
       "up": "minecraft:block/dark_prismarine",
@@ -1133,6 +1339,8 @@
     }
   },
   "dead_brain_coral_block": {
+    "id": 104,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dead_brain_coral_block",
       "up": "minecraft:block/dead_brain_coral_block",
@@ -1144,6 +1352,8 @@
     }
   },
   "dead_bubble_coral_block": {
+    "id": 105,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dead_bubble_coral_block",
       "up": "minecraft:block/dead_bubble_coral_block",
@@ -1155,6 +1365,8 @@
     }
   },
   "dead_fire_coral_block": {
+    "id": 106,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dead_fire_coral_block",
       "up": "minecraft:block/dead_fire_coral_block",
@@ -1166,6 +1378,8 @@
     }
   },
   "dead_horn_coral_block": {
+    "id": 107,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dead_horn_coral_block",
       "up": "minecraft:block/dead_horn_coral_block",
@@ -1177,6 +1391,8 @@
     }
   },
   "dead_tube_coral_block": {
+    "id": 108,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dead_tube_coral_block",
       "up": "minecraft:block/dead_tube_coral_block",
@@ -1188,6 +1404,8 @@
     }
   },
   "deepslate": {
+    "id": 109,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_top",
       "up": "minecraft:block/deepslate_top",
@@ -1199,6 +1417,8 @@
     }
   },
   "deepslate_bricks": {
+    "id": 110,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_bricks",
       "up": "minecraft:block/deepslate_bricks",
@@ -1210,6 +1430,8 @@
     }
   },
   "deepslate_coal_ore": {
+    "id": 111,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_coal_ore",
       "up": "minecraft:block/deepslate_coal_ore",
@@ -1221,6 +1443,8 @@
     }
   },
   "deepslate_copper_ore": {
+    "id": 112,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_copper_ore",
       "up": "minecraft:block/deepslate_copper_ore",
@@ -1232,6 +1456,8 @@
     }
   },
   "deepslate_diamond_ore": {
+    "id": 113,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_diamond_ore",
       "up": "minecraft:block/deepslate_diamond_ore",
@@ -1243,6 +1469,8 @@
     }
   },
   "deepslate_emerald_ore": {
+    "id": 114,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_emerald_ore",
       "up": "minecraft:block/deepslate_emerald_ore",
@@ -1254,6 +1482,8 @@
     }
   },
   "deepslate_gold_ore": {
+    "id": 115,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_gold_ore",
       "up": "minecraft:block/deepslate_gold_ore",
@@ -1265,6 +1495,8 @@
     }
   },
   "deepslate_iron_ore": {
+    "id": 116,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_iron_ore",
       "up": "minecraft:block/deepslate_iron_ore",
@@ -1276,6 +1508,8 @@
     }
   },
   "deepslate_lapis_ore": {
+    "id": 117,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_lapis_ore",
       "up": "minecraft:block/deepslate_lapis_ore",
@@ -1287,6 +1521,8 @@
     }
   },
   "deepslate_redstone_ore": {
+    "id": 118,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_redstone_ore",
       "up": "minecraft:block/deepslate_redstone_ore",
@@ -1298,6 +1534,8 @@
     }
   },
   "deepslate_tiles": {
+    "id": 119,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/deepslate_tiles",
       "up": "minecraft:block/deepslate_tiles",
@@ -1309,6 +1547,8 @@
     }
   },
   "diamond_block": {
+    "id": 120,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/diamond_block",
       "up": "minecraft:block/diamond_block",
@@ -1320,6 +1560,8 @@
     }
   },
   "diamond_ore": {
+    "id": 121,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/diamond_ore",
       "up": "minecraft:block/diamond_ore",
@@ -1331,6 +1573,8 @@
     }
   },
   "diorite": {
+    "id": 122,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/diorite",
       "up": "minecraft:block/diorite",
@@ -1342,6 +1586,8 @@
     }
   },
   "dirt": {
+    "id": 123,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dirt",
       "up": "minecraft:block/dirt",
@@ -1353,6 +1599,8 @@
     }
   },
   "dispenser": {
+    "id": 124,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/furnace_top",
       "up": "minecraft:block/furnace_top",
@@ -1364,6 +1612,8 @@
     }
   },
   "dried_kelp_block": {
+    "id": 125,
+    "transparent": false,
     "textures": {
       "down": "block/dried_kelp_bottom",
       "up": "block/dried_kelp_top",
@@ -1375,6 +1625,8 @@
     }
   },
   "dripstone_block": {
+    "id": 126,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dripstone_block",
       "up": "minecraft:block/dripstone_block",
@@ -1386,6 +1638,8 @@
     }
   },
   "dropper": {
+    "id": 127,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/furnace_top",
       "up": "minecraft:block/furnace_top",
@@ -1397,6 +1651,8 @@
     }
   },
   "emerald_block": {
+    "id": 128,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/emerald_block",
       "up": "minecraft:block/emerald_block",
@@ -1408,6 +1664,8 @@
     }
   },
   "emerald_ore": {
+    "id": 129,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/emerald_ore",
       "up": "minecraft:block/emerald_ore",
@@ -1419,6 +1677,8 @@
     }
   },
   "end_stone": {
+    "id": 130,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/end_stone",
       "up": "minecraft:block/end_stone",
@@ -1430,6 +1690,8 @@
     }
   },
   "end_stone_bricks": {
+    "id": 131,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/end_stone_bricks",
       "up": "minecraft:block/end_stone_bricks",
@@ -1441,6 +1703,8 @@
     }
   },
   "exposed_chiseled_copper": {
+    "id": 132,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_chiseled_copper",
       "up": "minecraft:block/exposed_chiseled_copper",
@@ -1452,6 +1716,8 @@
     }
   },
   "exposed_copper": {
+    "id": 133,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper",
       "up": "minecraft:block/exposed_copper",
@@ -1463,6 +1729,8 @@
     }
   },
   "exposed_copper_bulb": {
+    "id": 134,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper_bulb",
       "up": "minecraft:block/exposed_copper_bulb",
@@ -1474,6 +1742,8 @@
     }
   },
   "exposed_copper_bulb_lit": {
+    "id": 135,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper_bulb_lit",
       "up": "minecraft:block/exposed_copper_bulb_lit",
@@ -1485,6 +1755,8 @@
     }
   },
   "exposed_copper_bulb_lit_powered": {
+    "id": 136,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper_bulb_lit_powered",
       "up": "minecraft:block/exposed_copper_bulb_lit_powered",
@@ -1496,6 +1768,8 @@
     }
   },
   "exposed_copper_bulb_powered": {
+    "id": 137,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper_bulb_powered",
       "up": "minecraft:block/exposed_copper_bulb_powered",
@@ -1507,6 +1781,8 @@
     }
   },
   "exposed_copper_grate": {
+    "id": 138,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_copper_grate",
       "up": "minecraft:block/exposed_copper_grate",
@@ -1518,6 +1794,8 @@
     }
   },
   "exposed_cut_copper": {
+    "id": 139,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/exposed_cut_copper",
       "up": "minecraft:block/exposed_cut_copper",
@@ -1529,6 +1807,8 @@
     }
   },
   "fire_coral_block": {
+    "id": 140,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/fire_coral_block",
       "up": "minecraft:block/fire_coral_block",
@@ -1540,6 +1820,8 @@
     }
   },
   "fletching_table": {
+    "id": 141,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_planks",
       "up": "minecraft:block/fletching_table_top",
@@ -1551,6 +1833,8 @@
     }
   },
   "acacia_leaves": {
+    "id": 142,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/acacia_leaves",
       "up": "minecraft:block/acacia_leaves",
@@ -1562,6 +1846,8 @@
     }
   },
   "flowering_azalea_leaves": {
+    "id": 143,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/flowering_azalea_leaves",
       "up": "minecraft:block/flowering_azalea_leaves",
@@ -1573,6 +1859,8 @@
     }
   },
   "birch_leaves": {
+    "id": 144,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/birch_leaves",
       "up": "minecraft:block/birch_leaves",
@@ -1584,6 +1872,8 @@
     }
   },
   "cherry_leaves": {
+    "id": 145,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/cherry_leaves",
       "up": "minecraft:block/cherry_leaves",
@@ -1595,6 +1885,8 @@
     }
   },
   "dark_oak_leaves": {
+    "id": 146,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/dark_oak_leaves",
       "up": "minecraft:block/dark_oak_leaves",
@@ -1606,6 +1898,8 @@
     }
   },
   "jungle_leaves": {
+    "id": 147,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/jungle_leaves",
       "up": "minecraft:block/jungle_leaves",
@@ -1617,6 +1911,8 @@
     }
   },
   "mangrove_leaves": {
+    "id": 148,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/mangrove_leaves",
       "up": "minecraft:block/mangrove_leaves",
@@ -1628,6 +1924,8 @@
     }
   },
   "oak_leaves": {
+    "id": 149,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/oak_leaves",
       "up": "minecraft:block/oak_leaves",
@@ -1639,6 +1937,8 @@
     }
   },
   "pale_oak_leaves": {
+    "id": 150,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/pale_oak_leaves",
       "up": "minecraft:block/pale_oak_leaves",
@@ -1650,6 +1950,8 @@
     }
   },
   "spruce_leaves": {
+    "id": 151,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/spruce_leaves",
       "up": "minecraft:block/spruce_leaves",
@@ -1661,6 +1963,8 @@
     }
   },
   "frosted_ice_0": {
+    "id": 152,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/frosted_ice_0",
       "up": "minecraft:block/frosted_ice_0",
@@ -1672,6 +1976,8 @@
     }
   },
   "frosted_ice_1": {
+    "id": 153,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/frosted_ice_1",
       "up": "minecraft:block/frosted_ice_1",
@@ -1683,6 +1989,8 @@
     }
   },
   "frosted_ice_2": {
+    "id": 154,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/frosted_ice_2",
       "up": "minecraft:block/frosted_ice_2",
@@ -1694,6 +2002,8 @@
     }
   },
   "frosted_ice_3": {
+    "id": 155,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/frosted_ice_3",
       "up": "minecraft:block/frosted_ice_3",
@@ -1705,6 +2015,8 @@
     }
   },
   "furnace": {
+    "id": 156,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/furnace_top",
       "up": "minecraft:block/furnace_top",
@@ -1716,6 +2028,8 @@
     }
   },
   "furnace_on": {
+    "id": 157,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/furnace_top",
       "up": "minecraft:block/furnace_top",
@@ -1727,6 +2041,8 @@
     }
   },
   "gilded_blackstone": {
+    "id": 158,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gilded_blackstone",
       "up": "minecraft:block/gilded_blackstone",
@@ -1738,6 +2054,8 @@
     }
   },
   "glass": {
+    "id": 159,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/glass",
       "up": "minecraft:block/glass",
@@ -1749,6 +2067,8 @@
     }
   },
   "glowstone": {
+    "id": 160,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/glowstone",
       "up": "minecraft:block/glowstone",
@@ -1760,6 +2080,8 @@
     }
   },
   "gold_block": {
+    "id": 161,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gold_block",
       "up": "minecraft:block/gold_block",
@@ -1771,6 +2093,8 @@
     }
   },
   "gold_ore": {
+    "id": 162,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gold_ore",
       "up": "minecraft:block/gold_ore",
@@ -1782,6 +2106,8 @@
     }
   },
   "granite": {
+    "id": 163,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/granite",
       "up": "minecraft:block/granite",
@@ -1793,6 +2119,8 @@
     }
   },
   "grass_block": {
+    "id": 164,
+    "transparent": false,
     "textures": {
       "down": "block/dirt",
       "up": "block/grass_block_top",
@@ -1804,6 +2132,8 @@
     }
   },
   "gravel": {
+    "id": 165,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gravel",
       "up": "minecraft:block/gravel",
@@ -1815,6 +2145,8 @@
     }
   },
   "gray_concrete": {
+    "id": 166,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gray_concrete",
       "up": "minecraft:block/gray_concrete",
@@ -1826,6 +2158,8 @@
     }
   },
   "gray_concrete_powder": {
+    "id": 167,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gray_concrete_powder",
       "up": "minecraft:block/gray_concrete_powder",
@@ -1837,6 +2171,8 @@
     }
   },
   "gray_stained_glass": {
+    "id": 168,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/gray_stained_glass",
       "up": "minecraft:block/gray_stained_glass",
@@ -1848,6 +2184,8 @@
     }
   },
   "gray_terracotta": {
+    "id": 169,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gray_terracotta",
       "up": "minecraft:block/gray_terracotta",
@@ -1859,6 +2197,8 @@
     }
   },
   "gray_wool": {
+    "id": 170,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/gray_wool",
       "up": "minecraft:block/gray_wool",
@@ -1870,6 +2210,8 @@
     }
   },
   "green_concrete": {
+    "id": 171,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/green_concrete",
       "up": "minecraft:block/green_concrete",
@@ -1881,6 +2223,8 @@
     }
   },
   "green_concrete_powder": {
+    "id": 172,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/green_concrete_powder",
       "up": "minecraft:block/green_concrete_powder",
@@ -1892,6 +2236,8 @@
     }
   },
   "green_stained_glass": {
+    "id": 173,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/green_stained_glass",
       "up": "minecraft:block/green_stained_glass",
@@ -1903,6 +2249,8 @@
     }
   },
   "green_terracotta": {
+    "id": 174,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/green_terracotta",
       "up": "minecraft:block/green_terracotta",
@@ -1914,6 +2262,8 @@
     }
   },
   "green_wool": {
+    "id": 175,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/green_wool",
       "up": "minecraft:block/green_wool",
@@ -1925,6 +2275,8 @@
     }
   },
   "hay_block": {
+    "id": 176,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/hay_block_top",
       "up": "minecraft:block/hay_block_top",
@@ -1936,6 +2288,8 @@
     }
   },
   "hay_block_horizontal": {
+    "id": 177,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/hay_block_top",
       "up": "minecraft:block/hay_block_top",
@@ -1947,6 +2301,8 @@
     }
   },
   "honeycomb_block": {
+    "id": 178,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/honeycomb_block",
       "up": "minecraft:block/honeycomb_block",
@@ -1958,6 +2314,8 @@
     }
   },
   "honey_block": {
+    "id": 179,
+    "transparent": false,
     "textures": {
       "down": "block/honey_block_bottom",
       "up": "block/honey_block_bottom",
@@ -1969,6 +2327,8 @@
     }
   },
   "horn_coral_block": {
+    "id": 180,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/horn_coral_block",
       "up": "minecraft:block/horn_coral_block",
@@ -1980,6 +2340,8 @@
     }
   },
   "ice": {
+    "id": 181,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/ice",
       "up": "minecraft:block/ice",
@@ -1991,6 +2353,8 @@
     }
   },
   "iron_block": {
+    "id": 182,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/iron_block",
       "up": "minecraft:block/iron_block",
@@ -2002,6 +2366,8 @@
     }
   },
   "iron_ore": {
+    "id": 183,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/iron_ore",
       "up": "minecraft:block/iron_ore",
@@ -2013,6 +2379,8 @@
     }
   },
   "jack_o_lantern": {
+    "id": 184,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pumpkin_top",
       "up": "minecraft:block/pumpkin_top",
@@ -2024,6 +2392,8 @@
     }
   },
   "jigsaw": {
+    "id": 185,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jigsaw_side",
       "up": "minecraft:block/jigsaw_lock",
@@ -2035,6 +2405,8 @@
     }
   },
   "jukebox": {
+    "id": 186,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jukebox_side",
       "up": "minecraft:block/jukebox_top",
@@ -2046,6 +2418,8 @@
     }
   },
   "jungle_log": {
+    "id": 187,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jungle_log_top",
       "up": "minecraft:block/jungle_log_top",
@@ -2057,6 +2431,8 @@
     }
   },
   "jungle_log_horizontal": {
+    "id": 188,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jungle_log_top",
       "up": "minecraft:block/jungle_log_top",
@@ -2068,6 +2444,8 @@
     }
   },
   "jungle_planks": {
+    "id": 189,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jungle_planks",
       "up": "minecraft:block/jungle_planks",
@@ -2079,6 +2457,8 @@
     }
   },
   "jungle_wood": {
+    "id": 190,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jungle_log",
       "up": "minecraft:block/jungle_log",
@@ -2090,6 +2470,8 @@
     }
   },
   "lapis_block": {
+    "id": 191,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lapis_block",
       "up": "minecraft:block/lapis_block",
@@ -2101,6 +2483,8 @@
     }
   },
   "lapis_ore": {
+    "id": 192,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lapis_ore",
       "up": "minecraft:block/lapis_ore",
@@ -2112,6 +2496,8 @@
     }
   },
   "light_blue_concrete": {
+    "id": 193,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_blue_concrete",
       "up": "minecraft:block/light_blue_concrete",
@@ -2123,6 +2509,8 @@
     }
   },
   "light_blue_concrete_powder": {
+    "id": 194,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_blue_concrete_powder",
       "up": "minecraft:block/light_blue_concrete_powder",
@@ -2134,6 +2522,8 @@
     }
   },
   "light_blue_stained_glass": {
+    "id": 195,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/light_blue_stained_glass",
       "up": "minecraft:block/light_blue_stained_glass",
@@ -2145,6 +2535,8 @@
     }
   },
   "light_blue_terracotta": {
+    "id": 196,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_blue_terracotta",
       "up": "minecraft:block/light_blue_terracotta",
@@ -2156,6 +2548,8 @@
     }
   },
   "light_blue_wool": {
+    "id": 197,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_blue_wool",
       "up": "minecraft:block/light_blue_wool",
@@ -2167,6 +2561,8 @@
     }
   },
   "light_gray_concrete": {
+    "id": 198,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_gray_concrete",
       "up": "minecraft:block/light_gray_concrete",
@@ -2178,6 +2574,8 @@
     }
   },
   "light_gray_concrete_powder": {
+    "id": 199,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_gray_concrete_powder",
       "up": "minecraft:block/light_gray_concrete_powder",
@@ -2189,6 +2587,8 @@
     }
   },
   "light_gray_stained_glass": {
+    "id": 200,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/light_gray_stained_glass",
       "up": "minecraft:block/light_gray_stained_glass",
@@ -2200,6 +2600,8 @@
     }
   },
   "light_gray_terracotta": {
+    "id": 201,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_gray_terracotta",
       "up": "minecraft:block/light_gray_terracotta",
@@ -2211,6 +2613,8 @@
     }
   },
   "light_gray_wool": {
+    "id": 202,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/light_gray_wool",
       "up": "minecraft:block/light_gray_wool",
@@ -2222,6 +2626,8 @@
     }
   },
   "lime_concrete": {
+    "id": 203,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lime_concrete",
       "up": "minecraft:block/lime_concrete",
@@ -2233,6 +2639,8 @@
     }
   },
   "lime_concrete_powder": {
+    "id": 204,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lime_concrete_powder",
       "up": "minecraft:block/lime_concrete_powder",
@@ -2244,6 +2652,8 @@
     }
   },
   "lime_stained_glass": {
+    "id": 205,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/lime_stained_glass",
       "up": "minecraft:block/lime_stained_glass",
@@ -2255,6 +2665,8 @@
     }
   },
   "lime_terracotta": {
+    "id": 206,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lime_terracotta",
       "up": "minecraft:block/lime_terracotta",
@@ -2266,6 +2678,8 @@
     }
   },
   "lime_wool": {
+    "id": 207,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lime_wool",
       "up": "minecraft:block/lime_wool",
@@ -2277,6 +2691,8 @@
     }
   },
   "lodestone": {
+    "id": 208,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/lodestone_top",
       "up": "minecraft:block/lodestone_top",
@@ -2288,6 +2704,8 @@
     }
   },
   "magenta_concrete": {
+    "id": 209,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/magenta_concrete",
       "up": "minecraft:block/magenta_concrete",
@@ -2299,6 +2717,8 @@
     }
   },
   "magenta_concrete_powder": {
+    "id": 210,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/magenta_concrete_powder",
       "up": "minecraft:block/magenta_concrete_powder",
@@ -2310,6 +2730,8 @@
     }
   },
   "magenta_stained_glass": {
+    "id": 211,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/magenta_stained_glass",
       "up": "minecraft:block/magenta_stained_glass",
@@ -2321,6 +2743,8 @@
     }
   },
   "magenta_terracotta": {
+    "id": 212,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/magenta_terracotta",
       "up": "minecraft:block/magenta_terracotta",
@@ -2332,6 +2756,8 @@
     }
   },
   "magenta_wool": {
+    "id": 213,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/magenta_wool",
       "up": "minecraft:block/magenta_wool",
@@ -2343,6 +2769,8 @@
     }
   },
   "magma_block": {
+    "id": 214,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/magma",
       "up": "minecraft:block/magma",
@@ -2354,6 +2782,8 @@
     }
   },
   "mangrove_log": {
+    "id": 215,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mangrove_log_top",
       "up": "minecraft:block/mangrove_log_top",
@@ -2365,6 +2795,8 @@
     }
   },
   "mangrove_log_horizontal": {
+    "id": 216,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mangrove_log_top",
       "up": "minecraft:block/mangrove_log_top",
@@ -2376,6 +2808,8 @@
     }
   },
   "mangrove_planks": {
+    "id": 217,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mangrove_planks",
       "up": "minecraft:block/mangrove_planks",
@@ -2387,6 +2821,8 @@
     }
   },
   "mangrove_wood": {
+    "id": 218,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mangrove_log",
       "up": "minecraft:block/mangrove_log",
@@ -2398,6 +2834,8 @@
     }
   },
   "melon": {
+    "id": 219,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/melon_top",
       "up": "minecraft:block/melon_top",
@@ -2409,6 +2847,8 @@
     }
   },
   "mossy_cobblestone": {
+    "id": 220,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mossy_cobblestone",
       "up": "minecraft:block/mossy_cobblestone",
@@ -2420,6 +2860,8 @@
     }
   },
   "mossy_stone_bricks": {
+    "id": 221,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mossy_stone_bricks",
       "up": "minecraft:block/mossy_stone_bricks",
@@ -2431,6 +2873,8 @@
     }
   },
   "moss_block": {
+    "id": 222,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/moss_block",
       "up": "minecraft:block/moss_block",
@@ -2442,6 +2886,8 @@
     }
   },
   "mud": {
+    "id": 223,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mud",
       "up": "minecraft:block/mud",
@@ -2453,6 +2899,8 @@
     }
   },
   "muddy_mangrove_roots": {
+    "id": 224,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/muddy_mangrove_roots_top",
       "up": "minecraft:block/muddy_mangrove_roots_top",
@@ -2464,6 +2912,8 @@
     }
   },
   "mud_bricks": {
+    "id": 225,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mud_bricks",
       "up": "minecraft:block/mud_bricks",
@@ -2475,6 +2925,8 @@
     }
   },
   "mushroom_stem_inventory": {
+    "id": 226,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mushroom_stem",
       "up": "minecraft:block/mushroom_stem",
@@ -2486,6 +2938,8 @@
     }
   },
   "netherite_block": {
+    "id": 227,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/netherite_block",
       "up": "minecraft:block/netherite_block",
@@ -2497,6 +2951,8 @@
     }
   },
   "netherrack": {
+    "id": 228,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/netherrack",
       "up": "minecraft:block/netherrack",
@@ -2508,6 +2964,8 @@
     }
   },
   "nether_bricks": {
+    "id": 229,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/nether_bricks",
       "up": "minecraft:block/nether_bricks",
@@ -2519,6 +2977,8 @@
     }
   },
   "nether_gold_ore": {
+    "id": 230,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/nether_gold_ore",
       "up": "minecraft:block/nether_gold_ore",
@@ -2530,6 +2990,8 @@
     }
   },
   "nether_quartz_ore": {
+    "id": 231,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/nether_quartz_ore",
       "up": "minecraft:block/nether_quartz_ore",
@@ -2541,6 +3003,8 @@
     }
   },
   "nether_wart_block": {
+    "id": 232,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/nether_wart_block",
       "up": "minecraft:block/nether_wart_block",
@@ -2552,6 +3016,8 @@
     }
   },
   "note_block": {
+    "id": 233,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/note_block",
       "up": "minecraft:block/note_block",
@@ -2563,6 +3029,8 @@
     }
   },
   "oak_log": {
+    "id": 234,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_log_top",
       "up": "minecraft:block/oak_log_top",
@@ -2574,6 +3042,8 @@
     }
   },
   "oak_log_horizontal": {
+    "id": 235,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_log_top",
       "up": "minecraft:block/oak_log_top",
@@ -2585,6 +3055,8 @@
     }
   },
   "oak_planks": {
+    "id": 236,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_planks",
       "up": "minecraft:block/oak_planks",
@@ -2596,6 +3068,8 @@
     }
   },
   "oak_wood": {
+    "id": 237,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_log",
       "up": "minecraft:block/oak_log",
@@ -2607,6 +3081,8 @@
     }
   },
   "observer": {
+    "id": 238,
+    "transparent": false,
     "textures": {
       "down": "block/observer_top",
       "up": "block/observer_top",
@@ -2618,6 +3094,8 @@
     }
   },
   "obsidian": {
+    "id": 239,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/obsidian",
       "up": "minecraft:block/obsidian",
@@ -2629,6 +3107,8 @@
     }
   },
   "ochre_froglight": {
+    "id": 240,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/ochre_froglight_top",
       "up": "minecraft:block/ochre_froglight_top",
@@ -2640,6 +3120,8 @@
     }
   },
   "ochre_froglight_horizontal": {
+    "id": 241,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/ochre_froglight_top",
       "up": "minecraft:block/ochre_froglight_top",
@@ -2651,6 +3133,8 @@
     }
   },
   "orange_concrete": {
+    "id": 242,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/orange_concrete",
       "up": "minecraft:block/orange_concrete",
@@ -2662,6 +3146,8 @@
     }
   },
   "orange_concrete_powder": {
+    "id": 243,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/orange_concrete_powder",
       "up": "minecraft:block/orange_concrete_powder",
@@ -2673,6 +3159,8 @@
     }
   },
   "orange_stained_glass": {
+    "id": 244,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/orange_stained_glass",
       "up": "minecraft:block/orange_stained_glass",
@@ -2684,6 +3172,8 @@
     }
   },
   "orange_terracotta": {
+    "id": 245,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/orange_terracotta",
       "up": "minecraft:block/orange_terracotta",
@@ -2695,6 +3185,8 @@
     }
   },
   "orange_wool": {
+    "id": 246,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/orange_wool",
       "up": "minecraft:block/orange_wool",
@@ -2706,6 +3198,8 @@
     }
   },
   "orientable_vertical": {
+    "id": 247,
+    "transparent": false,
     "textures": {
       "particle": "#side",
       "down": "#side",
@@ -2717,6 +3211,8 @@
     }
   },
   "orientable_with_bottom": {
+    "id": 248,
+    "transparent": false,
     "textures": {
       "particle": "#front",
       "down": "#bottom",
@@ -2728,6 +3224,8 @@
     }
   },
   "oxidized_chiseled_copper": {
+    "id": 249,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_chiseled_copper",
       "up": "minecraft:block/oxidized_chiseled_copper",
@@ -2739,6 +3237,8 @@
     }
   },
   "oxidized_copper": {
+    "id": 250,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper",
       "up": "minecraft:block/oxidized_copper",
@@ -2750,6 +3250,8 @@
     }
   },
   "oxidized_copper_bulb": {
+    "id": 251,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper_bulb",
       "up": "minecraft:block/oxidized_copper_bulb",
@@ -2761,6 +3263,8 @@
     }
   },
   "oxidized_copper_bulb_lit": {
+    "id": 252,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper_bulb_lit",
       "up": "minecraft:block/oxidized_copper_bulb_lit",
@@ -2772,6 +3276,8 @@
     }
   },
   "oxidized_copper_bulb_lit_powered": {
+    "id": 253,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper_bulb_lit_powered",
       "up": "minecraft:block/oxidized_copper_bulb_lit_powered",
@@ -2783,6 +3289,8 @@
     }
   },
   "oxidized_copper_bulb_powered": {
+    "id": 254,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper_bulb_powered",
       "up": "minecraft:block/oxidized_copper_bulb_powered",
@@ -2794,6 +3302,8 @@
     }
   },
   "oxidized_copper_grate": {
+    "id": 255,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_copper_grate",
       "up": "minecraft:block/oxidized_copper_grate",
@@ -2805,6 +3315,8 @@
     }
   },
   "oxidized_cut_copper": {
+    "id": 256,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oxidized_cut_copper",
       "up": "minecraft:block/oxidized_cut_copper",
@@ -2816,6 +3328,8 @@
     }
   },
   "packed_ice": {
+    "id": 257,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/packed_ice",
       "up": "minecraft:block/packed_ice",
@@ -2827,6 +3341,8 @@
     }
   },
   "packed_mud": {
+    "id": 258,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/packed_mud",
       "up": "minecraft:block/packed_mud",
@@ -2838,6 +3354,8 @@
     }
   },
   "pale_moss_block": {
+    "id": 259,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_moss_block",
       "up": "minecraft:block/pale_moss_block",
@@ -2849,6 +3367,8 @@
     }
   },
   "pale_oak_log": {
+    "id": 260,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_oak_log_top",
       "up": "minecraft:block/pale_oak_log_top",
@@ -2860,6 +3380,8 @@
     }
   },
   "pale_oak_log_horizontal": {
+    "id": 261,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_oak_log_top",
       "up": "minecraft:block/pale_oak_log_top",
@@ -2871,6 +3393,8 @@
     }
   },
   "pale_oak_planks": {
+    "id": 262,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_oak_planks",
       "up": "minecraft:block/pale_oak_planks",
@@ -2882,6 +3406,8 @@
     }
   },
   "pale_oak_wood": {
+    "id": 263,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_oak_log",
       "up": "minecraft:block/pale_oak_log",
@@ -2893,6 +3419,8 @@
     }
   },
   "pearlescent_froglight": {
+    "id": 264,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pearlescent_froglight_top",
       "up": "minecraft:block/pearlescent_froglight_top",
@@ -2904,6 +3432,8 @@
     }
   },
   "pearlescent_froglight_horizontal": {
+    "id": 265,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pearlescent_froglight_top",
       "up": "minecraft:block/pearlescent_froglight_top",
@@ -2915,6 +3445,8 @@
     }
   },
   "pink_concrete": {
+    "id": 266,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pink_concrete",
       "up": "minecraft:block/pink_concrete",
@@ -2926,6 +3458,8 @@
     }
   },
   "pink_concrete_powder": {
+    "id": 267,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pink_concrete_powder",
       "up": "minecraft:block/pink_concrete_powder",
@@ -2937,6 +3471,8 @@
     }
   },
   "pink_stained_glass": {
+    "id": 268,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/pink_stained_glass",
       "up": "minecraft:block/pink_stained_glass",
@@ -2948,6 +3484,8 @@
     }
   },
   "pink_terracotta": {
+    "id": 269,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pink_terracotta",
       "up": "minecraft:block/pink_terracotta",
@@ -2959,6 +3497,8 @@
     }
   },
   "pink_wool": {
+    "id": 270,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pink_wool",
       "up": "minecraft:block/pink_wool",
@@ -2970,6 +3510,8 @@
     }
   },
   "polished_andesite": {
+    "id": 271,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_andesite",
       "up": "minecraft:block/polished_andesite",
@@ -2981,6 +3523,8 @@
     }
   },
   "polished_basalt": {
+    "id": 272,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_basalt_top",
       "up": "minecraft:block/polished_basalt_top",
@@ -2992,6 +3536,8 @@
     }
   },
   "polished_blackstone": {
+    "id": 273,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_blackstone",
       "up": "minecraft:block/polished_blackstone",
@@ -3003,6 +3549,8 @@
     }
   },
   "polished_blackstone_bricks": {
+    "id": 274,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_blackstone_bricks",
       "up": "minecraft:block/polished_blackstone_bricks",
@@ -3014,6 +3562,8 @@
     }
   },
   "polished_deepslate": {
+    "id": 275,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_deepslate",
       "up": "minecraft:block/polished_deepslate",
@@ -3025,6 +3575,8 @@
     }
   },
   "polished_diorite": {
+    "id": 276,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_diorite",
       "up": "minecraft:block/polished_diorite",
@@ -3036,6 +3588,8 @@
     }
   },
   "polished_granite": {
+    "id": 277,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_granite",
       "up": "minecraft:block/polished_granite",
@@ -3047,6 +3601,8 @@
     }
   },
   "polished_tuff": {
+    "id": 278,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/polished_tuff",
       "up": "minecraft:block/polished_tuff",
@@ -3058,6 +3614,8 @@
     }
   },
   "prismarine": {
+    "id": 279,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/prismarine",
       "up": "minecraft:block/prismarine",
@@ -3069,6 +3627,8 @@
     }
   },
   "prismarine_bricks": {
+    "id": 280,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/prismarine_bricks",
       "up": "minecraft:block/prismarine_bricks",
@@ -3080,6 +3640,8 @@
     }
   },
   "pumpkin": {
+    "id": 281,
+    "transparent": false,
     "textures": {
       "down": "block/pumpkin_top",
       "up": "block/pumpkin_top",
@@ -3091,6 +3653,8 @@
     }
   },
   "purple_concrete": {
+    "id": 282,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purple_concrete",
       "up": "minecraft:block/purple_concrete",
@@ -3102,6 +3666,8 @@
     }
   },
   "purple_concrete_powder": {
+    "id": 283,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purple_concrete_powder",
       "up": "minecraft:block/purple_concrete_powder",
@@ -3113,6 +3679,8 @@
     }
   },
   "purple_stained_glass": {
+    "id": 284,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/purple_stained_glass",
       "up": "minecraft:block/purple_stained_glass",
@@ -3124,6 +3692,8 @@
     }
   },
   "purple_terracotta": {
+    "id": 285,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purple_terracotta",
       "up": "minecraft:block/purple_terracotta",
@@ -3135,6 +3705,8 @@
     }
   },
   "purple_wool": {
+    "id": 286,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purple_wool",
       "up": "minecraft:block/purple_wool",
@@ -3146,6 +3718,8 @@
     }
   },
   "purpur_block": {
+    "id": 287,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purpur_block",
       "up": "minecraft:block/purpur_block",
@@ -3157,6 +3731,8 @@
     }
   },
   "purpur_pillar": {
+    "id": 288,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purpur_pillar_top",
       "up": "minecraft:block/purpur_pillar_top",
@@ -3168,6 +3744,8 @@
     }
   },
   "purpur_pillar_horizontal": {
+    "id": 289,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/purpur_pillar_top",
       "up": "minecraft:block/purpur_pillar_top",
@@ -3179,6 +3757,8 @@
     }
   },
   "quartz_block": {
+    "id": 290,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/quartz_block_top",
       "up": "minecraft:block/quartz_block_top",
@@ -3190,6 +3770,8 @@
     }
   },
   "quartz_bricks": {
+    "id": 291,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/quartz_bricks",
       "up": "minecraft:block/quartz_bricks",
@@ -3201,6 +3783,8 @@
     }
   },
   "quartz_pillar": {
+    "id": 292,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/quartz_pillar_top",
       "up": "minecraft:block/quartz_pillar_top",
@@ -3212,6 +3796,8 @@
     }
   },
   "quartz_pillar_horizontal": {
+    "id": 293,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/quartz_pillar_top",
       "up": "minecraft:block/quartz_pillar_top",
@@ -3223,6 +3809,8 @@
     }
   },
   "raw_copper_block": {
+    "id": 294,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/raw_copper_block",
       "up": "minecraft:block/raw_copper_block",
@@ -3234,6 +3822,8 @@
     }
   },
   "raw_gold_block": {
+    "id": 295,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/raw_gold_block",
       "up": "minecraft:block/raw_gold_block",
@@ -3245,6 +3835,8 @@
     }
   },
   "raw_iron_block": {
+    "id": 296,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/raw_iron_block",
       "up": "minecraft:block/raw_iron_block",
@@ -3256,6 +3848,8 @@
     }
   },
   "redstone_block": {
+    "id": 297,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/redstone_block",
       "up": "minecraft:block/redstone_block",
@@ -3267,6 +3861,8 @@
     }
   },
   "redstone_lamp": {
+    "id": 298,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/redstone_lamp",
       "up": "minecraft:block/redstone_lamp",
@@ -3278,6 +3874,8 @@
     }
   },
   "redstone_lamp_on": {
+    "id": 299,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/redstone_lamp_on",
       "up": "minecraft:block/redstone_lamp_on",
@@ -3289,6 +3887,8 @@
     }
   },
   "redstone_ore": {
+    "id": 300,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/redstone_ore",
       "up": "minecraft:block/redstone_ore",
@@ -3300,6 +3900,8 @@
     }
   },
   "red_concrete": {
+    "id": 301,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_concrete",
       "up": "minecraft:block/red_concrete",
@@ -3311,6 +3913,8 @@
     }
   },
   "red_concrete_powder": {
+    "id": 302,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_concrete_powder",
       "up": "minecraft:block/red_concrete_powder",
@@ -3322,6 +3926,8 @@
     }
   },
   "red_mushroom_block_inventory": {
+    "id": 303,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_mushroom_block",
       "up": "minecraft:block/red_mushroom_block",
@@ -3333,6 +3939,8 @@
     }
   },
   "red_nether_bricks": {
+    "id": 304,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_nether_bricks",
       "up": "minecraft:block/red_nether_bricks",
@@ -3344,6 +3952,8 @@
     }
   },
   "red_sand": {
+    "id": 305,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_sand",
       "up": "minecraft:block/red_sand",
@@ -3355,6 +3965,8 @@
     }
   },
   "red_stained_glass": {
+    "id": 306,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/red_stained_glass",
       "up": "minecraft:block/red_stained_glass",
@@ -3366,6 +3978,8 @@
     }
   },
   "red_terracotta": {
+    "id": 307,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_terracotta",
       "up": "minecraft:block/red_terracotta",
@@ -3377,6 +3991,8 @@
     }
   },
   "red_wool": {
+    "id": 308,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_wool",
       "up": "minecraft:block/red_wool",
@@ -3388,6 +4004,8 @@
     }
   },
   "resin_block": {
+    "id": 309,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/resin_block",
       "up": "minecraft:block/resin_block",
@@ -3399,6 +4017,8 @@
     }
   },
   "resin_bricks": {
+    "id": 310,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/resin_bricks",
       "up": "minecraft:block/resin_bricks",
@@ -3410,6 +4030,8 @@
     }
   },
   "rooted_dirt": {
+    "id": 311,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/rooted_dirt",
       "up": "minecraft:block/rooted_dirt",
@@ -3421,6 +4043,8 @@
     }
   },
   "sand": {
+    "id": 312,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sand",
       "up": "minecraft:block/sand",
@@ -3432,6 +4056,8 @@
     }
   },
   "sculk": {
+    "id": 313,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sculk",
       "up": "minecraft:block/sculk",
@@ -3443,6 +4069,8 @@
     }
   },
   "sea_lantern": {
+    "id": 314,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sea_lantern",
       "up": "minecraft:block/sea_lantern",
@@ -3454,6 +4082,8 @@
     }
   },
   "shroomlight": {
+    "id": 315,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/shroomlight",
       "up": "minecraft:block/shroomlight",
@@ -3465,6 +4095,8 @@
     }
   },
   "slime_block": {
+    "id": 316,
+    "transparent": false,
     "textures": {
       "down": "block/slime_block",
       "up": "block/slime_block",
@@ -3476,6 +4108,8 @@
     }
   },
   "smithing_table": {
+    "id": 317,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/smithing_table_bottom",
       "up": "minecraft:block/smithing_table_top",
@@ -3487,6 +4121,8 @@
     }
   },
   "smooth_basalt": {
+    "id": 318,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/smooth_basalt",
       "up": "minecraft:block/smooth_basalt",
@@ -3498,6 +4134,8 @@
     }
   },
   "smooth_quartz": {
+    "id": 319,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/quartz_block_bottom",
       "up": "minecraft:block/quartz_block_bottom",
@@ -3509,6 +4147,8 @@
     }
   },
   "smooth_red_sandstone": {
+    "id": 320,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/red_sandstone_top",
       "up": "minecraft:block/red_sandstone_top",
@@ -3520,6 +4160,8 @@
     }
   },
   "smooth_sandstone": {
+    "id": 321,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sandstone_top",
       "up": "minecraft:block/sandstone_top",
@@ -3531,6 +4173,8 @@
     }
   },
   "smooth_stone": {
+    "id": 322,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/smooth_stone",
       "up": "minecraft:block/smooth_stone",
@@ -3542,6 +4186,8 @@
     }
   },
   "smooth_stone_slab_double": {
+    "id": 323,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/smooth_stone",
       "up": "minecraft:block/smooth_stone",
@@ -3553,6 +4199,8 @@
     }
   },
   "snow_block": {
+    "id": 324,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/snow",
       "up": "minecraft:block/snow",
@@ -3564,6 +4212,8 @@
     }
   },
   "soul_sand": {
+    "id": 325,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/soul_sand",
       "up": "minecraft:block/soul_sand",
@@ -3575,6 +4225,8 @@
     }
   },
   "soul_soil": {
+    "id": 326,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/soul_soil",
       "up": "minecraft:block/soul_soil",
@@ -3586,6 +4238,8 @@
     }
   },
   "sponge": {
+    "id": 327,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/sponge",
       "up": "minecraft:block/sponge",
@@ -3597,6 +4251,8 @@
     }
   },
   "spruce_log": {
+    "id": 328,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/spruce_log_top",
       "up": "minecraft:block/spruce_log_top",
@@ -3608,6 +4264,8 @@
     }
   },
   "spruce_log_horizontal": {
+    "id": 329,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/spruce_log_top",
       "up": "minecraft:block/spruce_log_top",
@@ -3619,6 +4277,8 @@
     }
   },
   "spruce_planks": {
+    "id": 330,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/spruce_planks",
       "up": "minecraft:block/spruce_planks",
@@ -3630,6 +4290,8 @@
     }
   },
   "spruce_wood": {
+    "id": 331,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/spruce_log",
       "up": "minecraft:block/spruce_log",
@@ -3641,6 +4303,8 @@
     }
   },
   "stone": {
+    "id": 332,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stone",
       "up": "minecraft:block/stone",
@@ -3652,6 +4316,8 @@
     }
   },
   "stone_bricks": {
+    "id": 333,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stone_bricks",
       "up": "minecraft:block/stone_bricks",
@@ -3663,6 +4329,8 @@
     }
   },
   "stripped_acacia_log": {
+    "id": 334,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_acacia_log_top",
       "up": "minecraft:block/stripped_acacia_log_top",
@@ -3674,6 +4342,8 @@
     }
   },
   "stripped_acacia_log_horizontal": {
+    "id": 335,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_acacia_log_top",
       "up": "minecraft:block/stripped_acacia_log_top",
@@ -3685,6 +4355,8 @@
     }
   },
   "stripped_acacia_wood": {
+    "id": 336,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_acacia_log",
       "up": "minecraft:block/stripped_acacia_log",
@@ -3696,6 +4368,8 @@
     }
   },
   "stripped_bamboo_block": {
+    "id": 337,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_bamboo_block_top",
       "up": "minecraft:block/stripped_bamboo_block_top",
@@ -3707,6 +4381,8 @@
     }
   },
   "stripped_birch_log": {
+    "id": 338,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_birch_log_top",
       "up": "minecraft:block/stripped_birch_log_top",
@@ -3718,6 +4394,8 @@
     }
   },
   "stripped_birch_log_horizontal": {
+    "id": 339,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_birch_log_top",
       "up": "minecraft:block/stripped_birch_log_top",
@@ -3729,6 +4407,8 @@
     }
   },
   "stripped_birch_wood": {
+    "id": 340,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_birch_log",
       "up": "minecraft:block/stripped_birch_log",
@@ -3740,6 +4420,8 @@
     }
   },
   "stripped_cherry_log": {
+    "id": 341,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_cherry_log_top",
       "up": "minecraft:block/stripped_cherry_log_top",
@@ -3751,6 +4433,8 @@
     }
   },
   "stripped_cherry_wood": {
+    "id": 342,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_cherry_log",
       "up": "minecraft:block/stripped_cherry_log",
@@ -3762,6 +4446,8 @@
     }
   },
   "stripped_crimson_hyphae": {
+    "id": 343,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_crimson_stem",
       "up": "minecraft:block/stripped_crimson_stem",
@@ -3773,6 +4459,8 @@
     }
   },
   "stripped_crimson_stem": {
+    "id": 344,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_crimson_stem_top",
       "up": "minecraft:block/stripped_crimson_stem_top",
@@ -3784,6 +4472,8 @@
     }
   },
   "stripped_dark_oak_log": {
+    "id": 345,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_dark_oak_log_top",
       "up": "minecraft:block/stripped_dark_oak_log_top",
@@ -3795,6 +4485,8 @@
     }
   },
   "stripped_dark_oak_log_horizontal": {
+    "id": 346,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_dark_oak_log_top",
       "up": "minecraft:block/stripped_dark_oak_log_top",
@@ -3806,6 +4498,8 @@
     }
   },
   "stripped_dark_oak_wood": {
+    "id": 347,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_dark_oak_log",
       "up": "minecraft:block/stripped_dark_oak_log",
@@ -3817,6 +4511,8 @@
     }
   },
   "stripped_jungle_log": {
+    "id": 348,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_jungle_log_top",
       "up": "minecraft:block/stripped_jungle_log_top",
@@ -3828,6 +4524,8 @@
     }
   },
   "stripped_jungle_log_horizontal": {
+    "id": 349,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_jungle_log_top",
       "up": "minecraft:block/stripped_jungle_log_top",
@@ -3839,6 +4537,8 @@
     }
   },
   "stripped_jungle_wood": {
+    "id": 350,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_jungle_log",
       "up": "minecraft:block/stripped_jungle_log",
@@ -3850,6 +4550,8 @@
     }
   },
   "stripped_mangrove_log": {
+    "id": 351,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_mangrove_log_top",
       "up": "minecraft:block/stripped_mangrove_log_top",
@@ -3861,6 +4563,8 @@
     }
   },
   "stripped_mangrove_log_horizontal": {
+    "id": 352,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_mangrove_log_top",
       "up": "minecraft:block/stripped_mangrove_log_top",
@@ -3872,6 +4576,8 @@
     }
   },
   "stripped_mangrove_wood": {
+    "id": 353,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_mangrove_log",
       "up": "minecraft:block/stripped_mangrove_log",
@@ -3883,6 +4589,8 @@
     }
   },
   "stripped_oak_log": {
+    "id": 354,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_oak_log_top",
       "up": "minecraft:block/stripped_oak_log_top",
@@ -3894,6 +4602,8 @@
     }
   },
   "stripped_oak_log_horizontal": {
+    "id": 355,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_oak_log_top",
       "up": "minecraft:block/stripped_oak_log_top",
@@ -3905,6 +4615,8 @@
     }
   },
   "stripped_oak_wood": {
+    "id": 356,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_oak_log",
       "up": "minecraft:block/stripped_oak_log",
@@ -3916,6 +4628,8 @@
     }
   },
   "stripped_pale_oak_log": {
+    "id": 357,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_pale_oak_log_top",
       "up": "minecraft:block/stripped_pale_oak_log_top",
@@ -3927,6 +4641,8 @@
     }
   },
   "stripped_pale_oak_log_horizontal": {
+    "id": 358,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_pale_oak_log_top",
       "up": "minecraft:block/stripped_pale_oak_log_top",
@@ -3938,6 +4654,8 @@
     }
   },
   "stripped_pale_oak_wood": {
+    "id": 359,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_pale_oak_log",
       "up": "minecraft:block/stripped_pale_oak_log",
@@ -3949,6 +4667,8 @@
     }
   },
   "stripped_spruce_log": {
+    "id": 360,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_spruce_log_top",
       "up": "minecraft:block/stripped_spruce_log_top",
@@ -3960,6 +4680,8 @@
     }
   },
   "stripped_spruce_log_horizontal": {
+    "id": 361,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_spruce_log_top",
       "up": "minecraft:block/stripped_spruce_log_top",
@@ -3971,6 +4693,8 @@
     }
   },
   "stripped_spruce_wood": {
+    "id": 362,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_spruce_log",
       "up": "minecraft:block/stripped_spruce_log",
@@ -3982,6 +4706,8 @@
     }
   },
   "stripped_warped_hyphae": {
+    "id": 363,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_warped_stem",
       "up": "minecraft:block/stripped_warped_stem",
@@ -3993,6 +4719,8 @@
     }
   },
   "stripped_warped_stem": {
+    "id": 364,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/stripped_warped_stem_top",
       "up": "minecraft:block/stripped_warped_stem_top",
@@ -4004,6 +4732,8 @@
     }
   },
   "structure_block": {
+    "id": 365,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/structure_block",
       "up": "minecraft:block/structure_block",
@@ -4015,6 +4745,8 @@
     }
   },
   "structure_block_corner": {
+    "id": 366,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/structure_block_corner",
       "up": "minecraft:block/structure_block_corner",
@@ -4026,6 +4758,8 @@
     }
   },
   "structure_block_data": {
+    "id": 367,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/structure_block_data",
       "up": "minecraft:block/structure_block_data",
@@ -4037,6 +4771,8 @@
     }
   },
   "structure_block_load": {
+    "id": 368,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/structure_block_load",
       "up": "minecraft:block/structure_block_load",
@@ -4048,6 +4784,8 @@
     }
   },
   "structure_block_save": {
+    "id": 369,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/structure_block_save",
       "up": "minecraft:block/structure_block_save",
@@ -4059,6 +4797,8 @@
     }
   },
   "suspicious_gravel_0": {
+    "id": 370,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_gravel_0",
       "up": "minecraft:block/suspicious_gravel_0",
@@ -4070,6 +4810,8 @@
     }
   },
   "suspicious_gravel_1": {
+    "id": 371,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_gravel_1",
       "up": "minecraft:block/suspicious_gravel_1",
@@ -4081,6 +4823,8 @@
     }
   },
   "suspicious_gravel_2": {
+    "id": 372,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_gravel_2",
       "up": "minecraft:block/suspicious_gravel_2",
@@ -4092,6 +4836,8 @@
     }
   },
   "suspicious_gravel_3": {
+    "id": 373,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_gravel_3",
       "up": "minecraft:block/suspicious_gravel_3",
@@ -4103,6 +4849,8 @@
     }
   },
   "suspicious_sand_0": {
+    "id": 374,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_sand_0",
       "up": "minecraft:block/suspicious_sand_0",
@@ -4114,6 +4862,8 @@
     }
   },
   "suspicious_sand_1": {
+    "id": 375,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_sand_1",
       "up": "minecraft:block/suspicious_sand_1",
@@ -4125,6 +4875,8 @@
     }
   },
   "suspicious_sand_2": {
+    "id": 376,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_sand_2",
       "up": "minecraft:block/suspicious_sand_2",
@@ -4136,6 +4888,8 @@
     }
   },
   "suspicious_sand_3": {
+    "id": 377,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/suspicious_sand_3",
       "up": "minecraft:block/suspicious_sand_3",
@@ -4147,6 +4901,8 @@
     }
   },
   "target": {
+    "id": 378,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/target_top",
       "up": "minecraft:block/target_top",
@@ -4158,6 +4914,8 @@
     }
   },
   "terracotta": {
+    "id": 379,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/terracotta",
       "up": "minecraft:block/terracotta",
@@ -4169,6 +4927,8 @@
     }
   },
   "test_block_accept": {
+    "id": 380,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/test_block_accept",
       "up": "minecraft:block/test_block_accept",
@@ -4180,6 +4940,8 @@
     }
   },
   "test_block_fail": {
+    "id": 381,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/test_block_fail",
       "up": "minecraft:block/test_block_fail",
@@ -4191,6 +4953,8 @@
     }
   },
   "test_block_log": {
+    "id": 382,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/test_block_log",
       "up": "minecraft:block/test_block_log",
@@ -4202,6 +4966,8 @@
     }
   },
   "test_block_start": {
+    "id": 383,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/test_block_start",
       "up": "minecraft:block/test_block_start",
@@ -4213,6 +4979,8 @@
     }
   },
   "test_instance_block": {
+    "id": 384,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/test_instance_block",
       "up": "minecraft:block/test_instance_block",
@@ -4224,6 +4992,8 @@
     }
   },
   "tinted_glass": {
+    "id": 385,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/tinted_glass",
       "up": "minecraft:block/tinted_glass",
@@ -4235,6 +5005,8 @@
     }
   },
   "tube_coral_block": {
+    "id": 386,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/tube_coral_block",
       "up": "minecraft:block/tube_coral_block",
@@ -4246,6 +5018,8 @@
     }
   },
   "tuff": {
+    "id": 387,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/tuff",
       "up": "minecraft:block/tuff",
@@ -4257,6 +5031,8 @@
     }
   },
   "tuff_bricks": {
+    "id": 388,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/tuff_bricks",
       "up": "minecraft:block/tuff_bricks",
@@ -4268,6 +5044,8 @@
     }
   },
   "verdant_froglight": {
+    "id": 389,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/verdant_froglight_top",
       "up": "minecraft:block/verdant_froglight_top",
@@ -4279,6 +5057,8 @@
     }
   },
   "verdant_froglight_horizontal": {
+    "id": 390,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/verdant_froglight_top",
       "up": "minecraft:block/verdant_froglight_top",
@@ -4290,6 +5070,8 @@
     }
   },
   "warped_hyphae": {
+    "id": 391,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/warped_stem",
       "up": "minecraft:block/warped_stem",
@@ -4301,6 +5083,8 @@
     }
   },
   "warped_planks": {
+    "id": 392,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/warped_planks",
       "up": "minecraft:block/warped_planks",
@@ -4312,6 +5096,8 @@
     }
   },
   "warped_stem": {
+    "id": 393,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/warped_stem_top",
       "up": "minecraft:block/warped_stem_top",
@@ -4323,6 +5109,8 @@
     }
   },
   "warped_wart_block": {
+    "id": 394,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/warped_wart_block",
       "up": "minecraft:block/warped_wart_block",
@@ -4334,6 +5122,8 @@
     }
   },
   "weathered_chiseled_copper": {
+    "id": 395,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_chiseled_copper",
       "up": "minecraft:block/weathered_chiseled_copper",
@@ -4345,6 +5135,8 @@
     }
   },
   "weathered_copper": {
+    "id": 396,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper",
       "up": "minecraft:block/weathered_copper",
@@ -4356,6 +5148,8 @@
     }
   },
   "weathered_copper_bulb": {
+    "id": 397,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper_bulb",
       "up": "minecraft:block/weathered_copper_bulb",
@@ -4367,6 +5161,8 @@
     }
   },
   "weathered_copper_bulb_lit": {
+    "id": 398,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper_bulb_lit",
       "up": "minecraft:block/weathered_copper_bulb_lit",
@@ -4378,6 +5174,8 @@
     }
   },
   "weathered_copper_bulb_lit_powered": {
+    "id": 399,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper_bulb_lit_powered",
       "up": "minecraft:block/weathered_copper_bulb_lit_powered",
@@ -4389,6 +5187,8 @@
     }
   },
   "weathered_copper_bulb_powered": {
+    "id": 400,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper_bulb_powered",
       "up": "minecraft:block/weathered_copper_bulb_powered",
@@ -4400,6 +5200,8 @@
     }
   },
   "weathered_copper_grate": {
+    "id": 401,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_copper_grate",
       "up": "minecraft:block/weathered_copper_grate",
@@ -4411,6 +5213,8 @@
     }
   },
   "weathered_cut_copper": {
+    "id": 402,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/weathered_cut_copper",
       "up": "minecraft:block/weathered_cut_copper",
@@ -4422,6 +5226,8 @@
     }
   },
   "wet_sponge": {
+    "id": 403,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/wet_sponge",
       "up": "minecraft:block/wet_sponge",
@@ -4433,6 +5239,8 @@
     }
   },
   "white_concrete": {
+    "id": 404,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/white_concrete",
       "up": "minecraft:block/white_concrete",
@@ -4444,6 +5252,8 @@
     }
   },
   "white_concrete_powder": {
+    "id": 405,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/white_concrete_powder",
       "up": "minecraft:block/white_concrete_powder",
@@ -4455,6 +5265,8 @@
     }
   },
   "white_stained_glass": {
+    "id": 406,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/white_stained_glass",
       "up": "minecraft:block/white_stained_glass",
@@ -4466,6 +5278,8 @@
     }
   },
   "white_terracotta": {
+    "id": 407,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/white_terracotta",
       "up": "minecraft:block/white_terracotta",
@@ -4477,6 +5291,8 @@
     }
   },
   "white_wool": {
+    "id": 408,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/white_wool",
       "up": "minecraft:block/white_wool",
@@ -4488,6 +5304,8 @@
     }
   },
   "yellow_concrete": {
+    "id": 409,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/yellow_concrete",
       "up": "minecraft:block/yellow_concrete",
@@ -4499,6 +5317,8 @@
     }
   },
   "yellow_concrete_powder": {
+    "id": 410,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/yellow_concrete_powder",
       "up": "minecraft:block/yellow_concrete_powder",
@@ -4510,6 +5330,8 @@
     }
   },
   "yellow_stained_glass": {
+    "id": 411,
+    "transparent": true,
     "textures": {
       "down": "minecraft:block/yellow_stained_glass",
       "up": "minecraft:block/yellow_stained_glass",
@@ -4521,6 +5343,8 @@
     }
   },
   "yellow_terracotta": {
+    "id": 412,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/yellow_terracotta",
       "up": "minecraft:block/yellow_terracotta",
@@ -4532,6 +5356,8 @@
     }
   },
   "yellow_wool": {
+    "id": 413,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/yellow_wool",
       "up": "minecraft:block/yellow_wool",

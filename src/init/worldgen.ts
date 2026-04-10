@@ -7,8 +7,8 @@ import type {
 import type { WorldgenDimensions } from "@project-types";
 import type { System } from "@/engine/System";
 import { createInstancedFill } from "@/engine/generators/fill";
-import { WORLD_PARAMS } from "@/config";
-import { debug } from "@/logger";
+import { WORLD_PARAMS } from "@utils/config";
+import { debug } from "@utils/logger";
 import { getAtlasMaterial, getBlockGeometry } from "@libtexture/block-loader";
 
 function requireWorldgenForm(): HTMLFormElement {

@@ -2,13 +2,13 @@ import { InputManager } from "@lib/controls/InputManager";
 import { KeyMap } from "@lib/controls/KeyMap";
 import { KeyStore } from "@lib/controls/KeyStore";
 import type { InitSystemArgs } from "@project-types";
-import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/config";
+import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@utils/config";
 import { PlayerController } from "@/engine/PlayerController";
 import { System } from "@/engine/System";
 import { createBlockMesh } from "@libtexture/block-loader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
-import { debug } from "@/logger";
+import { debug } from "@utils/logger";
 import { ChunkLoader } from "@engine/chunk/ChunkLoader";
 
 /** Initializes the system, including the player, input manager, UI, and other core components */
@@ -47,13 +47,6 @@ export async function initSystem({
     const keyStore = new KeyStore();
     const inputManager = new InputManager(keyMap, keyStore);
 
-    const { uiHandler } = initUI({
-        inputManager,
-        pointerControls,
-        gameParams,
-    });
-    debug("UI initialized");
-
     // Create the player mesh and add it to the scene
     debug("Creating player mesh", blockName);
     const playerMesh = await createBlockMesh(blockName);
@@ -64,12 +57,21 @@ export async function initSystem({
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
+
+    const { uiHandler } = initUI({
+        inputManager,
+        pointerControls,
+        gameParams,
+    });
+
     const system = new System(
         inputManager,
         uiHandler,
         playerController,
         chunkLoader,
     );
+
+    debug("UI initialized");
 
     registerHandlers({
         system,

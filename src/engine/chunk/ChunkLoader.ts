@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { Chunk } from "./Chunk";
-import { WORLD_PARAMS } from "@config";
+import { WORLD_PARAMS } from "@utils/config";
 import { createInstancedFill } from "@engine/generators/fill";
 import { getAtlasMaterial, getBlockGeometry } from "@libtexture/block-loader";
-import { debug } from "@logger";
+import { debug } from "@utils/logger";
 
 export class ChunkLoader {
     worldChunksMap: Map<string, Chunk>;

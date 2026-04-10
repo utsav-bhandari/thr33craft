@@ -1,10 +1,14 @@
 // FOR NOW JUST IMPORT HELPER AT TOP TO SEE LOADING SCREEN, CAN REFACTOR LATER
-import { loadingScreenMessage, htmlSetup } from "@/helper";
-import { gameParams, SCENE_INIT_CONFIG, SYSTEM_INIT_CONFIG } from "@/config";
+import { loadingScreenMessage, htmlSetup } from "@utils/helper";
+import {
+    gameParams,
+    SCENE_INIT_CONFIG,
+    SYSTEM_INIT_CONFIG,
+} from "@utils/config";
 import { initScene } from "@/init/scene";
 import { initSystem } from "@/init/system";
 import { initWorldgen } from "@/init/worldgen";
-import { debug } from "@/logger";
+import { debug } from "@utils/logger";
 
 /**
  * Bootstraps the application by initializing the scene, system, and world generation, and starts the animation loop for rendering the scene. This function is responsible for setting up the core components of the application and ensuring that everything is ready for the game to run smoothly.
