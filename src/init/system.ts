@@ -162,9 +162,6 @@ function registerHandlers({
 
     window.addEventListener("focus", () => {
         debug("Window focused");
-        if (!system.uiHandler.isUIOpen()) {
-            system.uiHandler.lockPointer();
-        }
         setTimeout(() => {
             focusWarning.classList.remove("visible");
         }, 400);
@@ -174,7 +171,7 @@ function registerHandlers({
 function createWindowFocusWarning(): HTMLElement {
     const message = document.createElement("div");
     message.className = "focus-window-message";
-    message.textContent = "Click on window to continue playing";
+    message.textContent = "Interact to continue playing";
     document.body.appendChild(message);
     return message;
 }

@@ -84,12 +84,18 @@ export const WORLD_PARAMS = {
 
 export const SCENE_INIT_CONFIG: SceneInitConfig = {
     backgroundColor: 0x80adff,
+    fog: {
+        enabled: true,
+        color: 0x80adff,
+        near: 36,
+        far: 96,
+    },
     axesHelper: {
         enabled: true,
         size: 100,
     },
     grid: {
-        enabled: true,
+        enabled: false,
         size: WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
         divisions: WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
     },
@@ -97,13 +103,12 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 128,
+        far: 96,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 0],
     },
     ambientLight: {
         enabled: true,
-        // color: 0xffffff,
         color: 0xeeeeee,
         intensity: 3,
     },

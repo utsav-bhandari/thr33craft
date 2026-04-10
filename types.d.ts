@@ -32,6 +32,12 @@ export interface GameParams {
 
 export interface SceneInitConfig {
     backgroundColor?: number;
+    fog?: {
+        enabled?: boolean;
+        color?: number;
+        near?: number;
+        far?: number;
+    };
     axesHelper?: {
         enabled?: boolean;
         size?: number;

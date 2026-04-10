@@ -16,6 +16,7 @@ export function initScene(options: SceneInitConfig = {}): {
 } {
     const {
         backgroundColor = 0x80adff,
+        fog: fogOptions = {},
         axesHelper = {},
         grid = {},
         camera: cameraOptions = {},
@@ -43,6 +44,12 @@ export function initScene(options: SceneInitConfig = {}): {
         color: ambientColor = 0xffffff,
         intensity: ambientIntensity = 1,
     } = ambientLightOptions;
+    const {
+        enabled: fogEnabled = false,
+        color: fogColor = backgroundColor,
+        near: fogNear = 32,
+        far: fogFar = far,
+    } = fogOptions;
     const { antialias = true, pixelRatio = window.devicePixelRatio } =
         rendererOptions;
 
@@ -51,6 +58,9 @@ export function initScene(options: SceneInitConfig = {}): {
         scene.add(new THREE.AxesHelper(axesSize));
     }
     scene.background = new THREE.Color(backgroundColor);
+    if (fogEnabled) {
+        scene.fog = new THREE.Fog(fogColor, fogNear, fogFar);
+    }
 
     const renderer = new THREE.WebGLRenderer({ antialias });
     renderer.setPixelRatio(pixelRatio);

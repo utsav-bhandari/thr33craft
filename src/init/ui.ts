@@ -14,7 +14,7 @@ import { generateBlockTextureSheet } from "@libtexture/generateBlockTextureSheet
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@libtexture/loadBlockTextureSheet";
 import { debug } from "@utils/logger";
-import { renderableBlockNames } from "@block-registry";
+import { renderableBlockNames } from "@init/block-registry";
 
 /** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
  * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
@@ -70,8 +70,7 @@ async function initializeInventoryUI(
     blockTextureSheetConfig: InventoryBlockTextureSheetParams = {},
 ): Promise<void> {
     try {
-        // const blockNames = renderableBlockNames.sort();
-        const blockNames = renderableBlockNames.sort();
+        const blockNames = renderableBlockNames;
         const {
             source = "static",
             staticTextureSheetUrl = "/assets/images/block-texture-sheet.png",

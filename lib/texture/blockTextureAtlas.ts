@@ -84,7 +84,6 @@ export async function createRuntimeBlockTextureAtlas({
     // Set the wrapping mode to clamp to edge to prevent bleeding artifacts when sampling the atlas texture, ensuring that textures are rendered cleanly without unintended seams or artifacts at the edges of tiles.
     atlasTexture.wrapS = THREE.ClampToEdgeWrapping;
     atlasTexture.wrapT = THREE.ClampToEdgeWrapping;
-    // Crisp pixel art style is important for block textures, so mipmaps are disabled to maintain sharpness and prevent blurring when the texture is viewed at different distances or angles in the game world.
     atlasTexture.generateMipmaps = false;
     atlasTexture.needsUpdate = true;
 

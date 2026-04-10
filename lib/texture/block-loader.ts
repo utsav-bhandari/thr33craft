@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import type { AtlasState, BlockName } from "@project-types";
-import { staticBlocks } from "@/block-registry";
+import { staticBlocks } from "@init/block-registry";
 import {
     createAtlasMappedBoxGeometry,
     createRuntimeBlockTextureAtlas,
