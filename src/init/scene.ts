@@ -2,7 +2,7 @@ import * as THREE from "three";
 import type { PerspectiveCamera, Scene, WebGLRenderer } from "three";
 import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import type { SceneInitConfig, Vector3Tuple } from "@project-types";
-import { WORLD_PARAMS } from "@utils/config";
+import { WORLD_PARAMS } from "@/utils/config";
 
 function setVectorFromTuple(vector: THREE.Vector3, tuple: Vector3Tuple): void {
     vector.fromArray(tuple);
@@ -18,19 +18,12 @@ export function initScene(options: SceneInitConfig = {}): {
         backgroundColor = 0x80adff,
         fog: fogOptions = {},
         axesHelper = {},
-        grid = {},
         camera: cameraOptions = {},
         ambientLight: ambientLightOptions = {},
         renderer: rendererOptions = {},
     } = options;
 
     const { enabled: axesEnabled = true, size: axesSize = 100 } = axesHelper;
-    const {
-        enabled: gridEnabled = true,
-        size: gridSize = WORLD_PARAMS.BLOCK_SIZE *
-            WORLD_PARAMS.WORLD_SIZE_BLOCKS,
-        divisions = WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
-    } = grid;
     const {
         fov = 70,
         aspect = 1,
@@ -64,10 +57,6 @@ export function initScene(options: SceneInitConfig = {}): {
 
     const renderer = new THREE.WebGLRenderer({ antialias });
     renderer.setPixelRatio(pixelRatio);
-
-    if (gridEnabled) {
-        scene.add(new THREE.GridHelper(gridSize, divisions));
-    }
 
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     setVectorFromTuple(camera.position, position);

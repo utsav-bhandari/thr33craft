@@ -44,7 +44,7 @@ src/generateBlockTextureSheet.ts
                             Runtime block texture sheet generation
 src/engine/                 Rendering, atlas, loader, system, and controller logic
 src/impl/                   Concrete gameplay and inventory implementations
-src/init/                   Scene, system, UI, worldgen, and static sheet initialization
+src/init/                   Scene, system, UI, and static sheet initialization
 generators/fill.ts          Instanced world fill generation
 types.d.ts                  Shared project-wide type contracts
 ```

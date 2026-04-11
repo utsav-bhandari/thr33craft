@@ -12,8 +12,8 @@ export const AIR_BLOCK_ID = 0;
 export const staticBlocks = blocksJson as BlocksByName;
 validateStaticBlocks(staticBlocks);
 
-export const blocksByName = new Map<BlockName, BlockDefinition>();
-export const blocksById = new Map<BlockId, BlockDefinition>();
+const blocksByName = new Map<BlockName, BlockDefinition>();
+const blocksById = new Map<BlockId, BlockDefinition>();
 
 registerBlock({
     id: AIR_BLOCK_ID,
@@ -57,12 +57,6 @@ export function getRenderableBlocksByName(): BlocksByName {
     );
 }
 
-export function isAirBlock(block: BlockName | BlockId): boolean {
-    return typeof block === "string"
-        ? block === AIR_BLOCK_NAME
-        : block === AIR_BLOCK_ID;
-}
-
 export function isTransparentBlock(block: BlockName | BlockId): boolean {
     const name =
         typeof block === "string" ? block : blocksById.get(block)!.name;
@@ -73,6 +67,14 @@ export function isTransparentBlock(block: BlockName | BlockId): boolean {
 function registerBlock(blockData: BlockDefinition): void {
     blocksByName.set(blockData.name, blockData);
     blocksById.set(blockData.id, blockData);
+}
+
+export function getIDForBlock(blockName: BlockName): BlockId {
+    return blocksByName.get(blockName)!.id;
+}
+
+export function getNameForBlock(blockId: BlockId): BlockName {
+    return blocksById.get(blockId)!.name;
 }
 
 function validateStaticBlocks(blocks: BlocksByName): void {

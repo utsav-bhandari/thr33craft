@@ -2,14 +2,15 @@ import { InputManager } from "@lib/controls/InputManager";
 import { KeyMap } from "@lib/controls/KeyMap";
 import { KeyStore } from "@lib/controls/KeyStore";
 import type { InitSystemArgs } from "@project-types";
-import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@utils/config";
+import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/utils/config";
 import { PlayerController } from "@/engine/PlayerController";
 import { System } from "@/engine/System";
-import { createBlockMesh } from "@libtexture/block-loader";
+import { createBlockMesh } from "@lib/texture/block-loader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
-import { debug } from "@utils/logger";
-import { ChunkLoader } from "@engine/chunk/ChunkLoader";
+import { debug } from "@/utils/logger";
+import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
+import { HUDSystem } from "@/engine/HUDSystem";
 
 /** Initializes the system, including the player, input manager, UI, and other core components */
 export async function initSystem({
@@ -39,7 +40,11 @@ export async function initSystem({
         params: playerParams = gameParams.playerParams,
     } = playerOptions;
 
-    const { menu = "MENU", inventory = "INVENTORY" } = actionOptions;
+    const {
+        menu = "MENU",
+        inventory = "INVENTORY",
+        hud = "HUD_TOGGLE",
+    } = actionOptions;
 
     const keyMap = new KeyMap();
     keyMap.init(keyPreset);
@@ -57,18 +62,24 @@ export async function initSystem({
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
+    // document.addEventListener("click", (event) => {
+    //     console.log("Set block at 0,2,0 to spruce wood");
+    //     chunkLoader.setVoxelWorld(2, 2, 2, 331);
+    // });
 
     const { uiHandler } = initUI({
         inputManager,
         pointerControls,
         gameParams,
     });
+    const hudSystem = new HUDSystem();
 
     const system = new System(
         inputManager,
         uiHandler,
         playerController,
         chunkLoader,
+        hudSystem,
     );
 
     debug("UI initialized");
@@ -79,6 +90,7 @@ export async function initSystem({
         uiHandler,
         menuAction: menu,
         inventoryAction: inventory,
+        hudAction: hud,
     });
 
     return {
@@ -96,12 +108,14 @@ function registerHandlers({
     uiHandler,
     menuAction,
     inventoryAction,
+    hudAction,
 }: {
     system: System;
     keyStore: KeyStore;
     uiHandler: ReturnType<typeof initUI>["uiHandler"];
     menuAction: string;
     inventoryAction: string;
+    hudAction: string;
 }): void {
     // Helper function to add key event listeners while ignoring events from editable elements to prevent interference with typing in inputs, textareas, etc. This ensures that game controls do not interfere with standard text input behavior in the UI.
     const addKeyHandler = (
@@ -121,8 +135,6 @@ function registerHandlers({
 
     const focusWarning = createWindowFocusWarning();
 
-    const worldgen = uiHandler.getModal("worldgen");
-
     addKeyHandler("keydown", (key) => {
         debug(key, "pressed");
         keyStore.addPressedKey(key);
@@ -133,23 +145,21 @@ function registerHandlers({
         keyStore.removePressedKey(key);
     });
 
-    addKeyHandler("keydown", () => {
-        if (worldgen?.isVisible()) {
-            return;
-        }
-
-        if (system.inputManager.isPressed(menuAction)) {
+    addKeyHandler("keydown", (_key, event) => {
+        if (!event.repeat && system.inputManager.isPressed(menuAction)) {
             uiHandler.toggleModal("menu");
         }
     });
 
-    addKeyHandler("keydown", () => {
-        if (worldgen?.isVisible()) {
-            return;
-        }
-
-        if (system.inputManager.isPressed(inventoryAction)) {
+    addKeyHandler("keydown", (_key, event) => {
+        if (!event.repeat && system.inputManager.isPressed(inventoryAction)) {
             uiHandler.toggleModal("inventory");
+        }
+    });
+
+    addKeyHandler("keydown", (_key, event) => {
+        if (!event.repeat && system.inputManager.isPressed(hudAction)) {
+            system.toggleHUD();
         }
     });
 
@@ -171,7 +181,7 @@ function registerHandlers({
 function createWindowFocusWarning(): HTMLElement {
     const message = document.createElement("div");
     message.className = "focus-window-message";
-    message.textContent = "Interact to continue playing";
+    message.textContent = "Window out of focus";
     document.body.appendChild(message);
     return message;
 }

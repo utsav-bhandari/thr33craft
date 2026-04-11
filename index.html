@@ -27,70 +27,6 @@
             class="gameplay"
         />
 
-        <div id="worldgen" class="modal-overlay hidden">
-            <div class="modal-card pixel-corners worldgen-card">
-                <div class="modal-copy">
-                    <p class="modal-kicker">World Generation</p>
-                    <h1 class="modal-title">Choose your starting fill</h1>
-                    <p class="modal-description">
-                        Pick block counts for X, Y, and Z. Generation may take a
-                        moment, so wait for it to finish before starting.
-                    </p>
-                </div>
-
-                <form id="worldgen-form" class="worldgen-form">
-                    <label class="field-group" for="fill-x">
-                        <span>X blocks</span>
-                        <input
-                            id="fill-x"
-                            name="x"
-                            type="number"
-                            min="1"
-                            step="1"
-                            inputmode="numeric"
-                            value="1"
-                            required
-                            data-integer-input
-                        />
-                    </label>
-
-                    <label class="field-group" for="fill-y">
-                        <span>Y blocks</span>
-                        <input
-                            id="fill-y"
-                            name="y"
-                            type="number"
-                            min="1"
-                            step="1"
-                            inputmode="numeric"
-                            value="1"
-                            required
-                            data-integer-input
-                        />
-                    </label>
-
-                    <label class="field-group" for="fill-z">
-                        <span>Z blocks</span>
-                        <input
-                            id="fill-z"
-                            name="z"
-                            type="number"
-                            min="1"
-                            step="1"
-                            inputmode="numeric"
-                            value="1"
-                            required
-                            data-integer-input
-                        />
-                    </label>
-
-                    <button class="primary-button" type="submit">
-                        Start World
-                    </button>
-                </form>
-            </div>
-        </div>
-
         <div id="menu" class="modal-overlay hidden">
             <div class="modal-card pixel-corners menu-card">
                 <div class="modal-copy">
@@ -120,6 +56,9 @@
                     </div>
                     <div class="controls-row">
                         <span>Inventory</span><strong>E</strong>
+                    </div>
+                    <div class="controls-row">
+                        <span>Debug HUD</span><strong>H</strong>
                     </div>
                     <div class="controls-row">
                         <span>Menu</span><strong>F</strong>

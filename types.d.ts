@@ -26,7 +26,6 @@ export interface GameParams {
     keysPreset: KeyPreset;
     inventoryHtmlElm: HTMLElement;
     menuHtmlElm: HTMLElement;
-    worldGenHtmlElm: HTMLElement;
     inventoryBlockTextureSheetParams: InventoryBlockTextureSheetParams;
 }
 
@@ -76,6 +75,7 @@ export interface SystemInitConfig {
     actions?: {
         menu?: string;
         inventory?: string;
+        hud?: string;
     };
 }
 
@@ -194,14 +194,6 @@ export interface FillRegionOptions {
     endZ: number;
     startY: number;
     endY?: number;
-}
-
-export interface WorldgenDimensions {
-    geometry: THREE.BoxGeometry;
-    material: THREE.MeshStandardMaterial;
-    xBlocks: number;
-    yBlocks: number;
-    zBlocks: number;
 }
 
 export interface BlockTextureSheetProgressUpdate {

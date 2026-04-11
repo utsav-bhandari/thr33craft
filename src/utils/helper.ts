@@ -46,3 +46,7 @@ function createLoadingScreenMessage(): HTMLElement {
     message.textContent = "Please wait, Loading World...";
     return message;
 }
+
+export function mod(n: number, m: number): number {
+    return ((n % m) + m) % m;
+}

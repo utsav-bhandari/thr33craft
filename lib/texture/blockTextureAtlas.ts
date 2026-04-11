@@ -12,6 +12,9 @@ import type {
 const TILE_SIZE = 16;
 const MISSING_TEXTURE_KEY = "__missing__";
 
+// A certain blocky game uses a specific order for block faces, which is important to maintain when creating geometries and applying textures. The FACE_MAPPINGS constant defines this order, ensuring that textures are correctly mapped to the corresponding faces of the block geometry when generating meshes for rendering in the game world.
+const FACE_MAPPINGS = ["east", "west", "up", "down", "north", "south"] as const;
+
 const imageLoader = new THREE.ImageLoader();
 const imageCache = new Map<string, HTMLImageElement | null>();
 
@@ -29,12 +32,10 @@ export function normalizeTextureReference(
 /** Creates a runtime block texture atlas by collecting all unique texture references from the provided block data, generating a layout for the atlas, and drawing each texture onto a canvas to create a single texture that can be efficiently used for rendering blocks in the game world. The function also calculates UV mappings for each block face based on the atlas layout and returns the resulting atlas texture and UV mappings for use in block rendering. */
 export async function createRuntimeBlockTextureAtlas({
     blocks,
-    faceMappings,
 }: {
     blocks: BlocksByName;
-    faceMappings: readonly string[];
 }): Promise<AtlasState> {
-    const textureKeys = collectTextureKeys(blocks, faceMappings);
+    const textureKeys = collectTextureKeys(blocks, FACE_MAPPINGS);
     const atlasLayout = createAtlasLayout(textureKeys.length);
 
     const canvas = document.createElement("canvas");
@@ -81,7 +82,6 @@ export async function createRuntimeBlockTextureAtlas({
     atlasTexture.colorSpace = THREE.SRGBColorSpace;
     atlasTexture.magFilter = THREE.NearestFilter;
     atlasTexture.minFilter = THREE.NearestFilter;
-    // Set the wrapping mode to clamp to edge to prevent bleeding artifacts when sampling the atlas texture, ensuring that textures are rendered cleanly without unintended seams or artifacts at the edges of tiles.
     atlasTexture.wrapS = THREE.ClampToEdgeWrapping;
     atlasTexture.wrapT = THREE.ClampToEdgeWrapping;
     atlasTexture.generateMipmaps = false;
@@ -94,10 +94,10 @@ export async function createRuntimeBlockTextureAtlas({
 
     const blockFaceUvs = new Map<string, AtlasUvRect[]>();
 
-    // Iterate through each block and its corresponding texture references to generate UV mappings for each face of the block based on the atlas layout. If a block face does not have a valid texture reference, it will use the UVs for the missing texture tile to ensure that all block faces have valid UV mappings for rendering.
+    // Iterate through each block and its corresponding texture references to generate UV mappings for each face of the block based on the atlas layout
     Object.entries(blocks).forEach(([blockName, blockData]) => {
         const textureMap = blockData.textures ?? {};
-        const faceUvs = faceMappings.map((face) => {
+        const faceUvs = FACE_MAPPINGS.map((face) => {
             const textureKey = normalizeTextureReference(textureMap[face]);
             return atlasUvsByTextureKey.get(textureKey) ?? missingUvs;
         });

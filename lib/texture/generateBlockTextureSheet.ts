@@ -6,8 +6,8 @@ import type {
 import {
     createBlockTextureSheetLayout,
     createBlockTextureSheetMetadata,
-} from "@libtexture/blockTextureSheetLayout";
-import { debug } from "@utils/logger";
+} from "@lib/texture/blockTextureSheetLayout";
+import { debug } from "@/utils/logger";
 import {
     blockTextureAtlas,
     getAtlasMaterial,

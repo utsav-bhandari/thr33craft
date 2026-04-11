@@ -1,4 +1,4 @@
-import { DEBUG } from "@utils/config";
+import { DEBUG } from "@/utils/config";
 
 export function debug(...args: unknown[]): void {
     if (!DEBUG) {

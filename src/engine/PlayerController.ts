@@ -72,9 +72,9 @@ export class PlayerController extends BasePlayerController {
 
         this.player.move(targetVelocity, 20, deltaTime);
 
-        if (this.player.position.y <= this.player.height) {
-            this.player.position.y = this.player.height;
-        }
+        // if (this.player.position.y <= this.player.height) {
+        //     this.player.position.y = this.player.height;
+        // }
         this.camera.position.copy(this.player.position);
         // this.camera.translateZ(10);
     }

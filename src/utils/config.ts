@@ -22,7 +22,7 @@ function requireElement<T extends HTMLElement>(
 
 export const DEBUG = true;
 
-const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 2, 0];
+const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 33, 0];
 
 export const DEFAULT_KEYS_PRESET: KeyPreset = {
     UP: " ",
@@ -34,6 +34,7 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     SPRINT: "shift",
     MENU: "f",
     INVENTORY: "e",
+    HUD_TOGGLE: "h",
 };
 
 export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams =
@@ -56,13 +57,12 @@ export const gameParams: GameParams = {
     keysPreset: DEFAULT_KEYS_PRESET,
     inventoryHtmlElm: requireElement("inventory", HTMLDivElement),
     menuHtmlElm: requireElement("menu", HTMLDivElement),
-    worldGenHtmlElm: requireElement("worldgen", HTMLDivElement),
     inventoryBlockTextureSheetParams: INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS,
 };
 
 export const WORLD_PARAMS = {
     get RENDER_DISTANCE() {
-        const cameraFar = SCENE_INIT_CONFIG.camera?.far ?? 16;
+        const cameraFar = SCENE_INIT_CONFIG.camera?.far ?? 32;
 
         return Math.max(
             1,
@@ -72,7 +72,6 @@ export const WORLD_PARAMS = {
     CHUNK_PADDING: 1,
     CHUNK_LOAD_INTERVAL: 10,
     BLOCK_SIZE: 1,
-    WORLD_SIZE_BLOCKS: 100,
     DEFAULT_WORLD_FILL: {
         x: 1,
         y: 1,
@@ -94,18 +93,13 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         enabled: true,
         size: 100,
     },
-    grid: {
-        enabled: false,
-        size: WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
-        divisions: WORLD_PARAMS.BLOCK_SIZE * WORLD_PARAMS.WORLD_SIZE_BLOCKS,
-    },
     camera: {
         fov: 70,
         aspect: 1,
         near: 1,
         far: 96,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
-        lookAt: [0, 1.85, 0],
+        lookAt: [0, 1.85, 10],
     },
     ambientLight: {
         enabled: true,
@@ -127,5 +121,6 @@ export const SYSTEM_INIT_CONFIG: SystemInitConfig = {
     actions: {
         menu: "MENU",
         inventory: "INVENTORY",
+        hud: "HUD_TOGGLE",
     },
 };

@@ -1,5 +1,4 @@
-#menu,
-#worldgen {
+#menu {
     position: absolute;
     inset: 0;
 }
@@ -34,10 +33,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.worldgen-card {
-    width: min(100%, 460px);
-}
-
 .menu-card {
     width: min(100%, 420px);
 }
@@ -69,12 +64,6 @@
     font-size: 0.97rem;
 }
 
-.worldgen-form {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-}
-
 .field-group {
     display: grid;
     gap: 6px;
@@ -94,10 +83,6 @@
     color: #fff;
     outline: none;
     min-height: 42px;
-}
-
-.worldgen-form > button {
-    grid-column: 1 / -1;
 }
 
 .field-group input:focus {
@@ -255,6 +240,25 @@ body.ui-open .gameplay {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
+.hud {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    padding: 10px 14px;
+    background: rgba(8, 11, 17, 0.78);
+    border: 1px solid rgba(184, 216, 255, 0.2);
+    color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    line-height: 1.05;
+    white-space: pre-line;
+    pointer-events: none;
+    min-width: 320px;
+    max-width: min(460px, calc(100vw - 36px));
+    font-family: "Times New Roman", Times, serif;
+    font-size: medium;
+}
+
 @media all and (max-width: 640px) {
     .modal-overlay {
         padding: 16px;
@@ -274,6 +278,11 @@ body.ui-open .gameplay {
         width: calc(100% - 24px);
         box-sizing: border-box;
         text-align: center;
+    }
+
+    .hud {
+        max-width: calc(100% - 24px);
+        box-sizing: border-box;
     }
 
     .lil-gui.root {

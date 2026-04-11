@@ -10,11 +10,11 @@ import type {
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
 import { UIHandler } from "@/engine/UIHandler";
-import { generateBlockTextureSheet } from "@libtexture/generateBlockTextureSheet";
+import { generateBlockTextureSheet } from "@lib/texture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
-import { loadIndividualBlocks } from "@libtexture/loadBlockTextureSheet";
-import { debug } from "@utils/logger";
-import { renderableBlockNames } from "@init/block-registry";
+import { loadIndividualBlocks } from "@lib/texture/loadBlockTextureSheet";
+import { debug } from "@/utils/logger";
+import { renderableBlockNames } from "@/init/block-registry";
 
 /** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
  * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
@@ -29,7 +29,6 @@ export function initUI({
 }): {
     uiHandler: UIHandler;
     menu: UIModalLike;
-    worldgen: UIModalLike;
     inventory: Inventory;
 } {
     const uiHandler = new UIHandler(inputManager, pointerControls);
@@ -37,10 +36,6 @@ export function initUI({
     const menu = uiHandler.registerModal(
         "menu",
         new BaseUIModal(gameParams.menuHtmlElm),
-    );
-    const worldgen = uiHandler.registerModal(
-        "worldgen",
-        new BaseUIModal(gameParams.worldGenHtmlElm),
     );
     const inventory = uiHandler.registerModal(
         "inventory",
@@ -50,8 +45,12 @@ export function initUI({
         ),
     );
 
-    uiHandler.openModal("worldgen");
-    debug("Worldgen modal opened and inventory initialization started");
+    uiHandler.openModal("menu");
+    debug("Menu modal opened and inventory initialization started");
+    document
+        .getElementById("reset-world")
+        ?.addEventListener("click", () => window.location.reload());
+
     void initializeInventoryUI(
         inventory,
         gameParams.inventoryBlockTextureSheetParams,
@@ -60,7 +59,6 @@ export function initUI({
     return {
         uiHandler,
         menu,
-        worldgen,
         inventory,
     };
 }
