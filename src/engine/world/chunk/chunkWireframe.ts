@@ -1,10 +1,13 @@
 import * as THREE from "three";
 import { Chunk } from "./Chunk";
+import { Subchunk } from "./SubChunks";
 
 export function createChunkWireframe(): THREE.LineSegments {
     const positions: number[] = [];
     const size = Chunk.size;
     const height = Chunk.height;
+    const subchunkHeight = Subchunk.height;
+    const subchunkCount = height / subchunkHeight;
 
     // Top and bottom grid lines
     for (let i = 0; i <= size; i++) {
@@ -20,6 +23,17 @@ export function createChunkWireframe(): THREE.LineSegments {
         positions.push(i, 0, size, i, height, size);
         positions.push(0, 0, i, 0, height, i);
         positions.push(size, 0, i, size, height, i);
+    }
+
+    // Subchunk boundary grid planes at each vertical division
+    for (let boundary = 1; boundary < subchunkCount; boundary++) {
+        const y = boundary * subchunkHeight;
+        for (let x = 0; x <= size; x++) {
+            positions.push(x, y, 0, x, y, size);
+        }
+        for (let z = 0; z <= size; z++) {
+            positions.push(0, y, z, size, y, z);
+        }
     }
 
     // Horizontal edge lines at every unit height to form a visible ladder/grid on the sides
