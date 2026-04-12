@@ -69,7 +69,7 @@ export const WORLD_PARAMS = {
             Math.floor(cameraFar / 16) + WORLD_PARAMS.CHUNK_PADDING,
         );
     },
-    CHUNK_PADDING: 1,
+    CHUNK_PADDING: 0,
     CHUNK_LOAD_INTERVAL: 10,
     BLOCK_SIZE: 1,
     DEFAULT_WORLD_FILL: {
@@ -86,8 +86,13 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
     fog: {
         enabled: true,
         color: 0x80adff,
-        near: 36,
-        far: 96,
+        // based off of the camera's far plane
+        get near(): number {
+            return SCENE_INIT_CONFIG.camera?.far ?? 32;
+        },
+        get far(): number {
+            return (SCENE_INIT_CONFIG.camera?.far ?? 32) * 1.5;
+        },
     },
     axesHelper: {
         enabled: true,
@@ -97,7 +102,7 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 96,
+        far: 16,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 10],
     },

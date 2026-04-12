@@ -9,8 +9,7 @@ export class ChunkLoader {
     private readonly chunkManager: ChunkManager;
     private readonly loadPlanner: ChunkLoadPlanner;
     private readonly sceneController: ChunkSceneController;
-    // Initially set framesSinceLastLoad to the chunk load interval to allow
-    // immediate loading of chunks when the game starts.
+    // Start at interval so first update triggers immediate chunk refresh.
     private framesSinceLastLoad: number = WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
 
     constructor() {
@@ -19,6 +18,10 @@ export class ChunkLoader {
         this.sceneController = new ChunkSceneController();
     }
 
+    /**
+     * Advances chunk streaming around the player and updates debug wireframe.
+     * Runs one chunk build per frame via processBuildQueue.
+     */
     updateWorldChunks(scene: THREE.Scene, playerPosition: THREE.Vector3): void {
         const { chunkX, chunkZ } = Chunk.worldToChunkCoords(
             playerPosition.x,
@@ -41,6 +44,7 @@ export class ChunkLoader {
         return this.framesSinceLastLoad >= WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
     }
 
+    /** Refreshes active chunk set and detaches chunks that left range. */
     private refreshVisibleChunks(
         scene: THREE.Scene,
         chunkX: number,
@@ -56,6 +60,7 @@ export class ChunkLoader {
         this.purgeUnmodifiedChunksOutsideRadius(scene, chunksToRemove);
     }
 
+    /** Builds and attaches at most one queued chunk per tick. */
     processBuildQueue(scene: THREE.Scene): void {
         const chunkToBuild = this.loadPlanner.dequeueChunkToBuild();
         if (!chunkToBuild) return;
@@ -65,19 +70,19 @@ export class ChunkLoader {
         this.sceneController.attachChunk(scene, chunkToBuild);
     }
 
+    /** Removes out-of-range chunks and releases GPU memory when possible. */
     private purgeUnmodifiedChunksOutsideRadius(
         scene: THREE.Scene,
         chunksToBeRemoved: Chunk[],
     ): void {
         for (const chunk of chunksToBeRemoved) {
-            // remove from the Scene graph
+            // Remove from scene graph.
             this.sceneController.removeChunk(scene, chunk);
 
-            // free the VRAM/WebGL Meshes
+            // Dispose GPU-side mesh resources.
             this.chunkManager.freeChunkMeshes(chunk);
 
-            // If the user touched it, keep the 1D arrays in RAM
-            // If it's untouched, delete it to save RAM.
+            // Keep modified chunk data in RAM; drop untouched chunks.
             if (!chunk.isModified) {
                 this.chunkManager.deleteChunk(chunk);
             }

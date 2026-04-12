@@ -8,6 +8,10 @@ export class ChunkLoadPlanner {
 
     constructor(private readonly chunkManager: ChunkManager) {}
 
+    /**
+     * Recomputes active chunks around the player and rebuild queue ordering.
+     * Returns chunks that left the active set and should be detached/purged.
+     */
     refreshVisibleChunks(
         scene: THREE.Scene,
         centerX: number,
@@ -25,6 +29,7 @@ export class ChunkLoadPlanner {
         );
 
         this.activeChunks = nextActiveChunks;
+
         this.buildQueue = this.getChunksWithinRadiusSorted(
             centerX,
             centerZ,
@@ -34,6 +39,7 @@ export class ChunkLoadPlanner {
         return chunksToRemove;
     }
 
+    /** Returns the next not-yet-attached chunk to build for this frame. */
     dequeueChunkToBuild(): Chunk | undefined {
         return this.buildQueue.shift();
     }
@@ -42,6 +48,7 @@ export class ChunkLoadPlanner {
         return this.activeChunks.size;
     }
 
+    /** Collects chunks in a square radius around the center chunk. */
     private collectChunksWithinRadius(
         centerX: number,
         centerZ: number,
@@ -58,6 +65,7 @@ export class ChunkLoadPlanner {
         return chunks;
     }
 
+    /** Returns active chunks sorted nearest-first for stable build priority. */
     private getChunksWithinRadiusSorted(
         centerX: number,
         centerZ: number,
@@ -75,6 +83,7 @@ export class ChunkLoadPlanner {
             });
     }
 
+    /** Uses Chebyshev distance in chunk space. */
     private getChunkDistance(
         chunk: Chunk,
         centerX: number,

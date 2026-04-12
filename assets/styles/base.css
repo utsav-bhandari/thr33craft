@@ -28,8 +28,10 @@ body {
     color: #9c1a1a;
 }
 
-.lil-gui {
-    z-index: 2 !important;
+.lil-gui * {
+    z-index: 2;
+    font-family: "Times New Roman", Times, serif;
+    font-size: medium;
 }
 
 input[type="search"]::-webkit-search-decoration,

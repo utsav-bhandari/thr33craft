@@ -21,7 +21,7 @@ export class UIHandler extends BaseUIHandler {
         document.body.classList.toggle("ui-open", activeUI !== null);
     }
 
-    /** Registers a new modal with the UI handler, replacing any existing modal with the same name and setting up an event listener to close the modal when a "close-request" event is emitted. This function ensures that only one instance of a modal with a given name exists at any time and that the UI state is properly managed when modals are opened or closed. */
+    /** Registers (or replaces) a modal and hooks its close request into the handler. */
     registerModal<T extends UIModalLike>(name: string, modal: T): T {
         const disposeListener = this.modalListeners.get(name);
         disposeListener?.();
@@ -54,7 +54,7 @@ export class UIHandler extends BaseUIHandler {
         this.setActiveUI(modal);
     }
 
-    /** Toggles the specified UI modal, opening it if it's currently closed or closing it if it's currently open.*/
+    /** Opens a modal if inactive, otherwise closes it. */
     toggleModal(name: string): void {
         const modal = this.getModal(name);
 
@@ -67,7 +67,7 @@ export class UIHandler extends BaseUIHandler {
         this.setActiveUI(modal);
     }
 
-    /** Ensures that a modal with the specified name exists for all callers. */
+    /** Returns a registered modal or throws if it does not exist. */
     getModal(name: string): UIModalLike {
         if (!this.modals.has(name)) {
             throw new Error(`No modal registered with name: ${name}`);

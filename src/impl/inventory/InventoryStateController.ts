@@ -35,7 +35,7 @@ export class InventoryStateController {
         this.resetUnavailableView(message, "error");
     }
 
-    /** Updates the inventory UI to display the loaded block texture sheet, enabling interactions with the search component and download button. This function is called when the block texture sheet is successfully loaded, allowing players to view the available blocks in the inventory and use the search functionality to filter blocks based on their names. The status message is also updated to reflect the number of blocks loaded, providing feedback to the player about the current state of the inventory. */
+    /** Transitions the inventory to loaded state and enables controls. */
     showTextureSheet(textureSheet: BlockTextureSheet): void {
         this.grid.setTextureSheet(textureSheet);
         this.status.setMessage(
@@ -59,7 +59,7 @@ export class InventoryStateController {
         );
     }
 
-    /** Resets the inventory UI to an unavailable state, displaying a message and disabling interactions with the search component and download button. This is used when the block texture sheet is loading or if there was an error loading the texture sheet, ensuring that the user is informed of the current state and preventing interactions that would not function properly without a loaded texture sheet. The tone parameter allows for styling the status message appropriately based on whether it's a loading state or an error state. */
+    /** Applies a non-interactive inventory state (loading/error). */
     private resetUnavailableView(
         message: string,
         tone: "default" | "error",

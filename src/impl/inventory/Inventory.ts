@@ -11,7 +11,7 @@ import {
 import { InventoryStateController } from "@/impl/inventory/InventoryStateController";
 import { InventoryStatus } from "@/impl/inventory/InventoryStatus";
 
-/** Represents the inventory UI modal, allowing players to view and interact with the block texture sheet, search for specific blocks, and download the texture sheet if the option is enabled. This class manages the state of the inventory UI, including loading states, error states, and filter results based on user input. It also integrates with the InventoryStateController to update the UI components accordingly. */
+/** Inventory modal that manages search, status, grid, and optional sheet download. */
 export class Inventory extends BaseUIModal {
     downloadFileName: string;
     textureSheet: BlockTextureSheet | null;
@@ -49,12 +49,12 @@ export class Inventory extends BaseUIModal {
         this.closeButton.className =
             "inventory-action-button inventory-close-button";
         this.closeButton.setAttribute("aria-label", "Close inventory");
-        // Attach an event listener to the close button to emit a "close-request" event when clicked, allowing the UI handler to manage the closing of the inventory modal and the associated pointer controls. This ensures that when the user clicks the close button, the inventory modal will be closed and the pointer controls will be locked again for gameplay.
+        // Delegate close behavior to UIHandler so pointer/UI state stays centralized.
         this.closeButton.addEventListener("click", () => {
             this.emit("close-request");
         });
 
-        // Initialize the download button if the option is enabled in config, allowing players to download the block texture sheet directly from the inventory UI. The button will be disabled until the texture sheet is successfully loaded to prevent downloading an empty or invalid file.
+        // Download stays disabled until a valid texture sheet has loaded.
         this.downloadButton = null;
         if (showDownloadButton) {
             this.downloadButton = document.createElement("button");
@@ -120,14 +120,14 @@ export class Inventory extends BaseUIModal {
         this.stateController.showError(message);
     }
 
-    /** Sets the block texture sheet for the inventory grid, updating the state controller and applying an initial filter. */
+    /** Applies a loaded texture sheet to the grid and resets filtering. */
     setGridTextureSheet(textureSheet: BlockTextureSheet): void {
         this.textureSheet = textureSheet;
         this.stateController.showTextureSheet(textureSheet);
         this.applyFilter("");
     }
 
-    /** Applies the specified filter query to the inventory grid, updating the displayed blocks based on the search input. This function is called whenever the search query changes, allowing players to quickly find specific blocks in the inventory by filtering the block texture sheet based on block names. The state controller is updated with the filter results to provide feedback on how many blocks are visible based on the current query. */
+    /** Filters visible slots and updates the status line with result counts. */
     applyFilter(query: string): void {
         const {
             query: normalizedQuery,
@@ -142,7 +142,7 @@ export class Inventory extends BaseUIModal {
         });
     }
 
-    /** Initiates the download of the block texture sheet by creating a temporary anchor element and triggering a click event. This allows players to save the block texture sheet as an image file on their local device directly from the inventory UI. The download button is only enabled when a valid texture sheet is loaded, ensuring that players can only download the texture sheet when it's available. */
+    /** Triggers a browser download for the currently loaded texture-sheet image. */
     downloadTextureSheet(): void {
         const textureSheetUrl = this.textureSheet?.textureSheetUrl;
         if (!textureSheetUrl) {

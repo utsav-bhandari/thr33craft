@@ -19,8 +19,7 @@ import {
     renderableBlockNames,
 } from "@/init/block-registry";
 
-/** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
- * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
+/** Creates game UI modals and starts inventory texture-sheet initialization. */
 export function initUI({
     inputManager,
     pointerControls,
@@ -121,7 +120,7 @@ async function initializeInventoryUI(
     }
 }
 
-/** Generates a block texture sheet from scratch based on the provided block names and options, and updates the inventory UI with the loading progress. This function is used when the block texture sheet needs to be dynamically created at runtime, allowing for customization of the texture sheet generation process and providing feedback to the user through the inventory UI. */
+/** Generates the inventory texture sheet and streams progress into inventory status UI. */
 function generateTextureSheetFromScratch(
     inventoryUI: Inventory,
     blockNames: string[],
@@ -141,7 +140,7 @@ function generateTextureSheetFromScratch(
     });
 }
 
-/** Loads a block texture sheet from a static asset based on the provided block names and options, and updates the inventory UI with the loading progress. This function is used when a pre-generated block texture sheet is available as an asset, allowing for efficient loading of the texture sheet while providing feedback to the user through the inventory UI. */
+/** Loads an inventory texture sheet from prebuilt image assets. */
 async function loadTextureSheetFromAsset(
     inventoryUI: Inventory,
     blockNames: string[],

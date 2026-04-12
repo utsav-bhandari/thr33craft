@@ -29,7 +29,7 @@ export async function createBlockMesh(
     return mesh;
 }
 
-/** Retrieves the geometry for a block based on its name and the provided atlas state. It first checks a cache for an existing geometry to avoid redundant creation, and if not found, it creates a new geometry using the atlas UV mappings for the block's faces. The generated geometry is then cached for future use to optimize performance when rendering multiple instances of the same block type in the game world. */
+/** Returns cached block geometry or creates one from atlas face UV mappings. */
 export function getBlockGeometry(
     block: BlockName | BlockId,
     _atlasState?: AtlasState,
@@ -52,7 +52,7 @@ export function getBlockGeometry(
     return geometry;
 }
 
-/** Retrieves a material for the block atlas texture, utilizing a cache to avoid redundant creation and improve performance when rendering multiple blocks that share the same atlas texture. If a material for the given atlas texture already exists in the cache, it returns that material; otherwise, it creates a new material, caches it, and returns it for use in rendering block meshes. */
+/** Returns cached atlas material for a texture, creating it on first use. */
 export function getAtlasMaterial(
     atlasTexture: THREE.Texture = blockTextureAtlas.atlasTexture,
 ): THREE.MeshStandardMaterial {

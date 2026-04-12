@@ -31,6 +31,7 @@ export class System extends BaseSystem {
         this.chunkLoader.toggleChunkWireframes();
     }
 
+    /** Updates player motion and streams nearby world chunks. */
     worldUpdate(scene: Scene, deltaTime: number): void {
         this.playerController.updatePlayer(deltaTime);
         this.chunkLoader.updateWorldChunks(
@@ -62,8 +63,7 @@ export class System extends BaseSystem {
             uiOpen: this.uiHandler.isUIOpen(),
         });
 
-        // Only update the world if no UI is open to prevent unintended interactions and ensure that
-        // the game state remains consistent while the player is interacting with the UI.
+        // Suspend world simulation while UI is open or pointer is unlocked.
         if (this.uiHandler.isPointerLocked() && !this.uiHandler.isUIOpen()) {
             this.worldUpdate(scene, deltaTime);
         }

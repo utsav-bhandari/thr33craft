@@ -15,7 +15,7 @@ import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { HUDSystem } from "@/engine/HUDSystem";
 import { BEDROCK_BLOCK_ID } from "@/utils/constants";
 
-/** Initializes the system, including the player, input manager, UI, and other core components */
+/** Builds runtime systems: input, player controller, UI handler, world streaming, and HUD. */
 export async function initSystem({
     scene,
     camera,
@@ -35,7 +35,7 @@ export async function initSystem({
         actions: actionOptions = {},
     } = options;
 
-    // Further destructure player options with defaults
+    // Apply player defaults early so later setup reads one source of truth.
     const {
         blockName = "redstone_block",
         spawnPosition = WORLD_PARAMS.PLAYER_STARTING_POSITION,
@@ -54,7 +54,7 @@ export async function initSystem({
     const keyStore = new KeyStore();
     const inputManager = new InputManager(keyMap, keyStore);
 
-    // Create the player mesh and add it to the scene
+    // Create player mesh once and register it in the world scene.
     debug("Creating player mesh", blockName);
     const playerMesh = await createBlockMesh(blockName);
     debug("Player mesh created", { blockName });
@@ -116,7 +116,7 @@ function registerHandlers({
     inventoryAction: string;
     hudAction: string;
 }): void {
-    // Helper function to add key event listeners while ignoring events from editable elements to prevent interference with typing in inputs, textareas, etc.
+    // Ignore editable elements so typing in UI controls does not trigger actions.
     const addKeyHandler = (
         eventName: "keydown" | "keyup",
         callback: (key: string, event: KeyboardEvent) => void,
@@ -192,7 +192,7 @@ function createWindowFocusWarning(): HTMLElement {
     return message;
 }
 
-// Helper function to check if keyboard event target is an editable element to avoid interfering with typing in inputs, textareas, etc.
+// Guards gameplay hotkeys while user is focused on editable UI controls.
 function isEditableTarget(event: KeyboardEvent): boolean {
     const target = event.target;
 

@@ -14,6 +14,7 @@ export class ChunkManager {
         this.meshManager = new ChunkMeshManager(this);
     }
 
+    /** Returns an existing chunk or creates and caches a new one. */
     getOrCreateChunk(chunkX: number, chunkZ: number): Chunk {
         const chunkKey = this.getChunkKey(chunkX, chunkZ);
         const existingChunk = this.worldChunksMap.get(chunkKey);
@@ -27,6 +28,7 @@ export class ChunkManager {
         return chunk;
     }
 
+    /** Returns a neighboring chunk if it has already been created. */
     getNeighborChunk(
         chunk: Chunk,
         offsetX: number,
@@ -44,6 +46,7 @@ export class ChunkManager {
         this.worldChunksMap.delete(chunk.getKey());
     }
 
+    /** Lazily generates chunk voxel data exactly once. */
     ensureChunkGenerated(chunk: Chunk): void {
         if (!chunk.isDataGenerated) {
             generateFlatTerrain(chunk, this);
@@ -51,6 +54,10 @@ export class ChunkManager {
         }
     }
 
+    /**
+     * Writes a voxel in local chunk coordinates and marks touching subchunks dirty
+     * so border meshes are rebuilt consistently.
+     */
     setVoxelInChunk(
         chunk: Chunk,
         x: number,
@@ -76,6 +83,7 @@ export class ChunkManager {
         }
     }
 
+    /** Writes a voxel in world coordinates and returns the owning chunk. */
     setVoxelWorld(
         worldX: number,
         worldY: number,
@@ -116,6 +124,7 @@ export class ChunkManager {
         return this.worldChunksMap.size;
     }
 
+    /** Resolves world-space voxel id across chunk/subchunk boundaries. */
     private getVoxelIdWorld(
         worldX: number,
         worldY: number,

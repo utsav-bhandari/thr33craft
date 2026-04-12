@@ -1,4 +1,4 @@
-// FOR NOW JUST IMPORT HELPER AT TOP TO SEE LOADING SCREEN, CAN REFACTOR LATER
+// Initializes global HTML hooks and loading UI before bootstrapping.
 import { loadingScreenMessage, htmlSetup } from "@/utils/helper";
 import {
     gameParams,
@@ -9,9 +9,7 @@ import { initScene } from "@/init/scene";
 import { initSystem } from "@/init/system";
 import { debug } from "@/utils/logger";
 
-/**
- * Bootstraps the application by initializing the scene, system, and world generation, and starts the animation loop for rendering the scene. This function is responsible for setting up the core components of the application and ensuring that everything is ready for the game to run smoothly.
- */
+/** Initializes scene/system state, starts the render loop, and wires global UI hooks. */
 async function bootstrap(): Promise<void> {
     debug("Bootstrapping game...");
 

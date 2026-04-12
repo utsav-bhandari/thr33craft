@@ -8,7 +8,7 @@ export interface InventoryFilterResult {
     visibleCount: number;
 }
 
-/** Represents the grid component of the inventory UI, responsible for displaying the block texture sheet and applying filters based on user input. This class manages the creation of inventory slots based on the provided block texture sheet and updates the visibility of slots based on search queries to allow players to easily find specific blocks within their inventory. */
+/** Grid view for texture-sheet items, with text-based slot filtering. */
 export class InventoryGrid extends BaseUIComponent {
     declare htmlElement: HTMLDivElement;
     slots: HTMLButtonElement[];
@@ -21,7 +21,7 @@ export class InventoryGrid extends BaseUIComponent {
         this.slots = [];
     }
 
-    /** Sets the block texture sheet for the inventory grid, creating inventory slots based on the items in the texture sheet and displaying them within the grid. This function replaces any existing slots with new ones generated from the provided texture sheet and ensures that the grid is visible to the player once the texture sheet is loaded. */
+    /** Rebuilds slot elements from a texture sheet and shows the grid. */
     setTextureSheet(textureSheet: BlockTextureSheet): void {
         this.slots = textureSheet.items
             .filter((item) => item.id !== AIR_BLOCK_NAME)
@@ -30,7 +30,7 @@ export class InventoryGrid extends BaseUIComponent {
         this.show();
     }
 
-    /** Applies a filter to the inventory grid based on the provided search query, updating the visibility of inventory slots to show only those that match the query. This function normalizes the query and compares it against the dataset name of each slot, toggling the "hidden" class accordingly and returning an InventoryFilterResult object containing details about the filtering operation. */
+    /** Hides non-matching slots and returns summary counts for the current query. */
     applyFilter(query: string): InventoryFilterResult {
         const normalizedQuery = query.trim().toLowerCase();
         let visibleCount = 0;
@@ -52,7 +52,7 @@ export class InventoryGrid extends BaseUIComponent {
         };
     }
 
-    /** Creates an inventory slot element based on the provided BlockTextureSheetItem, including setting the appropriate background image and styles to display the block's texture. This function generates a button element for each block in the texture sheet, allowing for potential future interactions such as selecting or dragging blocks within the inventory UI. */
+    /** Builds one slot button for a sheet item with its icon background mapping. */
     createSlot(item: BlockTextureSheetItem): HTMLButtonElement {
         const slot = document.createElement("button");
         slot.type = "button";
