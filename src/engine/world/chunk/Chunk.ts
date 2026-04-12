@@ -1,11 +1,5 @@
 import { Subchunk } from "./SubChunks";
 import * as THREE from "three";
-import { BlockId } from "@project-types";
-
-type NeighborChunkResolver = (
-    chunkX: number,
-    chunkZ: number,
-) => Chunk | undefined;
 
 export class Chunk {
     static size = 16;
@@ -15,12 +9,10 @@ export class Chunk {
     isModified: boolean;
     subchunks: Subchunk[];
     subchunkCount: number;
-    private readonly resolveNeighborChunk: NeighborChunkResolver;
 
     constructor(
         public chunkX: number,
         public chunkZ: number,
-        resolveNeighborChunk: NeighborChunkResolver = () => undefined,
     ) {
         this.chunkX = chunkX;
         this.chunkZ = chunkZ;
@@ -28,29 +20,12 @@ export class Chunk {
         this.container.position.set(this.getWorldX(), 0, this.getWorldZ());
         this.isDataGenerated = false;
         this.isModified = false;
-        this.resolveNeighborChunk = resolveNeighborChunk;
-
         this.subchunks = [];
 
         this.subchunkCount = Chunk.height / Subchunk.height;
 
         for (let i = 0; i < this.subchunkCount; i++) {
-            this.subchunks[i] = new Subchunk(i, this);
-        }
-    }
-
-    getNeighborChunk(offsetX: number, offsetZ: number): Chunk | null {
-        return (
-            this.resolveNeighborChunk(
-                this.chunkX + offsetX,
-                this.chunkZ + offsetZ,
-            ) ?? null
-        );
-    }
-
-    generateMeshes(): void {
-        for (const sub of this.subchunks) {
-            sub.generateMesh(this.container);
+            this.subchunks[i] = new Subchunk(i);
         }
     }
 
@@ -66,41 +41,6 @@ export class Chunk {
     getSubchunk(y: number): Subchunk {
         const index = Math.floor(y / Subchunk.height);
         return this.subchunks[index];
-    }
-
-    setVoxel(x: number, y: number, z: number, blockId: BlockId): void {
-        const sub = this.getSubchunk(y);
-        sub.setVoxel(x, y % Subchunk.height, z, blockId);
-
-        // If the initial terrain generation is done, and a block changes,
-        // it means the player (or an in-game event) did it
-        if (this.isDataGenerated) {
-            this.markAsModified(true);
-        }
-    }
-
-    markAsModified(value: boolean): void {
-        this.isModified = value;
-    }
-
-    markDataAsGenerated(value: boolean): void {
-        this.isDataGenerated = value;
-    }
-
-    freeSubchunkMeshes(): void {
-        // Dispose of all subchunk resources
-        for (const sub of this.subchunks) {
-            for (const mesh of sub.instancedMeshes.values()) {
-                this.container.remove(mesh);
-                mesh.dispose();
-            }
-            sub.instancedMeshes.clear();
-
-            // When the meshes are destroyed, the subchunk must
-            // be marked dirty so it knows to rebuild the 3D meshes if
-            // the player ever walks back to this area.
-            sub.dirty = true;
-        }
     }
 
     getWorldX(): number {
