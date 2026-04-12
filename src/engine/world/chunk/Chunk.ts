@@ -58,11 +58,11 @@ export class Chunk {
         // If the initial terrain generation is done, and a block changes,
         // it means the player (or an in-game event) did it
         if (this.isDataGenerated) {
-            this.setModified(true);
+            this.markAsModified(true);
         }
     }
 
-    setModified(value: boolean): void {
+    markAsModified(value: boolean): void {
         this.isModified = value;
     }
 

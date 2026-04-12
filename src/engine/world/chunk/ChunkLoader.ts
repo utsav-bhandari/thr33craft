@@ -214,6 +214,8 @@ export class ChunkLoader {
             `setting block at chunk coords (${chunkX}, ${chunkZ}) and local coords (${localX}, ${worldY}, ${localZ})`,
         );
         chunk.setVoxel(localX, worldY, localZ, blockId);
+        // for testing: immediately generate meshes and mark as modified so we can see the change right away
+        chunk.markAsModified(true);
         chunk.generateMeshes();
     }
 

@@ -1,6 +1,7 @@
 import { InputManager } from "@lib/controls/InputManager";
 import { KeyMap } from "@lib/controls/KeyMap";
 import { KeyStore } from "@lib/controls/KeyStore";
+import * as THREE from "three";
 import type { InitSystemArgs } from "@project-types";
 import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/utils/config";
 import { PlayerController } from "@/engine/PlayerController";
@@ -11,6 +12,7 @@ import { initUI } from "@/init/ui";
 import { debug } from "@/utils/logger";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { HUDSystem } from "@/engine/HUDSystem";
+import { BEDROCK_BLOCK_ID } from "@/utils/constants";
 
 /** Initializes the system, including the player, input manager, UI, and other core components */
 export async function initSystem({
@@ -62,12 +64,7 @@ export async function initSystem({
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
-    document.addEventListener("keydown", (event) => {
-        if (event.key.toLowerCase() === "p") {
-            console.log("Set block at 0,32,0 to bedrock");
-            chunkLoader.setVoxelWorld(0, 32, 0, 12);
-        }
-    });
+    setupOriginAlignmentDebug(scene, chunkLoader);
 
     const { uiHandler } = initUI({
         inputManager,
@@ -198,4 +195,36 @@ function isEditableTarget(event: KeyboardEvent): boolean {
         target instanceof HTMLSelectElement ||
         (target instanceof HTMLElement && target.isContentEditable)
     );
+}
+
+function setupOriginAlignmentDebug(
+    scene: THREE.Scene,
+    chunkLoader: ChunkLoader,
+) {
+    const markerY = 32;
+    const wireframeMaterial = new THREE.LineBasicMaterial({
+        color: 0xffd84d,
+    });
+    const marker = new THREE.LineSegments(
+        new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)),
+        wireframeMaterial,
+    );
+    marker.position.set(0.5, markerY + 0.5, 0.5);
+
+    document.addEventListener("keydown", (event) => {
+        if (event.repeat || isEditableTarget(event)) {
+            return;
+        }
+
+        if (event.key.toLowerCase() !== "p") {
+            return;
+        }
+
+        chunkLoader.setVoxelWorld(0, markerY, 0, BEDROCK_BLOCK_ID);
+        if (!marker.parent) {
+            scene.add(marker);
+        }
+
+        debug("Origin alignment debug marker placed at world cell (0, 32, 0)");
+    });
 }
