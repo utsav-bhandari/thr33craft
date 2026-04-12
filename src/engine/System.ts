@@ -28,6 +28,7 @@ export class System extends BaseSystem {
 
     toggleHUD(): void {
         this.hudSystem.toggle();
+        this.chunkLoader.toggleChunkWireframes();
     }
 
     worldUpdate(scene: Scene, deltaTime: number): void {

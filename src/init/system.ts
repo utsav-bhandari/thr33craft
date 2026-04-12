@@ -28,7 +28,6 @@ export async function initSystem({
     inputManager: InputManager;
     keyStore: KeyStore;
 }> {
-    // Destructure options with defaults, allowing for overrides from gameParams and SYSTEM_INIT_CONFIG
     const {
         keyPreset = gameParams.keysPreset ?? DEFAULT_KEYS_PRESET,
         player: playerOptions = {},
@@ -116,7 +115,7 @@ function registerHandlers({
     inventoryAction: string;
     hudAction: string;
 }): void {
-    // Helper function to add key event listeners while ignoring events from editable elements to prevent interference with typing in inputs, textareas, etc. This ensures that game controls do not interfere with standard text input behavior in the UI.
+    // Helper function to add key event listeners while ignoring events from editable elements to prevent interference with typing in inputs, textareas, etc.
     const addKeyHandler = (
         eventName: "keydown" | "keyup",
         callback: (key: string, event: KeyboardEvent) => void,
@@ -162,7 +161,7 @@ function registerHandlers({
         }
     });
 
-    // If user switches tabs or the window loses focus, clear the key store to prevent stuck keys when they return to the game. This ensures that the game does not continue to register keys as pressed when the user is not actively interacting with the game, providing a smoother and more intuitive user experience.
+    // If user switches tabs or the window loses focus, clear the key store to prevent stuck keys when they return to the game.
     window.addEventListener("blur", () => {
         debug("Window blurred, clearing key store");
         keyStore.clear();
@@ -185,7 +184,7 @@ function createWindowFocusWarning(): HTMLElement {
     return message;
 }
 
-// Helper function to check if keyboard event target is an editable element to avoid interfering with typing in inputs, textareas, etc. This ensures that game controls do not interfere with standard text input behavior in the UI.
+// Helper function to check if keyboard event target is an editable element to avoid interfering with typing in inputs, textareas, etc.
 function isEditableTarget(event: KeyboardEvent): boolean {
     const target = event.target;
 

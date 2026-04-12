@@ -26,7 +26,7 @@ export class HUDSystem {
         this.htmlElement.className = "hud gameplay";
         document.body.appendChild(this.htmlElement);
 
-        this.visible = true;
+        this.visible = false;
         this.smoothedFps = 0;
     }
 
@@ -50,6 +50,9 @@ export class HUDSystem {
         const frameMs = deltaTime * 1000;
         const instantFps = deltaTime > 0 ? 1 / deltaTime : 0;
 
+        // The more you know huh
+        // Smooth the FPS value using an exponential moving average to avoid rapid fluctuations
+        // in the displayed FPS, which can make it easier to read and provide a more stable indication of performance.
         this.smoothedFps =
             this.smoothedFps === 0
                 ? instantFps

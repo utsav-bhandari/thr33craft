@@ -1,5 +1,9 @@
 import * as THREE from "three";
 import { Chunk } from "./Chunk";
+import {
+    createChunkWireframe,
+    setChunkWireframePosition,
+} from "./chunkWireframe";
 import { WORLD_PARAMS } from "@/utils/config";
 import { mod } from "@/utils/helper";
 import { generateFlatTerrain } from "@/engine/world/World-Generator";
@@ -9,6 +13,9 @@ export class ChunkLoader {
     worldChunksMap: Map<string, Chunk>;
     activeChunks: Set<Chunk>;
     buildQueue: Chunk[] = [];
+    wireframeVisible: boolean = false;
+    wireframe: THREE.LineSegments;
+    currentChunkKey: string | null = null;
     // Initially set framesSinceLastLoad to the chunk load interval to allow
     // immediate loading of chunks when the game starts.
     framesSinceLastLoad: number = WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
@@ -16,6 +23,7 @@ export class ChunkLoader {
     constructor() {
         this.worldChunksMap = new Map();
         this.activeChunks = new Set();
+        this.wireframe = createChunkWireframe();
     }
 
     updateWorldChunks(scene: THREE.Scene, playerPosition: THREE.Vector3): void {
@@ -35,6 +43,12 @@ export class ChunkLoader {
         }
 
         this.processBuildQueue(scene);
+
+        this.updateCurrentChunkWireframe(
+            scene,
+            playerPosition.x,
+            playerPosition.z,
+        );
     }
 
     private shouldRefreshVisibleChunks(): boolean {
@@ -225,5 +239,38 @@ export class ChunkLoader {
 
     getCachedChunkCount(): number {
         return this.worldChunksMap.size;
+    }
+
+    toggleChunkWireframes(): void {
+        this.setWireframeVisibility(!this.wireframeVisible);
+    }
+
+    setWireframeVisibility(visible: boolean): void {
+        this.wireframeVisible = visible;
+        this.wireframe.visible = visible;
+    }
+
+    private updateCurrentChunkWireframe(
+        scene: THREE.Scene,
+        worldX: number,
+        worldZ: number,
+    ): void {
+        if (!this.wireframeVisible) {
+            return;
+        }
+
+        const { chunkX, chunkZ } = Chunk.worldToChunkCoords(worldX, worldZ);
+        const chunkKey = `${chunkX},${chunkZ}`;
+
+        if (this.currentChunkKey === chunkKey) {
+            return;
+        }
+
+        this.currentChunkKey = chunkKey;
+        setChunkWireframePosition(this.wireframe, chunkX, chunkZ);
+
+        if (this.wireframe.parent !== scene) {
+            scene.add(this.wireframe);
+        }
     }
 }
