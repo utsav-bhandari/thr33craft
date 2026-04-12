@@ -20,6 +20,7 @@ export class HUDSystem {
     htmlElement: HTMLDivElement;
     visible: boolean;
     private smoothedFps: number;
+    private toggleElements: HTMLElement[];
 
     constructor() {
         this.htmlElement = document.createElement("div");
@@ -28,6 +29,12 @@ export class HUDSystem {
 
         this.visible = false;
         this.smoothedFps = 0;
+        this.toggleElements = [];
+    }
+
+    registerToggleElement(element: HTMLElement): void {
+        this.toggleElements.push(element);
+        this.syncElementVisibility(element);
     }
 
     toggle(): void {
@@ -73,6 +80,13 @@ export class HUDSystem {
 
     private syncVisibility(): void {
         this.htmlElement.classList.toggle("hidden", !this.visible);
+        this.toggleElements.forEach((element) => {
+            this.syncElementVisibility(element);
+        });
+    }
+
+    private syncElementVisibility(element: HTMLElement): void {
+        element.classList.toggle("hidden", !this.visible);
     }
 
     private formatNumber(value: number, decimals: number): string {

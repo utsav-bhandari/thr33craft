@@ -1,3 +1,4 @@
+import { GUI } from "lil-gui";
 import { InputManager } from "@lib/controls/InputManager";
 import { KeyMap } from "@lib/controls/KeyMap";
 import { KeyStore } from "@lib/controls/KeyStore";
@@ -63,14 +64,14 @@ export async function initSystem({
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
-    setupOriginAlignmentDebug(scene, chunkLoader);
+    const hudSystem = new HUDSystem();
+    setupDebugPlacementGui(scene, chunkLoader, hudSystem);
 
     const { uiHandler } = initUI({
         inputManager,
         pointerControls,
         gameParams,
     });
-    const hudSystem = new HUDSystem();
 
     const system = new System(
         inputManager,
@@ -161,6 +162,13 @@ function registerHandlers({
         }
     });
 
+    document.addEventListener("click", () => {
+        console.log("Document clicked, attempting to lock pointer");
+        if (!uiHandler.isUIOpen()) {
+            uiHandler.lockPointer();
+        }
+    });
+
     // If user switches tabs or the window loses focus, clear the key store to prevent stuck keys when they return to the game.
     window.addEventListener("blur", () => {
         debug("Window blurred, clearing key store");
@@ -196,19 +204,77 @@ function isEditableTarget(event: KeyboardEvent): boolean {
     );
 }
 
-function setupOriginAlignmentDebug(
+function setupDebugPlacementGui(
     scene: THREE.Scene,
     chunkLoader: ChunkLoader,
-) {
-    const markerY = 32;
+    hudSystem: HUDSystem,
+): void {
+    const wireframeGeometry = new THREE.EdgesGeometry(
+        new THREE.BoxGeometry(1, 1, 1),
+    );
     const wireframeMaterial = new THREE.LineBasicMaterial({
         color: 0xffd84d,
     });
-    const marker = new THREE.LineSegments(
-        new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)),
-        wireframeMaterial,
+    const createMarker = (): THREE.LineSegments =>
+        new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
+
+    const markerState = {
+        x: 5,
+        y: 32 - 5,
+        z: 5,
+        placeDebugBlock(): void {
+            const { x, y, z } = markerState;
+            chunkLoader.setVoxelWorld(x, y, z, BEDROCK_BLOCK_ID);
+            const placedMarker = createMarker();
+            placedMarker.position.set(x + 0.5, y + 0.5, z + 0.5);
+            scene.add(placedMarker);
+            debug(
+                `Origin alignment debug marker placed at world cell (${x}, ${y}, ${z})`,
+            );
+        },
+        clearDebugBlock(): void {
+            const { x, y, z } = markerState;
+            chunkLoader.setVoxelWorld(x, y, z, 0);
+            debug(`Cleared block at world cell (${x}, ${y}, ${z})`);
+        },
+    };
+
+    const marker = createMarker();
+    marker.position.set(
+        markerState.x + 0.5,
+        markerState.y + 0.5,
+        markerState.z + 0.5,
     );
-    marker.position.set(0.5, markerY + 0.5, 0.5);
+    scene.add(marker);
+
+    const gui = new GUI({ title: "Debug Controls" });
+    hudSystem.registerToggleElement(gui.domElement);
+
+    const debugFolder = gui.addFolder("Debug Placement");
+    debugFolder
+        .add(markerState, "x")
+        .name("World X")
+        .step(1)
+        .onChange((value: number) => {
+            marker.position.x = value + 0.5;
+        });
+    debugFolder
+        .add(markerState, "y")
+        .name("World Y")
+        .step(1)
+        .onChange((value: number) => {
+            marker.position.y = value + 0.5;
+        });
+    debugFolder
+        .add(markerState, "z")
+        .name("World Z")
+        .step(1)
+        .onChange((value: number) => {
+            marker.position.z = value + 0.5;
+        });
+    debugFolder.add(markerState, "placeDebugBlock").name("Place Debug Block");
+    debugFolder.add(markerState, "clearDebugBlock").name("Set To Air");
+    debugFolder.open();
 
     document.addEventListener("keydown", (event) => {
         if (event.repeat || isEditableTarget(event)) {
@@ -219,11 +285,6 @@ function setupOriginAlignmentDebug(
             return;
         }
 
-        chunkLoader.setVoxelWorld(0, markerY, 0, BEDROCK_BLOCK_ID);
-        if (!marker.parent) {
-            scene.add(marker);
-        }
-
-        debug("Origin alignment debug marker placed at world cell (0, 32, 0)");
+        markerState.placeDebugBlock();
     });
 }
