@@ -123,7 +123,13 @@ export class Subchunk {
 
             // Apply local translations to each instance
             positions.forEach((pos, index) => {
-                dummyMatrix.setPosition(pos[0], pos[1], pos[2]);
+                // BoxGeometry is centered at origin, so offset by 0.5 to align voxel
+                // coordinates to cell corners in world space.
+                dummyMatrix.setPosition(
+                    pos[0] + 0.5,
+                    pos[1] + 0.5,
+                    pos[2] + 0.5,
+                );
                 instancedMesh.setMatrixAt(index, dummyMatrix);
             });
 
