@@ -1,5 +1,6 @@
 import type { BlockTextureSheet, BlockTextureSheetItem } from "@project-types";
 import { BaseUIComponent } from "@lib/base/BaseUIComponent";
+import { AIR_BLOCK_NAME } from "@/init/block-registry";
 
 export interface InventoryFilterResult {
     query: string;
@@ -22,7 +23,9 @@ export class InventoryGrid extends BaseUIComponent {
 
     /** Sets the block texture sheet for the inventory grid, creating inventory slots based on the items in the texture sheet and displaying them within the grid. This function replaces any existing slots with new ones generated from the provided texture sheet and ensures that the grid is visible to the player once the texture sheet is loaded. */
     setTextureSheet(textureSheet: BlockTextureSheet): void {
-        this.slots = textureSheet.items.map((item) => this.createSlot(item));
+        this.slots = textureSheet.items
+            .filter((item) => item.id !== AIR_BLOCK_NAME)
+            .map((item) => this.createSlot(item));
         this.htmlElement.replaceChildren(...this.slots);
         this.show();
     }

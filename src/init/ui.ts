@@ -14,7 +14,10 @@ import { generateBlockTextureSheet } from "@lib/texture/generateBlockTextureShee
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@lib/texture/loadBlockTextureSheet";
 import { debug } from "@/utils/logger";
-import { renderableBlockNames } from "@/init/block-registry";
+import {
+    getRegisteredBlockNames,
+    renderableBlockNames,
+} from "@/init/block-registry";
 
 /** Initializes the UI components of the game, including the menu, world generation screen, and inventory, and sets up the necessary event handlers for user interaction.
  * This function is responsible for creating instances of the UI modals and integrating them with the input manager and pointer controls to ensure a seamless user experience when interacting with the game's UI. */
@@ -68,7 +71,6 @@ async function initializeInventoryUI(
     blockTextureSheetConfig: InventoryBlockTextureSheetParams = {},
 ): Promise<void> {
     try {
-        const blockNames = renderableBlockNames;
         const {
             source = "static",
             staticTextureSheetUrl = "/assets/images/block-texture-sheet.png",
@@ -77,6 +79,11 @@ async function initializeInventoryUI(
             chunkSize = 20,
             renderScale,
         } = blockTextureSheetConfig;
+
+        const blockNames =
+            source === "static"
+                ? getRegisteredBlockNames()
+                : renderableBlockNames;
 
         debug("Initializing inventory UI", {
             source,
@@ -115,7 +122,7 @@ async function initializeInventoryUI(
 }
 
 /** Generates a block texture sheet from scratch based on the provided block names and options, and updates the inventory UI with the loading progress. This function is used when the block texture sheet needs to be dynamically created at runtime, allowing for customization of the texture sheet generation process and providing feedback to the user through the inventory UI. */
-async function generateTextureSheetFromScratch(
+function generateTextureSheetFromScratch(
     inventoryUI: Inventory,
     blockNames: string[],
     options: GenerateBlockTextureSheetOptions,
