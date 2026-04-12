@@ -62,10 +62,12 @@ export async function initSystem({
     const player = new Player(playerMesh, playerParams);
     const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
-    // document.addEventListener("click", (event) => {
-    //     console.log("Set block at 0,2,0 to spruce wood");
-    //     chunkLoader.setVoxelWorld(2, 2, 2, 331);
-    // });
+    document.addEventListener("keydown", (event) => {
+        if (event.key.toLowerCase() === "p") {
+            console.log("Set block at 0,32,0 to bedrock");
+            chunkLoader.setVoxelWorld(0, 32, 0, 12);
+        }
+    });
 
     const { uiHandler } = initUI({
         inputManager,

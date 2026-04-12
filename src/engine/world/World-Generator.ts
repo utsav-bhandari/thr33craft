@@ -22,4 +22,6 @@ export function generateFlatTerrain(chunk: Chunk) {
             }
         }
     }
+
+    chunk.markDataAsGenerated(true);
 }

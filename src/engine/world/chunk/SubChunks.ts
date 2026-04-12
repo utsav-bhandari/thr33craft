@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { Chunk } from "./Chunk";
 import { getAtlasMaterial, getBlockGeometry } from "@lib/texture/block-loader";
 import { BlockId } from "@project-types";
-import { AIR_BLOCK_ID } from "@/init/block-registry";
+import { AIR_BLOCK_ID } from "@/utils/constants";
 
 export class Subchunk {
     static height = 16;

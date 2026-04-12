@@ -1,3 +1,4 @@
+import { AIR_BLOCK_ID } from "@/utils/constants";
 import blocksJson from "@blocks";
 import type {
     BlockDefinition,
@@ -7,7 +8,6 @@ import type {
 } from "@project-types";
 
 export const AIR_BLOCK_NAME = "air";
-export const AIR_BLOCK_ID = 0;
 
 export const staticBlocks = blocksJson as BlocksByName;
 validateStaticBlocks(staticBlocks);

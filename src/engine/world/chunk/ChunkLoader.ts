@@ -3,17 +3,19 @@ import { Chunk } from "./Chunk";
 import { WORLD_PARAMS } from "@/utils/config";
 import { mod } from "@/utils/helper";
 import { generateFlatTerrain } from "@/engine/world/World-Generator";
+import { debug } from "@/utils/logger";
 
 export class ChunkLoader {
     worldChunksMap: Map<string, Chunk>;
-    curChunksToLoad: Set<Chunk>;
+    activeChunks: Set<Chunk>;
+    buildQueue: Chunk[] = [];
     // Initially set framesSinceLastLoad to the chunk load interval to allow
     // immediate loading of chunks when the game starts.
     framesSinceLastLoad: number = WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
 
     constructor() {
         this.worldChunksMap = new Map();
-        this.curChunksToLoad = new Set();
+        this.activeChunks = new Set();
     }
 
     updateWorldChunks(scene: THREE.Scene, playerPosition: THREE.Vector3): void {
@@ -22,18 +24,21 @@ export class ChunkLoader {
             playerPosition.z,
         );
 
-        if (this.framesSinceLastLoad < WORLD_PARAMS.CHUNK_LOAD_INTERVAL) {
+        if (this.shouldRefreshVisibleChunks()) {
+            this.refreshVisibleChunks(scene, {
+                chunkX,
+                chunkZ,
+            });
+            this.framesSinceLastLoad = 0;
+        } else {
             this.framesSinceLastLoad++;
-            return;
         }
 
-        this.refreshVisibleChunks(scene, {
-            chunkX,
-            chunkZ,
-        });
+        this.processBuildQueue(scene);
+    }
 
-        this.framesSinceLastLoad = 0;
-        this.renderChunksToScene(scene, this.curChunksToLoad);
+    private shouldRefreshVisibleChunks(): boolean {
+        return this.framesSinceLastLoad >= WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
     }
 
     refreshVisibleChunks(
@@ -41,63 +46,95 @@ export class ChunkLoader {
         { chunkX, chunkZ }: { chunkX: number; chunkZ: number },
     ): void {
         const radius = WORLD_PARAMS.RENDER_DISTANCE;
-
-        for (let x = chunkX - radius; x <= chunkX + radius; x++) {
-            for (let z = chunkZ - radius; z <= chunkZ + radius; z++) {
-                const chunkKey = `${x},${z}`;
-                // CREATES new chunk if it doesn't exist, but doesn't add to scene or generate meshes yet
-                const chunk = this.getOrCreateChunkData(chunkKey);
-                // union of current chunks to load and new chunks to load
-                this.curChunksToLoad.add(chunk);
-            }
-        }
-
-        const nextBatchOfChunksToLoad = this.getChunksWithinRadiusSorted(
+        const nextBatchOfActiveChunks = this.collectChunksWithinRadius(
             chunkX,
             chunkZ,
             radius,
         );
 
-        this.removeChunksOutsideRadius(
-            scene,
-            this.curChunksToLoad.difference(nextBatchOfChunksToLoad),
-        );
-        // update the current chunks to load to be the new batch of chunks to load
-        this.curChunksToLoad = new Set(nextBatchOfChunksToLoad);
+        const chunksToRemove = this.getChunksToRemove(nextBatchOfActiveChunks);
+        this.purgeUnmodifiedChunksOutsideRadius(scene, chunksToRemove);
+
+        this.activeChunks = nextBatchOfActiveChunks;
+        this.rebuildQueue(scene, chunkX, chunkZ, radius);
     }
 
-    renderChunksToScene(scene: THREE.Scene, chunks: Set<Chunk>): void {
-        for (const chunk of chunks) {
-            if (!chunk.generated) {
-                generateFlatTerrain(chunk);
-                chunk.generated = true;
-            }
+    private collectChunksWithinRadius(
+        centerX: number,
+        centerZ: number,
+        radius: number,
+    ): Set<Chunk> {
+        const chunks = new Set<Chunk>();
 
-            chunk.generateMeshes();
-
-            // This check ensures that we only modify the scene graph when necessary
-            if (chunk.container.parent !== scene) {
-                scene.add(chunk.container);
+        for (let x = centerX - radius; x <= centerX + radius; x++) {
+            for (let z = centerZ - radius; z <= centerZ + radius; z++) {
+                const chunkKey = `${x},${z}`;
+                chunks.add(this.fetchOrInitializeChunk(chunkKey));
             }
+        }
+
+        return chunks;
+    }
+
+    private getChunksToRemove(nextBatchOfActiveChunks: Set<Chunk>): Chunk[] {
+        // Return chunks that are currently active but won't be in the next batch of active chunks
+        return [...this.activeChunks].filter(
+            (chunk) => !nextBatchOfActiveChunks.has(chunk),
+        );
+    }
+
+    private rebuildQueue(
+        scene: THREE.Scene,
+        chunkX: number,
+        chunkZ: number,
+        radius: number,
+    ): void {
+        this.buildQueue = this.getChunksWithinRadiusSorted(
+            chunkX,
+            chunkZ,
+            radius,
+        ).filter((chunk) => !this.isChunkAttachedToScene(chunk, scene));
+    }
+
+    private isChunkAttachedToScene(chunk: Chunk, scene: THREE.Scene): boolean {
+        return chunk.container.parent === scene;
+    }
+
+    processBuildQueue(scene: THREE.Scene): void {
+        const chunkToBuild = this.buildQueue.shift();
+        if (!chunkToBuild) return;
+
+        this.ensureChunkGenerated(chunkToBuild);
+        chunkToBuild.generateMeshes();
+        this.attachChunkToScene(scene, chunkToBuild);
+    }
+
+    private ensureChunkGenerated(chunk: Chunk): void {
+        if (!chunk.isDataGenerated) {
+            generateFlatTerrain(chunk);
         }
     }
 
-    createChunkData(chunkX: number, chunkZ: number): Chunk {
+    private attachChunkToScene(scene: THREE.Scene, chunk: Chunk): void {
+        if (!this.isChunkAttachedToScene(chunk, scene)) {
+            scene.add(chunk.container);
+        }
+    }
+
+    initEmptyChunk(chunkX: number, chunkZ: number): Chunk {
         const chunk = new Chunk(chunkX, chunkZ);
-        generateFlatTerrain(chunk);
-        chunk.generated = true;
         const chunkKey = chunk.getKey();
         this.worldChunksMap.set(chunkKey, chunk);
         return chunk;
     }
 
-    private removeChunksOutsideRadius(
+    private purgeUnmodifiedChunksOutsideRadius(
         scene: THREE.Scene,
-        chunksToBeRemoved: Set<Chunk>,
+        chunksToBeRemoved: Chunk[],
     ): void {
         for (const chunk of chunksToBeRemoved) {
             // remove from the currently loaded list
-            this.curChunksToLoad.delete(chunk);
+            this.activeChunks.delete(chunk);
 
             // remove from the Scene graph
             scene.remove(chunk.container);
@@ -106,18 +143,18 @@ export class ChunkLoader {
             chunk.freeSubchunkMeshes();
 
             // If the user touched it, keep the 1D arrays in RAM
-            // If it's untouched wilderness, delete it to save RAM.
+            // If it's untouched, delete it to save RAM.
             if (!chunk.isModified) {
                 this.worldChunksMap.delete(chunk.getKey());
             }
         }
     }
 
-    getOrCreateChunkData(chunkKey: string): Chunk {
+    fetchOrInitializeChunk(chunkKey: string): Chunk {
         const chunk = this.worldChunksMap.get(chunkKey);
         if (!chunk) {
             const [chunkX, chunkZ] = chunkKey.split(",").map(Number);
-            return this.createChunkData(chunkX, chunkZ);
+            return this.initEmptyChunk(chunkX, chunkZ);
         }
         return chunk;
     }
@@ -126,26 +163,16 @@ export class ChunkLoader {
         centerX: number,
         centerZ: number,
         radius: number,
-    ): Set<Chunk> {
-        return new Set(
-            Array.from(this.curChunksToLoad)
-                .filter((chunk) =>
-                    this.isChunkWithinRadius(chunk, centerX, centerZ, radius),
-                )
-                .sort((a, b) => {
-                    const distanceA = this.getChunkDistance(
-                        a,
-                        centerX,
-                        centerZ,
-                    );
-                    const distanceB = this.getChunkDistance(
-                        b,
-                        centerX,
-                        centerZ,
-                    );
-                    return distanceA - distanceB;
-                }),
-        );
+    ): Chunk[] {
+        return Array.from(this.activeChunks)
+            .filter((chunk) =>
+                this.isChunkWithinRadius(chunk, centerX, centerZ, radius),
+            )
+            .sort((a, b) => {
+                const distanceA = this.getChunkDistance(a, centerX, centerZ);
+                const distanceB = this.getChunkDistance(b, centerX, centerZ);
+                return distanceA - distanceB;
+            });
     }
 
     private isChunkWithinRadius(
@@ -173,21 +200,25 @@ export class ChunkLoader {
         worldX: number,
         worldY: number,
         worldZ: number,
-        value: number,
+        blockId: number,
     ) {
         const chunkX = Math.floor(worldX / Chunk.size);
         const chunkZ = Math.floor(worldZ / Chunk.size);
 
-        const chunk = this.getOrCreateChunkData(`${chunkX},${chunkZ}`);
+        const chunk = this.fetchOrInitializeChunk(`${chunkX},${chunkZ}`);
 
         const localX = mod(worldX, Chunk.size);
         const localZ = mod(worldZ, Chunk.size);
 
-        chunk.setVoxel(localX, worldY, localZ, value);
+        debug(
+            `setting block at chunk coords (${chunkX}, ${chunkZ}) and local coords (${localX}, ${worldY}, ${localZ})`,
+        );
+        chunk.setVoxel(localX, worldY, localZ, blockId);
+        chunk.generateMeshes();
     }
 
     getLoadedChunkCount(): number {
-        return this.curChunksToLoad.size;
+        return this.activeChunks.size;
     }
 
     getCachedChunkCount(): number {

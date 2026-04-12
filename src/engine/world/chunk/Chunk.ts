@@ -6,7 +6,7 @@ export class Chunk {
     static size = 16;
     static height = 128;
     container: THREE.Group;
-    generated: boolean;
+    isDataGenerated: boolean;
     isModified: boolean;
     subchunks: Subchunk[];
     subchunkCount: number;
@@ -19,7 +19,7 @@ export class Chunk {
         this.chunkZ = chunkZ;
         this.container = new THREE.Group();
         this.container.position.set(this.getWorldX(), 0, this.getWorldZ());
-        this.generated = false;
+        this.isDataGenerated = false;
         this.isModified = false;
 
         this.subchunks = [];
@@ -57,9 +57,17 @@ export class Chunk {
 
         // If the initial terrain generation is done, and a block changes,
         // it means the player (or an in-game event) did it
-        if (this.generated) {
-            this.isModified = true;
+        if (this.isDataGenerated) {
+            this.setModified(true);
         }
+    }
+
+    setModified(value: boolean): void {
+        this.isModified = value;
+    }
+
+    markDataAsGenerated(value: boolean): void {
+        this.isDataGenerated = value;
     }
 
     freeSubchunkMeshes(): void {
