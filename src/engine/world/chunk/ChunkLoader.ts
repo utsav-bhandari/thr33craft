@@ -136,7 +136,9 @@ export class ChunkLoader {
     }
 
     initEmptyChunk(chunkX: number, chunkZ: number): Chunk {
-        const chunk = new Chunk(chunkX, chunkZ);
+        const chunk = new Chunk(chunkX, chunkZ, (x: number, z: number) =>
+            this.worldChunksMap.get(`${x},${z}`),
+        );
         const chunkKey = chunk.getKey();
         this.worldChunksMap.set(chunkKey, chunk);
         return chunk;

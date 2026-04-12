@@ -2,6 +2,11 @@ import { Subchunk } from "./SubChunks";
 import * as THREE from "three";
 import { BlockId } from "@project-types";
 
+type NeighborChunkResolver = (
+    chunkX: number,
+    chunkZ: number,
+) => Chunk | undefined;
+
 export class Chunk {
     static size = 16;
     static height = 128;
@@ -10,10 +15,12 @@ export class Chunk {
     isModified: boolean;
     subchunks: Subchunk[];
     subchunkCount: number;
+    private readonly resolveNeighborChunk: NeighborChunkResolver;
 
     constructor(
         public chunkX: number,
         public chunkZ: number,
+        resolveNeighborChunk: NeighborChunkResolver = () => undefined,
     ) {
         this.chunkX = chunkX;
         this.chunkZ = chunkZ;
@@ -21,14 +28,24 @@ export class Chunk {
         this.container.position.set(this.getWorldX(), 0, this.getWorldZ());
         this.isDataGenerated = false;
         this.isModified = false;
+        this.resolveNeighborChunk = resolveNeighborChunk;
 
         this.subchunks = [];
 
         this.subchunkCount = Chunk.height / Subchunk.height;
 
         for (let i = 0; i < this.subchunkCount; i++) {
-            this.subchunks[i] = new Subchunk(i);
+            this.subchunks[i] = new Subchunk(i, this);
         }
+    }
+
+    getNeighborChunk(offsetX: number, offsetZ: number): Chunk | null {
+        return (
+            this.resolveNeighborChunk(
+                this.chunkX + offsetX,
+                this.chunkZ + offsetZ,
+            ) ?? null
+        );
     }
 
     generateMeshes(): void {
