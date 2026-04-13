@@ -199,6 +199,17 @@ function registerHandlers({
     };
 
     const focusWarning = createWindowFocusWarning();
+    const getMouseActionKey = (button: number): string | null => {
+        if (button === 0) {
+            return "mouse-left";
+        }
+
+        if (button === 2) {
+            return "mouse-right";
+        }
+
+        return null;
+    };
 
     const syncHotbarSelection = (slotIndex: number): void => {
         player.selectHotbarSlot(slotIndex);
@@ -276,6 +287,28 @@ function registerHandlers({
         },
         { passive: false },
     );
+
+    document.addEventListener("pointerdown", (event) => {
+        const mouseActionKey = getMouseActionKey(event.button);
+        if (!mouseActionKey) {
+            return;
+        }
+
+        if (!uiHandler.isPointerLocked() || uiHandler.isUIOpen()) {
+            return;
+        }
+
+        keyStore.addPressedKey(mouseActionKey);
+    });
+
+    document.addEventListener("pointerup", (event) => {
+        const mouseActionKey = getMouseActionKey(event.button);
+        if (!mouseActionKey) {
+            return;
+        }
+
+        keyStore.removePressedKey(mouseActionKey);
+    });
 
     document.addEventListener("click", (event) => {
         if (uiHandler.isTargetInsideActiveUI(event.target)) {

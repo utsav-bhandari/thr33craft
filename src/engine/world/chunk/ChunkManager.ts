@@ -116,6 +116,14 @@ export class ChunkManager {
         return chunk;
     }
 
+    getVoxelIdWorld(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): BlockId | null {
+        return this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
+    }
+
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
         if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
             return true;

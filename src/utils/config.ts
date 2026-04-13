@@ -37,6 +37,8 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     MENU: "f",
     INVENTORY: "e",
     HUD_TOGGLE: "h",
+    BREAK_BLOCK: "mouse-left",
+    PLACE_BLOCK: "mouse-right",
     HOTBAR_SLOT_1: "1",
     HOTBAR_SLOT_2: "2",
     HOTBAR_SLOT_3: "3",
@@ -75,6 +77,12 @@ export const gameParams: GameParams = {
 export const PLAYER_COLLISION = {
     padding: 1e-4,
     maxDeltaTime: 0.05,
+};
+
+export const INTERACTION_PARAMS = {
+    maxReach: 6,
+    breakRepeatMs: 140,
+    placeRepeatMs: 140,
 };
 
 const DEFAULT_CAMERA_FAR = 32;
@@ -131,7 +139,7 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
     camera: {
         fov: 70,
         aspect: 1,
-        near: 1,
+        near: 0.1,
         far: getCameraFar(),
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 10],

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import type { BlockId } from "@project-types";
 import { Chunk } from "./Chunk";
 import { WORLD_PARAMS } from "@/utils/config";
 import { ChunkManager } from "./ChunkManager";
@@ -110,6 +111,14 @@ export class ChunkLoader {
 
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
         return this.chunkManager.isVoxelSolidWorld(worldX, worldY, worldZ);
+    }
+
+    getVoxelIdWorld(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): BlockId | null {
+        return this.chunkManager.getVoxelIdWorld(worldX, worldY, worldZ);
     }
 
     getLoadedChunkCount(): number {

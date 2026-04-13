@@ -79,7 +79,7 @@
   },
   "azalea_leaves": {
     "id": 7,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/azalea_leaves",
       "up": "minecraft:block/azalea_leaves",
@@ -339,7 +339,7 @@
   },
   "blue_ice": {
     "id": 27,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/blue_ice",
       "up": "minecraft:block/blue_ice",
@@ -1834,7 +1834,7 @@
   },
   "acacia_leaves": {
     "id": 142,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/acacia_leaves",
       "up": "minecraft:block/acacia_leaves",
@@ -1847,7 +1847,7 @@
   },
   "flowering_azalea_leaves": {
     "id": 143,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/flowering_azalea_leaves",
       "up": "minecraft:block/flowering_azalea_leaves",
@@ -1860,7 +1860,7 @@
   },
   "birch_leaves": {
     "id": 144,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/birch_leaves",
       "up": "minecraft:block/birch_leaves",
@@ -1873,7 +1873,7 @@
   },
   "cherry_leaves": {
     "id": 145,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/cherry_leaves",
       "up": "minecraft:block/cherry_leaves",
@@ -1886,7 +1886,7 @@
   },
   "dark_oak_leaves": {
     "id": 146,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/dark_oak_leaves",
       "up": "minecraft:block/dark_oak_leaves",
@@ -1899,7 +1899,7 @@
   },
   "jungle_leaves": {
     "id": 147,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/jungle_leaves",
       "up": "minecraft:block/jungle_leaves",
@@ -1912,7 +1912,7 @@
   },
   "mangrove_leaves": {
     "id": 148,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/mangrove_leaves",
       "up": "minecraft:block/mangrove_leaves",
@@ -1925,7 +1925,7 @@
   },
   "oak_leaves": {
     "id": 149,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/oak_leaves",
       "up": "minecraft:block/oak_leaves",
@@ -1938,7 +1938,7 @@
   },
   "pale_oak_leaves": {
     "id": 150,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/pale_oak_leaves",
       "up": "minecraft:block/pale_oak_leaves",
@@ -1951,7 +1951,7 @@
   },
   "spruce_leaves": {
     "id": 151,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/spruce_leaves",
       "up": "minecraft:block/spruce_leaves",
@@ -1964,7 +1964,7 @@
   },
   "frosted_ice_0": {
     "id": 152,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/frosted_ice_0",
       "up": "minecraft:block/frosted_ice_0",
@@ -1977,7 +1977,7 @@
   },
   "frosted_ice_1": {
     "id": 153,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/frosted_ice_1",
       "up": "minecraft:block/frosted_ice_1",
@@ -1990,7 +1990,7 @@
   },
   "frosted_ice_2": {
     "id": 154,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/frosted_ice_2",
       "up": "minecraft:block/frosted_ice_2",
@@ -2003,7 +2003,7 @@
   },
   "frosted_ice_3": {
     "id": 155,
-    "transparent": true,
+    "transparent": false,
     "textures": {
       "down": "minecraft:block/frosted_ice_3",
       "up": "minecraft:block/frosted_ice_3",

@@ -1,12 +1,9 @@
 import { Vector3 } from "three";
 import type { PerspectiveCamera } from "three";
-import type {
-    InputManagerLike,
-    MovementDirection,
-    PlayerLike,
-} from "@project-types";
+import type { InputManagerLike, MovementDirection } from "@project-types";
 import { BasePlayerController } from "@lib/base/BasePlayerController";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
+import { Player } from "@/impl/Player";
 import { PLAYER_COLLISION, WORLD_PARAMS } from "@/utils/config";
 
 type MovementAxis = "x" | "y" | "z";
@@ -21,7 +18,7 @@ interface OccupiedBlockRange {
 }
 
 export class PlayerController extends BasePlayerController {
-    declare player: PlayerLike;
+    declare player: Player;
     declare inputManager: InputManagerLike;
     declare camera: PerspectiveCamera;
     private readonly chunkLoader: ChunkLoader;
@@ -37,7 +34,7 @@ export class PlayerController extends BasePlayerController {
     };
 
     constructor(
-        player: PlayerLike,
+        player: Player,
         inputManager: InputManagerLike,
         camera: PerspectiveCamera,
         chunkLoader: ChunkLoader,
@@ -92,6 +89,21 @@ export class PlayerController extends BasePlayerController {
 
     getPosition(): Vector3 {
         return this.player.position;
+    }
+
+    occupiesBlock(worldX: number, worldY: number, worldZ: number): boolean {
+        const occupiedBlockRange = this.getOccupiedBlockRange(
+            this.player.position,
+        );
+
+        return (
+            worldX >= occupiedBlockRange.minX &&
+            worldX <= occupiedBlockRange.maxX &&
+            worldY >= occupiedBlockRange.minY &&
+            worldY <= occupiedBlockRange.maxY &&
+            worldZ >= occupiedBlockRange.minZ &&
+            worldZ <= occupiedBlockRange.maxZ
+        );
     }
 
     updatePlayer(deltaTime: number): void {
