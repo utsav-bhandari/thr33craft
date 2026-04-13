@@ -182,6 +182,10 @@ function registerHandlers({
             focusWarning.classList.remove("visible");
         }, 400);
     });
+
+    document.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    });
 }
 
 function createWindowFocusWarning(): HTMLElement {
