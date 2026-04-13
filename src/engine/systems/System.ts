@@ -1,12 +1,12 @@
 import type { Camera, Scene, WebGLRenderer } from "three";
 import type { InputManagerLike } from "@project-types";
 import { BaseSystem } from "@lib/base/BaseSystem";
-import { BlockInteractionSystem } from "@/engine/BlockInteractionSystem";
-import { BlockTargetingSystem } from "@/engine/BlockTargetingSystem";
-import type { UIHandler } from "@/engine/UIHandler";
+import { BlockInteractionSystem } from "@/engine/systems/BlockInteractionSystem";
+import { BlockTargetingSystem } from "@/engine/systems/BlockTargetingSystem";
+import type { UIHandler } from "@/engine/ui/UIHandler";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
-import { HUDSystem } from "@/engine/HUDSystem";
-import { PlayerController } from "@/engine/PlayerController";
+import { HUDSystem } from "@/engine/systems/HUDSystem";
+import { PlayerController } from "@/engine/controllers/PlayerController";
 
 export class System extends BaseSystem {
     declare playerController: PlayerController;

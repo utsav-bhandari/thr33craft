@@ -1,7 +1,10 @@
 import * as THREE from "three";
 import type { Scene } from "three";
-import { PlayerController } from "@/engine/PlayerController";
-import { raycastVoxels, type VoxelRaycastHit } from "@/engine/voxelRaycast";
+import { PlayerController } from "@/engine/controllers/PlayerController";
+import {
+    raycastVoxels,
+    type VoxelRaycastHit,
+} from "@/engine/targeting/voxelRaycast";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { INTERACTION_PARAMS } from "@/utils/config";
 

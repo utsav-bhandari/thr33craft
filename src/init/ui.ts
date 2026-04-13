@@ -9,7 +9,7 @@ import type {
 } from "@project-types";
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
-import { UIHandler } from "@/engine/UIHandler";
+import { UIHandler } from "@/engine/ui/UIHandler";
 import { generateBlockTextureSheet } from "@lib/texture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@lib/texture/loadBlockTextureSheet";

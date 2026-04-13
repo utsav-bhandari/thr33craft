@@ -9,8 +9,8 @@ import {
     HOTBAR_SLOT_COUNT,
     WORLD_PARAMS,
 } from "@/utils/config";
-import { PlayerController } from "@/engine/PlayerController";
-import { System } from "@/engine/System";
+import { PlayerController } from "@/engine/controllers/PlayerController";
+import { System } from "@/engine/systems/System";
 import { createBlockMesh } from "@lib/texture/block-loader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
@@ -18,7 +18,7 @@ import { Hotbar } from "@/impl/inventory/Hotbar";
 import { Inventory } from "@/impl/inventory/Inventory";
 import { debug } from "@/utils/logger";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
-import { HUDSystem } from "@/engine/HUDSystem";
+import { HUDSystem } from "@/engine/systems/HUDSystem";
 import { BEDROCK_BLOCK_ID } from "@/utils/constants";
 import type { InventoryBlockSelectionDetail } from "@project-types";
 import { getNameForBlock } from "@/init/block-registry";

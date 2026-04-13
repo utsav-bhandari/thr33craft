@@ -1,6 +1,6 @@
 import type { InputManagerLike } from "@project-types";
-import { BlockTargetingSystem } from "@/engine/BlockTargetingSystem";
-import { PlayerController } from "@/engine/PlayerController";
+import { PlayerController } from "@/engine/controllers/PlayerController";
+import { BlockTargetingSystem } from "@/engine/systems/BlockTargetingSystem";
 import { Chunk } from "@/engine/world/chunk/Chunk";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { getIDForBlock } from "@/init/block-registry";
