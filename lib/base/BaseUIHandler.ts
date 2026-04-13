@@ -5,6 +5,7 @@ export class BaseUIHandler {
     inputManager: InputManagerLike;
     ptrControls: PointerLockControls;
     activeUI: UIModalLike | null;
+    protected containedElements: Set<HTMLElement>;
 
     constructor(
         inputManager: InputManagerLike,
@@ -13,6 +14,7 @@ export class BaseUIHandler {
         this.inputManager = inputManager;
         this.ptrControls = pointerControls;
         this.activeUI = null;
+        this.containedElements = new Set();
     }
 
     protected onActiveUIChange(_activeUI: UIModalLike | null): void {}
@@ -72,5 +74,67 @@ export class BaseUIHandler {
 
     isPointerLocked(): boolean {
         return this.ptrControls.isLocked;
+    }
+
+    registerContainedElement(element: HTMLElement): void {
+        this.containedElements.add(element);
+    }
+
+    unregisterContainedElement(element: HTMLElement): void {
+        this.containedElements.delete(element);
+    }
+
+    isPointInsideActiveUI(clientX: number, clientY: number): boolean {
+        if (
+            this.activeUI &&
+            this.isPointInsideElement(
+                this.activeUI.htmlElement,
+                clientX,
+                clientY,
+            )
+        ) {
+            return true;
+        }
+
+        for (const element of this.containedElements) {
+            if (this.isPointInsideElement(element, clientX, clientY)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    isTargetInsideActiveUI(target: EventTarget | null): boolean {
+        if (!(target instanceof Node)) {
+            return false;
+        }
+
+        if (this.activeUI?.htmlElement.contains(target)) {
+            return true;
+        }
+
+        for (const element of this.containedElements) {
+            if (element.contains(target)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private isPointInsideElement(
+        element: HTMLElement,
+        clientX: number,
+        clientY: number,
+    ): boolean {
+        const rect = element.getBoundingClientRect();
+
+        return (
+            clientX >= rect.left &&
+            clientX <= rect.right &&
+            clientY >= rect.top &&
+            clientY <= rect.bottom
+        );
     }
 }
