@@ -2,6 +2,7 @@ import { Chunk } from "./Chunk";
 import { BlockId } from "@project-types";
 import { AIR_BLOCK_ID } from "@/utils/constants";
 import { mod } from "@/utils/helper";
+import { WORLD_PARAMS } from "@/utils/config";
 import { Subchunk } from "./SubChunks";
 import { ChunkMeshManager } from "./ChunkMeshManager";
 import { generateFlatTerrain } from "../World-Generator";
@@ -26,6 +27,13 @@ export class ChunkManager {
         const chunk = new Chunk(chunkX, chunkZ);
         this.worldChunksMap.set(chunkKey, chunk);
         return chunk;
+    }
+
+    /** Returns a chunk only if it already exists in cache. */
+    getChunkIfExists(chunkX: number, chunkZ: number): Chunk | null {
+        return (
+            this.worldChunksMap.get(this.getChunkKey(chunkX, chunkZ)) ?? null
+        );
     }
 
     /** Returns a neighboring chunk if it has already been created. */
@@ -109,7 +117,31 @@ export class ChunkManager {
     }
 
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
-        return this.getVoxelIdWorld(worldX, worldY, worldZ) !== AIR_BLOCK_ID;
+        const voxelId = this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
+        return voxelId !== null && voxelId !== AIR_BLOCK_ID;
+    }
+
+    /**
+     * Meshing/culling variant: unknown neighbor chunks are treated as solid so
+     * chunk-border blocks stay hidden until the adjacent chunk is generated.
+     */
+    isVoxelSolidForMeshing(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): boolean {
+        // The world has no playable space below y=0, so treat that boundary as
+        // solid to avoid rendering buried bedrock blocks at the bottom layer.
+        if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
+            return true;
+        }
+
+        const voxelId = this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
+        if (voxelId === null) {
+            return true;
+        }
+
+        return voxelId !== AIR_BLOCK_ID;
     }
 
     rebuildChunkMeshes(chunk: Chunk): void {
@@ -124,20 +156,23 @@ export class ChunkManager {
         return this.worldChunksMap.size;
     }
 
-    /** Resolves world-space voxel id across chunk/subchunk boundaries. */
-    private getVoxelIdWorld(
+    /**
+     * Resolves world-space voxel id across chunk/subchunk boundaries.
+     * Returns null when the owning chunk does not exist or is not generated.
+     */
+    private tryGetVoxelIdWorld(
         worldX: number,
         worldY: number,
         worldZ: number,
-    ): number {
-        if (worldY < 0 || worldY >= Chunk.height) {
+    ): BlockId | null {
+        if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y || worldY >= Chunk.height) {
             return AIR_BLOCK_ID;
         }
 
         const { chunkX, chunkZ } = Chunk.worldToChunkCoords(worldX, worldZ);
         const chunk = this.worldChunksMap.get(this.getChunkKey(chunkX, chunkZ));
-        if (!chunk) {
-            return AIR_BLOCK_ID;
+        if (!chunk || !chunk.isDataGenerated) {
+            return null;
         }
 
         const localX = mod(worldX, Chunk.size);

@@ -116,12 +116,32 @@ export class ChunkMeshManager {
 
     private isHidden(worldX: number, worldY: number, worldZ: number): boolean {
         return (
-            this.chunkManager.isVoxelSolidWorld(worldX, worldY + 1, worldZ) &&
-            this.chunkManager.isVoxelSolidWorld(worldX, worldY - 1, worldZ) &&
-            this.chunkManager.isVoxelSolidWorld(worldX + 1, worldY, worldZ) &&
-            this.chunkManager.isVoxelSolidWorld(worldX - 1, worldY, worldZ) &&
-            this.chunkManager.isVoxelSolidWorld(worldX, worldY, worldZ + 1) &&
-            this.chunkManager.isVoxelSolidWorld(worldX, worldY, worldZ - 1)
+            this.chunkManager.isVoxelSolidForMeshing(
+                worldX,
+                worldY + 1,
+                worldZ,
+            ) &&
+            this.chunkManager.isVoxelSolidForMeshing(
+                worldX,
+                worldY - 1,
+                worldZ,
+            ) &&
+            this.chunkManager.isVoxelSolidForMeshing(
+                worldX + 1,
+                worldY,
+                worldZ,
+            ) &&
+            this.chunkManager.isVoxelSolidForMeshing(
+                worldX - 1,
+                worldY,
+                worldZ,
+            ) &&
+            this.chunkManager.isVoxelSolidForMeshing(
+                worldX,
+                worldY,
+                worldZ + 1,
+            ) &&
+            this.chunkManager.isVoxelSolidForMeshing(worldX, worldY, worldZ - 1)
         );
     }
 }

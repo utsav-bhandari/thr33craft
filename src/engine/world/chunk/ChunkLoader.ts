@@ -62,9 +62,13 @@ export class ChunkLoader {
 
     /** Builds and attaches at most one queued chunk per tick. */
     processBuildQueue(scene: THREE.Scene): void {
-        const chunkToBuild = this.loadPlanner.dequeueChunkToBuild();
-        if (!chunkToBuild) return;
+        const chunkCoords = this.loadPlanner.dequeueChunkToBuild();
+        if (!chunkCoords) return;
 
+        const chunkToBuild = this.chunkManager.getOrCreateChunk(
+            chunkCoords.chunkX,
+            chunkCoords.chunkZ,
+        );
         this.chunkManager.ensureChunkGenerated(chunkToBuild);
         this.chunkManager.rebuildChunkMeshes(chunkToBuild);
         this.sceneController.attachChunk(scene, chunkToBuild);

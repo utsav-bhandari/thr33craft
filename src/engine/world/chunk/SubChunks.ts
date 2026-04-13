@@ -23,7 +23,7 @@ export class Subchunk {
         return x + this.size * (z + this.size * y);
     }
 
-    getVoxelId(x: number, y: number, z: number): number {
+    getVoxelId(x: number, y: number, z: number): BlockId {
         return this.voxels[this.index(x, y, z)];
     }
 

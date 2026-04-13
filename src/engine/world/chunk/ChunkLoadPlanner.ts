@@ -3,8 +3,8 @@ import { Chunk } from "./Chunk";
 import { ChunkManager } from "./ChunkManager";
 
 export class ChunkLoadPlanner {
-    private activeChunks: Set<Chunk> = new Set();
-    private buildQueue: Chunk[] = [];
+    private activeChunkKeys: Set<string> = new Set();
+    private buildQueue: Array<{ chunkX: number; chunkZ: number }> = [];
 
     constructor(private readonly chunkManager: ChunkManager) {}
 
@@ -18,80 +18,121 @@ export class ChunkLoadPlanner {
         centerZ: number,
         radius: number,
     ): Chunk[] {
-        const nextActiveChunks = this.collectChunksWithinRadius(
+        const nextActiveChunkKeys = this.collectChunkKeysWithinRadius(
             centerX,
             centerZ,
             radius,
         );
 
-        const chunksToRemove = [...this.activeChunks].filter(
-            (chunk) => !nextActiveChunks.has(chunk),
-        );
+        const chunksToRemove: Chunk[] = [];
+        for (const chunkKey of this.activeChunkKeys) {
+            if (nextActiveChunkKeys.has(chunkKey)) {
+                continue;
+            }
 
-        this.activeChunks = nextActiveChunks;
+            const { chunkX, chunkZ } = this.parseChunkKey(chunkKey);
+            const chunk = this.chunkManager.getChunkIfExists(chunkX, chunkZ);
+            if (chunk) {
+                chunksToRemove.push(chunk);
+            }
+        }
 
-        this.buildQueue = this.getChunksWithinRadiusSorted(
+        this.activeChunkKeys = nextActiveChunkKeys;
+
+        this.buildQueue = this.getChunkCoordsWithinRadiusSorted(
             centerX,
             centerZ,
             radius,
-        ).filter((chunk) => chunk.container.parent !== scene);
+        ).filter(({ chunkX, chunkZ }) => {
+            const chunk = this.chunkManager.getChunkIfExists(chunkX, chunkZ);
+            // Only include chunks that exist but aren't yet attached to the scene because attached chunks will be up-to-date and don't need to be built.
+            return !chunk || chunk.container.parent !== scene;
+        });
 
         return chunksToRemove;
     }
 
     /** Returns the next not-yet-attached chunk to build for this frame. */
-    dequeueChunkToBuild(): Chunk | undefined {
+    dequeueChunkToBuild(): { chunkX: number; chunkZ: number } | undefined {
         return this.buildQueue.shift();
     }
 
     getLoadedChunkCount(): number {
-        return this.activeChunks.size;
+        return this.activeChunkKeys.size;
     }
 
-    /** Collects chunks in a square radius around the center chunk. */
-    private collectChunksWithinRadius(
+    /** Collects chunk keys in a square radius around the center chunk. */
+    private collectChunkKeysWithinRadius(
         centerX: number,
         centerZ: number,
         radius: number,
-    ): Set<Chunk> {
-        const chunks = new Set<Chunk>();
+    ): Set<string> {
+        const chunkKeys = new Set<string>();
 
         for (let x = centerX - radius; x <= centerX + radius; x++) {
             for (let z = centerZ - radius; z <= centerZ + radius; z++) {
-                chunks.add(this.chunkManager.getOrCreateChunk(x, z));
+                chunkKeys.add(this.getChunkKey(x, z));
             }
         }
 
-        return chunks;
+        return chunkKeys;
     }
 
-    /** Returns active chunks sorted nearest-first for stable build priority. */
-    private getChunksWithinRadiusSorted(
+    /** Returns chunk coordinates sorted nearest-first for stable build priority. */
+    private getChunkCoordsWithinRadiusSorted(
         centerX: number,
         centerZ: number,
         radius: number,
-    ): Chunk[] {
-        return Array.from(this.activeChunks)
+    ): Array<{ chunkX: number; chunkZ: number }> {
+        const chunkCoords = Array.from(this.activeChunkKeys, (chunkKey) =>
+            this.parseChunkKey(chunkKey),
+        );
+
+        return chunkCoords
             .filter(
-                (chunk) =>
-                    this.getChunkDistance(chunk, centerX, centerZ) <= radius,
+                ({ chunkX, chunkZ }) =>
+                    this.getChunkDistance(chunkX, chunkZ, centerX, centerZ) <=
+                    radius,
             )
             .sort((a, b) => {
-                const distanceA = this.getChunkDistance(a, centerX, centerZ);
-                const distanceB = this.getChunkDistance(b, centerX, centerZ);
+                const distanceA = this.getChunkDistance(
+                    a.chunkX,
+                    a.chunkZ,
+                    centerX,
+                    centerZ,
+                );
+                const distanceB = this.getChunkDistance(
+                    b.chunkX,
+                    b.chunkZ,
+                    centerX,
+                    centerZ,
+                );
                 return distanceA - distanceB;
             });
     }
 
     /** Uses Chebyshev distance in chunk space. */
     private getChunkDistance(
-        chunk: Chunk,
+        chunkX: number,
+        chunkZ: number,
         centerX: number,
         centerZ: number,
     ): number {
-        return Math.max(
-            Math.abs(chunk.chunkX - centerX),
-            Math.abs(chunk.chunkZ - centerZ),
-        );
+        return Math.max(Math.abs(chunkX - centerX), Math.abs(chunkZ - centerZ));
+    }
+
+    private getChunkKey(chunkX: number, chunkZ: number): string {
+        return `${chunkX},${chunkZ}`;
+    }
+
+    private parseChunkKey(chunkKey: string): {
+        chunkX: number;
+        chunkZ: number;
+    } {
+        const [chunkX, chunkZ] = chunkKey
+            .split(",")
+            .map((value) => Number.parseInt(value, 10));
+
+        return { chunkX, chunkZ };
     }
 }

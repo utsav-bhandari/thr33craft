@@ -51,7 +51,7 @@ export function createChunkWireframe(): THREE.LineSegments {
     );
 
     const material = new THREE.LineBasicMaterial({
-        color: 0xc0c0c0,
+        color: 0xff0000,
         transparent: true,
         opacity: 0.55,
         depthTest: true,
