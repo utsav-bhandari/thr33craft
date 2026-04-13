@@ -1,10 +1,10 @@
 import * as THREE from "three";
 import type { BlockId } from "@project-types";
-import { Chunk } from "./Chunk";
+import { Chunk } from "@/engine/world/chunk/Chunk";
 import { WORLD_PARAMS } from "@/utils/config";
-import { ChunkManager } from "./ChunkManager";
-import { ChunkLoadPlanner } from "./ChunkLoadPlanner";
-import { ChunkSceneController } from "./ChunkSceneController";
+import { ChunkManager } from "@/engine/world/chunk/ChunkManager";
+import { ChunkLoadPlanner } from "@/engine/world/chunk/ChunkLoadPlanner";
+import { ChunkSceneController } from "@/engine/world/chunk/ChunkSceneController";
 
 export class ChunkLoader {
     private readonly chunkManager: ChunkManager;

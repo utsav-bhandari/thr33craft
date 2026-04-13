@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import { Chunk } from "./Chunk";
-import { ChunkManager } from "./ChunkManager";
+import { Chunk } from "@/engine/world/chunk/Chunk";
+import { ChunkManager } from "@/engine/world/chunk/ChunkManager";
 
 export class ChunkLoadPlanner {
     private activeChunkKeys: Set<string> = new Set();

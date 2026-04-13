@@ -1,5 +1,5 @@
-import { Chunk } from "./chunk/Chunk";
-import type { ChunkManager } from "./chunk/ChunkManager";
+import { Chunk } from "@/engine/world/chunk/Chunk";
+import type { ChunkManager } from "@/engine/world/chunk/ChunkManager";
 import {
     BEDROCK_BLOCK_ID,
     DIRT_BLOCK_ID,

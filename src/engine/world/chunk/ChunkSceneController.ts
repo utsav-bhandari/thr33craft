@@ -1,9 +1,9 @@
 import * as THREE from "three";
-import { Chunk } from "./Chunk";
+import { Chunk } from "@/engine/world/chunk/Chunk";
 import {
     createChunkWireframe,
     setChunkWireframePosition,
-} from "./chunkWireframe";
+} from "@/engine/world/chunk/chunkWireframe";
 
 export class ChunkSceneController {
     private wireframeVisible = false;

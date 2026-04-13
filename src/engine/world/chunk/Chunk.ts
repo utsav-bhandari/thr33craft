@@ -1,4 +1,4 @@
-import { Subchunk } from "./SubChunks";
+import { Subchunk } from "@/engine/world/chunk/SubChunks";
 import * as THREE from "three";
 
 export class Chunk {

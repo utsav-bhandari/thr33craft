@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { AIR_BLOCK_ID } from "@/utils/constants";
 import { getAtlasMaterial, getBlockGeometry } from "@lib/texture/block-loader";
-import { Chunk } from "./Chunk";
-import { Subchunk } from "./SubChunks";
-import type { ChunkManager } from "./ChunkManager";
+import { Chunk } from "@/engine/world/chunk/Chunk";
+import { Subchunk } from "@/engine/world/chunk/SubChunks";
+import type { ChunkManager } from "@/engine/world/chunk/ChunkManager";
 
 export class ChunkMeshManager {
     private readonly subchunkMeshes = new Map<

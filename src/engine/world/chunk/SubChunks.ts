@@ -1,5 +1,5 @@
 import { BlockId } from "@project-types";
-import { Chunk } from "./Chunk";
+import { Chunk } from "@/engine/world/chunk/Chunk";
 
 export class Subchunk {
     static height = 16;

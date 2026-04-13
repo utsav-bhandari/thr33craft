@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import { Chunk } from "./Chunk";
-import { Subchunk } from "./SubChunks";
+import { Chunk } from "@/engine/world/chunk/Chunk";
+import { Subchunk } from "@/engine/world/chunk/SubChunks";
 
 export function createChunkWireframe(): THREE.LineSegments {
     const positions: number[] = [];

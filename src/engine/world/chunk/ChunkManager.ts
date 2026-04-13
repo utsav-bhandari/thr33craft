@@ -4,9 +4,9 @@ import { AIR_BLOCK_ID } from "@/utils/constants";
 import { isTransparentBlock } from "@/init/block-registry";
 import { mod } from "@/utils/helper";
 import { WORLD_PARAMS } from "@/utils/config";
-import { Subchunk } from "./SubChunks";
-import { ChunkMeshManager } from "./ChunkMeshManager";
-import { generateFlatTerrain } from "../World-Generator";
+import { Subchunk } from "@/engine/world/chunk/SubChunks";
+import { ChunkMeshManager } from "@/engine/world/chunk/ChunkMeshManager";
+import { generateFlatTerrain } from "@/engine/world/World-Generator";
 
 export class ChunkManager {
     private readonly worldChunksMap: Map<string, Chunk> = new Map();
