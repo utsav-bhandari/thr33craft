@@ -10,6 +10,10 @@ export class ChunkMeshManager {
         Subchunk,
         Map<number, THREE.InstancedMesh>
     >();
+    private readonly instancePosition = new THREE.Vector3();
+    private readonly instanceRotation = new THREE.Quaternion();
+    private readonly instanceScale = new THREE.Vector3(1, 1, 1);
+    private readonly yAxis = new THREE.Vector3(0, 1, 0);
 
     constructor(private readonly chunkManager: ChunkManager) {}
 
@@ -52,7 +56,7 @@ export class ChunkMeshManager {
 
         const visibleBlocks = new Map<
             number,
-            Array<[number, number, number]>
+            Array<[number, number, number, number]>
         >();
         const subchunkWorldY = subchunk.yIndex * Subchunk.height;
         const chunkWorldX = chunk.getWorldX();
@@ -76,7 +80,9 @@ export class ChunkMeshManager {
                         visibleBlocks.set(blockId, []);
                     }
 
-                    visibleBlocks.get(blockId)!.push([x, y, z]);
+                    visibleBlocks
+                        .get(blockId)!
+                        .push([x, y, z, subchunk.getVoxelRotation(x, y, z)]);
                 }
             }
         }
@@ -97,10 +103,19 @@ export class ChunkMeshManager {
             instancedMesh.position.set(0, localY, 0);
 
             positions.forEach((pos, index) => {
-                dummyMatrix.setPosition(
+                this.instancePosition.set(
                     pos[0] + 0.5,
                     pos[1] + 0.5,
                     pos[2] + 0.5,
+                );
+                this.instanceRotation.setFromAxisAngle(
+                    this.yAxis,
+                    pos[3] * -(Math.PI / 2),
+                );
+                dummyMatrix.compose(
+                    this.instancePosition,
+                    this.instanceRotation,
+                    this.instanceScale,
                 );
                 instancedMesh.setMatrixAt(index, dummyMatrix);
             });
@@ -116,32 +131,36 @@ export class ChunkMeshManager {
 
     private isHidden(worldX: number, worldY: number, worldZ: number): boolean {
         return (
-            this.chunkManager.isVoxelSolidForMeshing(
+            this.chunkManager.isVoxelOpaqueForMeshing(
                 worldX,
                 worldY + 1,
                 worldZ,
             ) &&
-            this.chunkManager.isVoxelSolidForMeshing(
+            this.chunkManager.isVoxelOpaqueForMeshing(
                 worldX,
                 worldY - 1,
                 worldZ,
             ) &&
-            this.chunkManager.isVoxelSolidForMeshing(
+            this.chunkManager.isVoxelOpaqueForMeshing(
                 worldX + 1,
                 worldY,
                 worldZ,
             ) &&
-            this.chunkManager.isVoxelSolidForMeshing(
+            this.chunkManager.isVoxelOpaqueForMeshing(
                 worldX - 1,
                 worldY,
                 worldZ,
             ) &&
-            this.chunkManager.isVoxelSolidForMeshing(
+            this.chunkManager.isVoxelOpaqueForMeshing(
                 worldX,
                 worldY,
                 worldZ + 1,
             ) &&
-            this.chunkManager.isVoxelSolidForMeshing(worldX, worldY, worldZ - 1)
+            this.chunkManager.isVoxelOpaqueForMeshing(
+                worldX,
+                worldY,
+                worldZ - 1,
+            )
         );
     }
 }

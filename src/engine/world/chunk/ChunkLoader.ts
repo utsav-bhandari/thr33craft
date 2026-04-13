@@ -121,6 +121,27 @@ export class ChunkLoader {
         return this.chunkManager.getVoxelIdWorld(worldX, worldY, worldZ);
     }
 
+    rotateVoxelWorld(worldX: number, worldY: number, worldZ: number): boolean {
+        const didRotate = this.chunkManager.rotateVoxelWorld(
+            worldX,
+            worldY,
+            worldZ,
+        );
+
+        if (!didRotate) {
+            return false;
+        }
+
+        const { chunkX, chunkZ } = Chunk.worldToChunkCoords(worldX, worldZ);
+        const chunk = this.chunkManager.getChunkIfExists(chunkX, chunkZ);
+        if (!chunk) {
+            return false;
+        }
+
+        this.chunkManager.rebuildChunkMeshes(chunk);
+        return true;
+    }
+
     getLoadedChunkCount(): number {
         return this.loadPlanner.getLoadedChunkCount();
     }

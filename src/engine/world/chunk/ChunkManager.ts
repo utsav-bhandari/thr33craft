@@ -1,6 +1,7 @@
 import { Chunk } from "./Chunk";
 import { BlockId } from "@project-types";
 import { AIR_BLOCK_ID } from "@/utils/constants";
+import { isTransparentBlock } from "@/init/block-registry";
 import { mod } from "@/utils/helper";
 import { WORLD_PARAMS } from "@/utils/config";
 import { Subchunk } from "./SubChunks";
@@ -124,6 +125,31 @@ export class ChunkManager {
         return this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
     }
 
+    rotateVoxelWorld(worldX: number, worldY: number, worldZ: number): boolean {
+        const voxelRef = this.tryGetVoxelRefWorld(worldX, worldY, worldZ);
+        if (!voxelRef) {
+            return false;
+        }
+
+        const { chunk, subchunk, localX, localY, localZ } = voxelRef;
+        if (subchunk.getVoxelId(localX, localY, localZ) === AIR_BLOCK_ID) {
+            return false;
+        }
+
+        subchunk.setVoxelRotation(
+            localX,
+            localY,
+            localZ,
+            subchunk.getVoxelRotation(localX, localY, localZ) + 1,
+        );
+
+        if (chunk.isDataGenerated) {
+            chunk.isModified = true;
+        }
+
+        return true;
+    }
+
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
         if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
             return true;
@@ -156,6 +182,23 @@ export class ChunkManager {
         return voxelId !== AIR_BLOCK_ID;
     }
 
+    isVoxelOpaqueForMeshing(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): boolean {
+        if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
+            return true;
+        }
+
+        const voxelId = this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
+        if (voxelId === null) {
+            return true;
+        }
+
+        return voxelId !== AIR_BLOCK_ID && !isTransparentBlock(voxelId);
+    }
+
     rebuildChunkMeshes(chunk: Chunk): void {
         this.meshManager.rebuildChunkMeshes(chunk);
     }
@@ -181,6 +224,33 @@ export class ChunkManager {
             return AIR_BLOCK_ID;
         }
 
+        const voxelRef = this.tryGetVoxelRefWorld(worldX, worldY, worldZ);
+        if (!voxelRef) {
+            return null;
+        }
+
+        return voxelRef.subchunk.getVoxelId(
+            voxelRef.localX,
+            voxelRef.localY,
+            voxelRef.localZ,
+        );
+    }
+
+    private tryGetVoxelRefWorld(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): {
+        chunk: Chunk;
+        subchunk: Subchunk;
+        localX: number;
+        localY: number;
+        localZ: number;
+    } | null {
+        if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y || worldY >= Chunk.height) {
+            return null;
+        }
+
         const { chunkX, chunkZ } = Chunk.worldToChunkCoords(worldX, worldZ);
         const chunk = this.worldChunksMap.get(this.getChunkKey(chunkX, chunkZ));
         if (!chunk || !chunk.isDataGenerated) {
@@ -192,7 +262,13 @@ export class ChunkManager {
         const subchunk = chunk.getSubchunk(worldY);
         const localY = worldY % Subchunk.height;
 
-        return subchunk.getVoxelId(localX, localY, localZ);
+        return {
+            chunk,
+            subchunk,
+            localX,
+            localY,
+            localZ,
+        };
     }
 
     private markNeighborSubchunksDirtyForEdgeVoxel(

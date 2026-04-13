@@ -5,6 +5,7 @@ export class Subchunk {
     static height = 16;
     size: number;
     voxels: Uint16Array;
+    rotations: Uint8Array;
     dirty: boolean;
 
     constructor(public yIndex: number) {
@@ -13,6 +14,9 @@ export class Subchunk {
         this.size = Chunk.size;
 
         this.voxels = new Uint16Array(this.size * Subchunk.height * this.size); // 16 * 16 * 16 = 4096
+        this.rotations = new Uint8Array(
+            this.size * Subchunk.height * this.size,
+        );
         this.dirty = true;
     }
 
@@ -27,12 +31,33 @@ export class Subchunk {
         return this.voxels[this.index(x, y, z)];
     }
 
+    getVoxelRotation(x: number, y: number, z: number): number {
+        return this.rotations[this.index(x, y, z)] ?? 0;
+    }
+
     setVoxel(x: number, y: number, z: number, blockId: BlockId): void {
-        this.voxels[this.index(x, y, z)] = blockId;
+        const index = this.index(x, y, z);
+        this.voxels[index] = blockId;
+        this.rotations[index] = 0;
+        this.dirty = true;
+    }
+
+    setVoxelRotation(
+        x: number,
+        y: number,
+        z: number,
+        quarterTurns: number,
+    ): void {
+        this.rotations[this.index(x, y, z)] =
+            normalizeQuarterTurns(quarterTurns);
         this.dirty = true;
     }
 
     markDirty(): void {
         this.dirty = true;
     }
+}
+
+function normalizeQuarterTurns(quarterTurns: number): number {
+    return ((quarterTurns % 4) + 4) % 4;
 }

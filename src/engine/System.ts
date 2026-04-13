@@ -33,6 +33,7 @@ export class System extends BaseSystem {
     private hoveredBlock: VoxelRaycastHit | null = null;
     private lastBreakTime = Number.NEGATIVE_INFINITY;
     private lastPlaceTime = Number.NEGATIVE_INFINITY;
+    private wasRotatePressed = false;
 
     constructor(
         inputManager: InputManagerLike,
@@ -92,6 +93,7 @@ export class System extends BaseSystem {
             this.updateHoveredBlock(scene);
             this.handleBlockInteractions(scene, time);
         } else {
+            this.wasRotatePressed = false;
             this.hideHoveredBlock();
         }
 
@@ -152,6 +154,18 @@ export class System extends BaseSystem {
     }
 
     private handleBlockInteractions(scene: Scene, time: number): void {
+        const isRotatePressed = this.inputManager.isPressed("ROTATE_BLOCK");
+
+        if (
+            !this.wasRotatePressed &&
+            isRotatePressed &&
+            this.rotateHoveredBlock()
+        ) {
+            this.updateHoveredBlock(scene);
+        }
+
+        this.wasRotatePressed = isRotatePressed;
+
         if (
             this.inputManager.isPressed("BREAK_BLOCK") &&
             time - this.lastBreakTime >= INTERACTION_PARAMS.breakRepeatMs &&
@@ -169,6 +183,18 @@ export class System extends BaseSystem {
             this.lastPlaceTime = time;
             this.updateHoveredBlock(scene);
         }
+    }
+
+    private rotateHoveredBlock(): boolean {
+        if (!this.hoveredBlock) {
+            return false;
+        }
+
+        return this.chunkLoader.rotateVoxelWorld(
+            this.hoveredBlock.blockX,
+            this.hoveredBlock.blockY,
+            this.hoveredBlock.blockZ,
+        );
     }
 
     private breakHoveredBlock(): boolean {

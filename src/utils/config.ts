@@ -39,6 +39,7 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     HUD_TOGGLE: "h",
     BREAK_BLOCK: "mouse-left",
     PLACE_BLOCK: "mouse-right",
+    ROTATE_BLOCK: "r",
     HOTBAR_SLOT_1: "1",
     HOTBAR_SLOT_2: "2",
     HOTBAR_SLOT_3: "3",
@@ -76,6 +77,7 @@ export const gameParams: GameParams = {
 
 export const PLAYER_COLLISION = {
     padding: 1e-4,
+    headClearance: 0.1,
     maxDeltaTime: 0.05,
 };
 
