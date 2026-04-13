@@ -22,7 +22,7 @@ function requireElement<T extends HTMLElement>(
 
 export const DEBUG = true;
 
-const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 33, 0];
+const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 38, 0];
 
 export const HOTBAR_SLOT_COUNT = 9;
 
@@ -64,11 +64,17 @@ export const gameParams: GameParams = {
     playerParams: {
         speed: 10,
         height: 1.85,
+        width: 0.6,
     },
     keysPreset: DEFAULT_KEYS_PRESET,
     inventoryHtmlElm: requireElement("inventory", HTMLDivElement),
     menuHtmlElm: requireElement("menu", HTMLDivElement),
     inventoryBlockTextureSheetParams: INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS,
+};
+
+export const PLAYER_COLLISION = {
+    padding: 1e-4,
+    maxDeltaTime: 0.05,
 };
 
 const DEFAULT_CAMERA_FAR = 32;

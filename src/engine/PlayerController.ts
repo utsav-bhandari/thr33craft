@@ -6,18 +6,52 @@ import type {
     PlayerLike,
 } from "@project-types";
 import { BasePlayerController } from "@lib/base/BasePlayerController";
+import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
+import { PLAYER_COLLISION, WORLD_PARAMS } from "@/utils/config";
+
+type MovementAxis = "x" | "y" | "z";
+
+interface OccupiedBlockRange {
+    minX: number;
+    maxX: number;
+    minY: number;
+    maxY: number;
+    minZ: number;
+    maxZ: number;
+}
 
 export class PlayerController extends BasePlayerController {
     declare player: PlayerLike;
     declare inputManager: InputManagerLike;
     declare camera: PerspectiveCamera;
+    private readonly chunkLoader: ChunkLoader;
+    private collisionEnabled = true;
+    private readonly candidatePosition = new Vector3();
+    private readonly occupiedBlockRange: OccupiedBlockRange = {
+        minX: 0,
+        maxX: 0,
+        minY: 0,
+        maxY: 0,
+        minZ: 0,
+        maxZ: 0,
+    };
 
     constructor(
         player: PlayerLike,
         inputManager: InputManagerLike,
         camera: PerspectiveCamera,
+        chunkLoader: ChunkLoader,
     ) {
         super(player, inputManager, camera);
+        this.chunkLoader = chunkLoader;
+    }
+
+    setCollisionEnabled(enabled: boolean): void {
+        this.collisionEnabled = enabled;
+    }
+
+    isCollisionEnabled(): boolean {
+        return this.collisionEnabled;
     }
 
     getDirection(): MovementDirection {
@@ -61,7 +95,10 @@ export class PlayerController extends BasePlayerController {
     }
 
     updatePlayer(deltaTime: number): void {
-        // get movement direction based on input
+        const cappedDeltaTime = Math.min(
+            deltaTime,
+            PLAYER_COLLISION.maxDeltaTime,
+        );
         const { dx, dy, dz } = this.getDirection();
         const speedMultiplier = this.inputManager.isPressed("SPRINT") ? 1.5 : 1;
         const targetVelocity = new Vector3(
@@ -70,12 +107,99 @@ export class PlayerController extends BasePlayerController {
             dz * this.player.speed * speedMultiplier,
         );
 
-        this.player.move(targetVelocity, 20, deltaTime);
+        if (this.collisionEnabled) {
+            this.moveWithCollisions(targetVelocity, 20, cappedDeltaTime);
+        } else {
+            this.player.move(targetVelocity, 20, cappedDeltaTime);
+        }
 
-        // if (this.player.position.y <= this.player.height) {
-        //     this.player.position.y = this.player.height;
-        // }
         this.camera.position.copy(this.player.position);
-        // this.camera.translateZ(10);
+    }
+
+    private moveWithCollisions(
+        targetVelocity: Vector3,
+        accel: number,
+        deltaTime: number,
+    ): void {
+        this.player.velocity.lerp(
+            targetVelocity,
+            Math.min(1, accel * deltaTime),
+        );
+        this.moveAlongAxis("x", this.player.velocity.x * deltaTime);
+        this.moveAlongAxis("y", this.player.velocity.y * deltaTime);
+        this.moveAlongAxis("z", this.player.velocity.z * deltaTime);
+    }
+
+    private moveAlongAxis(axis: MovementAxis, distance: number): void {
+        if (distance === 0) {
+            return;
+        }
+
+        const candidatePosition = this.candidatePosition.copy(
+            this.player.position,
+        );
+        candidatePosition[axis] += distance;
+
+        if (this.collidesAt(candidatePosition)) {
+            this.player.velocity[axis] = 0;
+            return;
+        }
+
+        this.player.position[axis] = candidatePosition[axis];
+    }
+
+    private collidesAt(position: Vector3): boolean {
+        const occupiedBlockRange = this.getOccupiedBlockRange(position);
+
+        if (occupiedBlockRange.minY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
+            return true;
+        }
+
+        for (
+            let worldX = occupiedBlockRange.minX;
+            worldX <= occupiedBlockRange.maxX;
+            worldX += 1
+        ) {
+            for (
+                let worldY = occupiedBlockRange.minY;
+                worldY <= occupiedBlockRange.maxY;
+                worldY += 1
+            ) {
+                for (
+                    let worldZ = occupiedBlockRange.minZ;
+                    worldZ <= occupiedBlockRange.maxZ;
+                    worldZ += 1
+                ) {
+                    if (
+                        this.chunkLoader.isVoxelSolidWorld(
+                            worldX,
+                            worldY,
+                            worldZ,
+                        )
+                    ) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private getOccupiedBlockRange(position: Vector3): OccupiedBlockRange {
+        const padding = PLAYER_COLLISION.padding;
+        const halfWidth = this.player.width / 2;
+        const occupiedBlockRange = this.occupiedBlockRange;
+
+        occupiedBlockRange.minX = Math.floor(position.x - halfWidth + padding);
+        occupiedBlockRange.maxX = Math.floor(position.x + halfWidth - padding);
+        occupiedBlockRange.minY = Math.floor(
+            position.y - this.player.height + padding,
+        );
+        occupiedBlockRange.maxY = Math.floor(position.y - padding);
+        occupiedBlockRange.minZ = Math.floor(position.z - halfWidth + padding);
+        occupiedBlockRange.maxZ = Math.floor(position.z + halfWidth - padding);
+
+        return occupiedBlockRange;
     }
 }

@@ -117,6 +117,10 @@ export class ChunkManager {
     }
 
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
+        if (worldY < WORLD_PARAMS.WORLD_BOTTOM_Y) {
+            return true;
+        }
+
         const voxelId = this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
         return voxelId !== null && voxelId !== AIR_BLOCK_ID;
     }

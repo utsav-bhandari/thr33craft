@@ -108,6 +108,10 @@ export class ChunkLoader {
         this.chunkManager.rebuildChunkMeshes(chunk);
     }
 
+    isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
+        return this.chunkManager.isVoxelSolidWorld(worldX, worldY, worldZ);
+    }
+
     getLoadedChunkCount(): number {
         return this.loadPlanner.getLoadedChunkCount();
     }

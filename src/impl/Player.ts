@@ -14,6 +14,7 @@ export class Player extends BasePlayer {
     position: Vector3;
     velocity: Vector3;
     height: number;
+    width: number;
     hotbarSlots: Array<HotbarItem | null>;
     activeHotbarSlotIndex: number;
 
@@ -23,6 +24,7 @@ export class Player extends BasePlayer {
         this.position = this.mesh.position;
         this.velocity = new Vector3();
         this.height = playerParams.height ?? 1.85;
+        this.width = playerParams.width ?? 0.6;
         this.hotbarSlots = Array.from(
             { length: HOTBAR_SLOT_COUNT },
             (): HotbarItem | null => null,
@@ -80,7 +82,7 @@ export class Player extends BasePlayer {
 
     move(targetVelocity: Vector3, accel: number, deltaTime: number): void {
         // smoothly interpolate velocity towards target velocity based on acceleration and delta time
-        this.velocity.lerp(targetVelocity, accel * deltaTime);
+        this.velocity.lerp(targetVelocity, Math.min(1, accel * deltaTime));
 
         this.position.addScaledVector(this.velocity, deltaTime);
     }

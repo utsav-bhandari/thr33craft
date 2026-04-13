@@ -69,10 +69,15 @@ export async function initSystem({
     scene.add(playerMesh);
 
     const player = new Player(playerMesh, playerParams);
-    const playerController = new PlayerController(player, inputManager, camera);
     const chunkLoader = new ChunkLoader();
+    const playerController = new PlayerController(
+        player,
+        inputManager,
+        camera,
+        chunkLoader,
+    );
     const hudSystem = new HUDSystem();
-    setupDebugPlacementGui(scene, chunkLoader, hudSystem);
+    setupDebugGui(scene, chunkLoader, hudSystem, playerController);
 
     const { uiHandler, inventory } = initUI({
         inputManager,
@@ -331,10 +336,11 @@ function isEditableTarget(event: KeyboardEvent): boolean {
     );
 }
 
-function setupDebugPlacementGui(
+function setupDebugGui(
     scene: THREE.Scene,
     chunkLoader: ChunkLoader,
     hudSystem: HUDSystem,
+    playerController: PlayerController,
 ): void {
     const wireframeGeometry = new THREE.EdgesGeometry(
         new THREE.BoxGeometry(1, 1, 1),
@@ -349,6 +355,7 @@ function setupDebugPlacementGui(
         x: 0,
         y: 30,
         z: 0,
+        collisionEnabled: playerController.isCollisionEnabled(),
         placeDebugBlock(): void {
             const { x, y, z } = markerState;
             chunkLoader.setVoxelWorld(x, y, z, BEDROCK_BLOCK_ID);
@@ -398,6 +405,13 @@ function setupDebugPlacementGui(
         .step(1)
         .onChange((value: number) => {
             marker.position.z = value + 0.5;
+        });
+    debugFolder
+        .add(markerState, "collisionEnabled")
+        .name("Player Collision")
+        .onChange((value: boolean) => {
+            playerController.setCollisionEnabled(value);
+            debug(`Player collision ${value ? "enabled" : "disabled"}`);
         });
     debugFolder.add(markerState, "placeDebugBlock").name("Place Debug Block");
     debugFolder.add(markerState, "clearDebugBlock").name("Set To Air");

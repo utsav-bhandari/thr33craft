@@ -8,6 +8,7 @@ export interface KeyPreset extends Record<string, string> {}
 export interface PlayerParams {
     speed?: number;
     height?: number;
+    width?: number;
 }
 
 export interface InventoryBlockTextureSheetParams {
@@ -128,7 +129,9 @@ export interface InputManagerLike {
 export interface PlayerLike {
     speed: number;
     position: THREE.Vector3;
+    velocity: THREE.Vector3;
     height: number;
+    width: number;
     move(targetVelocity: THREE.Vector3, accel: number, deltaTime: number): void;
 }
 
