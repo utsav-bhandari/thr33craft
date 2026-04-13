@@ -30,7 +30,7 @@ body {
 
 .lil-gui * {
     z-index: 2;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Consolas", monospace;
     font-size: medium;
 }
 

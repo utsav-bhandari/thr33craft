@@ -219,9 +219,9 @@ function setupDebugPlacementGui(
         new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
 
     const markerState = {
-        x: 5,
-        y: 32 - 5,
-        z: 5,
+        x: 0,
+        y: 30,
+        z: 0,
         placeDebugBlock(): void {
             const { x, y, z } = markerState;
             chunkLoader.setVoxelWorld(x, y, z, BEDROCK_BLOCK_ID);

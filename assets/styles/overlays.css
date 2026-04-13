@@ -255,7 +255,7 @@ body.ui-open .gameplay {
     pointer-events: none;
     min-width: 320px;
     max-width: min(460px, calc(100vw - 36px));
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Consolas", monospace;
     font-size: medium;
 }
 
