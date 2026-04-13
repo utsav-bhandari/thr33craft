@@ -29,6 +29,8 @@ async function bootstrap(): Promise<void> {
     loadingScreenMessage.remove();
 
     globalThis.system = system;
+    globalThis.scene = scene;
+
     renderer.setAnimationLoop((prevTime) => {
         system.animate(prevTime, renderer, scene, camera);
     });

@@ -1,41 +1,41 @@
 {
-  "acacia_log": {
+  "dirt": {
     "id": 1,
     "transparent": false,
     "textures": {
-      "down": "minecraft:block/acacia_log_top",
-      "up": "minecraft:block/acacia_log_top",
-      "north": "minecraft:block/acacia_log",
-      "south": "minecraft:block/acacia_log",
-      "west": "minecraft:block/acacia_log",
-      "east": "minecraft:block/acacia_log",
-      "particle": "minecraft:block/acacia_log"
+      "down": "minecraft:block/dirt",
+      "up": "minecraft:block/dirt",
+      "north": "minecraft:block/dirt",
+      "south": "minecraft:block/dirt",
+      "west": "minecraft:block/dirt",
+      "east": "minecraft:block/dirt",
+      "particle": "minecraft:block/dirt"
     }
   },
-  "acacia_planks": {
+  "stone": {
     "id": 2,
     "transparent": false,
     "textures": {
-      "down": "minecraft:block/acacia_planks",
-      "up": "minecraft:block/acacia_planks",
-      "north": "minecraft:block/acacia_planks",
-      "south": "minecraft:block/acacia_planks",
-      "west": "minecraft:block/acacia_planks",
-      "east": "minecraft:block/acacia_planks",
-      "particle": "minecraft:block/acacia_planks"
+      "down": "minecraft:block/stone",
+      "up": "minecraft:block/stone",
+      "north": "minecraft:block/stone",
+      "south": "minecraft:block/stone",
+      "west": "minecraft:block/stone",
+      "east": "minecraft:block/stone",
+      "particle": "minecraft:block/stone"
     }
   },
-  "acacia_wood": {
+  "grass_block": {
     "id": 3,
     "transparent": false,
     "textures": {
-      "down": "minecraft:block/acacia_log",
-      "up": "minecraft:block/acacia_log",
-      "north": "minecraft:block/acacia_log",
-      "south": "minecraft:block/acacia_log",
-      "west": "minecraft:block/acacia_log",
-      "east": "minecraft:block/acacia_log",
-      "particle": "minecraft:block/acacia_log"
+      "down": "block/dirt",
+      "up": "block/grass_block_top",
+      "north": "block/grass_block_side",
+      "south": "block/grass_block_side",
+      "west": "block/grass_block_side",
+      "east": "block/grass_block_side",
+      "particle": "block/dirt"
     }
   },
   "amethyst_block": {
@@ -1585,17 +1585,17 @@
       "particle": "minecraft:block/diorite"
     }
   },
-  "dirt": {
+  "acacia_log": {
     "id": 123,
     "transparent": false,
     "textures": {
-      "down": "minecraft:block/dirt",
-      "up": "minecraft:block/dirt",
-      "north": "minecraft:block/dirt",
-      "south": "minecraft:block/dirt",
-      "west": "minecraft:block/dirt",
-      "east": "minecraft:block/dirt",
-      "particle": "minecraft:block/dirt"
+      "down": "minecraft:block/acacia_log_top",
+      "up": "minecraft:block/acacia_log_top",
+      "north": "minecraft:block/acacia_log",
+      "south": "minecraft:block/acacia_log",
+      "west": "minecraft:block/acacia_log",
+      "east": "minecraft:block/acacia_log",
+      "particle": "minecraft:block/acacia_log"
     }
   },
   "dispenser": {
@@ -2118,17 +2118,17 @@
       "particle": "minecraft:block/granite"
     }
   },
-  "grass_block": {
+  "acacia_wood": {
     "id": 164,
     "transparent": false,
     "textures": {
-      "down": "block/dirt",
-      "up": "block/grass_block_top",
-      "north": "block/grass_block_side",
-      "south": "block/grass_block_side",
-      "west": "block/grass_block_side",
-      "east": "block/grass_block_side",
-      "particle": "block/dirt"
+      "down": "minecraft:block/acacia_log",
+      "up": "minecraft:block/acacia_log",
+      "north": "minecraft:block/acacia_log",
+      "south": "minecraft:block/acacia_log",
+      "west": "minecraft:block/acacia_log",
+      "east": "minecraft:block/acacia_log",
+      "particle": "minecraft:block/acacia_log"
     }
   },
   "gravel": {
@@ -4302,17 +4302,17 @@
       "particle": "minecraft:block/spruce_log"
     }
   },
-  "stone": {
+  "acacia_planks": {
     "id": 332,
     "transparent": false,
     "textures": {
-      "down": "minecraft:block/stone",
-      "up": "minecraft:block/stone",
-      "north": "minecraft:block/stone",
-      "south": "minecraft:block/stone",
-      "west": "minecraft:block/stone",
-      "east": "minecraft:block/stone",
-      "particle": "minecraft:block/stone"
+      "down": "minecraft:block/acacia_planks",
+      "up": "minecraft:block/acacia_planks",
+      "north": "minecraft:block/acacia_planks",
+      "south": "minecraft:block/acacia_planks",
+      "west": "minecraft:block/acacia_planks",
+      "east": "minecraft:block/acacia_planks",
+      "particle": "minecraft:block/acacia_planks"
     }
   },
   "stone_bricks": {

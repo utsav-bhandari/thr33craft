@@ -246,4 +246,5 @@ export interface BlockTextureSheet {
 
 declare global {
     var system: import("@/engine/System.js").System | undefined;
+    var scene: THREE.Scene | undefined;
 }

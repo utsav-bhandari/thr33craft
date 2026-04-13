@@ -85,10 +85,12 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
     backgroundColor: 0x80adff,
     fog: {
         enabled: true,
-        color: 0x80adff,
+        get color() {
+            return SCENE_INIT_CONFIG.backgroundColor;
+        },
         // based off of the camera's far plane
         get near(): number {
-            return SCENE_INIT_CONFIG.camera?.far ?? 32;
+            return (SCENE_INIT_CONFIG.camera?.far ?? 32) * 0.4;
         },
         get far(): number {
             return (SCENE_INIT_CONFIG.camera?.far ?? 32) * 1.5;
@@ -102,7 +104,7 @@ export const SCENE_INIT_CONFIG: SceneInitConfig = {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 16,
+        far: 32,
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 10],
     },
