@@ -1,5 +1,6 @@
 import type {
     BlockTextureSheet,
+    InventoryBlockSelectionDetail,
     InventoryBlockTextureSheetParams,
 } from "@project-types";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
@@ -84,6 +85,21 @@ export class Inventory extends BaseUIModal {
         });
 
         this.gridComponent = new InventoryGrid();
+        this.gridComponent.on("blockselect", (event) => {
+            if (!(event instanceof CustomEvent)) {
+                return;
+            }
+
+            const detail = event.detail as
+                | InventoryBlockSelectionDetail
+                | undefined;
+
+            if (!detail) {
+                return;
+            }
+
+            this.emit("blockselect", detail);
+        });
         this.statusComponent = new InventoryStatus();
         this.stateController = new InventoryStateController({
             status: this.statusComponent,
@@ -120,6 +136,16 @@ export class Inventory extends BaseUIModal {
         this.stateController.showError(message);
     }
 
+    override close(): void {
+        super.close();
+
+        if (!this.textureSheet) {
+            return;
+        }
+
+        this.stateController.resetToLoadedState(this.textureSheet);
+    }
+
     /** Applies a loaded texture sheet to the grid and resets filtering. */
     setGridTextureSheet(textureSheet: BlockTextureSheet): void {
         this.textureSheet = textureSheet;
@@ -140,6 +166,10 @@ export class Inventory extends BaseUIModal {
             totalCount,
             visibleCount,
         });
+    }
+
+    showSelectionFeedback(message: string): void {
+        this.stateController.showActionResult(message);
     }
 
     /** Triggers a browser download for the currently loaded texture-sheet image. */

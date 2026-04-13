@@ -56,6 +56,22 @@ export class InventoryStateController {
             query
                 ? `${visibleCount} of ${totalCount} blocks`
                 : this.getLoadedMessage(totalCount),
+            "success",
+        );
+    }
+
+    showActionResult(message: string): void {
+        this.status.setMessage(message, "success");
+    }
+
+    resetToLoadedState(textureSheet: BlockTextureSheet): void {
+        this.grid.setTextureSheet(textureSheet);
+        this.search.clear();
+        this.search.setDisabled(false);
+        this.downloadButton?.removeAttribute("disabled");
+        this.status.setMessage(
+            this.getLoadedMessage(textureSheet.items.length),
+            "success",
         );
     }
 

@@ -24,6 +24,8 @@ export const DEBUG = true;
 
 const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 33, 0];
 
+export const HOTBAR_SLOT_COUNT = 9;
+
 export const DEFAULT_KEYS_PRESET: KeyPreset = {
     UP: " ",
     DOWN: "c",
@@ -35,6 +37,15 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     MENU: "f",
     INVENTORY: "e",
     HUD_TOGGLE: "h",
+    HOTBAR_SLOT_1: "1",
+    HOTBAR_SLOT_2: "2",
+    HOTBAR_SLOT_3: "3",
+    HOTBAR_SLOT_4: "4",
+    HOTBAR_SLOT_5: "5",
+    HOTBAR_SLOT_6: "6",
+    HOTBAR_SLOT_7: "7",
+    HOTBAR_SLOT_8: "8",
+    HOTBAR_SLOT_9: "9",
 };
 
 export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams =

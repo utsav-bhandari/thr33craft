@@ -1,4 +1,8 @@
-import type { BlockTextureSheet, BlockTextureSheetItem } from "@project-types";
+import type {
+    BlockTextureSheet,
+    BlockTextureSheetItem,
+    InventoryBlockSelectionDetail,
+} from "@project-types";
 import { BaseUIComponent } from "@lib/base/BaseUIComponent";
 import { AIR_BLOCK_NAME } from "@/init/block-registry";
 
@@ -59,9 +63,21 @@ export class InventoryGrid extends BaseUIComponent {
         slot.className = "inventory-slot";
 
         const label = formatBlockLabel(item.id);
+        const selectionDetail: InventoryBlockSelectionDetail = {
+            id: item.id,
+            label,
+            textureSheetUrl: item.textureSheetUrl,
+            backgroundPosition: item.backgroundPosition,
+            backgroundSize: item.backgroundSize,
+        };
+
         slot.title = label;
         slot.setAttribute("aria-label", label);
         slot.dataset.name = label.toLowerCase();
+        slot.dataset.blockId = item.id;
+        slot.addEventListener("click", () => {
+            this.emit("blockselect", selectionDetail);
+        });
 
         const icon = document.createElement("span");
         icon.className = "inventory-icon";
@@ -74,7 +90,7 @@ export class InventoryGrid extends BaseUIComponent {
     }
 }
 
-function formatBlockLabel(blockId: string): string {
+export function formatBlockLabel(blockId: string): string {
     return blockId
         .split("_")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

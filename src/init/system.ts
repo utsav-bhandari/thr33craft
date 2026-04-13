@@ -4,16 +4,23 @@ import { KeyMap } from "@lib/controls/KeyMap";
 import { KeyStore } from "@lib/controls/KeyStore";
 import * as THREE from "three";
 import type { InitSystemArgs } from "@project-types";
-import { DEFAULT_KEYS_PRESET, WORLD_PARAMS } from "@/utils/config";
+import {
+    DEFAULT_KEYS_PRESET,
+    HOTBAR_SLOT_COUNT,
+    WORLD_PARAMS,
+} from "@/utils/config";
 import { PlayerController } from "@/engine/PlayerController";
 import { System } from "@/engine/System";
 import { createBlockMesh } from "@lib/texture/block-loader";
 import { Player } from "@/impl/Player";
 import { initUI } from "@/init/ui";
+import { Hotbar } from "@/impl/inventory/Hotbar";
+import { Inventory } from "@/impl/inventory/Inventory";
 import { debug } from "@/utils/logger";
 import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { HUDSystem } from "@/engine/HUDSystem";
 import { BEDROCK_BLOCK_ID } from "@/utils/constants";
+import type { InventoryBlockSelectionDetail } from "@project-types";
 
 /** Builds runtime systems: input, player controller, UI handler, world streaming, and HUD. */
 export async function initSystem({
@@ -44,7 +51,7 @@ export async function initSystem({
 
     const {
         menu = "MENU",
-        inventory = "INVENTORY",
+        inventory: inventoryActionName = "INVENTORY",
         hud = "HUD_TOGGLE",
     } = actionOptions;
 
@@ -67,11 +74,15 @@ export async function initSystem({
     const hudSystem = new HUDSystem();
     setupDebugPlacementGui(scene, chunkLoader, hudSystem);
 
-    const { uiHandler } = initUI({
+    const { uiHandler, inventory } = initUI({
         inputManager,
         pointerControls,
         gameParams,
     });
+    const hotbar = new Hotbar(HOTBAR_SLOT_COUNT);
+    document.body.appendChild(hotbar.htmlElement);
+    uiHandler.registerContainedElement(hotbar.htmlElement);
+    hotbar.render(player.getHotbarSnapshot());
 
     const system = new System(
         inputManager,
@@ -83,12 +94,39 @@ export async function initSystem({
 
     debug("UI initialized");
 
+    inventory.on("blockselect", (event: Event) => {
+        if (!(event instanceof CustomEvent)) {
+            return;
+        }
+
+        const detail = event.detail as
+            | InventoryBlockSelectionDetail
+            | undefined;
+        if (!detail) {
+            return;
+        }
+
+        const assignment = player.assignHotbarItem(detail);
+        hotbar.render(player.getHotbarSnapshot());
+        inventory.showSelectionFeedback(
+            createHotbarSelectionMessage(detail.label, assignment, player),
+        );
+        debug("Hotbar item assigned", {
+            blockId: detail.id,
+            slot: assignment.slotIndex + 1,
+            mode: assignment.mode,
+            selectedBlock: player.getSelectedBlockName(),
+        });
+    });
+
     registerHandlers({
         system,
+        player,
+        hotbar,
         keyStore,
         uiHandler,
         menuAction: menu,
-        inventoryAction: inventory,
+        inventoryAction: inventoryActionName,
         hudAction: hud,
     });
 
@@ -101,8 +139,29 @@ export async function initSystem({
     };
 }
 
+function createHotbarSelectionMessage(
+    label: string,
+    assignment: ReturnType<Player["assignHotbarItem"]>,
+    player: Player,
+): string {
+    const slotNumber = assignment.slotIndex + 1;
+
+    if (assignment.mode === "existing") {
+        return `${label} is already in hotbar slot ${slotNumber}`;
+    }
+
+    if (assignment.mode === "replaced") {
+        const activeSlotNumber = player.activeHotbarSlotIndex + 1;
+        return `Replaced active slot ${activeSlotNumber} with ${label}`;
+    }
+
+    return `Added ${label} to hotbar slot ${slotNumber}`;
+}
+
 function registerHandlers({
     system,
+    player,
+    hotbar,
     keyStore,
     uiHandler,
     menuAction,
@@ -110,6 +169,8 @@ function registerHandlers({
     hudAction,
 }: {
     system: System;
+    player: Player;
+    hotbar: Hotbar;
     keyStore: KeyStore;
     uiHandler: ReturnType<typeof initUI>["uiHandler"];
     menuAction: string;
@@ -133,6 +194,15 @@ function registerHandlers({
     };
 
     const focusWarning = createWindowFocusWarning();
+
+    const syncHotbarSelection = (slotIndex: number): void => {
+        player.selectHotbarSlot(slotIndex);
+        hotbar.render(player.getHotbarSnapshot());
+        debug("Hotbar slot selected", {
+            slot: slotIndex + 1,
+            selectedBlock: player.getSelectedBlockName(),
+        });
+    };
 
     addKeyHandler("keydown", (key) => {
         debug(key, "pressed");
@@ -162,11 +232,64 @@ function registerHandlers({
         }
     });
 
-    document.addEventListener("click", () => {
-        console.log("Document clicked, attempting to lock pointer");
-        if (!uiHandler.isUIOpen()) {
-            uiHandler.lockPointer();
+    addKeyHandler("keydown", (_key, event) => {
+        if (event.repeat) {
+            return;
         }
+
+        for (let slotIndex = 0; slotIndex < HOTBAR_SLOT_COUNT; slotIndex += 1) {
+            if (
+                !system.inputManager.isPressed(`HOTBAR_SLOT_${slotIndex + 1}`)
+            ) {
+                continue;
+            }
+
+            syncHotbarSelection(slotIndex);
+            return;
+        }
+    });
+
+    document.addEventListener(
+        "wheel",
+        (event) => {
+            if (uiHandler.isUIOpen() || !uiHandler.isPointerLocked()) {
+                return;
+            }
+
+            if (event.deltaY === 0) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const direction = event.deltaY < 0 ? -1 : 1;
+            const nextSlotIndex =
+                (player.activeHotbarSlotIndex + direction + HOTBAR_SLOT_COUNT) %
+                HOTBAR_SLOT_COUNT;
+
+            syncHotbarSelection(nextSlotIndex);
+        },
+        { passive: false },
+    );
+
+    document.addEventListener("click", (event) => {
+        if (uiHandler.isTargetInsideActiveUI(event.target)) {
+            return;
+        }
+
+        if (
+            event instanceof MouseEvent &&
+            uiHandler.isPointInsideActiveUI(event.clientX, event.clientY)
+        ) {
+            return;
+        }
+
+        if (uiHandler.isPointerLocked()) {
+            return;
+        }
+
+        uiHandler.closeActiveUI();
+        uiHandler.lockPointer();
     });
 
     // If user switches tabs or the window loses focus, clear the key store to prevent stuck keys when they return to the game.

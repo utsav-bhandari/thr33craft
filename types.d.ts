@@ -233,6 +233,28 @@ export interface BlockTextureSheetItem extends BlockTextureSheetMetadataItem {
     textureSheetUrl: string;
 }
 
+export interface HotbarItem {
+    id: string;
+    label: string;
+    textureSheetUrl: string;
+    backgroundPosition: string;
+    backgroundSize: string;
+}
+
+export interface HotbarSnapshot {
+    slots: (HotbarItem | null)[];
+    activeSlotIndex: number;
+}
+
+export type HotbarAssignmentMode = "existing" | "empty" | "replaced";
+
+export interface HotbarAssignmentResult {
+    slotIndex: number;
+    mode: HotbarAssignmentMode;
+}
+
+export interface InventoryBlockSelectionDetail extends HotbarItem {}
+
 export interface BlockTextureSheet {
     textureSheetUrl: string;
     iconSize: number;

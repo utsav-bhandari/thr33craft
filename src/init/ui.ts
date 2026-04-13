@@ -14,10 +14,7 @@ import { generateBlockTextureSheet } from "@lib/texture/generateBlockTextureShee
 import { Inventory } from "@/impl/inventory/Inventory";
 import { loadIndividualBlocks } from "@lib/texture/loadBlockTextureSheet";
 import { debug } from "@/utils/logger";
-import {
-    getRegisteredBlockNames,
-    renderableBlockNames,
-} from "@/init/block-registry";
+import { renderableBlockNames } from "@/init/block-registry";
 
 /** Creates game UI modals and starts inventory texture-sheet initialization. */
 export function initUI({
@@ -79,10 +76,7 @@ async function initializeInventoryUI(
             renderScale,
         } = blockTextureSheetConfig;
 
-        const blockNames =
-            source === "static"
-                ? getRegisteredBlockNames()
-                : renderableBlockNames;
+        const blockNames = renderableBlockNames;
 
         debug("Initializing inventory UI", {
             source,
