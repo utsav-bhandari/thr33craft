@@ -92,13 +92,13 @@ export class ChunkManager {
         }
     }
 
-    /** Writes a voxel in world coordinates and returns the owning chunk. */
+    /** Writes a voxel in world coordinates and returns all generated chunks whose meshes must be rebuilt. */
     setVoxelWorld(
         worldX: number,
         worldY: number,
         worldZ: number,
         blockId: BlockId,
-    ): Chunk {
+    ): Chunk[] {
         const { chunkX, chunkZ } = Chunk.worldToChunkCoords(worldX, worldZ);
         const chunk = this.getOrCreateChunk(chunkX, chunkZ);
 
@@ -114,7 +114,7 @@ export class ChunkManager {
             chunk.isDataGenerated,
         );
 
-        return chunk;
+        return this.collectChunksNeedingMeshRebuild(chunk, localX, localZ);
     }
 
     getVoxelIdWorld(
@@ -315,6 +315,49 @@ export class ChunkManager {
             chunk
                 .getSubchunk((subchunkYIndex + 1) * Subchunk.height)
                 .markDirty();
+        }
+    }
+
+    private collectChunksNeedingMeshRebuild(
+        chunk: Chunk,
+        localX: number,
+        localZ: number,
+    ): Chunk[] {
+        const chunks = new Set<Chunk>();
+
+        if (chunk.isDataGenerated) {
+            chunks.add(chunk);
+        }
+
+        if (localX === 0) {
+            this.addGeneratedNeighborChunk(chunks, chunk, -1, 0);
+        }
+
+        if (localX === Chunk.size - 1) {
+            this.addGeneratedNeighborChunk(chunks, chunk, 1, 0);
+        }
+
+        if (localZ === 0) {
+            this.addGeneratedNeighborChunk(chunks, chunk, 0, -1);
+        }
+
+        if (localZ === Chunk.size - 1) {
+            this.addGeneratedNeighborChunk(chunks, chunk, 0, 1);
+        }
+
+        return Array.from(chunks);
+    }
+
+    private addGeneratedNeighborChunk(
+        chunks: Set<Chunk>,
+        chunk: Chunk,
+        offsetX: number,
+        offsetZ: number,
+    ): void {
+        const neighborChunk = this.getNeighborChunk(chunk, offsetX, offsetZ);
+
+        if (neighborChunk?.isDataGenerated) {
+            chunks.add(neighborChunk);
         }
     }
 

@@ -100,13 +100,16 @@ export class ChunkLoader {
         worldZ: number,
         blockId: number,
     ) {
-        const chunk = this.chunkManager.setVoxelWorld(
+        const chunks = this.chunkManager.setVoxelWorld(
             worldX,
             worldY,
             worldZ,
             blockId,
         );
-        this.chunkManager.rebuildChunkMeshes(chunk);
+
+        for (const chunk of chunks) {
+            this.chunkManager.rebuildChunkMeshes(chunk);
+        }
     }
 
     isVoxelSolidWorld(worldX: number, worldY: number, worldZ: number): boolean {
