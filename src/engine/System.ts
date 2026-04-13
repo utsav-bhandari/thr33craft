@@ -55,6 +55,10 @@ export class System extends BaseSystem {
         this.chunkLoader.toggleChunkWireframes();
     }
 
+    getHoveredBlockId(): number | null {
+        return this.hoveredBlock?.blockId ?? null;
+    }
+
     /** Updates player motion and streams nearby world chunks. */
     worldUpdate(scene: Scene, deltaTime: number): void {
         this.playerController.updatePlayer(deltaTime);

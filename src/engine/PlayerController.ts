@@ -209,7 +209,7 @@ export class PlayerController extends BasePlayerController {
             position.y - this.player.height + padding,
         );
         occupiedBlockRange.maxY = Math.floor(
-            position.y - PLAYER_COLLISION.headClearance,
+            position.y + PLAYER_COLLISION.headClearance,
         );
         occupiedBlockRange.minZ = Math.floor(position.z - halfWidth + padding);
         occupiedBlockRange.maxZ = Math.floor(position.z + halfWidth - padding);

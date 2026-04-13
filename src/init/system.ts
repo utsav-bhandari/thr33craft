@@ -21,6 +21,8 @@ import { ChunkLoader } from "@/engine/world/chunk/ChunkLoader";
 import { HUDSystem } from "@/engine/HUDSystem";
 import { BEDROCK_BLOCK_ID } from "@/utils/constants";
 import type { InventoryBlockSelectionDetail } from "@project-types";
+import { getNameForBlock } from "@/init/block-registry";
+import { formatBlockLabel } from "@/impl/inventory/InventoryGrid";
 
 /** Builds runtime systems: input, player controller, UI handler, world streaming, and HUD. */
 export async function initSystem({
@@ -97,6 +99,60 @@ export async function initSystem({
         hudSystem,
     );
 
+    const assignHotbarItem = (detail: InventoryBlockSelectionDetail): void => {
+        const assignment = player.assignHotbarItem(detail);
+        hotbar.render(player.getHotbarSnapshot());
+        inventory.showSelectionFeedback(
+            createHotbarSelectionMessage(detail.label, assignment, player),
+        );
+        debug("Hotbar item assigned", {
+            blockId: detail.id,
+            slot: assignment.slotIndex + 1,
+            mode: assignment.mode,
+            selectedBlock: player.getSelectedBlockName(),
+        });
+    };
+
+    const getInventorySelectionDetailForBlock = (
+        blockId: number,
+    ): InventoryBlockSelectionDetail | null => {
+        const blockName = getNameForBlock(blockId);
+        const metadata = inventory.textureSheet?.metadata[blockName];
+        const textureSheetUrl = inventory.textureSheet?.textureSheetUrl;
+
+        if (!metadata || !textureSheetUrl) {
+            return null;
+        }
+
+        return {
+            id: blockName,
+            label: formatBlockLabel(blockName),
+            textureSheetUrl,
+            backgroundPosition: metadata.backgroundPosition,
+            backgroundSize: metadata.backgroundSize,
+        };
+    };
+
+    const removeActiveHotbarItem = (): void => {
+        const removedItem = player.clearActiveHotbarItem();
+        hotbar.render(player.getHotbarSnapshot());
+
+        if (!removedItem) {
+            inventory.showSelectionFeedback(
+                "Active hotbar slot is already empty",
+            );
+            return;
+        }
+
+        inventory.showSelectionFeedback(
+            `Removed ${removedItem.label} from hotbar slot ${player.activeHotbarSlotIndex + 1}`,
+        );
+        debug("Hotbar item removed", {
+            blockId: removedItem.id,
+            slot: player.activeHotbarSlotIndex + 1,
+        });
+    };
+
     debug("UI initialized");
 
     inventory.on("blockselect", (event: Event) => {
@@ -111,17 +167,7 @@ export async function initSystem({
             return;
         }
 
-        const assignment = player.assignHotbarItem(detail);
-        hotbar.render(player.getHotbarSnapshot());
-        inventory.showSelectionFeedback(
-            createHotbarSelectionMessage(detail.label, assignment, player),
-        );
-        debug("Hotbar item assigned", {
-            blockId: detail.id,
-            slot: assignment.slotIndex + 1,
-            mode: assignment.mode,
-            selectedBlock: player.getSelectedBlockName(),
-        });
+        assignHotbarItem(detail);
     });
 
     registerHandlers({
@@ -130,6 +176,9 @@ export async function initSystem({
         hotbar,
         keyStore,
         uiHandler,
+        assignHotbarItem,
+        removeActiveHotbarItem,
+        getInventorySelectionDetailForBlock,
         menuAction: menu,
         inventoryAction: inventoryActionName,
         hudAction: hud,
@@ -169,6 +218,9 @@ function registerHandlers({
     hotbar,
     keyStore,
     uiHandler,
+    assignHotbarItem,
+    removeActiveHotbarItem,
+    getInventorySelectionDetailForBlock,
     menuAction,
     inventoryAction,
     hudAction,
@@ -178,6 +230,11 @@ function registerHandlers({
     hotbar: Hotbar;
     keyStore: KeyStore;
     uiHandler: ReturnType<typeof initUI>["uiHandler"];
+    assignHotbarItem: (detail: InventoryBlockSelectionDetail) => void;
+    removeActiveHotbarItem: () => void;
+    getInventorySelectionDetailForBlock: (
+        blockId: number,
+    ) => InventoryBlockSelectionDetail | null;
     menuAction: string;
     inventoryAction: string;
     hudAction: string;
@@ -202,6 +259,10 @@ function registerHandlers({
     const getMouseActionKey = (button: number): string | null => {
         if (button === 0) {
             return "mouse-left";
+        }
+
+        if (button === 1) {
+            return "mouse-middle";
         }
 
         if (button === 2) {
@@ -253,6 +314,23 @@ function registerHandlers({
             return;
         }
 
+        if (uiHandler.isUIOpen() || !uiHandler.isPointerLocked()) {
+            return;
+        }
+
+        if (!system.inputManager.isPressed("REMOVE_HOTBAR_ITEM")) {
+            return;
+        }
+
+        event.preventDefault();
+        removeActiveHotbarItem();
+    });
+
+    addKeyHandler("keydown", (_key, event) => {
+        if (event.repeat) {
+            return;
+        }
+
         for (let slotIndex = 0; slotIndex < HOTBAR_SLOT_COUNT; slotIndex += 1) {
             if (
                 !system.inputManager.isPressed(`HOTBAR_SLOT_${slotIndex + 1}`)
@@ -294,11 +372,32 @@ function registerHandlers({
             return;
         }
 
+        if (event.button === 1) {
+            event.preventDefault();
+        }
+
         if (!uiHandler.isPointerLocked() || uiHandler.isUIOpen()) {
             return;
         }
 
         keyStore.addPressedKey(mouseActionKey);
+
+        if (event.button !== 1) {
+            return;
+        }
+
+        const hoveredBlockId = system.getHoveredBlockId();
+        if (hoveredBlockId === null) {
+            return;
+        }
+
+        const selectionDetail =
+            getInventorySelectionDetailForBlock(hoveredBlockId);
+        if (!selectionDetail) {
+            return;
+        }
+
+        assignHotbarItem(selectionDetail);
     });
 
     document.addEventListener("pointerup", (event) => {
@@ -346,6 +445,12 @@ function registerHandlers({
 
     document.addEventListener("contextmenu", (event) => {
         event.preventDefault();
+    });
+
+    document.addEventListener("auxclick", (event) => {
+        if (event.button === 1) {
+            event.preventDefault();
+        }
     });
 }
 

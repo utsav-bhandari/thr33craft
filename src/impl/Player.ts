@@ -69,6 +69,17 @@ export class Player extends BasePlayer {
         };
     }
 
+    clearActiveHotbarItem(): HotbarItem | null {
+        const removedItem = this.hotbarSlots[this.activeHotbarSlotIndex];
+
+        if (!removedItem) {
+            return null;
+        }
+
+        this.hotbarSlots[this.activeHotbarSlotIndex] = null;
+        return removedItem;
+    }
+
     getSelectedBlockName(): string | null {
         return this.hotbarSlots[this.activeHotbarSlotIndex]?.id ?? null;
     }
