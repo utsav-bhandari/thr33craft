@@ -1,4 +1,4 @@
-# Project 6
+# THR33CRAFT
 
 A browser-based voxel sandbox built with Three.js, Vite, and TypeScript. The app boots a chunked 3D world, locks the pointer for first-person movement, streams nearby chunks around the player, and uses an inventory plus hotbar flow for selecting and placing blocks.
 
