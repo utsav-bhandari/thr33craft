@@ -60,59 +60,72 @@ export const gameParams: GameParams = {
     inventoryBlockTextureSheetParams: INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS,
 };
 
-export const WORLD_PARAMS = {
-    get RENDER_DISTANCE() {
-        const cameraFar = SCENE_INIT_CONFIG.camera?.far ?? 32;
+const DEFAULT_CAMERA_FAR = 32;
+const CHUNK_SIZE = 16;
 
-        return Math.max(
-            1,
-            Math.floor(cameraFar / 16) + WORLD_PARAMS.CHUNK_PADDING,
-        );
-    },
+const FOG_NEAR_FACTOR = 0.5;
+const FOG_FAR_FACTOR = 1.5;
+
+function getCameraFar() {
+    return DEFAULT_CAMERA_FAR;
+}
+
+function calculateRenderDistance(
+    cameraFar: number,
+    chunkPadding: number,
+): number {
+    return Math.max(1, Math.floor(cameraFar / CHUNK_SIZE) + chunkPadding);
+}
+
+function calculateFogNear(cameraFar: number): number {
+    return cameraFar * FOG_NEAR_FACTOR;
+}
+
+function calculateFogFar(cameraFar: number): number {
+    return cameraFar * FOG_FAR_FACTOR;
+}
+
+export const WORLD_PARAMS = {
+    WORLD_BOTTOM_Y: 0,
     CHUNK_PADDING: 0,
     CHUNK_LOAD_INTERVAL: 10,
-    BLOCK_SIZE: 1,
-    DEFAULT_WORLD_FILL: {
-        x: 1,
-        y: 1,
-        z: 1,
-    },
-    GROUND_BLOCK_NAME: "grass_block",
     PLAYER_STARTING_POSITION,
+
+    get RENDER_DISTANCE() {
+        return calculateRenderDistance(getCameraFar(), this.CHUNK_PADDING);
+    },
 };
 
 export const SCENE_INIT_CONFIG: SceneInitConfig = {
     backgroundColor: 0x80adff,
+
     fog: {
         enabled: true,
-        get color() {
-            return SCENE_INIT_CONFIG.backgroundColor;
-        },
-        // based off of the camera's far plane
-        get near(): number {
-            return (SCENE_INIT_CONFIG.camera?.far ?? 32) * 0.4;
-        },
-        get far(): number {
-            return (SCENE_INIT_CONFIG.camera?.far ?? 32) * 1.5;
-        },
+        color: 0xb9d2fa,
+        near: calculateFogNear(getCameraFar()),
+        far: calculateFogFar(getCameraFar()),
     },
+
     axesHelper: {
         enabled: true,
-        size: 100,
+        size: 128,
     },
+
     camera: {
         fov: 70,
         aspect: 1,
         near: 1,
-        far: 32,
+        far: getCameraFar(),
         position: [...WORLD_PARAMS.PLAYER_STARTING_POSITION],
         lookAt: [0, 1.85, 10],
     },
+
     ambientLight: {
         enabled: true,
         color: 0xeeeeee,
         intensity: 3,
     },
+
     renderer: {
         antialias: true,
         pixelRatio: window.devicePixelRatio,

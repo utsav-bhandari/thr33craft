@@ -151,7 +151,6 @@ export interface BlockData {
 }
 
 export type BlockName = string;
-
 export type BlockId = number;
 
 export type BlocksByName = Record<BlockName, BlockData>;
