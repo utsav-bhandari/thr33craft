@@ -9,6 +9,7 @@ import type {
 } from "@project-types";
 import type { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { BaseUIModal } from "@lib/base/BaseUIModal";
+import { blockTextureAtlas } from "@lib/texture/block-loader";
 import { UIHandler } from "@/engine/ui/UIHandler";
 import { generateBlockTextureSheet } from "@lib/texture/generateBlockTextureSheet";
 import { Inventory } from "@/impl/inventory/Inventory";
@@ -38,10 +39,10 @@ export function initUI({
     );
     const inventory = uiHandler.registerModal(
         "inventory",
-        new Inventory(
-            gameParams.inventoryHtmlElm,
-            gameParams.inventoryBlockTextureSheetParams,
-        ),
+        new Inventory(gameParams.inventoryHtmlElm, {
+            textureSheet: gameParams.inventoryBlockTextureSheetParams,
+            textureAtlas: gameParams.blockTextureAtlasParams,
+        }),
     );
 
     uiHandler.openModal("menu");
@@ -108,6 +109,9 @@ async function initializeInventoryUI(
             blockCount: blockNames.length,
         });
         inventoryUI.setGridTextureSheet(textureSheet);
+        inventoryUI.setTextureAtlasDownloadUrl(
+            blockTextureAtlas.atlasTextureUrl,
+        );
     } catch (error) {
         console.error(error);
         inventoryUI.setErrorState("Failed to load block texture sheet.");

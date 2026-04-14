@@ -1,4 +1,5 @@
 import type {
+    BlockTextureAtlasParams,
     BlockTextureSheet,
     InventoryBlockSelectionDetail,
     InventoryBlockTextureSheetParams,
@@ -14,30 +15,42 @@ import { InventoryStatus } from "@/impl/inventory/InventoryStatus";
 
 /** Inventory modal that manages search, status, grid, and optional sheet download. */
 export class Inventory extends BaseUIModal {
-    downloadFileName: string;
+    textureSheetDownloadFileName: string;
+    textureAtlasDownloadFileName: string;
     textureSheet: BlockTextureSheet | null;
+    textureAtlasUrl: string | null;
     statusComponent: InventoryStatus;
     headerElement: HTMLDivElement;
     actionsElement: HTMLDivElement;
     closeButton: HTMLButtonElement;
     downloadButton: HTMLButtonElement | null;
+    atlasDownloadButton: HTMLButtonElement | null;
     searchComponent: InventorySearch;
     gridComponent: InventoryGrid;
     stateController: InventoryStateController;
 
     constructor(
         htmlElement: HTMLElement,
-        options: InventoryBlockTextureSheetParams = {},
+        options: {
+            textureSheet?: InventoryBlockTextureSheetParams;
+            textureAtlas?: BlockTextureAtlasParams;
+        } = {},
     ) {
         super(htmlElement);
 
         const {
             showDownloadButton = false,
             downloadFileName = "block-texture-sheet.png",
-        } = options;
+        } = options.textureSheet ?? {};
+        const {
+            showDownloadButton: showAtlasDownloadButton = false,
+            downloadFileName: atlasDownloadFileName = "block-texture-atlas.png",
+        } = options.textureAtlas ?? {};
 
-        this.downloadFileName = downloadFileName;
+        this.textureSheetDownloadFileName = downloadFileName;
+        this.textureAtlasDownloadFileName = atlasDownloadFileName;
         this.textureSheet = null;
+        this.textureAtlasUrl = null;
 
         this.headerElement = document.createElement("div");
         this.headerElement.className = "inventory-header";
@@ -69,6 +82,22 @@ export class Inventory extends BaseUIModal {
             this.downloadButton.disabled = true;
             this.downloadButton.addEventListener("click", () => {
                 this.downloadTextureSheet();
+            });
+        }
+
+        this.atlasDownloadButton = null;
+        if (showAtlasDownloadButton) {
+            this.atlasDownloadButton = document.createElement("button");
+            this.atlasDownloadButton.type = "button";
+            this.atlasDownloadButton.className = "inventory-action-button";
+            this.atlasDownloadButton.textContent = "Download Texture Atlas";
+            this.atlasDownloadButton.setAttribute(
+                "aria-label",
+                "Download block texture atlas",
+            );
+            this.atlasDownloadButton.disabled = true;
+            this.atlasDownloadButton.addEventListener("click", () => {
+                this.downloadTextureAtlas();
             });
         }
 
@@ -105,12 +134,16 @@ export class Inventory extends BaseUIModal {
             status: this.statusComponent,
             search: this.searchComponent,
             grid: this.gridComponent,
-            downloadButton: this.downloadButton,
+            downloadButtons: [
+                this.downloadButton,
+                this.atlasDownloadButton,
+            ].filter((button): button is HTMLButtonElement => button !== null),
         });
 
         this.actionsElement.append(
             this.searchComponent.htmlElement,
             ...(this.downloadButton ? [this.downloadButton] : []),
+            ...(this.atlasDownloadButton ? [this.atlasDownloadButton] : []),
         );
 
         this.headerElement.append(
@@ -153,6 +186,11 @@ export class Inventory extends BaseUIModal {
         this.applyFilter("");
     }
 
+    setTextureAtlasDownloadUrl(textureAtlasUrl: string): void {
+        this.textureAtlasUrl = textureAtlasUrl;
+        this.atlasDownloadButton?.removeAttribute("disabled");
+    }
+
     /** Filters visible slots and updates the status line with result counts. */
     applyFilter(query: string): void {
         const {
@@ -179,9 +217,24 @@ export class Inventory extends BaseUIModal {
             return;
         }
 
+        this.downloadUrl(textureSheetUrl, this.textureSheetDownloadFileName);
+    }
+
+    downloadTextureAtlas(): void {
+        if (!this.textureAtlasUrl) {
+            return;
+        }
+
+        this.downloadUrl(
+            this.textureAtlasUrl,
+            this.textureAtlasDownloadFileName,
+        );
+    }
+
+    private downloadUrl(url: string, fileName: string): void {
         const link = document.createElement("a");
-        link.href = textureSheetUrl;
-        link.download = this.downloadFileName;
+        link.href = url;
+        link.download = fileName;
         document.body.append(link);
         link.click();
         link.remove();

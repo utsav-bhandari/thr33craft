@@ -1,4 +1,5 @@
 import type {
+    BlockTextureAtlasParams,
     GameParams,
     InventoryBlockTextureSheetParams,
     KeyPreset,
@@ -65,6 +66,13 @@ export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetPar
         renderScale: Math.min(window.devicePixelRatio || 1, 2),
     };
 
+export const BLOCK_TEXTURE_ATLAS_PARAMS: BlockTextureAtlasParams = {
+    source: "static",
+    staticTextureAtlasUrl: "/images/block-texture-atlas.png",
+    showDownloadButton: false,
+    downloadFileName: "block-texture-atlas.png",
+};
+
 export const gameParams: GameParams = {
     playerParams: {
         speed: 10,
@@ -75,6 +83,7 @@ export const gameParams: GameParams = {
     inventoryHtmlElm: requireElement("inventory", HTMLDivElement),
     menuHtmlElm: requireElement("menu", HTMLDivElement),
     inventoryBlockTextureSheetParams: INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS,
+    blockTextureAtlasParams: BLOCK_TEXTURE_ATLAS_PARAMS,
 };
 
 export const PLAYER_COLLISION = {

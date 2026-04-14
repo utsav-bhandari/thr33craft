@@ -8,23 +8,23 @@ export class InventoryStateController {
     status: InventoryStatus;
     search: InventorySearch;
     grid: InventoryGrid;
-    downloadButton: HTMLButtonElement | null;
+    downloadButtons: HTMLButtonElement[];
 
     constructor({
         status,
         search,
         grid,
-        downloadButton,
+        downloadButtons,
     }: {
         status: InventoryStatus;
         search: InventorySearch;
         grid: InventoryGrid;
-        downloadButton: HTMLButtonElement | null;
+        downloadButtons: HTMLButtonElement[];
     }) {
         this.status = status;
         this.search = search;
         this.grid = grid;
-        this.downloadButton = downloadButton;
+        this.downloadButtons = downloadButtons;
     }
 
     showLoading(message: string): void {
@@ -43,7 +43,7 @@ export class InventoryStateController {
             "success",
         );
         this.search.setDisabled(false);
-        this.downloadButton?.removeAttribute("disabled");
+        this.setDownloadButtonsDisabled(false);
         this.search.clear();
     }
 
@@ -68,7 +68,7 @@ export class InventoryStateController {
         this.grid.setTextureSheet(textureSheet);
         this.search.clear();
         this.search.setDisabled(false);
-        this.downloadButton?.removeAttribute("disabled");
+        this.setDownloadButtonsDisabled(false);
         this.status.setMessage(
             this.getLoadedMessage(textureSheet.items.length),
             "success",
@@ -83,7 +83,18 @@ export class InventoryStateController {
         this.status.setMessage(message, tone);
         this.grid.hide();
         this.search.setDisabled(true);
-        this.downloadButton?.setAttribute("disabled", "true");
+        this.setDownloadButtonsDisabled(true);
+    }
+
+    private setDownloadButtonsDisabled(disabled: boolean): void {
+        this.downloadButtons.forEach((button) => {
+            if (disabled) {
+                button.setAttribute("disabled", "true");
+                return;
+            }
+
+            button.removeAttribute("disabled");
+        });
     }
 
     private getLoadedMessage(blockCount: number): string {

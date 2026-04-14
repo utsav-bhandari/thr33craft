@@ -1,9 +1,10 @@
 import * as THREE from "three";
 import type { AtlasState, BlockId, BlockName } from "@project-types";
 import { getNameForBlock, staticBlocks } from "@/init/block-registry";
+import { BLOCK_TEXTURE_ATLAS_PARAMS } from "@/utils/config";
 import {
     createAtlasMappedBoxGeometry,
-    createRuntimeBlockTextureAtlas,
+    createConfiguredBlockTextureAtlas,
 } from "@lib/texture/blockTextureAtlas";
 import { debug } from "@/utils/logger";
 
@@ -12,8 +13,9 @@ const blockGeometryCache = new Map<string, THREE.BoxGeometry>();
 
 debug("Fetching block texture atlas");
 
-export const blockTextureAtlas = await createRuntimeBlockTextureAtlas({
+export const blockTextureAtlas = await createConfiguredBlockTextureAtlas({
     blocks: staticBlocks,
+    params: BLOCK_TEXTURE_ATLAS_PARAMS,
 });
 debug("Block texture atlas fetched");
 

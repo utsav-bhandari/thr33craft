@@ -22,12 +22,20 @@ export interface InventoryBlockTextureSheetParams {
     renderScale?: number;
 }
 
+export interface BlockTextureAtlasParams {
+    source?: "static" | "generated";
+    staticTextureAtlasUrl?: string;
+    showDownloadButton?: boolean;
+    downloadFileName?: string;
+}
+
 export interface GameParams {
     playerParams: PlayerParams;
     keysPreset: KeyPreset;
     inventoryHtmlElm: HTMLElement;
     menuHtmlElm: HTMLElement;
     inventoryBlockTextureSheetParams: InventoryBlockTextureSheetParams;
+    blockTextureAtlasParams: BlockTextureAtlasParams;
 }
 
 export interface SceneInitConfig {
@@ -182,8 +190,10 @@ export interface TilePosition {
 }
 
 export interface AtlasState {
-    readonly atlasTexture: THREE.CanvasTexture;
+    readonly atlasTexture: THREE.Texture;
+    readonly atlasTextureUrl: string;
     readonly blockFaceUvs: Map<string, AtlasUvRect[]>;
+    readonly atlasCanvas?: HTMLCanvasElement;
 }
 
 export interface FillRegionOptions {

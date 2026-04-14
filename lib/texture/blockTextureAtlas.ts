@@ -3,6 +3,7 @@ import type {
     AtlasLayout,
     AtlasState,
     AtlasUvRect,
+    BlockTextureAtlasParams,
     BlocksByName,
     TilePosition,
 } from "@project-types";
@@ -16,6 +17,7 @@ const MISSING_TEXTURE_KEY = "__missing__";
 const FACE_MAPPINGS = ["east", "west", "up", "down", "north", "south"] as const;
 
 const imageLoader = new THREE.ImageLoader();
+const textureLoader = new THREE.TextureLoader();
 const imageCache = new Map<string, HTMLImageElement | null>();
 
 /** Normalizes a texture reference by extracting the file name or returning a default missing texture key if the reference is invalid. */
@@ -35,8 +37,8 @@ export async function createRuntimeBlockTextureAtlas({
 }: {
     blocks: BlocksByName;
 }): Promise<AtlasState> {
-    const textureKeys = collectTextureKeys(blocks, FACE_MAPPINGS);
-    const atlasLayout = createAtlasLayout(textureKeys.length);
+    const { atlasLayout, blockFaceUvs, textureKeys } =
+        createAtlasLookupState(blocks);
 
     const canvas = document.createElement("canvas");
     canvas.width = atlasLayout.size;
@@ -48,8 +50,6 @@ export async function createRuntimeBlockTextureAtlas({
     }
 
     context.imageSmoothingEnabled = false;
-
-    const atlasUvsByTextureKey = new Map<string, AtlasUvRect>();
 
     for (let index = 0; index < textureKeys.length; index += 1) {
         const textureKey = textureKeys[index];
@@ -66,16 +66,6 @@ export async function createRuntimeBlockTextureAtlas({
                 drawMissingTextureTile(context, tilePosition.x, tilePosition.y);
             }
         }
-
-        // Persist UVs so block faces can reference this atlas tile.
-        atlasUvsByTextureKey.set(
-            textureKey,
-            createUvRect({
-                column: tilePosition.column,
-                row: tilePosition.row,
-                tilesPerSide: atlasLayout.tilesPerSide,
-            }),
-        );
     }
 
     const atlasTexture = new THREE.CanvasTexture(canvas);
@@ -87,28 +77,77 @@ export async function createRuntimeBlockTextureAtlas({
     atlasTexture.generateMipmaps = false;
     atlasTexture.needsUpdate = true;
 
-    const missingUvs = atlasUvsByTextureKey.get(MISSING_TEXTURE_KEY);
-    if (!missingUvs) {
-        throw new Error("Missing atlas UV rect was not generated.");
-    }
-
-    const blockFaceUvs = new Map<string, AtlasUvRect[]>();
-
-    // Resolve each block face to a UV rect, falling back to missing texture UVs.
-    Object.entries(blocks).forEach(([blockName, blockData]) => {
-        const textureMap = blockData.textures ?? {};
-        const faceUvs = FACE_MAPPINGS.map((face) => {
-            const textureKey = normalizeTextureReference(textureMap[face]);
-            return atlasUvsByTextureKey.get(textureKey) ?? missingUvs;
-        });
-
-        blockFaceUvs.set(blockName, faceUvs);
-    });
+    const atlasTextureUrl = canvas.toDataURL("image/png");
 
     return {
         atlasTexture,
+        atlasTextureUrl,
+        atlasCanvas: canvas,
         blockFaceUvs,
     };
+}
+
+export async function loadStaticBlockTextureAtlas({
+    blocks,
+    textureAtlasUrl,
+}: {
+    blocks: BlocksByName;
+    textureAtlasUrl: string;
+}): Promise<AtlasState> {
+    const { atlasLayout, blockFaceUvs } = createAtlasLookupState(blocks);
+    const atlasTexture = await new Promise<THREE.Texture>((resolve, reject) => {
+        textureLoader.load(textureAtlasUrl, resolve, undefined, reject);
+    });
+
+    atlasTexture.colorSpace = THREE.SRGBColorSpace;
+    atlasTexture.magFilter = THREE.NearestFilter;
+    atlasTexture.minFilter = THREE.NearestFilter;
+    atlasTexture.wrapS = THREE.ClampToEdgeWrapping;
+    atlasTexture.wrapT = THREE.ClampToEdgeWrapping;
+    atlasTexture.generateMipmaps = false;
+    atlasTexture.needsUpdate = true;
+
+    const atlasImage = atlasTexture.image as
+        | { width?: number; height?: number }
+        | undefined;
+    if (
+        atlasImage?.width !== undefined &&
+        atlasImage?.height !== undefined &&
+        (atlasImage.width !== atlasLayout.size ||
+            atlasImage.height !== atlasLayout.size)
+    ) {
+        throw new Error(
+            `Block texture atlas dimensions mismatch. Expected ${atlasLayout.size}x${atlasLayout.size}, received ${atlasImage.width}x${atlasImage.height}.`,
+        );
+    }
+
+    return {
+        atlasTexture,
+        atlasTextureUrl: textureAtlasUrl,
+        blockFaceUvs,
+    };
+}
+
+export async function createConfiguredBlockTextureAtlas({
+    blocks,
+    params = {},
+}: {
+    blocks: BlocksByName;
+    params?: BlockTextureAtlasParams;
+}): Promise<AtlasState> {
+    const {
+        source = "static",
+        staticTextureAtlasUrl = "/images/block-texture-atlas.png",
+    } = params;
+
+    if (source === "generated") {
+        return createRuntimeBlockTextureAtlas({ blocks });
+    }
+
+    return loadStaticBlockTextureAtlas({
+        blocks,
+        textureAtlasUrl: staticTextureAtlasUrl,
+    });
 }
 
 /** Creates a box geometry with UVs remapped to atlas face rectangles. */
@@ -167,6 +206,52 @@ function collectTextureKeys(
 
         return left.localeCompare(right);
     });
+}
+
+function createAtlasLookupState(blocks: BlocksByName): {
+    atlasLayout: AtlasLayout;
+    atlasUvsByTextureKey: Map<string, AtlasUvRect>;
+    blockFaceUvs: Map<string, AtlasUvRect[]>;
+    textureKeys: string[];
+} {
+    const textureKeys = collectTextureKeys(blocks, FACE_MAPPINGS);
+    const atlasLayout = createAtlasLayout(textureKeys.length);
+    const atlasUvsByTextureKey = new Map<string, AtlasUvRect>();
+
+    textureKeys.forEach((textureKey, index) => {
+        const tilePosition = getTilePosition(index, atlasLayout);
+        atlasUvsByTextureKey.set(
+            textureKey,
+            createUvRect({
+                column: tilePosition.column,
+                row: tilePosition.row,
+                tilesPerSide: atlasLayout.tilesPerSide,
+            }),
+        );
+    });
+
+    const missingUvs = atlasUvsByTextureKey.get(MISSING_TEXTURE_KEY);
+    if (!missingUvs) {
+        throw new Error("Missing atlas UV rect was not generated.");
+    }
+
+    const blockFaceUvs = new Map<string, AtlasUvRect[]>();
+    Object.entries(blocks).forEach(([blockName, blockData]) => {
+        const textureMap = blockData.textures ?? {};
+        const faceUvs = FACE_MAPPINGS.map((face) => {
+            const textureKey = normalizeTextureReference(textureMap[face]);
+            return atlasUvsByTextureKey.get(textureKey) ?? missingUvs;
+        });
+
+        blockFaceUvs.set(blockName, faceUvs);
+    });
+
+    return {
+        atlasLayout,
+        atlasUvsByTextureKey,
+        blockFaceUvs,
+        textureKeys,
+    };
 }
 
 /** Computes a square, power-of-two atlas layout for a texture count. */
