@@ -14,7 +14,7 @@ export async function loadIndividualBlocks(
     options: LoadBlockTextureSheetOptions = {},
 ): Promise<BlockTextureSheet> {
     const textureSheetUrl =
-        options.textureSheetUrl ?? "/assets/images/block-texture-sheet.png";
+        options.textureSheetUrl ?? "/images/block-texture-sheet.png";
     const columns = options.columns ?? 16;
     const iconSize = options.iconSize ?? 64;
 

@@ -231,7 +231,7 @@ async function loadTextureImage(
 
     const image = await new Promise<HTMLImageElement | null>((resolve) => {
         imageLoader.load(
-            `/assets/blocks/${textureKey}.png`,
+            `/blocks/${textureKey}.png`,
             (loadedImage) => resolve(loadedImage),
             undefined,
             () => resolve(null),

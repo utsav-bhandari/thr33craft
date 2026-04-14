@@ -82,7 +82,7 @@ Important exports:
 
 `INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS.source` controls how block icons are loaded:
 
-- `"static"` loads the prebuilt sheet from `/assets/images/block-texture-sheet.png`.
+- `"static"` loads the prebuilt sheet from `/images/block-texture-sheet.png`.
 - `"generated"` renders icons at startup and streams progress into the inventory UI.
 
 ## Project structure
@@ -94,9 +94,9 @@ tsconfig.json                           TypeScript configuration
 vite.config.ts                          Vite configuration
 types.d.ts                              Shared application types
 
-assets/styles/                          Global and UI styles
-assets/images/                          Icons and static image assets
-assets/blocks/                          Block-related static assets
+styles/                          Global and UI styles
+images/                          Icons and static image assets
+blocks/                          Block-related static assets
 
 lib/base/                               Reusable base classes for systems, UI, and controllers
 lib/controls/                           Input mapping and pressed-key state management

@@ -56,7 +56,7 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
 export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams =
     {
         source: "static",
-        staticTextureSheetUrl: "/assets/images/block-texture-sheet.png",
+        staticTextureSheetUrl: "/images/block-texture-sheet.png",
         showDownloadButton: false,
         downloadFileName: "block-texture-sheet.png",
         columns: 16,

@@ -1,17 +1,11 @@
-    # Dependency directories
+# Dependency directories
 node_modules/
-jspm_packages/
 
 # TypeScript/Build output
 dist/
 out/
 build/
 *.tsbuildinfo
-
-# Individual compiled JS files (optional - use if you don't use a build folder)
-# *.js
-# *.js.map
-# *.d.ts
 
 # Logs
 logs
@@ -34,11 +28,7 @@ pids
 .env.production.local
 
 # IDE / Editor folders
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode
 .idea/
 *.swp
 *.swo
@@ -46,8 +36,3 @@ pids
 # OS generated files
 .DS_Store
 Thumbs.db
-dist/index.html
-dist/assets/index-BfTHF4Kv.js
-dist/assets/index-DJWlM1yf.css
-
-tsconfig.json

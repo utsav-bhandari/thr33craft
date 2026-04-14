@@ -69,7 +69,7 @@ async function initializeInventoryUI(
     try {
         const {
             source = "static",
-            staticTextureSheetUrl = "/assets/images/block-texture-sheet.png",
+            staticTextureSheetUrl = "/images/block-texture-sheet.png",
             columns = 16,
             iconSize = 64,
             chunkSize = 20,
