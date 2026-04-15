@@ -83,13 +83,13 @@ export async function initSystem({
         chunkLoader,
     );
     const hudSystem = new HUDSystem();
-    setupDebugGui(scene, chunkLoader, hudSystem, playerController);
 
     const { uiHandler, inventory } = initUI({
         inputManager,
         pointerControls,
         gameParams,
     });
+    setupDebugGui(scene, chunkLoader, hudSystem, playerController, uiHandler);
     const hotbar = new Hotbar(HOTBAR_SLOT_COUNT);
     document.body.appendChild(hotbar.htmlElement);
     uiHandler.registerContainedElement(hotbar.htmlElement);
@@ -483,6 +483,7 @@ function setupDebugGui(
     chunkLoader: ChunkLoader,
     hudSystem: HUDSystem,
     playerController: PlayerController,
+    uiHandler: ReturnType<typeof initUI>["uiHandler"],
 ): void {
     const wireframeGeometry = new THREE.EdgesGeometry(
         new THREE.BoxGeometry(1, 1, 1),
@@ -550,6 +551,7 @@ function setupDebugGui(
 
     const gui = new GUI({ title: "Debug Controls" });
     hudSystem.registerToggleElement(gui.domElement);
+    uiHandler.registerContainedElement(gui.domElement);
 
     const debugFolder = gui.addFolder("Debug Placement");
     debugFolder
