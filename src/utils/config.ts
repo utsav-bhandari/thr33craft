@@ -30,6 +30,9 @@ export interface TerrainParams {
     baseHeight: number;
     heightVariation: number;
     topsoilDepth: number;
+    beachBand: number;
+    sandDepth: number;
+    snowStartHeight: number;
     seaLevel: number;
     spawnClearance: number;
 }
@@ -43,9 +46,21 @@ const DEFAULT_TERRAIN_PARAMS: TerrainParams = {
     baseHeight: 24,
     heightVariation: 12,
     topsoilDepth: 3,
+    beachBand: 2,
+    sandDepth: 3,
+    snowStartHeight: 34,
     seaLevel: 20,
     spawnClearance: 6,
 };
+
+function normalizeTerrainParams(
+    terrainParams?: Partial<TerrainParams> | null,
+): TerrainParams {
+    return {
+        ...DEFAULT_TERRAIN_PARAMS,
+        ...terrainParams,
+    };
+}
 
 function loadTerrainParams(): TerrainParams {
     if (typeof window === "undefined") {
@@ -60,7 +75,9 @@ function loadTerrainParams(): TerrainParams {
     }
 
     try {
-        return JSON.parse(storedTerrainParams) as TerrainParams;
+        return normalizeTerrainParams(
+            JSON.parse(storedTerrainParams) as Partial<TerrainParams>,
+        );
     } catch {
         window.localStorage.removeItem(TERRAIN_SETTINGS_STORAGE_KEY);
         return { ...DEFAULT_TERRAIN_PARAMS };
@@ -74,7 +91,7 @@ export function getDefaultTerrainParams(): TerrainParams {
 }
 
 export function saveTerrainParams(nextTerrainParams: TerrainParams): void {
-    const sanitizedTerrainParams = nextTerrainParams;
+    const sanitizedTerrainParams = normalizeTerrainParams(nextTerrainParams);
 
     Object.assign(TERRAIN_PARAMS, sanitizedTerrainParams);
 

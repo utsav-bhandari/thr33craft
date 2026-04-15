@@ -4,6 +4,8 @@ import {
     BEDROCK_BLOCK_ID,
     DIRT_BLOCK_ID,
     GRASS_BLOCK_ID,
+    SAND_BLOCK_ID,
+    SNOW_BLOCK_ID,
     STONE_BLOCK_ID,
     WATER_BLOCK_ID,
 } from "@/utils/constants";
@@ -35,13 +37,29 @@ function getSurfaceHeight(worldX: number, worldZ: number): number {
     );
 }
 
-function getTerrainBlockId(y: number, surfaceY: number): number {
-    if (y === WORLD_PARAMS.WORLD_BOTTOM_Y) {
-        return BEDROCK_BLOCK_ID;
+function isBeachSurface(surfaceY: number): boolean {
+    return surfaceY <= TERRAIN_PARAMS.seaLevel + TERRAIN_PARAMS.beachBand;
+}
+
+function isSnowSurface(surfaceY: number): boolean {
+    return surfaceY >= TERRAIN_PARAMS.snowStartHeight;
+}
+
+function getSurfaceBlockId(surfaceY: number): number {
+    if (isSnowSurface(surfaceY)) {
+        return SNOW_BLOCK_ID;
     }
 
-    if (y === surfaceY) {
-        return GRASS_BLOCK_ID;
+    if (isBeachSurface(surfaceY)) {
+        return SAND_BLOCK_ID;
+    }
+
+    return GRASS_BLOCK_ID;
+}
+
+function getSubsurfaceBlockId(y: number, surfaceY: number): number {
+    if (isBeachSurface(surfaceY) && surfaceY - y <= TERRAIN_PARAMS.sandDepth) {
+        return SAND_BLOCK_ID;
     }
 
     if (surfaceY - y <= TERRAIN_PARAMS.topsoilDepth) {
@@ -49,6 +67,18 @@ function getTerrainBlockId(y: number, surfaceY: number): number {
     }
 
     return STONE_BLOCK_ID;
+}
+
+function getTerrainBlockId(y: number, surfaceY: number): number {
+    if (y === WORLD_PARAMS.WORLD_BOTTOM_Y) {
+        return BEDROCK_BLOCK_ID;
+    }
+
+    if (y === surfaceY) {
+        return getSurfaceBlockId(surfaceY);
+    }
+
+    return getSubsurfaceBlockId(y, surfaceY);
 }
 
 export function generateTerrain(chunk: Chunk, chunkManager: ChunkManager) {

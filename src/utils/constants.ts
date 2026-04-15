@@ -4,3 +4,5 @@ export const STONE_BLOCK_ID = 2;
 export const GRASS_BLOCK_ID = 3;
 export const WATER_BLOCK_ID = 4;
 export const BEDROCK_BLOCK_ID = 12;
+export const SAND_BLOCK_ID = 310;
+export const SNOW_BLOCK_ID = 322;

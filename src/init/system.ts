@@ -534,6 +534,9 @@ function setupDebugGui(
                 baseHeight: terrainState.baseHeight,
                 heightVariation: terrainState.heightVariation,
                 topsoilDepth: terrainState.topsoilDepth,
+                beachBand: terrainState.beachBand,
+                sandDepth: terrainState.sandDepth,
+                snowStartHeight: terrainState.snowStartHeight,
                 seaLevel: terrainState.seaLevel,
                 spawnClearance: terrainState.spawnClearance,
             });
@@ -612,6 +615,24 @@ function setupDebugGui(
         .name("Topsoil Depth")
         .min(1)
         .max(12)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "beachBand")
+        .name("Beach Band")
+        .min(0)
+        .max(8)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "sandDepth")
+        .name("Sand Depth")
+        .min(1)
+        .max(8)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "snowStartHeight")
+        .name("Snow Line")
+        .min(0)
+        .max(127)
         .step(1);
     terrainFolder
         .add(terrainState, "seaLevel")
