@@ -16,6 +16,7 @@ export interface InventoryFilterResult {
 export class InventoryGrid extends BaseUIComponent {
     declare htmlElement: HTMLDivElement;
     slots: HTMLButtonElement[];
+    private tooltipElement: HTMLDivElement;
 
     constructor() {
         const gridElement = document.createElement("div");
@@ -23,6 +24,11 @@ export class InventoryGrid extends BaseUIComponent {
         super(gridElement);
 
         this.slots = [];
+        this.tooltipElement = document.createElement("div");
+        this.tooltipElement.className =
+            "inventory-tooltip inventory-tooltip-hidden tooltip-corners";
+        const root = document.body ?? document.documentElement;
+        root.appendChild(this.tooltipElement);
     }
 
     /** Rebuilds slot elements from a texture sheet and shows the grid. */
@@ -71,11 +77,28 @@ export class InventoryGrid extends BaseUIComponent {
             backgroundSize: item.backgroundSize,
         };
 
-        slot.title = label;
         slot.setAttribute("aria-label", label);
         slot.dataset.name = label.toLowerCase();
         slot.dataset.blockId = item.id;
+
+        const showTooltip = (event: MouseEvent | PointerEvent): void => {
+            this.tooltipElement.textContent = label;
+            this.tooltipElement.classList.remove("inventory-tooltip-hidden");
+            this.tooltipElement.classList.add("inventory-tooltip-visible");
+            this.positionTooltip(event);
+        };
+
+        const hideTooltip = (): void => {
+            this.tooltipElement.classList.remove("inventory-tooltip-visible");
+            this.tooltipElement.classList.add("inventory-tooltip-hidden");
+        };
+
+        slot.addEventListener("mouseenter", showTooltip);
+        slot.addEventListener("pointermove", showTooltip);
+        slot.addEventListener("mouseleave", hideTooltip);
+        slot.addEventListener("blur", hideTooltip);
         slot.addEventListener("click", () => {
+            hideTooltip();
             this.emit("blockselect", selectionDetail);
         });
 
@@ -87,6 +110,40 @@ export class InventoryGrid extends BaseUIComponent {
 
         slot.append(icon);
         return slot;
+    }
+
+    private positionTooltip(event: MouseEvent | PointerEvent): void {
+        const tooltip = this.tooltipElement;
+        const buffer = 14;
+
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        let left = event.clientX + buffer;
+        let top = event.clientY - tooltipRect.height - buffer;
+
+        if (left + tooltipRect.width + buffer > viewportWidth) {
+            left = Math.max(buffer, event.clientX - tooltipRect.width - buffer);
+        }
+
+        if (top < buffer) {
+            top = event.clientY + buffer;
+        }
+
+        if (top + tooltipRect.height + buffer > viewportHeight) {
+            top = Math.max(
+                buffer,
+                viewportHeight - tooltipRect.height - buffer,
+            );
+        }
+
+        if (left + tooltipRect.width + buffer > viewportWidth) {
+            left = Math.max(buffer, viewportWidth - tooltipRect.width - buffer);
+        }
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
     }
 }
 
