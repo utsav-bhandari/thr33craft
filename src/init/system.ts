@@ -6,7 +6,11 @@ import * as THREE from "three";
 import type { InitSystemArgs } from "@project-types";
 import {
     DEFAULT_KEYS_PRESET,
+    getDefaultTerrainParams,
     HOTBAR_SLOT_COUNT,
+    resetTerrainParamsToDefaults,
+    saveTerrainParams,
+    TERRAIN_PARAMS,
     WORLD_PARAMS,
 } from "@/utils/config";
 import { PlayerController } from "@/engine/controllers/PlayerController";
@@ -519,6 +523,28 @@ function setupDebugGui(
     );
     scene.add(marker);
 
+    const terrainState = {
+        ...getDefaultTerrainParams(),
+        ...TERRAIN_PARAMS,
+        applyTerrainSettings(): void {
+            saveTerrainParams({
+                seed: terrainState.seed,
+                noiseScale: terrainState.noiseScale,
+                surfaceSampleY: terrainState.surfaceSampleY,
+                baseHeight: terrainState.baseHeight,
+                heightVariation: terrainState.heightVariation,
+                topsoilDepth: terrainState.topsoilDepth,
+                seaLevel: terrainState.seaLevel,
+                spawnClearance: terrainState.spawnClearance,
+            });
+            window.location.reload();
+        },
+        resetTerrainSettings(): void {
+            resetTerrainParamsToDefaults();
+            window.location.reload();
+        },
+    };
+
     const gui = new GUI({ title: "Debug Controls" });
     hudSystem.registerToggleElement(gui.domElement);
 
@@ -554,6 +580,57 @@ function setupDebugGui(
     debugFolder.add(markerState, "placeDebugBlock").name("Place Debug Block");
     debugFolder.add(markerState, "clearDebugBlock").name("Set To Air");
     debugFolder.open();
+
+    const terrainFolder = gui.addFolder("Terrain Generation");
+    terrainFolder.add(terrainState, "seed").name("Seed").step(1);
+    terrainFolder
+        .add(terrainState, "noiseScale")
+        .name("Noise Scale")
+        .min(0.001)
+        .max(0.25)
+        .step(0.001);
+    terrainFolder
+        .add(terrainState, "surfaceSampleY")
+        .name("Noise Sample Y")
+        .min(-128)
+        .max(128)
+        .step(0.5);
+    terrainFolder
+        .add(terrainState, "baseHeight")
+        .name("Base Height")
+        .min(1)
+        .max(96)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "heightVariation")
+        .name("Height Range")
+        .min(0)
+        .max(48)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "topsoilDepth")
+        .name("Topsoil Depth")
+        .min(1)
+        .max(12)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "seaLevel")
+        .name("Sea Level")
+        .min(0)
+        .max(127)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "spawnClearance")
+        .name("Spawn Clearance")
+        .min(2)
+        .max(24)
+        .step(1);
+    terrainFolder
+        .add(terrainState, "applyTerrainSettings")
+        .name("Apply + Reload");
+    terrainFolder
+        .add(terrainState, "resetTerrainSettings")
+        .name("Reset Terrain");
 
     document.addEventListener("keydown", (event) => {
         if (event.repeat || isEditableTarget(event)) {

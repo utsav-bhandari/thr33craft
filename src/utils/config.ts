@@ -23,7 +23,80 @@ function requireElement<T extends HTMLElement>(
 
 export const DEBUG = true;
 
-const PLAYER_STARTING_POSITION: Vector3Tuple = [0, 38, 0];
+export interface TerrainParams {
+    seed: number;
+    noiseScale: number;
+    surfaceSampleY: number;
+    baseHeight: number;
+    heightVariation: number;
+    topsoilDepth: number;
+    seaLevel: number;
+    spawnClearance: number;
+}
+
+const TERRAIN_SETTINGS_STORAGE_KEY = "thr33craft.terrain-settings";
+
+const DEFAULT_TERRAIN_PARAMS: TerrainParams = {
+    seed: 12345,
+    noiseScale: 0.025,
+    surfaceSampleY: 0,
+    baseHeight: 24,
+    heightVariation: 12,
+    topsoilDepth: 3,
+    seaLevel: 20,
+    spawnClearance: 6,
+};
+
+function loadTerrainParams(): TerrainParams {
+    if (typeof window === "undefined") {
+        return { ...DEFAULT_TERRAIN_PARAMS };
+    }
+
+    const storedTerrainParams = window.localStorage.getItem(
+        TERRAIN_SETTINGS_STORAGE_KEY,
+    );
+    if (!storedTerrainParams) {
+        return { ...DEFAULT_TERRAIN_PARAMS };
+    }
+
+    try {
+        return JSON.parse(storedTerrainParams) as TerrainParams;
+    } catch {
+        window.localStorage.removeItem(TERRAIN_SETTINGS_STORAGE_KEY);
+        return { ...DEFAULT_TERRAIN_PARAMS };
+    }
+}
+
+export const TERRAIN_PARAMS = loadTerrainParams();
+
+export function getDefaultTerrainParams(): TerrainParams {
+    return { ...DEFAULT_TERRAIN_PARAMS };
+}
+
+export function saveTerrainParams(nextTerrainParams: TerrainParams): void {
+    const sanitizedTerrainParams = nextTerrainParams;
+
+    Object.assign(TERRAIN_PARAMS, sanitizedTerrainParams);
+
+    if (typeof window !== "undefined") {
+        window.localStorage.setItem(
+            TERRAIN_SETTINGS_STORAGE_KEY,
+            JSON.stringify(sanitizedTerrainParams),
+        );
+    }
+}
+
+export function resetTerrainParamsToDefaults(): void {
+    saveTerrainParams(getDefaultTerrainParams());
+}
+
+const PLAYER_STARTING_POSITION: Vector3Tuple = [
+    0,
+    TERRAIN_PARAMS.baseHeight +
+        TERRAIN_PARAMS.heightVariation +
+        TERRAIN_PARAMS.spawnClearance,
+    0,
+];
 
 export const HOTBAR_SLOT_COUNT = 9;
 
@@ -98,7 +171,7 @@ export const INTERACTION_PARAMS = {
     placeRepeatMs: 140,
 };
 
-const DEFAULT_CAMERA_FAR = 32;
+const DEFAULT_CAMERA_FAR = 128;
 const CHUNK_SIZE = 16;
 
 const FOG_NEAR_FACTOR = 0.5;

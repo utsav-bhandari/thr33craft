@@ -5,26 +5,75 @@ import {
     DIRT_BLOCK_ID,
     GRASS_BLOCK_ID,
     STONE_BLOCK_ID,
+    WATER_BLOCK_ID,
 } from "@/utils/constants";
-import { WORLD_PARAMS } from "@/utils/config";
+import { TERRAIN_PARAMS, WORLD_PARAMS } from "@/utils/config";
+import { OpenSimplex2S } from "@/engine/generators/OpenSimplex2S";
 
-export function generateFlatTerrain(chunk: Chunk, chunkManager: ChunkManager) {
+const terrainNoise = new OpenSimplex2S(TERRAIN_PARAMS.seed);
+
+function clampSurfaceHeight(surfaceHeight: number): number {
+    return Math.max(
+        WORLD_PARAMS.WORLD_BOTTOM_Y + 1,
+        Math.min(Chunk.height - 1, surfaceHeight),
+    );
+}
+
+function getSurfaceHeight(worldX: number, worldZ: number): number {
+    const sampledNoise = terrainNoise.noise3ImproveXZ(
+        worldX * TERRAIN_PARAMS.noiseScale,
+        TERRAIN_PARAMS.surfaceSampleY,
+        worldZ * TERRAIN_PARAMS.noiseScale,
+    );
+    const clampedNoise = Math.max(-1, Math.min(1, sampledNoise));
+
+    return clampSurfaceHeight(
+        Math.round(
+            TERRAIN_PARAMS.baseHeight +
+                clampedNoise * TERRAIN_PARAMS.heightVariation,
+        ),
+    );
+}
+
+function getTerrainBlockId(y: number, surfaceY: number): number {
+    if (y === WORLD_PARAMS.WORLD_BOTTOM_Y) {
+        return BEDROCK_BLOCK_ID;
+    }
+
+    if (y === surfaceY) {
+        return GRASS_BLOCK_ID;
+    }
+
+    if (surfaceY - y <= TERRAIN_PARAMS.topsoilDepth) {
+        return DIRT_BLOCK_ID;
+    }
+
+    return STONE_BLOCK_ID;
+}
+
+export function generateTerrain(chunk: Chunk, chunkManager: ChunkManager) {
+    const chunkWorldX = chunk.getWorldX();
+    const chunkWorldZ = chunk.getWorldZ();
+
     for (let x = 0; x < Chunk.size; x++) {
         for (let z = 0; z < Chunk.size; z++) {
-            // Make the bottom 10 blocks solid
+            const worldX = chunkWorldX + x;
+            const worldZ = chunkWorldZ + z;
+            const surfaceY = getSurfaceHeight(worldX, worldZ);
+            const highestFilledY = Math.min(
+                Chunk.height - 1,
+                Math.max(surfaceY, TERRAIN_PARAMS.seaLevel),
+            );
+
             for (
                 let y = WORLD_PARAMS.WORLD_BOTTOM_Y;
-                y < Chunk.height / 4;
+                y <= highestFilledY;
                 y++
             ) {
-                let blockId =
-                    y === Math.floor(Chunk.height / 4) - 1
-                        ? GRASS_BLOCK_ID
-                        : DIRT_BLOCK_ID;
-                if (y < Math.floor(Chunk.height / 8)) blockId = STONE_BLOCK_ID;
-                if (y === WORLD_PARAMS.WORLD_BOTTOM_Y)
-                    blockId = BEDROCK_BLOCK_ID;
-
+                const blockId =
+                    y <= surfaceY
+                        ? getTerrainBlockId(y, surfaceY)
+                        : WATER_BLOCK_ID;
                 chunkManager.setVoxelInChunk(chunk, x, y, z, blockId, false);
             }
         }
