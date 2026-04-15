@@ -31,6 +31,16 @@ export class InventoryGrid extends BaseUIComponent {
         root.appendChild(this.tooltipElement);
     }
 
+    override hide(): void {
+        this.hideTooltip();
+        super.hide();
+    }
+
+    hideTooltip(): void {
+        this.tooltipElement.classList.remove("inventory-tooltip-visible");
+        this.tooltipElement.classList.add("inventory-tooltip-hidden");
+    }
+
     /** Rebuilds slot elements from a texture sheet and shows the grid. */
     setTextureSheet(textureSheet: BlockTextureSheet): void {
         this.slots = textureSheet.items
@@ -88,17 +98,12 @@ export class InventoryGrid extends BaseUIComponent {
             this.positionTooltip(event);
         };
 
-        const hideTooltip = (): void => {
-            this.tooltipElement.classList.remove("inventory-tooltip-visible");
-            this.tooltipElement.classList.add("inventory-tooltip-hidden");
-        };
-
         slot.addEventListener("mouseenter", showTooltip);
         slot.addEventListener("pointermove", showTooltip);
-        slot.addEventListener("mouseleave", hideTooltip);
-        slot.addEventListener("blur", hideTooltip);
+        slot.addEventListener("mouseleave", () => this.hideTooltip());
+        slot.addEventListener("blur", () => this.hideTooltip());
         slot.addEventListener("click", () => {
-            hideTooltip();
+            this.hideTooltip();
             this.emit("blockselect", selectionDetail);
         });
 

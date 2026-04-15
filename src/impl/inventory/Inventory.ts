@@ -171,6 +171,7 @@ export class Inventory extends BaseUIModal {
 
     override close(): void {
         super.close();
+        this.gridComponent?.hideTooltip();
 
         if (!this.textureSheet) {
             return;
