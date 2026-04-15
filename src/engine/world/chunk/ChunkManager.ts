@@ -6,7 +6,7 @@ import { mod } from "@/utils/helper";
 import { WORLD_PARAMS } from "@/utils/config";
 import { Subchunk } from "@/engine/world/chunk/SubChunks";
 import { ChunkMeshManager } from "@/engine/world/chunk/ChunkMeshManager";
-import { generateFlatTerrain } from "@/engine/world/World-Generator";
+import { generateTerrain } from "@/engine/world/World-Generator";
 
 export class ChunkManager {
     private readonly worldChunksMap: Map<string, Chunk> = new Map();
@@ -56,11 +56,15 @@ export class ChunkManager {
     }
 
     /** Lazily generates chunk voxel data exactly once. */
-    ensureChunkGenerated(chunk: Chunk): void {
-        if (!chunk.isDataGenerated) {
-            generateFlatTerrain(chunk, this);
-            chunk.isDataGenerated = true;
+    ensureChunkGenerated(chunk: Chunk): Chunk[] {
+        if (chunk.isDataGenerated) {
+            return [];
         }
+
+        generateTerrain(chunk, this);
+        chunk.isDataGenerated = true;
+
+        return this.markGeneratedNeighborChunksDirty(chunk);
     }
 
     /**
@@ -362,6 +366,29 @@ export class ChunkManager {
 
         if (neighborChunk?.isDataGenerated) {
             chunks.add(neighborChunk);
+        }
+    }
+
+    private markGeneratedNeighborChunksDirty(chunk: Chunk): Chunk[] {
+        const generatedNeighbors = [
+            this.getNeighborChunk(chunk, -1, 0),
+            this.getNeighborChunk(chunk, 1, 0),
+            this.getNeighborChunk(chunk, 0, -1),
+            this.getNeighborChunk(chunk, 0, 1),
+        ].filter((neighborChunk): neighborChunk is Chunk => {
+            return neighborChunk?.isDataGenerated === true;
+        });
+
+        for (const neighborChunk of generatedNeighbors) {
+            this.markAllSubchunksDirty(neighborChunk);
+        }
+
+        return generatedNeighbors;
+    }
+
+    private markAllSubchunksDirty(chunk: Chunk): void {
+        for (const subchunk of chunk.subchunks) {
+            subchunk.markDirty();
         }
     }
 

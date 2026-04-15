@@ -10,6 +10,8 @@ export class ChunkLoader {
     private readonly chunkManager: ChunkManager;
     private readonly loadPlanner: ChunkLoadPlanner;
     private readonly sceneController: ChunkSceneController;
+    private readonly pendingChunkRefreshKeys = new Set<string>();
+    private readonly pendingChunkRefreshQueue: string[] = [];
     // Start at interval so first update triggers immediate chunk refresh.
     private framesSinceLastLoad: number = WORLD_PARAMS.CHUNK_LOAD_INTERVAL;
 
@@ -61,17 +63,23 @@ export class ChunkLoader {
         this.purgeUnmodifiedChunksOutsideRadius(scene, chunksToRemove);
     }
 
-    /** Builds and attaches at most one queued chunk per tick. */
+    /** Builds one chunk or processes one deferred refresh per tick. */
     processBuildQueue(scene: THREE.Scene): void {
         const chunkCoords = this.loadPlanner.dequeueChunkToBuild();
-        if (!chunkCoords) return;
+        if (!chunkCoords) {
+            this.processPendingChunkRefresh();
+            return;
+        }
 
         const chunkToBuild = this.chunkManager.getOrCreateChunk(
             chunkCoords.chunkX,
             chunkCoords.chunkZ,
         );
-        this.chunkManager.ensureChunkGenerated(chunkToBuild);
+        const chunksNeedingNeighborRefresh =
+            this.chunkManager.ensureChunkGenerated(chunkToBuild);
         this.chunkManager.rebuildChunkMeshes(chunkToBuild);
+        this.enqueueChunkRefreshes(chunksNeedingNeighborRefresh);
+
         this.sceneController.attachChunk(scene, chunkToBuild);
     }
 
@@ -91,7 +99,41 @@ export class ChunkLoader {
             if (!chunk.isModified) {
                 this.chunkManager.deleteChunk(chunk);
             }
+
+            this.pendingChunkRefreshKeys.delete(chunk.getKey());
         }
+    }
+
+    private enqueueChunkRefreshes(chunks: Chunk[]): void {
+        for (const chunk of chunks) {
+            const chunkKey = chunk.getKey();
+
+            if (this.pendingChunkRefreshKeys.has(chunkKey)) {
+                continue;
+            }
+
+            this.pendingChunkRefreshKeys.add(chunkKey);
+            this.pendingChunkRefreshQueue.push(chunkKey);
+        }
+    }
+
+    private processPendingChunkRefresh(): void {
+        const chunkKey = this.pendingChunkRefreshQueue.shift();
+        if (!chunkKey) {
+            return;
+        }
+
+        this.pendingChunkRefreshKeys.delete(chunkKey);
+
+        const [chunkX, chunkZ] = chunkKey
+            .split(",")
+            .map((value) => Number.parseInt(value, 10));
+        const chunk = this.chunkManager.getChunkIfExists(chunkX, chunkZ);
+        if (!chunk?.isDataGenerated) {
+            return;
+        }
+
+        this.chunkManager.rebuildChunkMeshes(chunk);
     }
 
     setVoxelWorld(
