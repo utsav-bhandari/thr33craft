@@ -8,11 +8,16 @@ import {
     createBlockTextureSheetMetadata,
 } from "@lib/texture/blockTextureSheetLayout";
 import { debug } from "@/utils/logger";
+import { isTranslucentBlock } from "@/init/block-registry";
 import {
     blockTextureAtlas,
     getAtlasMaterial,
     getBlockGeometry,
+    getGlassAtlasMaterial,
+    getWaterAtlasMaterial,
 } from "./block-loader";
+import { WATER_BLOCK_ID } from "@/utils/constants";
+import { getIDForBlock } from "@/init/block-registry";
 
 export async function generateBlockTextureSheet(
     blockNames: string[],
@@ -110,7 +115,12 @@ export async function generateBlockTextureSheet(
         const blockName = blockNames[index];
         debug("Generating texture sheet block", { index, blockName });
         const blockGeometry = getBlockGeometry(blockName, blockTextureAtlas);
-        const blockMaterial = getAtlasMaterial(blockTextureAtlas.atlasTexture);
+        const blockMaterial =
+            getIDForBlock(blockName) === WATER_BLOCK_ID
+                ? getWaterAtlasMaterial(blockTextureAtlas.atlasTexture)
+                : isTranslucentBlock(blockName)
+                  ? getGlassAtlasMaterial(blockTextureAtlas.atlasTexture)
+                  : getAtlasMaterial(blockTextureAtlas.atlasTexture);
 
         mesh.geometry = blockGeometry;
         mesh.material = blockMaterial;

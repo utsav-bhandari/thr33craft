@@ -158,6 +158,7 @@ export interface MovementDirection {
 export interface BlockData {
     readonly id: BlockId;
     readonly transparent: boolean;
+    readonly translucent?: boolean;
     readonly textures: Record<string, string>;
 }
 

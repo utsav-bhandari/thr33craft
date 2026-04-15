@@ -1,6 +1,12 @@
 import * as THREE from "three";
-import { AIR_BLOCK_ID } from "@/utils/constants";
-import { getAtlasMaterial, getBlockGeometry } from "@lib/texture/block-loader";
+import { AIR_BLOCK_ID, WATER_BLOCK_ID } from "@/utils/constants";
+import {
+    getAtlasMaterial,
+    getBlockGeometry,
+    getGlassAtlasMaterial,
+    getWaterAtlasMaterial,
+} from "@lib/texture/block-loader";
+import { isTranslucentBlock } from "@/init/block-registry";
 import { Chunk } from "@/engine/world/chunk/Chunk";
 import { Subchunk } from "@/engine/world/chunk/SubChunks";
 import type { ChunkManager } from "@/engine/world/chunk/ChunkManager";
@@ -72,7 +78,12 @@ export class ChunkMeshManager {
                     const worldY = subchunkWorldY + y;
                     const worldZ = chunkWorldZ + z;
 
-                    if (this.isHidden(worldX, worldY, worldZ)) {
+                    if (
+                        (blockId === WATER_BLOCK_ID &&
+                            this.isWaterHidden(worldX, worldY, worldZ)) ||
+                        (blockId !== WATER_BLOCK_ID &&
+                            this.isHidden(worldX, worldY, worldZ))
+                    ) {
                         continue;
                     }
 
@@ -87,18 +98,28 @@ export class ChunkMeshManager {
             }
         }
 
-        const material = getAtlasMaterial();
         const localY = subchunk.yIndex * Subchunk.height;
         const dummyMatrix = new THREE.Matrix4();
         const nextMeshes = new Map<number, THREE.InstancedMesh>();
 
         visibleBlocks.forEach((positions, blockId) => {
             const geometry = getBlockGeometry(blockId);
+            const translucent = isTranslucentBlock(blockId);
+            const material =
+                blockId === WATER_BLOCK_ID
+                    ? getWaterAtlasMaterial()
+                    : translucent
+                      ? getGlassAtlasMaterial()
+                      : getAtlasMaterial();
             const instancedMesh = new THREE.InstancedMesh(
                 geometry,
                 material,
                 positions.length,
             );
+
+            if (translucent) {
+                instancedMesh.renderOrder = 1;
+            }
 
             instancedMesh.position.set(0, localY, 0);
 
@@ -161,6 +182,27 @@ export class ChunkMeshManager {
                 worldY,
                 worldZ - 1,
             )
+        );
+    }
+
+    private isWaterHidden(
+        worldX: number,
+        worldY: number,
+        worldZ: number,
+    ): boolean {
+        return (
+            this.chunkManager.getVoxelIdWorld(worldX, worldY + 1, worldZ) ===
+                WATER_BLOCK_ID &&
+            this.chunkManager.getVoxelIdWorld(worldX, worldY - 1, worldZ) ===
+                WATER_BLOCK_ID &&
+            this.chunkManager.getVoxelIdWorld(worldX + 1, worldY, worldZ) ===
+                WATER_BLOCK_ID &&
+            this.chunkManager.getVoxelIdWorld(worldX - 1, worldY, worldZ) ===
+                WATER_BLOCK_ID &&
+            this.chunkManager.getVoxelIdWorld(worldX, worldY, worldZ + 1) ===
+                WATER_BLOCK_ID &&
+            this.chunkManager.getVoxelIdWorld(worldX, worldY, worldZ - 1) ===
+                WATER_BLOCK_ID
         );
     }
 }

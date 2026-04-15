@@ -1,6 +1,6 @@
 import { Chunk } from "./Chunk";
 import { BlockId } from "@project-types";
-import { AIR_BLOCK_ID } from "@/utils/constants";
+import { AIR_BLOCK_ID, WATER_BLOCK_ID } from "@/utils/constants";
 import { isTransparentBlock } from "@/init/block-registry";
 import { mod } from "@/utils/helper";
 import { WORLD_PARAMS } from "@/utils/config";
@@ -156,7 +156,11 @@ export class ChunkManager {
         }
 
         const voxelId = this.tryGetVoxelIdWorld(worldX, worldY, worldZ);
-        return voxelId !== null && voxelId !== AIR_BLOCK_ID;
+        return (
+            voxelId !== null &&
+            voxelId !== AIR_BLOCK_ID &&
+            voxelId !== WATER_BLOCK_ID
+        );
     }
 
     /**

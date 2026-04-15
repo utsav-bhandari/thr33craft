@@ -41,6 +41,7 @@
     "water": {
         "id": 4,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/water_still",
             "up": "minecraft:block/water_still",
@@ -249,6 +250,7 @@
     "black_stained_glass": {
         "id": 20,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/black_stained_glass",
             "up": "minecraft:block/black_stained_glass",
@@ -353,6 +355,7 @@
     "blue_stained_glass": {
         "id": 28,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/blue_stained_glass",
             "up": "minecraft:block/blue_stained_glass",
@@ -483,6 +486,7 @@
     "brown_stained_glass": {
         "id": 38,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/brown_stained_glass",
             "up": "minecraft:block/brown_stained_glass",
@@ -1237,6 +1241,7 @@
     "cyan_stained_glass": {
         "id": 96,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/cyan_stained_glass",
             "up": "minecraft:block/cyan_stained_glass",
@@ -2056,6 +2061,7 @@
     "glass": {
         "id": 159,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/glass",
             "up": "minecraft:block/glass",
@@ -2173,6 +2179,7 @@
     "gray_stained_glass": {
         "id": 168,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/gray_stained_glass",
             "up": "minecraft:block/gray_stained_glass",
@@ -2238,6 +2245,7 @@
     "green_stained_glass": {
         "id": 173,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/green_stained_glass",
             "up": "minecraft:block/green_stained_glass",
@@ -2524,6 +2532,7 @@
     "light_blue_stained_glass": {
         "id": 195,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/light_blue_stained_glass",
             "up": "minecraft:block/light_blue_stained_glass",
@@ -2589,6 +2598,7 @@
     "light_gray_stained_glass": {
         "id": 200,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/light_gray_stained_glass",
             "up": "minecraft:block/light_gray_stained_glass",
@@ -2654,6 +2664,7 @@
     "lime_stained_glass": {
         "id": 205,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/lime_stained_glass",
             "up": "minecraft:block/lime_stained_glass",
@@ -2732,6 +2743,7 @@
     "magenta_stained_glass": {
         "id": 211,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/magenta_stained_glass",
             "up": "minecraft:block/magenta_stained_glass",
@@ -3161,6 +3173,7 @@
     "orange_stained_glass": {
         "id": 244,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/orange_stained_glass",
             "up": "minecraft:block/orange_stained_glass",
@@ -3447,6 +3460,7 @@
     "pink_stained_glass": {
         "id": 266,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/pink_stained_glass",
             "up": "minecraft:block/pink_stained_glass",
@@ -3655,6 +3669,7 @@
     "purple_stained_glass": {
         "id": 282,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/purple_stained_glass",
             "up": "minecraft:block/purple_stained_glass",
@@ -3941,6 +3956,7 @@
     "red_stained_glass": {
         "id": 304,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/red_stained_glass",
             "up": "minecraft:block/red_stained_glass",
@@ -4968,6 +4984,7 @@
     "tinted_glass": {
         "id": 383,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/tinted_glass",
             "up": "minecraft:block/tinted_glass",
@@ -5241,6 +5258,7 @@
     "white_stained_glass": {
         "id": 404,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/white_stained_glass",
             "up": "minecraft:block/white_stained_glass",
@@ -5306,6 +5324,7 @@
     "yellow_stained_glass": {
         "id": 409,
         "transparent": true,
+        "translucent": true,
         "textures": {
             "down": "minecraft:block/yellow_stained_glass",
             "up": "minecraft:block/yellow_stained_glass",

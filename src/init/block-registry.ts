@@ -64,6 +64,13 @@ export function isTransparentBlock(block: BlockName | BlockId): boolean {
     return blocksByName.get(name)!.transparent;
 }
 
+export function isTranslucentBlock(block: BlockName | BlockId): boolean {
+    const name =
+        typeof block === "string" ? block : blocksById.get(block)!.name;
+
+    return blocksByName.get(name)!.translucent === true;
+}
+
 function registerBlock(blockData: BlockDefinition): void {
     blocksByName.set(blockData.name, blockData);
     blocksById.set(blockData.id, blockData);

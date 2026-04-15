@@ -9,6 +9,8 @@ import {
 import { debug } from "@/utils/logger";
 
 const atlasMaterialCache = new Map<THREE.Texture, THREE.MeshStandardMaterial>();
+const glassMaterialCache = new Map<THREE.Texture, THREE.MeshStandardMaterial>();
+const waterMaterialCache = new Map<THREE.Texture, THREE.MeshStandardMaterial>();
 const blockGeometryCache = new Map<string, THREE.BoxGeometry>();
 
 debug("Fetching block texture atlas");
@@ -69,5 +71,43 @@ export function getAtlasMaterial(
         depthWrite: true,
     });
     atlasMaterialCache.set(atlasTexture, material);
+    return material;
+}
+
+/** Returns a cached alpha-blended atlas material for glass-type blocks. */
+export function getGlassAtlasMaterial(
+    atlasTexture: THREE.Texture = blockTextureAtlas.atlasTexture,
+): THREE.MeshStandardMaterial {
+    const cached = glassMaterialCache.get(atlasTexture);
+    if (cached) {
+        return cached;
+    }
+
+    const material = new THREE.MeshStandardMaterial({
+        map: atlasTexture,
+        transparent: true,
+        opacity: 0.7,
+        depthWrite: false,
+    });
+    glassMaterialCache.set(atlasTexture, material);
+    return material;
+}
+
+/** Returns a cached alpha-blended atlas material for water blocks. */
+export function getWaterAtlasMaterial(
+    atlasTexture: THREE.Texture = blockTextureAtlas.atlasTexture,
+): THREE.MeshStandardMaterial {
+    const cached = waterMaterialCache.get(atlasTexture);
+    if (cached) {
+        return cached;
+    }
+
+    const material = new THREE.MeshStandardMaterial({
+        map: atlasTexture,
+        transparent: true,
+        opacity: 0.2,
+        depthWrite: false,
+    });
+    waterMaterialCache.set(atlasTexture, material);
     return material;
 }
