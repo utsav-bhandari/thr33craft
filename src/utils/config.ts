@@ -144,10 +144,13 @@ export const DEFAULT_KEYS_PRESET: KeyPreset = {
     HOTBAR_SLOT_9: "9",
 };
 
+// @ts-ignore
+export const base = import.meta.env.BASE_URL;
+
 export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetParams =
     {
         source: "static",
-        staticTextureSheetUrl: "/images/block-texture-sheet.png",
+        staticTextureSheetUrl: `${base}/images/block-texture-sheet.png`,
         showDownloadButton: false,
         downloadFileName: "block-texture-sheet.png",
         columns: 16,
@@ -158,7 +161,7 @@ export const INVENTORY_BLOCK_TEXTURE_SHEET_PARAMS: InventoryBlockTextureSheetPar
 
 export const BLOCK_TEXTURE_ATLAS_PARAMS: BlockTextureAtlasParams = {
     source: "static",
-    staticTextureAtlasUrl: "/images/block-texture-atlas.png",
+    staticTextureAtlasUrl: `${base}/images/block-texture-atlas.png`,
     showDownloadButton: false,
     downloadFileName: "block-texture-atlas.png",
 };

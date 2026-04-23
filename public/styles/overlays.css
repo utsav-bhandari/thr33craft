@@ -164,7 +164,7 @@
     display: grid;
     place-items: center;
     padding: 24px;
-    background-image: url("/blocks/dirt.png");
+    background-image: url("../blocks/dirt.png");
     image-rendering: pixelated;
     background-repeat: repeat;
     background-size: 64px;

@@ -314,9 +314,12 @@ async function loadTextureImage(
         return imageCache.get(textureKey) ?? null;
     }
 
+    // @ts-ignore
+    const base = import.meta.env.BASE_URL;
+
     const image = await new Promise<HTMLImageElement | null>((resolve) => {
         imageLoader.load(
-            `/blocks/${textureKey}.png`,
+            `${base}/blocks/${textureKey}.png`,
             (loadedImage) => resolve(loadedImage),
             undefined,
             () => resolve(null),
