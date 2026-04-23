@@ -41,15 +41,15 @@ const TERRAIN_SETTINGS_STORAGE_KEY = "thr33craft.terrain-settings";
 
 const DEFAULT_TERRAIN_PARAMS: TerrainParams = {
     seed: 12345,
-    noiseScale: 0.025,
+    noiseScale: 0.015,
     surfaceSampleY: 0,
-    baseHeight: 24,
-    heightVariation: 12,
-    topsoilDepth: 3,
-    beachBand: 2,
-    sandDepth: 3,
-    snowStartHeight: 34,
-    seaLevel: 20,
+    baseHeight: 64,
+    heightVariation: 28,
+    topsoilDepth: 4,
+    beachBand: 3,
+    sandDepth: 5,
+    snowStartHeight: 80,
+    seaLevel: 48,
     spawnClearance: 6,
 };
 
