@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>THR33CRAFT Project Landing Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                margin: 0;
+                padding: 24px;
+                color: #1a1a1a;
+                background: #f7f7f7;
+            }
+
+            main {
+                max-width: 900px;
+                margin: 0 auto;
+                background: #ffffff;
+                padding: 24px;
+                border: 1px solid #dddddd;
+            }
+
+            img {
+                width: 100%;
+                max-width: 760px;
+                height: auto;
+                display: block;
+                margin: 12px 0 20px;
+                border: 1px solid #cccccc;
+            }
+
+            a {
+                color: #0b57d0;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>THR33CRAFT: Project Showcase</h1>
+            <p>
+                This page summarizes what I built for THR33CRAFT, a
+                browser-based voxel sandbox made with Three.js and TypeScript.
+            </p>
+
+            <h2>Project Demo</h2>
+            <p>
+                Open the playable demo here:
+                <a href="/" target="_blank" rel="noopener noreferrer"
+                    >Launch THR33CRAFT Demo</a
+                >
+            </p>
+
+            <h2>Feature 1: World Generation and Exploration</h2>
+            <p>
+                The project streams chunked terrain around the player so the
+                world feels large and continuous while moving in first person.
+            </p>
+            <img
+                src="/thr33craft/showcase/world-overview.png"
+                alt="Wide view of generated voxel terrain and horizon"
+            />
+
+            <h2>Feature 2: Block Targeting and Interaction</h2>
+            <p>
+                I implemented block targeting, breaking, and placement workflows
+                to make the sandbox interactive.
+            </p>
+            <img
+                src="/thr33craft/showcase/block-interaction.png"
+                alt="Crosshair targeting a block while placing or breaking"
+            />
+
+            <h2>Feature 3: Inventory and Hotbar</h2>
+            <p>
+                The inventory supports browsing and selecting blocks, while the
+                hotbar gives fast access during gameplay.
+            </p>
+            <img
+                src="/thr33craft/showcase/inventory-hotbar.png"
+                alt="Inventory panel and hotbar with selected items"
+            />
+
+            <h2>What This Project Demonstrates</h2>
+            <p>
+                THR33CRAFT demonstrates how a real-time 3D sandbox can stay
+                responsive by streaming the world in chunks around the player,
+                then building those chunks nearest-first so nearby terrain
+                appears first while distant terrain catches up in the
+                background.
+            </p>
+            <p>
+                A big performance detail is voxel culling during meshing. When
+                a block is completely surrounded by solid neighbors on all six
+                sides, it is skipped and never sent to the GPU. Even chunk
+                borders are handled carefully: if a neighboring chunk has not
+                loaded yet, it is treated as solid for meshing so border faces
+                stay hidden instead of popping in and out.
+            </p>
+            <p>
+                The inventory icons are also generated in an interesting way.
+                Instead of hand-drawing every icon, the project can render each
+                block through a tiny Three.js scene with an orthographic camera
+                and directional light, then pack all results into one texture
+                sheet. Metadata stores each icon's background-position so the
+                inventory and hotbar can display hundreds of block previews from
+                a single image efficiently.
+            </p>
+            <p>
+                The result is a project that is fun to explore on the surface,
+                but also full of engine-level ideas under the hood: streaming,
+                culling, batching, and UI texture pipelines.
+            </p>
+        </main>
+    </body>
+</html>
