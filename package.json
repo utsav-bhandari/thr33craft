@@ -5,7 +5,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "typecheck": "tsc --noEmit -p tsconfig.json",
-        "predeploy": "npm run build --base=/thr33craft",
+        "predeploy": "npm run build -- --base=/thr33craft",
         "deploy": "gh-pages -d dist"
     },
     "devDependencies": {
