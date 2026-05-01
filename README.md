@@ -1,4 +1,4 @@
-# THR33CRAFT
+# [THR33CRAFT](https://utsav-bhandari.github.io/thr33craft/landing.html)
 
 A browser-based voxel sandbox built with Three.js, Vite, and TypeScript. The app boots a chunked 3D world, locks the pointer for first-person movement, streams nearby chunks around the player, and uses an inventory plus hotbar flow for selecting and placing blocks.
 
